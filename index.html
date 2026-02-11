@@ -1,6 +1,55 @@
-git clone https://github.com/primateth/azul-de-pantalla-bio.git
-cd azul-de-pantalla-bio
-# crea index.html con tu editor
-git add index.html
-git commit -m "Add landing page (bio)"
-git push
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Azul de Pantalla · Bio (QR)</title>
+  <meta name="description" content="Biografía y enlaces verificados. Si no te carga, no existes." />
+  <meta name="theme-color" content="#0b0c22" />
+  <style>
+    :root { color-scheme: dark; }
+    body{ margin:0; font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      background:#050616; color:#e9ecff; }
+    .wrap{ max-width:860px; margin:0 auto; padding:44px 18px 60px; }
+    .badge{ display:inline-block; padding:8px 12px; border:1px solid rgba(110,130,255,.22);
+      border-radius:999px; background:rgba(10,12,34,.55); letter-spacing:.6px; text-transform:uppercase;
+      font-size:13px; }
+    h1{ margin:14px 0 8px; font-size:40px; }
+    p{ color:rgba(233,236,255,.9); line-height:1.6; }
+    a{ color:#6aa2ff; text-decoration:none; }
+    a:hover{ text-decoration:underline; }
+    .card{ margin-top:18px; padding:18px; border:1px solid rgba(110,130,255,.22);
+      border-radius:18px; background:rgba(18,20,56,.35); }
+    .mono{ font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+      font-size:13px; color:rgba(233,236,255,.75); }
+    ul{ margin:10px 0 0; padding-left:18px; }
+    li{ margin:8px 0; }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="badge">Azul de Pantalla · Bio (QR)</div>
+    <h1>Expediente de Identidad</h1>
+    <p><b>Bio oficial (QR)</b>. Enlaces verificados, versión auditable y contacto. Si no te carga, no existes.</p>
+
+    <div class="card">
+      <h2 style="margin:0 0 10px; font-size:16px; text-transform:uppercase; letter-spacing:.5px;">Biografía</h2>
+      <p>
+        Azul de Pantalla es un canon ficticio para la sociedad del dato: versículos, glosas y fichas clasificadas.
+        El Único no crea el mundo: lo registra. Lo que no se mide, no existe; lo que no carga, no cuenta.
+      </p>
+      <p class="mono">Última revisión: 2026-02-12 · Clasificación: ABIERTA</p>
+    </div>
+
+    <div class="card">
+      <h2 style="margin:0 0 10px; font-size:16px; text-transform:uppercase; letter-spacing:.5px;">Enlaces verificados</h2>
+      <ul>
+        <li><a href="#" rel="noopener">Libro (KDP / web)</a></li>
+        <li><a href="#" rel="noopener">Dossier / prensa (PDF)</a> <span class="mono">assets/dossier.pdf</span></li>
+        <li><a href="#" rel="noopener">Contacto</a></li>
+        <li><a href="https://github.com/primateth/azul-de-pantalla-bio" rel="noopener">Repositorio</a></li>
+      </ul>
+    </div>
+  </div>
+</body>
+</html>
