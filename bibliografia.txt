@@ -1,4 +1,5 @@
-bibliografia
+Bibliografía Azul de pantalla
+Templo del dato
 
 Quizás es mejor la bibliografía que el propio libro.
 Si el libro es malo, la bibliografía siempre queda bien.
@@ -73,6 +74,7 @@ REF-027. La ceremonia del porno. (2007). Anagrama.
 
 BARFIELD, Owen
 REF-028. Salvar las apariencias. (2015). Atalanta.
+
 BARÓ, Miguel García
 REF-029. De estética y mística. (2007). Sígueme.
 
@@ -98,6 +100,7 @@ REF-040. Ritual Theory, Ritual Practice. (1992). Oxford University Press.
 BENJAMIN, Walter
 REF-041. Obras (ensayos citados). (2007–2008). Abada.
 REF-042. El capitalismo como religión 
+
 BERMEJO RUBIO, Fernando
 REF-043. La invención de Jesús de Nazaret. (2018). Siglo XXI.
 
@@ -123,6 +126,7 @@ REF-051. Mysterium Magnum. (2024). Atalanta.
 
 BONFIL BATALLA, Guillermo
 REF-052. México profundo: Una civilización negada. (2019). Fondo de Cultura Económica.
+
 BRANDON, S. G. F.
 REF-053. The Judgment of the Dead. (1967). Weidenfeld & Nicolson.
 
@@ -157,8 +161,7 @@ REF-068. El imperio de la ficción: capitalismo y sacrificios hollywoodenses. (2
 REF-069. Sacrificios y hierogamias: la violencia y el goce en el escenario del poder, Vol. 1. (2016). edicionessenoicide.
 REF-070. Sacrificios y hierogamias: la violencia y el goce en el escenario del poder, Vol. 2. (2016). edicionessenoicide.
 REF-071. En el nombre del Falo y del Ano y de la Matriz transhumana. (2017). 
-REF-072. Androginización 
-vs. Heteroarcado. 
+REF-072. Androginización vs. Heteroarcado. 
 REF-073. El ritual de la violencia en el escenario del poder-religión. 
 REF-074. Manifiesto hierogámico-sacrificial. 
 REF-075. El plano de inmanencia y Occidente. 
@@ -186,6 +189,7 @@ REF-086. Vidas mágicas e inquisición. (2024). Alianza.
 
 CASTANEDA, Carlos
 REF-087. Las enseñanzas de Don Juan: Una forma Yaqui de conocimiento. (2004). Fondo de Cultura Económica.
+
 CASTEL, E.
 REF-088. Gran diccionario de mitología egipcia. (2001). Aldebarán.
 
@@ -211,6 +215,7 @@ REF-096. El aciago demiurgo. (2000). Taurus.
 
 CLASTRES, Pierre
 REF-097. La sociedad contra el Estado. (2018). Virus Editorial.
+
 COLLINGWOOD, R. G.
 REF-098. Idea de la historia. (2018). Fondo de Cultura Económica.
 
@@ -224,8 +229,7 @@ CORTÁZAR, Julio
 REF-101. Rayuela. (2002). Cátedra.
 
 CRAWLEY, Ernest
-REF-102. The Mystic Rose. (1932). 
-Watts & Co.
+REF-102. The Mystic Rose. (1932). Watts & Co.
 
 CROSLAND, Maurice
 REF-103. El mundo oculto de Newton. (2008). RBA.
@@ -246,8 +250,7 @@ DANTAS, J.
 REF-112. El libro del Tao. (2014). 
 
 DE LA CADENA, Marisol
-REF-113. Indigenous Mestizos: The Politics of Race and Culture in Cuzco, Peru, 1919–1991. (2000). 
-Duke University Press.
+REF-113. Indigenous Mestizos: The Politics of Race and Culture in Cuzco, Peru, 1919–1991. (2000). Duke University Press.
 
 DEBORD, Guy
 REF-114. In girum imus nocte… y Basura y escombros. (2000). Anagrama.
@@ -264,6 +267,7 @@ REF-119. Mil mesetas. (2018). Pre-Textos.
 DERRIDA, Jacques
 REF-120. La escritura y la diferencia. (2018). Anthropos.
 REF-121. El sacrificio. 
+
 DESCARTES, René
 REF-122. Meditaciones metafísicas. (2016). Gredos.
 
@@ -274,8 +278,7 @@ DÍAZ, Carlos
 REF-124. Filosofía de la religión. (2008). Ediciones Encuentro.
 
 DILTHEY, Wilhelm
-REF-125. Introducción a las ciencias del espíritu. (2010). 
-Fondo de Cultura Económica.
+REF-125. Introducción a las ciencias del espíritu. (2010). Fondo de Cultura Económica.
 
 DOUGLAS, Mary
 REF-126. Purity and Danger: An Analysis of Concepts of Pollution and Taboo. (1966). Routledge.
@@ -289,6 +292,7 @@ Fondo de Cultura Económica.
 
 DURKHEIM, Émile
 REF-129. Las formas elementales de la vida religiosa. (2014). Akal.
+
 ECO, Umberto
 REF-130. El nombre de la rosa. (2016). Lumen.
 REF-131. Apocalípticos e integrados. (2018). Debolsillo.
@@ -313,6 +317,7 @@ REF-139. Elogio de la locura. (2013). Alianza.
 
 ESQUILO
 REF-140. Tragedias. (2016). Gredos.
+
 ESTEBAN, M. del P.; MORA, Rodrigo
 REF-141. Feminicidio o auto-construcción de la mujer. 
 
@@ -326,8 +331,7 @@ REF-145. La tradición hermética.
 REF-146. Metafísica del sexo. 
 
 FAVRE, Henri
-REF-147. El indigenismo. (1998). 
-Fondo de Cultura Económica.
+REF-147. El indigenismo. (1998). Fondo de Cultura Económica.
 
 FEDERICI, Silvia
 REF-148. Caliban and the Witch. (2004). Autonomedia.
@@ -338,6 +342,7 @@ REF-150. Teología platónica. (2022). Atalanta.
 
 FINKELSTEIN, Israel; SILBERMAN, Neil Asher
 REF-151. La Biblia desenterrada. (2003). Siglo XXI.
+
 FOUCAULT, Michel
 REF-152. Las palabras y las cosas. (1968). 
 REF-153. Vigilar y castigar. (2000). 
@@ -348,8 +353,7 @@ REF-157. Los anormales.
 
 FRAZER, James G.
 REF-158. El totemismo. (1987). Eyras.
-REF-159. La rama dorada. (2011). 
-Fondo de Cultura Económica.
+REF-159. La rama dorada. (2011). Fondo de Cultura Económica.
 
 FREUD, Sigmund
 REF-160. El malestar en la cultura. (2017). Alianza.
@@ -364,6 +368,7 @@ REF-163. El corazón del hombre. (1966). Fondo de Cultura Económica.
 FULCANELLI
 REF-164. Las moradas filosofales. (2010). Obelisco.
 REF-165. El misterio de las catedrales. (2011). Obelisco.
+
 GADAMER, Hans-Georg
 REF-166. Verdad y método I. (2012). Sígueme.
 REF-167. Verdad y método II. (2012). Sígueme.
@@ -375,6 +380,7 @@ GARCILASO DE LA VEGA, Inca
 REF-169. La Florida del Inca. (1605). 
 REF-170. Comentarios reales de los incas. (1609). 
 REF-171. Historia general del Perú. (1617). 
+
 GEERTZ, Clifford
 REF-172. La interpretación de las culturas. 
 
@@ -385,6 +391,7 @@ REF-175. Violence and the Sacred. (1977). Johns Hopkins University Press.
 
 GOBINEAU, Arthur de
 REF-176. Las religiones y las filosofías en Asia Central. (2014). 
+
 GOBIERNO DE ESPAÑA, Oficina Nacional de Prospectiva y Estrategia
 REF-177. España 2050: Fundamentos y propuestas para una Estrategia Nacional de Largo Plazo. (2021). Ministerio de la Presidencia.
 REF-178. España 2050: Resumen ejecutivo (PDF). (2021). Ministerio de la Presidencia.
@@ -404,8 +411,7 @@ REF-183. El rey del mundo. (2022). Obelisco.
 REF-184. La crisis del mundo moderno. (2022). Obelisco.
 
 HAN, Byung-Chul
-REF-185. La agonia del eros.
-HERDER. (2013). 
+REF-185. La agonia del eros.HERDER. (2013). 
 REF-186. La sociedad del cansancio. HERDER.(2010). 
 REF-187. La sociedad de la transparencia. HERDER.(2012). 
 REF-188. Psicopolítica. HERDER.(2014). 
@@ -435,6 +441,7 @@ REF-197. Odisea. (2017). Gredos.
 
 HUME, David
 REF-198. Diálogos sobre la religión natural. (2016). Gredos.
+
 HUXLEY, Aldous
 REF-199. Un mundo feliz. (2003). debolsillo.
 
@@ -463,6 +470,7 @@ REF-207. Cuando Dios era mujer.
 
 KOHN, Eduardo
 REF-208. How Forests Think: Toward an Anthropology Beyond the Human. (2013).
+
 KOPENAWA, Davi; ALBERT, Bruce
 REF-209. La caída del cielo: Palabras de un chamán yanomami. 
 
@@ -470,12 +478,10 @@ KROPOTKIN, Piotr
 REF-210. La conquista del pan. (2015). La Malatesta.
 
 KRISTEVA, Julia
-REF-211. Powers of Horror: An Essay on Abjection. (1982). 
-Columbia University Press.
+REF-211. Powers of Horror: An Essay on Abjection. (1982). Columbia University Press.
 
 KUHN, Thomas S.
-REF-212. La estructura de las revoluciones científicas. (1971). 
-Fondo de Cultura Económica.
+REF-212. La estructura de las revoluciones científicas. (1971). Fondo de Cultura Económica.
 
 KURNITZKY, Horst
 REF-213. La estructura libidinal del dinero. 
@@ -489,6 +495,7 @@ REF-218. El triunfo de la religión.
 
 LA METTRIE, Julien Offray de
 REF-219. El hombre máquina. El arte de gozar. (2000). Valdemar.
+
 LAO TSÉ
 REF-220. Tao Te Ching. (2010). Siruela.
 
@@ -505,7 +512,6 @@ REF-224. La doctrine du sacrifice dans les Brâhmanas. (1898).
 LÉVI-STRAUSS, Claude
 REF-225. Las estructuras elementales del parentesco. 
 REF-226. El pensamiento salvaje. 
-datosporcompletar.
 REF-227. Lo crudo y lo cocido. (2016). Fondo de Cultura Económica.
 
 LIBIS, Jacques
@@ -513,6 +519,7 @@ REF-228. El mito del andrógino. (2001). Siruela.
 
 LIDDELL, Alicia
 REF-229. El sacrificio como acto poético. (2014). Consonni / Continta Me Tienes.
+
 LOCKE, John
 REF-230. Ensayo sobre el entendimiento humano. (2012). 
 Fondo de Cultura Económica.
@@ -544,6 +551,7 @@ MARX, Karl
 REF-239. Cuadernos de París. (1974). Era.
 REF-240. El Capital. (1975). Siglo XXI.
 REF-241. El capital I. (2014). Siglo XXI.
+
 MAUSS, Marcel; HUBERT, Henri
 REF-242. Ensayo sobre la naturaleza y función del sacrificio. 
 
@@ -559,22 +567,23 @@ MILL, John Stuart
 REF-246. Sobre la libertad. (2013). Alianza.
 
 MOORE, Alan
-REF-247. Watchmen. (2000). 
-Norma Editorial.
-REF-248. V de Vendetta. (2002). 
-Norma Editorial.
+REF-247. Watchmen. (2000). Norma Editorial.
+REF-248. V de Vendetta. (2002). Norma Editorial.
 REF-249. From Hell. Planeta Cómic.
 REF-250. La cosa del pantano - vertigo
 
 MILLER, Frank
 REF-251. Batman: El regreso del Caballero Oscuro. 
+
 Norma Editorial.
 REF-252. Sin City 01: El duro adiós. 
 
 MYLONAS, George E.
 REF-253. Eleusis and the Eleusinian Mysteries. (2009). Cyceon Tales.
+
 NEWTON, Isaac
 REF-254. Principios matemáticos de la Filosofía natural. (1987). Tecnos.
+
 NIETZSCHE, Friedrich
 REF-255. El nacimiento de la tragedia y otras obras citadas. 
 REF-256. Así habló Zaratustra. (2017). Alianza.
@@ -597,6 +606,7 @@ REF-262. La sociedad abierta y sus enemigos II. (2015). Paidós.
 
 RADCLIFFE-BROWN, A. R.
 REF-263. El método de la antropología social.
+
 REICH, Wilhelm
 REF-264. Ether, God and Devil. (1949). Orgone Institute Press.
 
@@ -614,7 +624,6 @@ REF-268. Teología política. (2013). Trotta.
 
 SCHOPENHAUER, Arthur
 REF-269. El mundo como voluntad y representación I. (2016). Trotta.
-
 REF-270. El mundo como voluntad y representación II. (2016). Trotta.
 
 SPENGLER, Oswald
@@ -622,9 +631,9 @@ REF-271. La decadencia de Occidente.
 
 SPINOZA, Baruch
 REF-272. Ética demostrada según el orden geométrico. (2016). Gredos.
+
 TAUSSIG, Michael
-REF-273. Shamanism, Colonialism, and the Wild Man: A Study in Terror and Healing. (1987). 
-University of Chicago Press.
+REF-273. Shamanism, Colonialism, and the Wild Man: A Study in Terror and Healing. (1987). University of Chicago Press.
 
 TAYLOR, Charles
 REF-274. La era secular I. (2018). Gedisa.
@@ -640,11 +649,13 @@ REF-279. Corpus Hermeticum.
 
 TURNER, Victor
 REF-280. The Ritual Process: Structure and Anti-Structure. (1969). Aldine.
+
 VANACLOCHA, Bernat; CAÑIGUERAL, Salvador
 REF-281. Fitoterapia: Vademécum de prescripción. 
 
 VIVEIROS DE CASTRO, Eduardo
 REF-282. Metafísicas caníbales: Líneas de antropología postestructural. 
+
 WAGNER, Richard
 REF-283. Tristán e Isolda (libreto / notas). 
 
@@ -666,62 +677,48 @@ REF-290. El arte de la memoria. (2011). Siruela.
 ŽIŽEK, Slavoj
 REF-291. Ateísmo cristiano. Ediciones Akal (2025)
 REF-292.Mis chistes, mi filosofia.
+
 ZUBOFF, Shoshana
 REF-293. The Age of Surveillance Capitalism. (2019). PublicAffairs.
 REF-294. La era del capitalismo de la vigilancia. (2020). Ediciones Paidós.
 
-WIKI|PODCAST|BLOG
-REF-295. El informe de Iron Mountain: sobre la posibilidad y conveniencia de la paz. (AUDIOLIBRO)
+PODCAST, 1
+REF-295. El informe de Iron Mountain: sobre la posibilidad y conveniencia de la paz. - AUDIOLIBRO
 REF-296. IVoox IA con Jon Hernandez
 REF-297. IVoox El submarino Subversivo
 REF-298. Svali interview (parte 1)
-REF-299. The Revealing.
+REF-299. IVoox - ESTO SALDRÁ BIEN
+REF-300. Orígenes - Contra Celso - AUDIOLIBRO
 
-Biblioteca, Pleyades
-REF-300. Delirious Heterotopias (blog). 
-REF-301. IVoox - ESTO SALDRÁ BIEN
-REF-302. Orígenes - Contra Celso-AUDIOLIBRO
+BLOG,1
+REF-300. The Revealing.
+REF-302. Delirious Heterotopias. 
 
-MANUALES
-MANUALES , EPIC GAMES
-REF-303. Unreal Engine 5.7
-Documentation.  
-Epic Developer Community. 
+MANUALES, EPIC GAMES
+REF-303. Unreal Engine 5.7 Documentation.  Epic Developer Community. 
 REF-304. Welcome to Virtual Production. Epic Developer Community. 
-REF-305. Virtual Production Visualization Guide. 
-Epic Developer Community. 
+REF-305. Virtual Production Visualization Guide. Epic Developer Community. 
 REF-306. Introducción a la Virtual Production. Epic Developer Community.
 REF-307. In-Camera VFX in Unreal Engine. Unreal Engine Documentation. 
-REF-308. In-Camera VFX Quick Start for Unreal Engine.  
-Unreal Engine Documentation.
-REF-309. In-Camera VFX Editor for Unreal Engine. 
-Unreal Engine Documentation. 
-REF-310. In-Camera VFX Best Practices in Unreal Engine.  
-Unreal Engine Documentation. 
+REF-308. In-Camera VFX Quick Start for Unreal Engine.  Unreal Engine Documentation.
+REF-309. In-Camera VFX Editor for Unreal Engine. Unreal Engine Documentation. 
+REF-310. In-Camera VFX Best Practices in Unreal Engine.  Unreal Engine Documentation. 
 REF-311. nDisplay Overview for Unreal Engine. Unreal Engine Documentation. 
-REF-312. Rendering to Multiple Displays with nDisplay in Unreal Engine.  
-Unreal Engine Documentation. 
+REF-312. Rendering to Multiple Displays with nDisplay in Unreal Engine.  Unreal Engine Documentation. 
 REF-313. nDisplay Quick Start for Unreal Engine.
-REF-314. nDisplay Multi-User Technical Reference in Unreal Engine. 
-Unreal Engine Documentation. 
+REF-314. nDisplay Multi-User Technical Reference in Unreal Engine. Unreal Engine Documentation. 
 REF-315. Switchboard in Unreal Engine. Unreal Engine Documentation. 
 REF-316. Live Link in Unreal Engine. Unreal Engine Documentation. 
-REF-317. Live Link Hub Quick Start in Unreal Engine. 
-Unreal Engine Documentation. 
+REF-317. Live Link Hub Quick Start in Unreal Engine. Unreal Engine Documentation. 
 REF-318. Take Recorder in Unreal Engine. Unreal Engine Documentation. 
-REF-319. Movie Render Pipeline in Unreal Engine.  
-Unreal Engine Documentation. 
-REF-320. Rendering High Quality Frames with Movie Render Queue in Unreal
-Engine.  Unreal Engine Documentation. 
-REF-321. DMX Overview.  
-Unreal Engine Documentation. 
+REF-319. Movie Render Pipeline in Unreal Engine.  Unreal Engine Documentation. 
+REF-320. Rendering High Quality Frames with Movie Render Queue in UnrealEngine.  Unreal Engine Documentation. 
+REF-321. DMX Overview.  Unreal Engine Documentation. 
 REF-322. DMX Quick Start in Unreal Engine. Unreal Engine Documentation. 
 
 KADNER, Noah
 REF-323. The Virtual Production Field Guide (Volume 1). (2019). Epic Games. 
 REF-324. The Virtual Production Field Guide (Volume 2). (2021). Epic Games. 
-
-DOCUMENTOS|ARTÍCULOS|ENTORNOS
 
 ALEXANDRE, Eleazar
 REF-325. Leendanik: Desde el principio. 
@@ -739,12 +736,12 @@ REF-330. La danza final de Kali (2.ª ed.).
 REF-331. La rueda de los cuatro brazos: Introducción al carácter. 
 REF-332. El anarquismo y las tríadas miméticas. (2015). 
 
-HTMLs
+HTMLs, TEXTOS RELIGIOSOS
 REF-333. Biblia (edición genérica)
 REF-334. El sagrado Corán. 
 REF-335. El Talmud: Código sagrado y secreto. 
 REF-336. Los Annunakis. 
 
 Más Arellano, Guillermo
-REF-337 Los Deicidas: Más allá de la realidad y la ficción
-REF-338 Hijos de la Sabiduría: Origen y Destino de la Gnosis
+REF-337. Los Deicidas: Más allá de la realidad y la ficción
+REF-338. Hijos de la Sabiduría: Origen y Destino de la Gnosis
