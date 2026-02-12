@@ -12,7 +12,7 @@ REF-002. Signatura rerum. (2008).
 ACHARYA, S.
 REF-003. La conspiración de Cristo. (2005). Valdemar.
 
-AGLIETTA, Michel - ORLÉAN, André
+AGLIETTA, Michel; ORLÉAN, André
 REF-004. La violencia de la moneda. (1990). Siglo XXI.
 
 AGUSTÍN, San
@@ -258,6 +258,9 @@ REF-113. Indigenous Mestizos: The Politics of Race and Culture in Cuzco, Peru, 1
 
 DEBORD, Guy
 REF-114. In girum imus nocte… y Basura y escombros. (2000). Anagrama.
+
+DEAGEL
+REF-114_1. 2025 forecast by country. 
 
 DELEUZE, Gilles
 REF-115. La lógica del sentido. (2018). Paidós.
@@ -693,7 +696,7 @@ ZUBOFF, Shoshana
 REF-293. The Age of Surveillance Capitalism. (2019). PublicAffairs.
 REF-294. La era del capitalismo de la vigilancia. (2020). Ediciones Paidós.
 
-PODCAST, 1
+PODCASTS
 REF-295. El informe de Iron Mountain: sobre la posibilidad y conveniencia de la paz. - AUDIOLIBRO
 REF-296. IVoox IA con Jon Hernandez
 REF-297. IVoox El submarino Subversivo
@@ -701,7 +704,7 @@ REF-298. Svali interview (parte 1)
 REF-299. IVoox - ESTO SALDRÁ BIEN
 REF-300. Orígenes - Contra Celso - AUDIOLIBRO
 
-BLOG,1
+BLOGS
 REF-300. The Revealing.
 REF-302. Delirious Heterotopias. 
 REF-302_1. BIBLIOTECA PLEYADES
@@ -732,17 +735,14 @@ KADNER, Noah
 REF-323. The Virtual Production Field Guide (Volume 1). (2019). Epic Games. 
 REF-324. The Virtual Production Field Guide (Volume 2). (2021). Epic Games. 
 
-DEAGEL
-REF-327. 2025 forecast by country. 
-
 TEXTOS RELIGIOSOS
 
 ALEXANDRE, Eleazar
-REF-328. Leendanik: Desde el principio. 
-REF-329. Los Bere. 
+REF-325. Leendanik: Desde el principio. 
+REF-326. Los Bere. 
 
-ANÓNIMO
-REF-330. Biblia (edición genérica)
-REF-331. El sagrado Corán. 
-REF-332. El Talmud: Código sagrado y secreto. 
-REF-333. Los Annunakis. 
+ANÓNIMOS
+REF-327. Biblia (edición genérica)
+REF-328. El sagrado Corán. 
+REF-329. El Talmud: Código sagrado y secreto. 
+REF-330. Los Annunakis. 
