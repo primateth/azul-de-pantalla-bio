@@ -699,63 +699,70 @@ REF-294. La era del capitalismo de la vigilancia. (2020). Ediciones Paidós.
 PODCASTS
 
 AUDIOLIBRO
-REF-295. El informe de Iron Mountain: sobre la posibilidad y conveniencia de la paz. 
+REF-295. El informe de Iron Mountain: sobre la posibilidad y conveniencia de la paz.
 
 Hernandez, Jon
-REF-296. IVoox IA con 
+REF-296. IVoox IA con Jon Hernandez.
 
 El submarino Subversivo
-REF-297. IVoox 
+REF-297. IVoox El submarino Subversivo.
 
-Svali interview 
-REF-298. (parte 1)
+Svali interview
+REF-298. Svali interview (parte 1).
 
 ESTO SALDRÁ BIEN
-REF-299. IVoox 
+REF-299. IVoox - ESTO SALDRÁ BIEN.
 
 Contra, Celso
-REF-300. Orígenes  - AUDIOLIBRO
+REF-300. Orígenes - Contra Celso. (AUDIOLIBRO)
 
 BLOGS
 
+The Revealing
 REF-301. The Revealing.
-REF-302. Delirious Heterotopias. 
-REF-302_1. BIBLIOTECA PLEYADES
 
-MANUALES, EPIC GAMES
-REF-303. Unreal Engine 5.7 Documentation.  Epic Developer Community. 
-REF-304. Welcome to Virtual Production. Epic Developer Community. 
-REF-305. Virtual Production Visualization Guide. Epic Developer Community. 
+Delirious Heterotopias
+REF-302. Delirious Heterotopias.
+
+BIBLIOTECA PLEYADES
+REF-302_1. BIBLIOTECA PLEYADES.
+
+MANUALES
+
+EPIC GAMES
+REF-303. Unreal Engine 5.7 Documentation. Epic Developer Community.
+REF-304. Welcome to Virtual Production. Epic Developer Community.
+REF-305. Virtual Production Visualization Guide. Epic Developer Community.
 REF-306. Introducción a la Virtual Production. Epic Developer Community.
-REF-307. In-Camera VFX in Unreal Engine. Unreal Engine Documentation. 
-REF-308. In-Camera VFX Quick Start for Unreal Engine.  Unreal Engine Documentation.
-REF-309. In-Camera VFX Editor for Unreal Engine. Unreal Engine Documentation. 
-REF-310. In-Camera VFX Best Practices in Unreal Engine.  Unreal Engine Documentation. 
-REF-311. nDisplay Overview for Unreal Engine. Unreal Engine Documentation. 
-REF-312. Rendering to Multiple Displays with nDisplay in Unreal Engine.  Unreal Engine Documentation. 
+REF-307. In-Camera VFX in Unreal Engine. Unreal Engine Documentation.
+REF-308. In-Camera VFX Quick Start for Unreal Engine. Unreal Engine Documentation.
+REF-309. In-Camera VFX Editor for Unreal Engine. Unreal Engine Documentation.
+REF-310. In-Camera VFX Best Practices in Unreal Engine. Unreal Engine Documentation.
+REF-311. nDisplay Overview for Unreal Engine. Unreal Engine Documentation.
+REF-312. Rendering to Multiple Displays with nDisplay in Unreal Engine. Unreal Engine Documentation.
 REF-313. nDisplay Quick Start for Unreal Engine.
-REF-314. nDisplay Multi-User Technical Reference in Unreal Engine. Unreal Engine Documentation. 
-REF-315. Switchboard in Unreal Engine. Unreal Engine Documentation. 
-REF-316. Live Link in Unreal Engine. Unreal Engine Documentation. 
-REF-317. Live Link Hub Quick Start in Unreal Engine. Unreal Engine Documentation. 
-REF-318. Take Recorder in Unreal Engine. Unreal Engine Documentation. 
-REF-319. Movie Render Pipeline in Unreal Engine.  Unreal Engine Documentation. 
-REF-320. Rendering High Quality Frames with Movie Render Queue in UnrealEngine.  Unreal Engine Documentation. 
-REF-321. DMX Overview.  Unreal Engine Documentation. 
-REF-322. DMX Quick Start in Unreal Engine. Unreal Engine Documentation. 
+REF-314. nDisplay Multi-User Technical Reference in Unreal Engine. Unreal Engine Documentation.
+REF-315. Switchboard in Unreal Engine. Unreal Engine Documentation.
+REF-316. Live Link in Unreal Engine. Unreal Engine Documentation.
+REF-317. Live Link Hub Quick Start in Unreal Engine. Unreal Engine Documentation.
+REF-318. Take Recorder in Unreal Engine. Unreal Engine Documentation.
+REF-319. Movie Render Pipeline in Unreal Engine. Unreal Engine Documentation.
+REF-320. Rendering High Quality Frames with Movie Render Queue in Unreal Engine. Unreal Engine Documentation.
+REF-321. DMX Overview. Unreal Engine Documentation.
+REF-322. DMX Quick Start in Unreal Engine. Unreal Engine Documentation.
 
 KADNER, Noah
-REF-323. The Virtual Production Field Guide (Volume 1). (2019). Epic Games. 
-REF-324. The Virtual Production Field Guide (Volume 2). (2021). Epic Games. 
+REF-323. The Virtual Production Field Guide (Volume 1). (2019). Epic Games.
+REF-324. The Virtual Production Field Guide (Volume 2). (2021). Epic Games.
 
 TEXTOS RELIGIOSOS
 
 ALEXANDRE, Eleazar
-REF-325. Leendanik: Desde el principio. 
-REF-326. Los Bere. 
+REF-325. Leendanik: Desde el principio.
+REF-326. Los Bere.
 
 ANÓNIMOS
-REF-327. Biblia (edición genérica)
-REF-328. El sagrado Corán. 
-REF-329. El Talmud: Código sagrado y secreto. 
-REF-330. Los Annunakis. 
+REF-327. Biblia (edición genérica).
+REF-328. El sagrado Corán.
+REF-329. El Talmud: Código sagrado y secreto.
+REF-330. Los Annunakis.
