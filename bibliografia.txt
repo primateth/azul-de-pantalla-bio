@@ -26,6 +26,7 @@ REF-007. Diana, Queen of Heaven: The New World Religion. The Ancient Goddess Ret
 
 ALEXANDRIAN
 REF-008. Historia de la filosofía oculta. (2014). Valdemar.
+
 ALIGHIERI, Dante
 REF-009. Divina Comedia. (1996). Cátedra.
 REF-010. Vida nueva. (2003). Cátedra.
@@ -312,7 +313,7 @@ REF-137. Poema. (2016). Gredos.
 EPICURO
 REF-138. Obras completas. (2017). Gredos.
 
-ERASMO de Rotterdam
+ERASMO, de Rotterdam
 REF-139. Elogio de la locura. (2013). Alianza.
 
 ESQUILO
