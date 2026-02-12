@@ -670,21 +670,19 @@ ZUBOFF, Shoshana
 REF-293. The Age of Surveillance Capitalism. (2019). PublicAffairs.
 REF-294. La era del capitalismo de la vigilancia. (2020). Ediciones Paidós.
 
-WIKI|PODCAST|BLOG
-
+WIKI, PODCAST, BLOG
 REF-295. El informe de Iron Mountain: sobre la posibilidad y conveniencia de la paz. (AUDIOLIBRO)
 REF-296. IVoox IA con Jon Hernandez
 REF-297. IVoox El submarino Subversivo
 REF-298. Svali interview (parte 1)
 REF-299. The Revealing.
-(Biblioteca Pleyades)
+
+Biblioteca, Pleyades
 REF-300. Delirious Heterotopias (blog). 
 REF-301. IVoox - ESTO SALDRÁ BIEN
 REF-302. Orígenes - Contra Celso-AUDIOLIBRO
 
-MANUALES 
-
-EPIC GAMES
+MANUALES , EPIC GAMES
 REF-303. Unreal Engine 5.7
 Documentation.  
 Epic Developer Community. 
@@ -734,13 +732,13 @@ REF-327. 2025 forecast by country.
 REF-328. Entorno operativo 2035 .
 MINISTERIO DE DEFENSA- GOBIERNO DE ESPAÑA
 
-IBN ASAD
+IBN ,ASAD
 REF-329. Artículos polémicos contra la new age y la tecnocracia. 
 REF-330. La danza final de Kali (2.ª ed.). 
 REF-331. La rueda de los cuatro brazos: Introducción al carácter. 
 REF-332. El anarquismo y las tríadas miméticas. (2015). 
-HTMLs
 
+HTMLs
 REF-333. Biblia (edición genérica)
 REF-334. El sagrado Corán. 
 REF-335. El Talmud: Código sagrado y secreto. 
