@@ -12,7 +12,7 @@ REF-002. Signatura rerum. (2008).
 ACHARYA, S.
 REF-003. La conspiración de Cristo. (2005). Valdemar.
 
-AGLIETTA, Michel; ORLÉAN, André
+AGLIETTA, Michel - ORLÉAN, André
 REF-004. La violencia de la moneda. (1990). Siglo XXI.
 
 AGUSTÍN, San
@@ -49,6 +49,9 @@ REF-016. El teatro y su doble. (2011). Edhasa.
 
 ASAD, Ibn
 REF-017. La danza final de Kali. (2010). Editorial Ibn Asad.
+REF-017_1. Artículos polémicos contra la new age y la tecnocracia. 
+REF-017_2. La rueda de los cuatro brazos: Introducción al carácter. 
+REF-017_3. El anarquismo y las tríadas miméticas. (2015). 
 
 ASSMANN, Jan
 REF-018. The Mind of Egypt. (2002). 
@@ -397,6 +400,9 @@ GOBIERNO DE ESPAÑA, Oficina Nacional de Prospectiva y Estrategia
 REF-177. España 2050: Fundamentos y propuestas para una Estrategia Nacional de Largo Plazo. (2021). Ministerio de la Presidencia.
 REF-178. España 2050: Resumen ejecutivo (PDF). (2021). Ministerio de la Presidencia.
 
+GOBIERNO DE ESPAÑA, MINISTERIO DE DEFENSA 
+REF-178_1. Entorno operativo 2035 .
+
 GOETHE, J. W.
 REF-179. Fausto. (2006). Cátedra.
 
@@ -553,6 +559,10 @@ REF-239. Cuadernos de París. (1974). Era.
 REF-240. El Capital. (1975). Siglo XXI.
 REF-241. El capital I. (2014). Siglo XXI.
 
+Más Arellano, Guillermo
+REF-241_1. Los Deicidas: Más allá de la realidad y la ficción
+REF-241_2. Hijos de la Sabiduría: Origen y Destino de la Gnosis
+
 MAUSS, Marcel; HUBERT, Henri
 REF-242. Ensayo sobre la naturaleza y función del sacrificio. 
 
@@ -694,6 +704,7 @@ REF-300. Orígenes - Contra Celso - AUDIOLIBRO
 BLOG,1
 REF-300. The Revealing.
 REF-302. Delirious Heterotopias. 
+REF-302_1. BIBLIOTECA PLEYADES
 
 MANUALES, EPIC GAMES
 REF-303. Unreal Engine 5.7 Documentation.  Epic Developer Community. 
@@ -721,28 +732,17 @@ KADNER, Noah
 REF-323. The Virtual Production Field Guide (Volume 1). (2019). Epic Games. 
 REF-324. The Virtual Production Field Guide (Volume 2). (2021). Epic Games. 
 
-ALEXANDRE, Eleazar
-REF-325. Leendanik: Desde el principio. 
-REF-326. Los Bere. 
-
 DEAGEL
 REF-327. 2025 forecast by country. 
 
-MINISTERIO DE DEFENSA - GOBIERNO DE ESPAÑA
-REF-328. Entorno operativo 2035 .
+TEXTOS RELIGIOSOS
 
-IBN ,ASAD
-REF-329. Artículos polémicos contra la new age y la tecnocracia. 
-REF-330. La danza final de Kali (2.ª ed.). 
-REF-331. La rueda de los cuatro brazos: Introducción al carácter. 
-REF-332. El anarquismo y las tríadas miméticas. (2015). 
+ALEXANDRE, Eleazar
+REF-328. Leendanik: Desde el principio. 
+REF-329. Los Bere. 
 
-HTMLs, TEXTOS RELIGIOSOS
-REF-333. Biblia (edición genérica)
-REF-334. El sagrado Corán. 
-REF-335. El Talmud: Código sagrado y secreto. 
-REF-336. Los Annunakis. 
-
-Más Arellano, Guillermo
-REF-337. Los Deicidas: Más allá de la realidad y la ficción
-REF-338. Hijos de la Sabiduría: Origen y Destino de la Gnosis
+ANÓNIMO
+REF-330. Biblia (edición genérica)
+REF-331. El sagrado Corán. 
+REF-332. El Talmud: Código sagrado y secreto. 
+REF-333. Los Annunakis. 
