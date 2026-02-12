@@ -4,825 +4,725 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Bibliografía Azul de Pantalla · Templo del dato</title>
-  <meta name="description" content="Bibliografía pública del proyecto Azul de Pantalla: Templo del dato. QR-friendly." />
   <style>
     :root{
-      --bg:#07091a;
-      --bg2:#0b0e28;
-      --ink: rgba(233,236,255,.92);
-      --muted: rgba(233,236,255,.68);
-      --muted2: rgba(233,236,255,.52);
-      --line: rgba(110,130,255,.16);
-      --line2: rgba(110,130,255,.22);
-      --chip: rgba(10,12,34,.35);
-      --chip2: rgba(10,12,34,.7);
-      --accent: rgba(110,130,255,.55);
+      --bg:#0b0f14;
+      --panel:#0f1620;
+      --panel2:#121c28;
+      --text:#e9eef6;
+      --muted:#a7b3c6;
+      --accent:#0b4dff; /* Klein-ish */
+      --accent2:#2bd4ff;
+      --border:rgba(255,255,255,.10);
+      --shadow:0 18px 40px rgba(0,0,0,.38);
+      --radius:18px;
+      --radius2:14px;
+      --mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+      --sans: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
     }
-    *{ box-sizing: border-box; }
-    html,body{ height:100%; }
+    *{box-sizing:border-box}
     body{
       margin:0;
-      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
-      color: var(--ink);
-      background:
-        radial-gradient(1200px 900px at 10% 10%, rgba(110,130,255,.18), transparent 60%),
-        radial-gradient(1200px 900px at 90% 20%, rgba(80,220,160,.10), transparent 55%),
-        radial-gradient(900px 700px at 50% 100%, rgba(255,200,80,.08), transparent 60%),
-        linear-gradient(180deg, var(--bg), var(--bg2));
+      font-family:var(--sans);
+      background:radial-gradient(1200px 800px at 20% 0%, rgba(11,77,255,.15), transparent 60%),
+                 radial-gradient(900px 700px at 90% 10%, rgba(43,212,255,.10), transparent 55%),
+                 var(--bg);
+      color:var(--text);
     }
-    .wrap{ max-width: 1160px; margin: 0 auto; padding: 22px 16px 60px; }
-    .card{
-      background: rgba(7,9,26,.55);
-      border: 1px solid var(--line);
-      border-radius: 18px;
-      box-shadow: 0 10px 40px rgba(0,0,0,.25);
-      overflow: hidden;
-      backdrop-filter: blur(10px);
-    }
-    header.hero{
-      padding: 18px 18px 14px;
-      border-bottom: 1px solid var(--line);
-      background: linear-gradient(180deg, rgba(10,12,34,.70), rgba(10,12,34,.25));
-    }
+    a{color:var(--accent2); text-decoration:none}
+    a:hover{text-decoration:underline}
     .top{
-      display:flex;
-      gap:12px;
-      flex-wrap: wrap;
-      align-items:center;
-      justify-content: space-between;
+      position:sticky; top:0; z-index:10;
+      backdrop-filter: blur(10px);
+      background: linear-gradient(to bottom, rgba(11,15,20,.92), rgba(11,15,20,.70));
+      border-bottom:1px solid var(--border);
     }
-    .badge{
-      display:flex;
-      align-items:center;
-      gap:10px;
-      font-size: 13px;
-      padding: 7px 10px;
-      border-radius: 999px;
-      border: 1px solid var(--line2);
-      background: rgba(10,12,34,.55);
-      color: var(--muted);
+    .topInner{
+      max-width:1200px; margin:0 auto; padding:18px 18px 14px;
+      display:flex; gap:16px; align-items:flex-start; justify-content:space-between;
     }
-    .dot{
-      width:10px; height:10px; border-radius: 50%;
-      background: rgba(110,130,255,.65);
-      box-shadow: 0 0 0 3px rgba(110,130,255,.16);
+    .titleWrap{min-width:260px}
+    h1{
+      font-size:18px; margin:0 0 6px 0; letter-spacing:.2px;
     }
-    .nav{
-      display:flex;
-      gap:10px;
-      flex-wrap:wrap;
-      align-items:center;
-      justify-content:flex-end;
-    }
-    .nav a{
-      display:inline-flex;
-      align-items:center;
-      gap:8px;
-      padding:8px 12px;
-      border-radius:999px;
-      border:1px solid rgba(110,130,255,.22);
-      background: rgba(10,12,34,.35);
-      color: rgba(233,236,255,.86);
-      font-size: 13px;
-      text-decoration:none;
-      white-space: nowrap;
-    }
-    .nav a:hover{ filter: brightness(1.08); }
-    .nav a:active{ transform: translateY(1px); }
-    .nav a.primary{
-      border-color: rgba(110,130,255,.35);
-      background: rgba(10,12,34,.70);
-    }
-    h1{ margin: 14px 0 0; font-size: 22px; letter-spacing: .2px; }
     .sub{
-      margin: 6px 0 0;
-      font-size: 13.5px;
-      color: var(--muted);
-      line-height: 1.55;
+      margin:0; color:var(--muted); font-size:13px; line-height:1.35;
     }
-    .epigraph{
-      margin-top: 12px;
-      padding: 12px 14px;
-      border-radius: 14px;
-      border: 1px dashed rgba(110,130,255,.22);
-      color: rgba(233,236,255,.75);
-      background: rgba(10,12,34,.28);
-      font-size: 13px;
-      line-height: 1.55;
+    .quote{
+      margin:10px 0 0; color:rgba(233,238,246,.85);
+      font-size:13px; line-height:1.45;
+      border-left:3px solid rgba(11,77,255,.55);
+      padding-left:10px;
     }
-    .grid{
-      display:grid;
-      grid-template-columns: 320px 1fr;
-      gap: 14px;
-      padding: 14px;
-    }
-    @media (max-width: 980px){ .grid{ grid-template-columns: 1fr; } }
-    aside{
-      border: 1px solid var(--line);
-      border-radius: 16px;
-      background: rgba(10,12,34,.22);
-      padding: 12px;
-    }
-    .search{
-      display:flex;
-      gap: 8px;
+    .btnRow{
+      display:flex; gap:10px; flex-wrap:wrap; justify-content:flex-end;
       align-items:center;
-      margin-bottom: 10px;
+      margin-top:2px;
     }
-    .search input{
-      width: 100%;
-      padding: 10px 12px;
-      border-radius: 12px;
-      border: 1px solid var(--line);
-      background: rgba(10,12,34,.45);
-      color: var(--ink);
-      outline: none;
-      font-size: 14px;
+    .btn{
+      padding:10px 12px;
+      border-radius:12px;
+      border:1px solid var(--border);
+      background: linear-gradient(180deg, rgba(18,28,40,.95), rgba(15,22,32,.75));
+      color:var(--text);
+      cursor:pointer;
+      box-shadow: 0 10px 22px rgba(0,0,0,.22);
+      font-size:13px;
+      display:inline-flex; gap:8px; align-items:center;
+      user-select:none;
     }
-    .search button{
-      padding: 10px 12px;
-      border-radius: 12px;
-      border: 1px solid var(--line);
-      background: rgba(10,12,34,.45);
-      color: var(--muted);
-      cursor: pointer;
+    .btn:hover{border-color:rgba(255,255,255,.18)}
+    .btn.primary{
+      border-color:rgba(11,77,255,.55);
+      background: linear-gradient(180deg, rgba(11,77,255,.32), rgba(15,22,32,.75));
     }
-    .search button:hover{ filter: brightness(1.08); }
-    .tocTitle{
-      margin: 10px 0 6px;
-      font-size: 12px;
-      letter-spacing: .12em;
-      text-transform: uppercase;
-      color: var(--muted2);
+    .btn[disabled]{opacity:.5; cursor:not-allowed}
+    .layout{
+      max-width:1200px;
+      margin:0 auto;
+      padding:16px 18px 30px;
+      display:grid;
+      grid-template-columns: 330px 1fr;
+      gap:16px;
     }
-    .toc a{
-      display:block;
-      padding: 8px 10px;
-      border-radius: 12px;
-      text-decoration:none;
-      border: 1px solid transparent;
-      color: rgba(233,236,255,.86);
-      font-size: 13px;
-      line-height: 1.25;
+    .card{
+      background: linear-gradient(180deg, rgba(15,22,32,.92), rgba(12,18,26,.88));
+      border:1px solid var(--border);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
     }
-    .toc a small{
-      display:block;
-      margin-top: 2px;
-      color: rgba(233,236,255,.55);
-      font-size: 11.5px;
-      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace;
+    .side{
+      position:sticky; top:110px;
+      height: calc(100vh - 130px);
+      overflow:auto;
     }
-    .toc a:hover{
-      background: rgba(110,130,255,.10);
-      border-color: rgba(110,130,255,.18);
+    .sideInner{padding:14px}
+    .label{font-size:12px; color:var(--muted); margin:12px 0 6px}
+    .input, .select, textarea{
+      width:100%;
+      padding:10px 12px;
+      border-radius:12px;
+      border:1px solid var(--border);
+      background: rgba(18,28,40,.55);
+      color:var(--text);
+      font-size:13px;
+      outline:none;
     }
-    .metaLine{
-      margin-top: 10px;
-      display:flex;
-      flex-wrap: wrap;
-      gap: 8px;
-      color: var(--muted2);
-      font-size: 12px;
+    textarea{
+      min-height:130px;
+      font-family:var(--mono);
+      font-size:12px;
+      line-height:1.35;
+      resize:vertical;
     }
+    .row{display:flex; gap:10px}
+    .row > *{flex:1}
+    .small{font-size:12px; color:var(--muted); line-height:1.4}
     .pill{
-      padding: 6px 10px;
-      border-radius: 999px;
-      border: 1px solid rgba(110,130,255,.18);
-      background: rgba(10,12,34,.35);
+      display:inline-flex; gap:8px; align-items:center;
+      padding:7px 10px;
+      border-radius:999px;
+      border:1px solid var(--border);
+      background: rgba(18,28,40,.35);
+      font-size:12px;
+      color:var(--muted);
+      margin-top:10px;
     }
-    main{
-      border: 1px solid var(--line);
-      border-radius: 16px;
-      background: rgba(10,12,34,.18);
-      padding: 14px;
-      min-height: 420px;
+    .main{
+      overflow:hidden;
+    }
+    .mainInner{padding:16px}
+    .toolbar{
+      display:flex; gap:10px; align-items:center; flex-wrap:wrap;
+      padding:14px 14px 0;
     }
     .status{
-      display:flex;
-      gap: 10px;
-      flex-wrap: wrap;
-      align-items:center;
-      justify-content: space-between;
-      margin-bottom: 10px;
+      font-family:var(--mono);
+      font-size:12px;
+      color:rgba(233,238,246,.75);
+      padding:8px 10px;
+      border-radius:12px;
+      border:1px solid var(--border);
+      background: rgba(18,28,40,.25);
     }
-    .status .hint{ color: var(--muted2); font-size: 12.5px; }
-    .status .ok{ color: rgba(80,220,160,.85); font-size: 12.5px; }
-    .status .bad{ color: rgba(255,120,120,.85); font-size: 12.5px; }
-    section.sec{
-      margin-top: 18px;
-      padding-top: 10px;
-      border-top: 1px solid rgba(110,130,255,.14);
+    .hr{
+      height:1px; background:var(--border);
+      margin:14px 0;
     }
-    section.sec:first-of-type{ margin-top: 0; padding-top: 0; border-top: none; }
-    h2{ margin: 0 0 8px; font-size: 16px; letter-spacing: .2px; }
-    details.author{
-      border: 1px solid rgba(110,130,255,.16);
-      background: rgba(10,12,34,.26);
-      border-radius: 14px;
-      margin: 10px 0;
-      overflow: hidden;
+    details{
+      border:1px solid var(--border);
+      border-radius: var(--radius2);
+      background: rgba(18,28,40,.25);
+      margin:10px 0;
+      overflow:hidden;
     }
-    details.author summary{
-      cursor: pointer;
-      list-style: none;
-      padding: 10px 12px;
-      display:flex;
-      align-items:center;
-      justify-content: space-between;
-      gap: 10px;
+    summary{
+      cursor:pointer;
+      padding:12px 12px;
+      display:flex; gap:10px; align-items:center; justify-content:space-between;
+      list-style:none;
     }
-    details.author summary::-webkit-details-marker{ display:none; }
-    .authorName{ font-weight: 600; font-size: 13.8px; color: rgba(233,236,255,.90); }
-    .authorCount{
-      font-size: 12px;
-      color: rgba(233,236,255,.62);
-      padding: 4px 8px;
-      border-radius: 999px;
-      border: 1px solid rgba(110,130,255,.16);
-      background: rgba(7,9,26,.35);
-      white-space: nowrap;
-      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace;
+    summary::-webkit-details-marker{display:none}
+    .sumLeft{
+      display:flex; gap:10px; align-items:baseline; flex-wrap:wrap;
     }
-    .items{ padding: 6px 12px 10px; border-top: 1px solid rgba(110,130,255,.12); }
-    .item{
-      display:flex;
-      gap: 10px;
-      padding: 8px 0;
-      border-bottom: 1px dashed rgba(110,130,255,.12);
-      align-items:flex-start;
+    .who{font-weight:650; letter-spacing:.2px}
+    .refRange{
+      font-family:var(--mono);
+      font-size:12px;
+      color:rgba(233,238,246,.72);
+      border:1px solid rgba(255,255,255,.12);
+      padding:4px 8px;
+      border-radius:999px;
+      background: rgba(11,77,255,.10);
     }
-    .item:last-child{ border-bottom: none; }
+    .blockBody{padding:0 12px 12px}
+    ul.entries{margin:8px 0 0 0; padding:0 0 0 18px}
+    ul.entries li{margin:6px 0; color:rgba(233,238,246,.90); line-height:1.45}
     .ref{
-      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace;
-      font-size: 12px;
-      color: rgba(110,130,255,.92);
-      min-width: 112px;
-      padding-top: 1px;
+      font-family:var(--mono);
+      font-size:12px;
+      color:rgba(233,238,246,.75);
+      margin-right:6px;
     }
-    .txt{
-      font-size: 13.4px;
-      line-height: 1.55;
-      color: rgba(233,236,255,.86);
-      word-break: break-word;
+    .metaLine{
+      font-family:var(--mono);
+      font-size:12px;
+      color:rgba(167,179,198,.92);
+      margin-top:8px;
     }
-    .empty{
-      padding: 18px 14px;
-      border-radius: 14px;
-      border: 1px dashed rgba(110,130,255,.22);
-      color: var(--muted);
-      background: rgba(10,12,34,.20);
-      font-size: 13px;
-      line-height: 1.6;
+    .secTitle{
+      margin:18px 0 6px;
+      font-size:15px;
+      color:rgba(233,238,246,.92);
+      letter-spacing:.2px;
     }
-    footer{
-      margin-top: 14px;
-      color: rgba(233,236,255,.45);
-      font-size: 12px;
-      text-align: center;
+    .subTitle{
+      margin:14px 0 6px;
+      font-size:13px;
+      color:rgba(233,238,246,.88);
+      letter-spacing:.2px;
     }
-    footer a{ color: rgba(233,236,255,.60); }
+    .hint{
+      font-size:12px;
+      color:rgba(167,179,198,.95);
+      line-height:1.45;
+      margin-top:8px;
+    }
+    .tag{
+      font-family:var(--mono);
+      font-size:11px;
+      color:rgba(167,179,198,.9);
+      border:1px solid rgba(255,255,255,.10);
+      padding:3px 8px;
+      border-radius:999px;
+      background: rgba(18,28,40,.25);
+    }
+    .sepOpt{
+      color:rgba(167,179,198,.7);
+    }
+
+    @media (max-width: 980px){
+      .layout{grid-template-columns:1fr}
+      .side{position:relative; top:auto; height:auto}
+      .topInner{flex-direction:column; align-items:stretch}
+      .btnRow{justify-content:flex-start}
+    }
   </style>
 </head>
-
 <body>
-  <a id="top"></a>
-  <div class="wrap">
-    <div class="card">
-      <header class="hero">
-        <div class="top">
-          <div class="badge" title="GitHub Pages">
-            <span class="dot"></span>
-            <span>Azul de Pantalla · Bibliografía</span>
-          </div>
-
-          <nav class="nav" aria-label="Menú">
-            <a class="primary" href="#top" title="Enlace de compra aún no publicado">Comprar (próximamente)</a>
-            <a href="mailto:mercurius81@proton.me?subject=Azul%20de%20Pantalla%20-%20Contacto">Contacto</a>
-            <a href="#bibliografia">Bibliografía</a>
-            <a href="https://github.com/primateth/azul-de-pantalla-bio" target="_blank" rel="noopener">Repo</a>
-            <a href="bibliografia.txt" target="_blank" rel="noopener">Descargar</a>
-          </nav>
-        </div>
-
-        <h1>Bibliografía Azul de Pantalla</h1>
-        <p class="sub">Templo del dato. Lista pública de referencias (y coartada elegante para cualquier libro).</p>
-
-        <div class="epigraph" id="bibliografia">
+  <div class="top">
+    <div class="topInner">
+      <div class="titleWrap">
+        <h1>Bibliografía Azul de Pantalla · <span class="tag">Templo del dato</span></h1>
+        <p class="sub">Índice navegable (autores A–Z primero, secciones añadidas al final). Normaliza subrefs <span style="font-family:var(--mono)">REF-XXX_X</span> → <span style="font-family:var(--mono)">REF-XXX-YY</span>.</p>
+        <div class="quote">
           <div>Quizás es mejor la bibliografía que el propio libro.</div>
           <div>Si el libro es malo, la bibliografía siempre queda bien.</div>
           <div>Si el libro es bueno, la bibliografía se atribuye el mérito.</div>
+          <div style="opacity:.75;margin-top:6px">© M. MÜLLER</div>
         </div>
-      </header>
+      </div>
 
-      <div class="grid">
-        <aside>
-          <div class="search">
-            <input id="q" type="search" placeholder="Buscar por autor, REF o título…" autocomplete="off" />
-            <button id="clear" type="button" title="Limpiar">✕</button>
-          </div>
-
-          <div class="tocTitle">Autores (BIBLIOGRAFÍA)</div>
-          <div id="tocAuthors" class="toc"></div>
-
-          <div class="tocTitle" style="margin-top:14px">Secciones</div>
-          <div id="tocSections" class="toc"></div>
-
-          <div class="metaLine">
-            <span class="pill" id="countAuthors">Autores: …</span>
-            <span class="pill" id="countRefs">Refs: …</span>
-          </div>
-        </aside>
-
-        <main>
-          <div class="status">
-            <div class="hint">Fuente: <span class="pill">bibliografia.txt</span> (raíz del repo)</div>
-            <div id="loadState" class="ok">Cargando…</div>
-          </div>
-
-          <div id="content"></div>
-
-          <footer>
-            QR-friendly · <a href="#top">Subir</a>
-          </footer>
-        </main>
+      <div class="btnRow">
+        <button class="btn primary" id="btnTop" title="Volver arriba">↑ Arriba</button>
+        <button class="btn" id="btnCopyAnchor" title="Copia el enlace interno a la sección actual">⛓ Copiar ancla</button>
+        <a class="btn" href="mailto:mercurius81@proton.me" title="Contacto por email">✉ Contacto</a>
+        <button class="btn" id="btnComprar" disabled title="Sin link de compra todavía">🛒 Comprar</button>
       </div>
     </div>
   </div>
 
-  <script>
-    // ===== Helpers =====
-    function normKey(s){
-      return (s || "").trim()
-        .normalize("NFD").replace(/[\u0300-\u036f]/g,"")
-        .toUpperCase();
+  <div class="layout">
+    <aside class="card side">
+      <div class="sideInner">
+        <div class="label">Cargar bibliografía</div>
+        <div class="row">
+          <input class="input" type="file" id="fileInput" accept=".txt,.md,.text" />
+          <button class="btn" id="btnLoadDemo" title="Carga un ejemplo mínimo para probar">⚙ Demo</button>
+        </div>
+        <div class="label">O pegar texto (y “Procesar”)</div>
+        <textarea id="pasteBox" placeholder="Pega aquí tu bibliografía completa (tal cual) y pulsa “Procesar”…"></textarea>
+        <div class="row" style="margin-top:10px">
+          <button class="btn primary" id="btnProcess">⚡ Procesar</button>
+          <button class="btn" id="btnClear">🧽 Limpiar</button>
+        </div>
+
+        <div class="hr"></div>
+
+        <div class="label">Buscar (autor / sección)</div>
+        <input class="input" id="search" placeholder="Ej: Foucault, REF-152, Podcasts…" />
+
+        <div class="label">Ir a (autores primero, secciones al final)</div>
+        <select class="select" id="jumpSelect">
+          <option value="">(elige…)</option>
+        </select>
+
+        <div class="pill" id="countsPill">Sin datos cargados</div>
+
+        <p class="hint">
+          Consejo Scribus: si en tu TXT tienes <span style="font-family:var(--mono)">REF-017_1</span>, aquí se verá como
+          <span style="font-family:var(--mono)">REF-017-01</span> para evitar pérdidas/orden raro en menús.
+        </p>
+      </div>
+    </aside>
+
+    <main class="card main">
+      <div class="toolbar">
+        <div class="status" id="status">Crea el índice cargando tu TXT o pegando el texto.</div>
+      </div>
+      <div class="mainInner" id="content"></div>
+    </main>
+  </div>
+
+<script>
+/* ============
+   Normalización REF: REF-123_1 => REF-123-01
+   ============ */
+function normalizeRef(refToken){
+  // refToken viene como "REF-017_1" o "REF-017" o "REF-017-01"
+  const m = refToken.match(/^REF-(\d{3})(?:[_-](\d+))?$/);
+  if(!m) return refToken;
+  const main = m[1];
+  const sub = m[2];
+  if(!sub) return `REF-${main}`;
+  const sub2 = String(parseInt(sub,10)).padStart(2,'0');
+  return `REF-${main}-${sub2}`;
+}
+
+function parseRefFromLine(line){
+  // Match "REF-123." or "REF-123_1." or "REF-123-01."
+  const m = line.match(/^(REF-\d{3}(?:[_-]\d+)?)\.\s*(.*)$/);
+  if(!m) return null;
+  return { rawRef:m[1], ref: normalizeRef(m[1]), text: m[2].trim() };
+}
+
+function slugify(s){
+  return s
+    .toLowerCase()
+    .normalize("NFD").replace(/[\u0300-\u036f]/g, "")
+    .replace(/[^\w\s-]/g,"")
+    .trim()
+    .replace(/\s+/g,"-")
+    .replace(/-+/g,"-");
+}
+
+function looksLikeSectionHeading(title){
+  const T = title.trim();
+  const known = new Set([
+    "PODCASTS",
+    "AUDIOLIBROS",
+    "IVOOX / PROGRAMAS",
+    "BLOGS",
+    "MANUALES",
+    "EPIC GAMES",
+    "TEXTOS RELIGIOSOS",
+    "IDEOLOGÍAS / DOCTRINAS DE MANDO (POLÍTICA Y RÉGIMEN)",
+    "IDEOLOGÍAS (CARTOGRAFÍA HISTÓRICA)",
+    "CONTRAPESOS / HISTORIOGRAFÍA CRÍTICA",
+    "ANTI-TECNOLOGÍA (OBJETOS HISTÓRICOS)",
+    "CRÍTICA DE LA TÉCNICA (CANON)",
+    "RADICALISMOS ANTI-CIVILIZACIÓN (CARTOGRAFÍA)"
+  ]);
+  if(known.has(T)) return true;
+
+  // Heurística: todo mayúsculas largo, o con barras/paréntesis muy “sección”
+  const isAllCaps = (T === T.toUpperCase()) && /[A-ZÁÉÍÓÚÜÑ]/.test(T);
+  if(isAllCaps && T.length >= 8 && !T.includes(",")) return true;
+  if(T.includes(" / ") && (T === T.toUpperCase())) return true;
+  if(/\(.+\)/.test(T) && (T === T.toUpperCase())) return true;
+
+  return false;
+}
+
+function isIgnorableLine(line){
+  const t = line.trim();
+  if(!t) return true;
+  const ignoreStarts = [
+    "Bibliografía Azul de pantalla",
+    "Templo del dato",
+    "Quizás es mejor",
+    "Si el libro es malo",
+    "Si el libro es bueno",
+    "©"
+  ];
+  return ignoreStarts.some(x => t.startsWith(x));
+}
+
+function parseBibliography(raw){
+  const lines = raw.split(/\r?\n/);
+
+  const blocks = [];
+  let current = null;
+
+  function pushCurrent(){
+    if(current){
+      blocks.push(current);
+      current = null;
     }
-    function slug(s){
-      const t = (s || "").trim()
-        .normalize("NFD").replace(/[\u0300-\u036f]/g,"")
-        .toLowerCase()
-        .replace(/[^a-z0-9]+/g,"-")
-        .replace(/^-+|-+$/g,"");
-      return t || "x";
-    }
-    function escapeHtml(s){
-      return String(s || "")
-        .replaceAll("&","&amp;")
-        .replaceAll("<","&lt;")
-        .replaceAll(">","&gt;")
-        .replaceAll('"',"&quot;")
-        .replaceAll("'","&#039;");
-    }
-    function nextNonEmpty(lines, i){
-      for (let j=i; j<lines.length; j++){
-        const t = (lines[j] || "").trim();
-        if (t) return t;
+  }
+
+  for(let i=0;i<lines.length;i++){
+    const line = lines[i].trim();
+    if(isIgnorableLine(line)) continue;
+
+    const ref = parseRefFromLine(line);
+    if(ref){
+      if(!current){
+        // si aparece REF sin encabezado, crea bloque genérico
+        current = { title: "SIN ENCABEZADO", kind: "author", entries:[], links:[] };
       }
-      return "";
-    }
-    function isRefLine(line){
-      return /^REF-\d{3}(?:_\d+)?\./.test((line || "").trim());
+      current.entries.push(ref);
+      continue;
     }
 
-    const MAIN_SECTION = "BIBLIOGRAFÍA";
-    const SECTION_ORDER = ["BIBLIOGRAFÍA","PODCASTS","BLOGS","MANUALES","TEXTOS RELIGIOSOS"].map(normKey);
-
-    const HEADER_PREFIXES = [
-      "BIBLIOGRAFIA AZUL",
-      "TEMPLO DEL DATO",
-      "QUIZAS ES MEJOR LA BIBLIOGRAFIA",
-      "SI EL LIBRO ES MALO",
-      "SI EL LIBRO ES BUENO"
-    ];
-
-    function isHeaderLine(t){
-      const k = normKey(t);
-      return HEADER_PREFIXES.some(p => k.startsWith(p));
+    // Links / PDF / URLs sueltas
+    const linkMatch = line.match(/^(Link:|PDF:)\s*(.+)$/i);
+    if(linkMatch){
+      if(!current){
+        current = { title: "ENLACES", kind:"section", entries:[], links:[] };
+      }
+      current.links.push(linkMatch[2].trim());
+      continue;
     }
 
-    function isSectionTitle(t){
-      const k = normKey(t);
-      return SECTION_ORDER.includes(k);
+    // URL sola (línea entera)
+    if(/^https?:\/\/\S+$/i.test(line)){
+      if(!current){
+        current = { title: "ENLACES", kind:"section", entries:[], links:[] };
+      }
+      current.links.push(line);
+      continue;
     }
 
-    // Compatibilidad: "MANUALES, EPIC GAMES" = sección MANUALES, autor EPIC GAMES
-    function parseSectionAuthorLine(line){
-      const t = (line || "").trim();
-      if (!t.includes(",")) return null;
-      const parts = t.split(",").map(p=>p.trim()).filter(Boolean);
-      if (parts.length < 2) return null;
+    // Nuevo encabezado
+    pushCurrent();
+    const title = line;
+    const kind = looksLikeSectionHeading(title) ? "section" : "author";
+    current = { title, kind, entries:[], links:[] };
+  }
+  pushCurrent();
 
-      const section = parts[0];
-      const author = parts.slice(1).join(", ").trim();
-      if (SECTION_ORDER.includes(normKey(section))) return { section, author };
-      return null;
+  // Post-proceso: asignar ids únicos y calcular rango REF
+  const usedIds = new Map();
+  for(const b of blocks){
+    const base = (b.kind==="author" ? "a-" : "s-") + slugify(b.title || "bloque");
+    const count = (usedIds.get(base) || 0) + 1;
+    usedIds.set(base, count);
+    b.id = count===1 ? base : `${base}-${count}`;
+
+    if(b.entries.length){
+      b.firstRef = b.entries[0].ref;
+      b.lastRef = b.entries[b.entries.length-1].ref;
+      b.refLabel = (b.firstRef === b.lastRef) ? b.firstRef : `${b.firstRef}–${b.lastRef}`;
+    } else if(b.links.length){
+      b.refLabel = "links";
+    } else {
+      b.refLabel = "";
     }
+  }
 
-    // Ref sort key: REF-017_2 => [17,2]
-    function refKey(ref){
-      const m = String(ref || "").match(/^REF-(\d{3})(?:_(\d+))?$/);
-      if (!m) return [999999, 999999];
-      const a = parseInt(m[1],10);
-      const b = m[2] ? parseInt(m[2],10) : 0;
-      return [a,b];
-    }
+  return blocks;
+}
 
-    function refRange(items){
-      if (!items || !items.length) return { first:"", last:"", count:0 };
-      const refs = items.map(it => it.ref).filter(Boolean);
-      if (!refs.length) return { first:"", last:"", count: items.length };
-      refs.sort((x,y)=>{
-        const [ax,bx]=refKey(x), [ay,by]=refKey(y);
-        return ax!==ay ? ax-ay : bx-by;
-      });
-      return { first: refs[0], last: refs[refs.length-1], count: items.length };
-    }
+function render(blocks){
+  const content = document.getElementById("content");
+  content.innerHTML = "";
 
-    function authorSortKey(name){
-      return normKey(name);
-    }
+  // Separa autores y secciones, pero el contenido se renderiza en el orden original
+  const authorBlocks = blocks.filter(b => b.kind==="author");
+  const sectionBlocks = blocks.filter(b => b.kind==="section");
 
-    function splitMeta(raw){
-      const s = (raw || "").trim();
-      const m = s.match(/^(.*?)(\(\d{4}\))?(?:\.\s*)?(.*)?$/);
-      const title = (m && m[1]) ? m[1].trim() : s;
-      const year = (m && m[2]) ? m[2].replace(/[()]/g,"") : "";
-      const tail = (m && m[3]) ? m[3].trim() : "";
-      const publisher = tail || "";
-      return { title, year, publisher };
-    }
+  // Jump select: autores (A–Z) primero, luego secciones (en orden de aparición)
+  const jump = document.getElementById("jumpSelect");
+  jump.innerHTML = `<option value="">(elige…)</option>`;
 
-    function isAuthorLine(line, nextLine, currentSectionName){
-      const t = (line || "").trim();
-      if (!t) return false;
-      if (t.startsWith("REF-")) return false;
-      if (isHeaderLine(t)) return false;
-      if (isSectionTitle(t)) return false;
-      if (parseSectionAuthorLine(t)) return false;
+  const collator = new Intl.Collator("es", { sensitivity:"base", numeric:true });
+  const authorsSorted = [...authorBlocks].sort((x,y)=>{
+    const c = collator.compare(x.title, y.title);
+    if(c!==0) return c;
+    return collator.compare(x.refLabel||"", y.refLabel||"");
+  });
 
-      const nextIsRef = isRefLine(nextLine);
+  const optgroupA = document.createElement("optgroup");
+  optgroupA.label = "AUTORES (A–Z)";
+  for(const b of authorsSorted){
+    const opt = document.createElement("option");
+    opt.value = b.id;
+    const ref = b.refLabel ? ` — ${b.refLabel}` : "";
+    opt.textContent = `${b.title}${ref}`;
+    optgroupA.appendChild(opt);
+  }
+  jump.appendChild(optgroupA);
 
-      // En BIBLIOGRAFÍA: estricto (coma/; o MAYÚSCULAS + REF)
-      if (normKey(currentSectionName) === normKey(MAIN_SECTION)){
-        if (t.includes(",") || t.includes(";")) return true;
-        if (t === t.toUpperCase() && nextIsRef) return true;
-        return false;
+  const optgroupS = document.createElement("optgroup");
+  optgroupS.label = "SECCIONES (al final)";
+  // Secciones: solo “macro” (las que suelen ser tus cabeceras finales)
+  // Mantiene orden de aparición
+  const seen = new Set();
+  for(const b of sectionBlocks){
+    // Filtra duplicados exactos por título (para no repetir demasiado)
+    const key = b.title.trim();
+    if(seen.has(key)) continue;
+    seen.add(key);
+    const opt = document.createElement("option");
+    opt.value = b.id;
+    opt.textContent = b.title;
+    optgroupS.appendChild(opt);
+  }
+  jump.appendChild(optgroupS);
+
+  // Render en orden original, con niveles visuales
+  for(const b of blocks){
+    const wrapper = document.createElement("div");
+    wrapper.id = b.id;
+
+    // “Sección” grande: H2
+    if(b.kind === "section"){
+      const h = document.createElement("div");
+      h.className = "secTitle";
+      h.textContent = b.title;
+      wrapper.appendChild(h);
+
+      if(b.links.length){
+        const p = document.createElement("div");
+        p.className = "metaLine";
+        p.innerHTML = b.links.map(u => `• <a href="${escapeHtml(u)}" target="_blank" rel="noopener noreferrer">${escapeHtml(u)}</a>`).join("<br>");
+        wrapper.appendChild(p);
       }
 
-      // En otras secciones: si la siguiente es REF, aceptamos como autor aunque sea Title Case (Ej: "El submarino Subversivo")
-      if (nextIsRef && t.length <= 90 && !t.endsWith(".")) return true;
-
-      // fallback clásico
-      if (t.includes(",") || t.includes(";")) return true;
-      if (t === t.toUpperCase() && nextIsRef) return true;
-
-      return false;
-    }
-
-    function parseBib(text){
-      const rawLines = text.replace(/\r/g,"").split("\n");
-      const lines = rawLines.map(l => (l || "").trimEnd());
-
-      const sections = [];
-      let currentSection = { name: MAIN_SECTION, id: slug(MAIN_SECTION), authors:[] };
-      sections.push(currentSection);
-
-      let currentAuthor = null;
-      let lastItem = null;
-
-      for (let i=0; i<lines.length; i++){
-        const line = (lines[i] || "").trim();
-        if (!line) continue;
-
-        if (isHeaderLine(line)) continue;
-
-        // "MANUALES, EPIC GAMES"
-        const legacy = parseSectionAuthorLine(line);
-        if (legacy){
-          currentSection = { name: legacy.section, id: slug(legacy.section), authors:[] };
-          sections.push(currentSection);
-
-          currentAuthor = { name: legacy.author, id: `${currentSection.id}--${slug(legacy.author)}`, items:[] };
-          currentSection.authors.push(currentAuthor);
-          lastItem = null;
-          continue;
+      if(b.entries.length){
+        const ul = document.createElement("ul");
+        ul.className = "entries";
+        for(const e of b.entries){
+          const li = document.createElement("li");
+          li.innerHTML = `<span class="ref">${escapeHtml(e.ref)}.</span> ${escapeHtml(e.text)}`;
+          ul.appendChild(li);
         }
-
-        // Sección explícita
-        if (isSectionTitle(line)){
-          currentSection = { name: line, id: slug(line), authors:[] };
-          sections.push(currentSection);
-          currentAuthor = null;
-          lastItem = null;
-          continue;
-        }
-
-        const nextLine = nextNonEmpty(lines, i+1);
-
-        // Autor multilinea (INTERNATIONAL / FACT-CHECKING NETWORK...)
-        const n1 = nextNonEmpty(lines, i+1);
-        const idxN1 = lines.findIndex((_, idx) => idx > i && (lines[idx] || "").trim() === n1);
-        const n2 = nextNonEmpty(lines, (idxN1 >= 0 ? idxN1+1 : i+2));
-        if (line === line.toUpperCase() && n1 && n1 === n1.toUpperCase() && isRefLine(n2)){
-          const combined = (line + " " + n1).replace(/\s+/g," ").trim();
-          currentAuthor = { name: combined, id: `${currentSection.id}--${slug(combined)}`, items:[] };
-          currentSection.authors.push(currentAuthor);
-          lastItem = null;
-          i = (idxN1 >= 0 ? idxN1 : i+1);
-          continue;
-        }
-
-        // Autor
-        if (isAuthorLine(line, nextLine, currentSection.name)){
-          currentAuthor = { name: line, id: `${currentSection.id}--${slug(line)}`, items:[] };
-          currentSection.authors.push(currentAuthor);
-          lastItem = null;
-          continue;
-        }
-
-        // REF
-        if (isRefLine(line)){
-          if (!currentAuthor){
-            // En secciones no principales, es más limpio agrupar en VARIOS
-            const fallbackName = (normKey(currentSection.name) === normKey(MAIN_SECTION))
-              ? "SIN AUTOR (REVISAR TXT)"
-              : "VARIOS";
-            currentAuthor = { name: fallbackName, id: `${currentSection.id}--${slug(fallbackName)}`, items:[] };
-            currentSection.authors.push(currentAuthor);
-          }
-          const m = line.match(/^(REF-\d{3}(?:_\d+)?)\.\s*(.*)$/);
-          const ref = m ? m[1] : "";
-          const raw = m ? m[2] : line.replace(/^REF-\d{3}(?:_\d+)?\.\s*/,"");
-          const meta = splitMeta(raw);
-
-          const item = { ref, raw, title: meta.title, year: meta.year, publisher: meta.publisher };
-          currentAuthor.items.push(item);
-          lastItem = item;
-          continue;
-        }
-
-        // Continuación (líneas partidas)
-        if (lastItem){
-          lastItem.raw = (lastItem.raw + " " + line).replace(/\s+/g," ").trim();
-          const meta = splitMeta(lastItem.raw);
-          lastItem.title = meta.title;
-          lastItem.year = meta.year;
-          lastItem.publisher = meta.publisher;
-        }
+        wrapper.appendChild(ul);
       }
 
-      return sections;
+      content.appendChild(wrapper);
+      continue;
     }
 
-    function sortAll(sections){
-      // Orden secciones fijo: BIBLIOGRAFÍA primero, el resto después
-      const pos = new Map(SECTION_ORDER.map((k,i)=>[k,i]));
-      sections.sort((a,b)=>{
-        const pa = pos.has(normKey(a.name)) ? pos.get(normKey(a.name)) : 999;
-        const pb = pos.has(normKey(b.name)) ? pos.get(normKey(b.name)) : 999;
-        if (pa !== pb) return pa - pb;
-        return (a.name||"").localeCompare((b.name||""), "es", { sensitivity:"base" });
-      });
+    // Autor: acordeón
+    const details = document.createElement("details");
+    details.open = false;
+    const summary = document.createElement("summary");
 
-      // Orden autores e items
-      for (const s of sections){
-        for (const a of s.authors){
-          a.items.sort((x,y)=>{
-            const [ax,bx]=refKey(x.ref), [ay,by]=refKey(y.ref);
-            if (ax!==ay) return ax-ay;
-            if (bx!==by) return bx-by;
-            return (x.raw||"").localeCompare((y.raw||""), "es", { sensitivity:"base" });
-          });
-        }
-        s.authors.sort((x,y)=> authorSortKey(x.name).localeCompare(authorSortKey(y.name), "es", { sensitivity:"base" }));
+    const left = document.createElement("div");
+    left.className = "sumLeft";
+    const who = document.createElement("div");
+    who.className = "who";
+    who.textContent = b.title;
+
+    const ref = document.createElement("div");
+    ref.className = "refRange";
+    ref.textContent = b.refLabel || "—";
+
+    left.appendChild(who);
+    left.appendChild(ref);
+
+    const right = document.createElement("div");
+    right.style.opacity = ".75";
+    right.style.fontSize = "12px";
+    right.textContent = "ver";
+
+    summary.appendChild(left);
+    summary.appendChild(right);
+
+    const body = document.createElement("div");
+    body.className = "blockBody";
+
+    if(b.entries.length){
+      const ul = document.createElement("ul");
+      ul.className = "entries";
+      for(const e of b.entries){
+        const li = document.createElement("li");
+        li.innerHTML = `<span class="ref">${escapeHtml(e.ref)}.</span> ${escapeHtml(e.text)}`;
+        ul.appendChild(li);
       }
-
-      return sections;
+      body.appendChild(ul);
     }
 
-    function countAll(sections){
-      let authors = 0, refs = 0;
-      for (const s of sections){
-        authors += s.authors.length;
-        for (const a of s.authors) refs += a.items.length;
-      }
-      return { authors, refs };
+    if(b.links.length){
+      const p = document.createElement("div");
+      p.className = "metaLine";
+      p.innerHTML = b.links.map(u => `• <a href="${escapeHtml(u)}" target="_blank" rel="noopener noreferrer">${escapeHtml(u)}</a>`).join("<br>");
+      body.appendChild(p);
     }
 
-    // ===== Render =====
-    function renderSidebarAuthors(mainSection){
-      const el = document.getElementById("tocAuthors");
-      el.innerHTML = "";
+    details.appendChild(summary);
+    details.appendChild(body);
 
-      if (!mainSection || !mainSection.authors.length){
-        el.innerHTML = `<div class="empty">Sin autores en BIBLIOGRAFÍA (o filtro sin resultados).</div>`;
-        return;
-      }
+    const card = document.createElement("div");
+    card.className = "card";
+    card.style.padding = "0";
+    card.style.background = "transparent";
+    card.style.border = "0";
+    card.style.boxShadow = "none";
+    card.appendChild(details);
 
-      for (const a of mainSection.authors){
-        const rr = refRange(a.items);
-        const refText = rr.first ? (rr.first === rr.last ? rr.first : `${rr.first}–${rr.last}`) : "";
-        const link = document.createElement("a");
-        link.href = "#" + a.id;
-        link.innerHTML = `${escapeHtml(a.name)}${refText ? `<small>${escapeHtml(refText)}</small>` : ""}`;
-        el.appendChild(link);
-      }
+    wrapper.appendChild(card);
+    content.appendChild(wrapper);
+  }
+
+  // Estado + contadores
+  const countsPill = document.getElementById("countsPill");
+  countsPill.textContent = `${authorBlocks.length} autores · ${sectionBlocks.length} secciones/bloques · ${blocks.length} bloques total`;
+
+  document.getElementById("status").textContent =
+    `Cargado: ${authorBlocks.length} autores (navegables A–Z) · secciones finales incluidas. Subrefs normalizadas a REF-XXX-YY.`;
+}
+
+function escapeHtml(s){
+  return String(s)
+    .replaceAll("&","&amp;")
+    .replaceAll("<","&lt;")
+    .replaceAll(">","&gt;")
+    .replaceAll('"',"&quot;")
+    .replaceAll("'","&#039;");
+}
+
+/* ============
+   Búsqueda / navegación
+   ============ */
+function setupSearch(){
+  const search = document.getElementById("search");
+  const jump = document.getElementById("jumpSelect");
+
+  search.addEventListener("input", ()=>{
+    const q = search.value.trim().toLowerCase();
+    const opts = jump.querySelectorAll("option");
+    for(const opt of opts){
+      if(!opt.value) continue;
+      opt.hidden = q ? !opt.textContent.toLowerCase().includes(q) : false;
     }
+  });
 
-    function renderSidebarSections(sections){
-      const el = document.getElementById("tocSections");
-      el.innerHTML = "";
+  jump.addEventListener("change", ()=>{
+    const id = jump.value;
+    if(!id) return;
+    const el = document.getElementById(id);
+    if(!el) return;
+    el.scrollIntoView({behavior:"smooth", block:"start"});
+    // abre el acordeón si es autor
+    const det = el.querySelector("details");
+    if(det) det.open = true;
+  });
+}
 
-      for (const s of sections){
-        const a = document.createElement("a");
-        a.href = "#" + s.id;
-        a.textContent = s.name;
-        el.appendChild(a);
-      }
+function setupButtons(){
+  document.getElementById("btnTop").addEventListener("click", ()=>{
+    window.scrollTo({top:0, behavior:"smooth"});
+  });
+
+  document.getElementById("btnClear").addEventListener("click", ()=>{
+    document.getElementById("pasteBox").value = "";
+    document.getElementById("content").innerHTML = "";
+    document.getElementById("jumpSelect").innerHTML = `<option value="">(elige…)</option>`;
+    document.getElementById("status").textContent = "Limpio. Carga un TXT o pega el texto.";
+    document.getElementById("countsPill").textContent = "Sin datos cargados";
+  });
+
+  document.getElementById("btnCopyAnchor").addEventListener("click", async ()=>{
+    const id = getNearestAnchorId();
+    if(!id){
+      alert("No encuentro ancla cerca (haz scroll a un bloque).");
+      return;
     }
-
-    function authorSummaryChip(author){
-      const rr = refRange(author.items);
-      const refText = rr.first ? (rr.first === rr.last ? rr.first : `${rr.first}–${rr.last}`) : "";
-      const count = rr.count || 0;
-      return refText ? `${refText} · ${count}` : `${count} refs`;
+    const anchor = `#${id}`;
+    try{
+      await navigator.clipboard.writeText(anchor);
+      alert(`Copiado: ${anchor}`);
+    }catch{
+      prompt("Copia manual:", anchor);
     }
+  });
 
-    function renderContent(sections){
-      const root = document.getElementById("content");
-      root.innerHTML = "";
+  document.getElementById("btnLoadDemo").addEventListener("click", ()=>{
+    const demo = `
+Bibliografía Azul de pantalla
+Templo del dato
 
-      for (const s of sections){
-        const sec = document.createElement("section");
-        sec.className = "sec";
-        sec.id = s.id;
+AGAMBEN, Giorgio
+REF-001. El Reino y la Gloria. (2008).
+REF-002. Signatura rerum. (2008).
 
-        const h2 = document.createElement("h2");
-        h2.textContent = s.name;
-        sec.appendChild(h2);
+PODCASTS
+AUDIOLIBROS
+REF-295. El informe de Iron Mountain: sobre la posibilidad y conveniencia de la paz. (Audiolibro).
 
-        if (!s.authors.length){
-          const empty = document.createElement("div");
-          empty.className = "empty";
-          empty.textContent = "Sección vacía. Si no es intencional, revisa el TXT.";
-          sec.appendChild(empty);
-          root.appendChild(sec);
-          continue;
-        }
+MANUALES
+EPIC GAMES
+REF-303. Unreal Engine 5.7 Documentation. Epic Developer Community.
+    `.trim();
+    document.getElementById("pasteBox").value = demo;
+    document.getElementById("btnProcess").click();
+  });
 
-        for (const a of s.authors){
-          const det = document.createElement("details");
-          det.className = "author";
-          det.id = a.id;
-
-          const sum = document.createElement("summary");
-
-          const left = document.createElement("div");
-          left.className = "authorName";
-          left.textContent = a.name;
-
-          const right = document.createElement("div");
-          right.className = "authorCount";
-          right.textContent = authorSummaryChip(a);
-
-          sum.appendChild(left);
-          sum.appendChild(right);
-          det.appendChild(sum);
-
-          const items = document.createElement("div");
-          items.className = "items";
-
-          for (const it of a.items){
-            const row = document.createElement("div");
-            row.className = "item";
-            row.id = `${a.id}--${slug(it.ref || it.title || "x")}`;
-
-            const ref = document.createElement("div");
-            ref.className = "ref";
-            ref.textContent = it.ref || "REF";
-
-            const txt = document.createElement("div");
-            txt.className = "txt";
-            txt.innerHTML = escapeHtml(it.raw || "");
-
-            row.appendChild(ref);
-            row.appendChild(txt);
-            items.appendChild(row);
-          }
-
-          det.appendChild(items);
-          sec.appendChild(det);
-        }
-
-        root.appendChild(sec);
-      }
+  document.getElementById("btnProcess").addEventListener("click", ()=>{
+    const raw = document.getElementById("pasteBox").value;
+    if(!raw.trim()){
+      alert("Pega tu bibliografía o carga un .txt primero.");
+      return;
     }
+    const blocks = parseBibliography(raw);
+    render(blocks);
+  });
 
-    function openFromHash(){
-      const h = (location.hash || "").replace("#","").trim();
-      if (!h) return;
+  document.getElementById("fileInput").addEventListener("change", async (ev)=>{
+    const file = ev.target.files && ev.target.files[0];
+    if(!file) return;
+    const text = await file.text();
+    document.getElementById("pasteBox").value = text;
+    document.getElementById("btnProcess").click();
+  });
+}
 
-      const el = document.getElementById(h);
-      if (!el) return;
-
-      if (el.tagName === "DETAILS"){
-        el.open = true;
-        el.scrollIntoView({behavior:"smooth", block:"start"});
-        return;
-      }
-      el.scrollIntoView({behavior:"smooth", block:"start"});
-
-      // si hash apunta a una fila item (div.item), abre su details padre
-      if (el.classList && el.classList.contains("item")){
-        const parentDetails = el.closest("details.author");
-        if (parentDetails) parentDetails.open = true;
-      }
+function getNearestAnchorId(){
+  // Busca el bloque visible más cercano al top
+  const content = document.getElementById("content");
+  const blocks = Array.from(content.children);
+  const top = window.scrollY + 140; // margen por header
+  let best = null;
+  let bestDist = Infinity;
+  for(const b of blocks){
+    const r = b.getBoundingClientRect();
+    const y = window.scrollY + r.top;
+    const d = Math.abs(y - top);
+    if(d < bestDist){
+      bestDist = d;
+      best = b;
     }
+  }
+  return best && best.id ? best.id : null;
+}
 
-    function applyFilter(sections, query){
-      const q = normKey(query || "");
-      if (!q) return sections;
-
-      const out = [];
-      for (const s of sections){
-        const ns = { ...s, authors: [] };
-        for (const a of s.authors){
-          const authorHit = normKey(a.name).includes(q);
-          const items = a.items.filter(it => {
-            return authorHit ||
-              normKey(it.ref).includes(q) ||
-              normKey(it.raw).includes(q) ||
-              normKey(it.title).includes(q);
-          });
-          if (items.length){
-            ns.authors.push({ ...a, items });
-          }
-        }
-        if (ns.authors.length) out.push(ns);
-      }
-      return out;
-    }
-
-    // ===== Boot =====
-    (async function(){
-      const loadState = document.getElementById("loadState");
-      try{
-        const res = await fetch("bibliografia.txt", { cache: "no-store" });
-        if (!res.ok) throw new Error("No se pudo cargar bibliografia.txt (" + res.status + ")");
-
-        const text = await res.text();
-        let sections = parseBib(text);
-        sections = sortAll(sections);
-
-        const counts = countAll(sections);
-        document.getElementById("countAuthors").textContent = "Autores: " + counts.authors;
-        document.getElementById("countRefs").textContent = "Refs: " + counts.refs;
-
-        const main = sections.find(s => normKey(s.name) === normKey(MAIN_SECTION));
-        renderSidebarAuthors(main);
-        renderSidebarSections(sections);
-
-        renderContent(sections);
-
-        loadState.className = "ok";
-        loadState.textContent = "Listo";
-
-        setTimeout(openFromHash, 50);
-        window.addEventListener("hashchange", () => setTimeout(openFromHash, 30));
-
-        const input = document.getElementById("q");
-        const clear = document.getElementById("clear");
-
-        function rerender(){
-          const filtered = applyFilter(sections, input.value);
-          const mainF = filtered.find(s => normKey(s.name) === normKey(MAIN_SECTION));
-          renderSidebarAuthors(mainF);
-          renderSidebarSections(filtered);
-          renderContent(filtered);
-
-          if ((input.value || "").trim()){
-            document.querySelectorAll("details.author").forEach(d => d.open = true);
-          }
-        }
-
-        input.addEventListener("input", rerender);
-        clear.addEventListener("click", () => { input.value=""; rerender(); input.focus(); });
-
-      }catch(err){
-        loadState.className = "bad";
-        loadState.textContent = "Error";
-        document.getElementById("content").innerHTML = `
-          <div class="empty">
-            <div style="margin-bottom:8px"><b>No pude cargar bibliografia.txt</b></div>
-            <ul style="margin:0; padding-left:18px; color: rgba(233,236,255,.72)">
-              <li>Debe estar en la raíz del repo, junto a <b>index.html</b>.</li>
-              <li>Nombre exacto: <b>bibliografia.txt</b>.</li>
-              <li>Tras el push, espera el despliegue de Pages (a veces tarda un poco).</li>
-            </ul>
-            <div style="margin-top:10px; color: rgba(233,236,255,.62)">${escapeHtml(err.message || String(err))}</div>
-          </div>
-        `;
-      }
-    })();
-  </script>
+/* init */
+setupSearch();
+setupButtons();
+</script>
 </body>
 </html>
