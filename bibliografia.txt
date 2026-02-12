@@ -310,7 +310,7 @@ REF-136. Naturaleza. (2011).
 EMPÉDOCLES
 REF-137. Poema. (2016). Gredos.
 
-EPICURO
+EPICURO,
 REF-138. Obras completas. (2017). Gredos.
 
 ERASMO, de Rotterdam
