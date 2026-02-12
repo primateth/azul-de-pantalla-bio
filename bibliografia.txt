@@ -366,6 +366,9 @@ FREUD, Sigmund
 REF-160. El malestar en la cultura. (2017). Alianza.
 REF-161. Obras completas (ediciones citadas). Amorrortu / Alianza.
 
+Friedman, Milton 
+REF-161_1. Why Government Is the Problem. Hoover Institution Press. (1993)
+
 FROBENIUS, Leo
 REF-162. La cultura como ser viviente. (1934). Espasa-Calpe.
 
@@ -442,6 +445,9 @@ REF-193. Ser y tiempo. (2014). Trotta.
 HESÍODO
 REF-194. Teogonía. (2017). Gredos.
 
+Hitler, Adolf 
+REF-193_1. Mein Kampf: Adolf Hitler's Totalitarian Vision—Essential Lessons in Vigilance, Responsibility, and Opposing Evil
+
 HOBBES, Thomas
 REF-195. Leviatán. (2012). Alianza.
 
@@ -496,6 +502,9 @@ REF-212. La estructura de las revoluciones científicas. (1971). Fondo de Cultur
 KURNITZKY, Horst
 REF-213. La estructura libidinal del dinero. 
 REF-214. Edipo y otras obras citadas.
+
+L. Bernays, Edward 
+REF-214_1. Propaganda. Editorial Melusina. (2008)
 
 LACAN, Jacques
 REF-215. Seminario 3. 
@@ -604,6 +613,7 @@ REF-256. Así habló Zaratustra. (2017). Alianza.
 
 ORWELL, George
 REF-257. 1984. (2013). DEBOLSILLO
+REF-257_1. REVIEW OF ADOLPH HITLER'S "MEIN KAMPF". 
 
 OTTO, Rudolf
 REF-258. Lo santo. (2018). Alianza.
@@ -642,6 +652,9 @@ REF-270. El mundo como voluntad y representación II. (2016). Trotta.
 
 SPENGLER, Oswald
 REF-271. La decadencia de Occidente.
+
+Smith, Adam 
+REF-270_1. The Wealth of Nations. Martino Fine Books. (2015)
 
 SPINOZA, Baruch
 REF-272. Ética demostrada según el orden geométrico. (2016). Gredos.
