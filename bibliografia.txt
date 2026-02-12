@@ -7,8 +7,8 @@ Si el libro es bueno, la bibliografía se atribuye el mérito.
 © M. MÜLLER
 
 AGAMBEN, Giorgio
-REF-001. El Reino y la Gloria. (2008). 
-REF-002. Signatura rerum. (2008). 
+REF-001. El Reino y la Gloria. (2008).
+REF-002. Signatura rerum. (2008).
 
 ACHARYA, S.
 REF-003. La conspiración de Cristo. (2005). Valdemar.
@@ -50,13 +50,14 @@ REF-016. El teatro y su doble. (2011). Edhasa.
 
 ASAD, Ibn
 REF-017. La danza final de Kali. (2010). Editorial Ibn Asad.
-REF-017_1. Artículos polémicos contra la new age y la tecnocracia. 
-REF-017_2. La rueda de los cuatro brazos: Introducción al carácter. 
-REF-017_3. El anarquismo y las tríadas miméticas. (2015). 
+REF-017_1. Artículos polémicos contra la new age y la tecnocracia.
+REF-017_2. La rueda de los cuatro brazos: Introducción al carácter.
+REF-017_3. El anarquismo y las tríadas miméticas. (2015).
 
 ASSMANN, Jan
-REF-018. The Mind of Egypt. (2002). 
+REF-018. The Mind of Egypt. (2002).
 REF-019. Violencia y monoteísmo. (2014).
+
 ATWOOD, Margaret
 REF-020. Pagar (con la misma moneda). (2011). Ediciones B.
 
@@ -104,7 +105,7 @@ REF-040. Ritual Theory, Ritual Practice. (1992). Oxford University Press.
 
 BENJAMIN, Walter
 REF-041. Obras (ensayos citados). (2007–2008). Abada.
-REF-042. El capitalismo como religión 
+REF-042. El capitalismo como religión.
 
 BERMEJO RUBIO, Fernando
 REF-043. La invención de Jesús de Nazaret. (2018). Siglo XXI.
@@ -146,7 +147,7 @@ REF-056. De la magia: De los vínculos en general. (2007). Cactus.
 REF-057. Expulsión de la bestia triunfante. (2009). Siruela.
 REF-058. Del infinito: el universo y los mundos. (2011). Tecnos.
 
-BRUNSON,E.K.;CHANDLER,H.;GRONVALL, G. K.; RAVI, S.; SELL, T. K.; SHEARER, M. P.; SCHOCH-SPANA, M.
+BRUNSON, E. K.; CHANDLER, H.; GRONVALL, G. K.; RAVI, S.; SELL, T. K.; SHEARER, M. P.; SCHOCH-SPANA, M.
 REF-059. The SPARS Pandemic 2025–2028: A Futuristic Scenario to Facilitate Medical Countermeasure Communication. (2020). Journal of International Crisis and Risk Communication Research.
 
 BURCKHARDT, Jacob
@@ -161,19 +162,19 @@ REF-065. Homo Necans. (2013). Acantilado.
 REF-066. Religión griega: Arcaica y clásica. (2007). Abada.
 
 BUSTAMANTE, Pedro
-REF-067. Teoría de la ficción. (2008). 
+REF-067. Teoría de la ficción. (2008).
 REF-068. El imperio de la ficción: capitalismo y sacrificios hollywoodenses. (2015). Ediciones Libertarias.
 REF-069. Sacrificios y hierogamias: la violencia y el goce en el escenario del poder, Vol. 1. (2016). edicionessenoicide.
 REF-070. Sacrificios y hierogamias: la violencia y el goce en el escenario del poder, Vol. 2. (2016). edicionessenoicide.
-REF-071. En el nombre del Falo y del Ano y de la Matriz transhumana. (2017). 
-REF-072. Androginización vs. Heteroarcado. 
-REF-073. El ritual de la violencia en el escenario del poder-religión. 
-REF-074. Manifiesto hierogámico-sacrificial. 
-REF-075. El plano de inmanencia y Occidente. 
-REF-076. ¡Es la economía destructiva, estúpido!. 
-REF-077. Hollycapitalismo: la excepción es la regla. 
-REF-078. El zika, los carnavales, las olimpiadas y la portada de The Economist. 
-REF-079. El ojo que todo lo enmascara. 
+REF-071. En el nombre del Falo y del Ano y de la Matriz transhumana. (2017).
+REF-072. Androginización vs. Heteroarcado.
+REF-073. El ritual de la violencia en el escenario del poder-religión.
+REF-074. Manifiesto hierogámico-sacrificial.
+REF-075. El plano de inmanencia y Occidente.
+REF-076. ¡Es la economía destructiva, estúpido!.
+REF-077. Hollycapitalismo: la excepción es la regla.
+REF-078. El zika, los carnavales, las olimpiadas y la portada de The Economist.
+REF-079. El ojo que todo lo enmascara.
 
 CAILLOIS, Roger
 REF-080. El hombre y lo sagrado. (1942). Fondo de Cultura Económica.
@@ -246,13 +247,13 @@ REF-106. El libro de la ley (Edaf). (2015). Edaf.
 REF-107. Confesiones. (2018). Valdemar.
 REF-108. Liber Aleph: Libro de la sabiduría o de la insensatez. (2020). Edaf.
 REF-109. Los libros sagrados de Thelema. (2020). Valdemar.
-REF-110. Magick. (2007). 
+REF-110. Magick. (2007).
 
 CROWLEY, Aleister; HARRIS, Lady Frieda
 REF-111. El libro de Thoth. (2021). Edaf.
 
 DANTAS, J.
-REF-112. El libro del Tao. (2014). 
+REF-112. El libro del Tao. (2014).
 
 DE LA CADENA, Marisol
 REF-113. Indigenous Mestizos: The Politics of Race and Culture in Cuzco, Peru, 1919–1991. (2000). Duke University Press.
@@ -261,7 +262,7 @@ DEBORD, Guy
 REF-114. In girum imus nocte… y Basura y escombros. (2000). Anagrama.
 
 DEAGEL
-REF-114_1. 2025 forecast by country. 
+REF-114_1. 2025 forecast by country.
 
 DELEUZE, Gilles
 REF-115. La lógica del sentido. (2018). Paidós.
@@ -274,13 +275,13 @@ REF-119. Mil mesetas. (2018). Pre-Textos.
 
 DERRIDA, Jacques
 REF-120. La escritura y la diferencia. (2018). Anthropos.
-REF-121. El sacrificio. 
+REF-121. El sacrificio.
 
 DESCARTES, René
 REF-122. Meditaciones metafísicas. (2016). Gredos.
 
 DESCOLA, Philippe
-REF-123. Más allá de naturaleza y cultura. (2012). 
+REF-123. Más allá de naturaleza y cultura. (2012).
 
 DÍAZ, Carlos
 REF-124. Filosofía de la religión. (2008). Ediciones Encuentro.
@@ -295,8 +296,7 @@ DUNNE, J. W.
 REF-127. Un experimento con el tiempo. (2017). Atalanta.
 
 DURAND, Gilbert
-REF-128. Las estructuras antropológicas del imaginario. (2004). 
-Fondo de Cultura Económica.
+REF-128. Las estructuras antropológicas del imaginario. (2004). Fondo de Cultura Económica.
 
 DURKHEIM, Émile
 REF-129. Las formas elementales de la vida religiosa. (2014). Akal.
@@ -309,15 +309,15 @@ ELIADE, Mircea
 REF-132. Lo sagrado y lo profano. (2016). Paidós.
 REF-133. El mito del eterno retorno. (2017). Alianza.
 REF-134. The Sacred and the Profane: The Nature of Religion. (1959). Harcourt.
-REF-135. Shamanism: Archaic Techniques of Ecstasy. 
+REF-135. Shamanism: Archaic Techniques of Ecstasy.
 
 EMERSON, Ralph Waldo
-REF-136. Naturaleza. (2011). 
+REF-136. Naturaleza. (2011).
 
 EMPÉDOCLES
 REF-137. Poema. (2016). Gredos.
 
-EPICURO,
+EPICURO
 REF-138. Obras completas. (2017). Gredos.
 
 ERASMO, de Rotterdam
@@ -327,7 +327,7 @@ ESQUILO
 REF-140. Tragedias. (2016). Gredos.
 
 ESTEBAN, M. del P.; MORA, Rodrigo
-REF-141. Feminicidio o auto-construcción de la mujer. 
+REF-141. Feminicidio o auto-construcción de la mujer.
 
 ESTULIN, Daniel
 REF-142. El club de los inmortales. (2013). Ediciones B.
@@ -335,8 +335,8 @@ REF-142. El club de los inmortales. (2013). Ediciones B.
 EVOLA, Julius
 REF-143. Revuelta contra el mundo moderno. (2002). Ediciones B.
 REF-144. Metafísica del sexo. (2019). Ediciones B.
-REF-145. La tradición hermética.  
-REF-146. Metafísica del sexo. 
+REF-145. La tradición hermética.
+REF-146. Metafísica del sexo.
 
 FAVRE, Henri
 REF-147. El indigenismo. (1998). Fondo de Cultura Económica.
@@ -352,12 +352,12 @@ FINKELSTEIN, Israel; SILBERMAN, Neil Asher
 REF-151. La Biblia desenterrada. (2003). Siglo XXI.
 
 FOUCAULT, Michel
-REF-152. Las palabras y las cosas. (1968). 
-REF-153. Vigilar y castigar. (2000). 
+REF-152. Las palabras y las cosas. (1968).
+REF-153. Vigilar y castigar. (2000).
 REF-154. Vigilar y castigar. (2018). Siglo XXI.
-REF-155. Historia de la sexualidad (I–III). (s. f.). 
-REF-156. Defender la sociedad. 
-REF-157. Los anormales. 
+REF-155. Historia de la sexualidad (I–III). (s. f.).
+REF-156. Defender la sociedad.
+REF-157. Los anormales.
 
 FRAZER, James G.
 REF-158. El totemismo. (1987). Eyras.
@@ -367,8 +367,8 @@ FREUD, Sigmund
 REF-160. El malestar en la cultura. (2017). Alianza.
 REF-161. Obras completas (ediciones citadas). Amorrortu / Alianza.
 
-Friedman, Milton 
-REF-161_1. Why Government Is the Problem. Hoover Institution Press. (1993)
+FRIEDMAN, Milton
+REF-161_1. Why Government Is the Problem. (1993). Hoover Institution Press.
 
 FROBENIUS, Leo
 REF-162. La cultura como ser viviente. (1934). Espasa-Calpe.
@@ -385,15 +385,15 @@ REF-166. Verdad y método I. (2012). Sígueme.
 REF-167. Verdad y método II. (2012). Sígueme.
 
 GARCÍA, Rodrigo
-REF-168. Cenizas escogidas (Obras 1986–2009). (2013). 
+REF-168. Cenizas escogidas (Obras 1986–2009). (2013).
 
 GARCILASO DE LA VEGA, Inca
-REF-169. La Florida del Inca. (1605). 
-REF-170. Comentarios reales de los incas. (1609). 
-REF-171. Historia general del Perú. (1617). 
+REF-169. La Florida del Inca. (1605).
+REF-170. Comentarios reales de los incas. (1609).
+REF-171. Historia general del Perú. (1617).
 
 GEERTZ, Clifford
-REF-172. La interpretación de las culturas. 
+REF-172. La interpretación de las culturas.
 
 GIRARD, René
 REF-173. El chivo expiatorio. (2017). Anagrama.
@@ -401,14 +401,14 @@ REF-174. La violencia y lo sagrado. (2023). Anagrama.
 REF-175. Violence and the Sacred. (1977). Johns Hopkins University Press.
 
 GOBINEAU, Arthur de
-REF-176. Las religiones y las filosofías en Asia Central. (2014). 
+REF-176. Las religiones y las filosofías en Asia Central. (2014).
 
 GOBIERNO DE ESPAÑA, Oficina Nacional de Prospectiva y Estrategia
 REF-177. España 2050: Fundamentos y propuestas para una Estrategia Nacional de Largo Plazo. (2021). Ministerio de la Presidencia.
 REF-178. España 2050: Resumen ejecutivo (PDF). (2021). Ministerio de la Presidencia.
 
-GOBIERNO DE ESPAÑA, MINISTERIO DE DEFENSA 
-REF-178_1. Entorno operativo 2035.
+GOBIERNO DE ESPAÑA, Ministerio de Defensa
+REF-178_1. Entorno operativo 2035. (s. f.).
 
 GOETHE, J. W.
 REF-179. Fausto. (2006). Cátedra.
@@ -417,7 +417,7 @@ GOFFMAN, Erving
 REF-180. La presentación de la persona en la vida cotidiana. (2006). Amorrortu.
 
 GRIFFITHS, Paul J.
-REF-181. Obra citada en notas. 
+REF-181. Obra citada en notas.
 
 GUÉNON, René
 REF-182. El reino de la cantidad y el signo de los tiempos. (2018). Omnia Veritas.
@@ -425,17 +425,17 @@ REF-183. El rey del mundo. (2022). Obelisco.
 REF-184. La crisis del mundo moderno. (2022). Obelisco.
 
 HAN, Byung-Chul
-REF-185. La agonia del eros.HERDER. (2013). 
-REF-186. La sociedad del cansancio. HERDER.(2010). 
-REF-187. La sociedad de la transparencia. HERDER.(2012). 
-REF-188. Psicopolítica. HERDER.(2014). 
-REF-189. INFOCRACIA. TAURUS.(2022). 
+REF-185. La agonía del eros. (2013). Herder.
+REF-186. La sociedad del cansancio. (2010). Herder.
+REF-187. La sociedad de la transparencia. (2012). Herder.
+REF-188. Psicopolítica. (2014). Herder.
+REF-189. Infocracia. (2022). Taurus.
 
 HARAWAY, Donna
 REF-190. Simians, Cyborgs, and Women: The Reinvention of Nature. (1991). Routledge.
 
 HERÁCLITO
-REF-191. Fragmentos. (s. f.). 
+REF-191. Fragmentos. (s. f.).
 
 HEGEL, G. W. F.
 REF-192. Fenomenología del espíritu. (2017). Fondo de Cultura Económica.
@@ -443,11 +443,11 @@ REF-192. Fenomenología del espíritu. (2017). Fondo de Cultura Económica.
 HEIDEGGER, Martin
 REF-193. Ser y tiempo. (2014). Trotta.
 
+HITLER, Adolf
+REF-193_1. Mein Kampf. (1925–1926).
+
 HESÍODO
 REF-194. Teogonía. (2017). Gredos.
-
-Hitler, Adolf 
-REF-193_1. Mein Kampf: Adolf Hitler's Totalitarian Vision—Essential Lessons in Vigilance, Responsibility, and Opposing Evil
 
 HOBBES, Thomas
 REF-195. Leviatán. (2012). Alianza.
@@ -460,36 +460,35 @@ HUME, David
 REF-198. Diálogos sobre la religión natural. (2016). Gredos.
 
 HUXLEY, Aldous
-REF-199. Un mundo feliz. (2003). debolsillo.
+REF-199. Un mundo feliz. (2003). Debolsillo.
 
-INTERNATIONAL
-FACT-CHECKING NETWORK (IFCN)
-REF-200. IFCN Code of Principles. 
+INTERNATIONAL FACT-CHECKING NETWORK (IFCN)
+REF-200. IFCN Code of Principles.
 
 JUNG, C. G.
 REF-201. Psicología y alquimia. (2010). Paidós.
 
 JODOROWSKY, Alejandro
-REF-202. La casta de los metabarones (2011). Reservoir Books (2021)
+REF-202. La casta de los metabarones. (2011). Reservoir Books / Norma (ed. citada).
 
 KANT, Immanuel
 REF-203. Crítica de la razón pura. (2016). Gredos.
 
 KIERKEGAARD, Søren
 REF-204. Temor y temblor. (2016). Alianza.
-REF-205. Temor y temblor. 
+REF-205. Temor y temblor.
 
 KLAGES, Ludwig
 REF-206. De l’Éros cosmogonique. (2008). L’Harmattan.
 
 KLEIN, F.
-REF-207. Cuando Dios era mujer. 
+REF-207. Cuando Dios era mujer.
 
 KOHN, Eduardo
 REF-208. How Forests Think: Toward an Anthropology Beyond the Human. (2013).
 
 KOPENAWA, Davi; ALBERT, Bruce
-REF-209. La caída del cielo: Palabras de un chamán yanomami. 
+REF-209. La caída del cielo: Palabras de un chamán yanomami.
 
 KROPOTKIN, Piotr
 REF-210. La conquista del pan. (2015). La Malatesta.
@@ -501,17 +500,17 @@ KUHN, Thomas S.
 REF-212. La estructura de las revoluciones científicas. (1971). Fondo de Cultura Económica.
 
 KURNITZKY, Horst
-REF-213. La estructura libidinal del dinero. 
+REF-213. La estructura libidinal del dinero.
 REF-214. Edipo y otras obras citadas.
 
-L. Bernays, Edward 
-REF-214_1. Propaganda. Editorial Melusina. (2008)
+BERNAYS, Edward L.
+REF-214_1. Propaganda. (2008). Editorial Melusina.
 
 LACAN, Jacques
-REF-215. Seminario 3. 
-REF-216. Seminario 11. 
-REF-217. Écrits I. 
-REF-218. El triunfo de la religión. 
+REF-215. Seminario 3.
+REF-216. Seminario 11.
+REF-217. Écrits I.
+REF-218. El triunfo de la religión.
 
 LA METTRIE, Julien Offray de
 REF-219. El hombre máquina. El arte de gozar. (2000). Valdemar.
@@ -520,18 +519,18 @@ LAO TSÉ
 REF-220. Tao Te Ching. (2010). Siruela.
 
 LE GUIN, Ursula K.
-REF-221. La mano izquierda de la oscuridad - minotauro ESENCIALES
+REF-221. La mano izquierda de la oscuridad. (ed. citada).
 
 LÉVI, Éliphas
 REF-222. Dogma y ritual de la alta magia. (2008). Edaf.
 REF-223. Historia de la magia. (2020). Edaf.
 
 LÉVI, Sylvain
-REF-224. La doctrine du sacrifice dans les Brâhmanas. (1898). 
+REF-224. La doctrine du sacrifice dans les Brâhmanas. (1898).
 
 LÉVI-STRAUSS, Claude
-REF-225. Las estructuras elementales del parentesco. 
-REF-226. El pensamiento salvaje. 
+REF-225. Las estructuras elementales del parentesco.
+REF-226. El pensamiento salvaje.
 REF-227. Lo crudo y lo cocido. (2016). Fondo de Cultura Económica.
 
 LIBIS, Jacques
@@ -541,22 +540,20 @@ LIDDELL, Alicia
 REF-229. El sacrificio como acto poético. (2014). Consonni / Continta Me Tienes.
 
 LOCKE, John
-REF-230. Ensayo sobre el entendimiento humano. (2012). 
-Fondo de Cultura Económica.
+REF-230. Ensayo sobre el entendimiento humano. (2012). Fondo de Cultura Económica.
 
 LORENZ, Konrad
-REF-231. Sobre la agresión. (1971). 
-Siglo XXI.
+REF-231. Sobre la agresión. (1971). Siglo XXI.
 
 LUCRECIO
 REF-232. De la naturaleza de las cosas. (2018). Gredos.
 
 MACHIAVELLI, Niccolò
 REF-233. El príncipe. (2016). Alianza.
-REF-234. El Príncipe. (1985). Cátedra.
+REF-234. El príncipe. (1985). Cátedra.
 
 MALINOWSKI, Bronislaw
-REF-235. Edipo destronado. (2013). Errata naturae.
+REF-235. Edipo destronado. (2013). Errata Naturae.
 
 MARCUSE, Herbert
 REF-236. Eros y civilización. (2010). Planeta.
@@ -572,16 +569,15 @@ REF-239. Cuadernos de París. (1974). Era.
 REF-240. El Capital. (1975). Siglo XXI.
 REF-241. El capital I. (2014). Siglo XXI.
 
-Más Arellano, Guillermo
-REF-241_1. Los Deicidas: Más allá de la realidad y la ficción
-REF-241_2. Hijos de la Sabiduría: Origen y Destino de la Gnosis
+MÁS ARELLANO, Guillermo
+REF-241_1. Los Deicidas: Más allá de la realidad y la ficción.
+REF-241_2. Hijos de la Sabiduría: Origen y Destino de la Gnosis.
 
 MAUSS, Marcel; HUBERT, Henri
-REF-242. Ensayo sobre la naturaleza y función del sacrificio. 
+REF-242. Ensayo sobre la naturaleza y función del sacrificio.
 
 MAUSS, Marcel
-REF-243. Ensayo sobre el don. (s. f.). 
-
+REF-243. Ensayo sobre el don. (s. f.).
 REF-244. Ensayo sobre el don. (2016). Katz.
 
 MÉNDEZ FILESI, Mariano
@@ -590,17 +586,15 @@ REF-245. El laberinto. (2009). Alba.
 MILL, John Stuart
 REF-246. Sobre la libertad. (2013). Alianza.
 
+MILLER, Frank
+REF-251. Batman: El regreso del Caballero Oscuro. (ed. citada).
+REF-252. Sin City 01: El duro adiós. (ed. citada).
+
 MOORE, Alan
 REF-247. Watchmen. (2000). Norma Editorial.
 REF-248. V de Vendetta. (2002). Norma Editorial.
-REF-249. From Hell. Planeta Cómic.
-REF-250. La cosa del pantano - vertigo
-
-MILLER, Frank
-REF-251. Batman: El regreso del Caballero Oscuro. 
-
-Norma Editorial.
-REF-252. Sin City 01: El duro adiós. 
+REF-249. From Hell. (ed. citada).
+REF-250. La cosa del pantano. (ed. citada).
 
 MYLONAS, George E.
 REF-253. Eleusis and the Eleusinian Mysteries. (2009). Cyceon Tales.
@@ -609,12 +603,12 @@ NEWTON, Isaac
 REF-254. Principios matemáticos de la Filosofía natural. (1987). Tecnos.
 
 NIETZSCHE, Friedrich
-REF-255. El nacimiento de la tragedia y otras obras citadas. 
+REF-255. El nacimiento de la tragedia y otras obras citadas.
 REF-256. Así habló Zaratustra. (2017). Alianza.
 
 ORWELL, George
-REF-257. 1984. (2013). DEBOLSILLO
-REF-257_1. REVIEW OF ADOLPH HITLER'S "MEIN KAMPF". 
+REF-257. 1984. (2013). Debolsillo.
+REF-257_1. Review of Adolf Hitler’s "Mein Kampf". (s. f.). (Ensayo/Artículo).
 
 OTTO, Rudolf
 REF-258. Lo santo. (2018). Alianza.
@@ -636,13 +630,13 @@ REICH, Wilhelm
 REF-264. Ether, God and Devil. (1949). Orgone Institute Press.
 
 ROBERTSON SMITH, W.
-REF-265. The Religion of the Semites. 
+REF-265. The Religion of the Semites.
 
 RUBIO, Alicia
-REF-266. Cuando nos prohibieron ser mujeres y os persiguieron por ser hombres. 
+REF-266. Cuando nos prohibieron ser mujeres y os persiguieron por ser hombres.
 
 RIVERA CUSICANQUI, Silvia
-REF-267. Ch’ixinakax utxiwa: Una reflexión sobre prácticas y discursos descolonizadores. (2010). 
+REF-267. Ch’ixinakax utxiwa: Una reflexión sobre prácticas y discursos descolonizadores. (2010).
 
 SCHMITT, Carl
 REF-268. Teología política. (2013). Trotta.
@@ -651,11 +645,11 @@ SCHOPENHAUER, Arthur
 REF-269. El mundo como voluntad y representación I. (2016). Trotta.
 REF-270. El mundo como voluntad y representación II. (2016). Trotta.
 
+SMITH, Adam
+REF-270_1. The Wealth of Nations. (2015). Martino Fine Books.
+
 SPENGLER, Oswald
 REF-271. La decadencia de Occidente.
-
-Smith, Adam 
-REF-270_1. The Wealth of Nations. Martino Fine Books. (2015)
 
 SPINOZA, Baruch
 REF-272. Ética demostrada según el orden geométrico. (2016). Gredos.
@@ -673,29 +667,29 @@ REF-277. Teología sistemática II. (2017). Sígueme.
 REF-278. Teología sistemática III. (2017). Sígueme.
 
 TRISMEGISTO, Hermes
-REF-279. Corpus Hermeticum. 
+REF-279. Corpus Hermeticum.
 
 TURNER, Victor
 REF-280. The Ritual Process: Structure and Anti-Structure. (1969). Aldine.
 
 VANACLOCHA, Bernat; CAÑIGUERAL, Salvador
-REF-281. Fitoterapia: Vademécum de prescripción. 
+REF-281. Fitoterapia: Vademécum de prescripción.
 
 VIVEIROS DE CASTRO, Eduardo
-REF-282. Metafísicas caníbales: Líneas de antropología postestructural. 
+REF-282. Metafísicas caníbales: Líneas de antropología postestructural.
 
 WAGNER, Richard
-REF-283. Tristán e Isolda (libreto / notas). 
+REF-283. Tristán e Isolda (libreto / notas).
 
 WHITE, J.; FU, Q.; HAYS, S.; SANDBORN, M.; OLEA, C.; GILBERT, H.; ELNASHAR, A.; SPENCER-SMITH, J.; SCHMIDT, D. C.
-REF-284. A Prompt Pattern Catalog to Enhance Prompt Engineering with ChatGPT . (2023). 
-REF-285. A Prompt Pattern Catalog to Enhance Prompt Engineering with ChatGPT . (versión revisada). (2024). 
+REF-284. A Prompt Pattern Catalog to Enhance Prompt Engineering with ChatGPT. (2023).
+REF-285. A Prompt Pattern Catalog to Enhance Prompt Engineering with ChatGPT. (versión revisada). (2024).
 
 WITTGENSTEIN, Ludwig
 REF-286. Investigaciones filosóficas. (2016). Crítica.
 
 WORWOOD, Valerie Ann
-REF-287. The Complete Book of Essential Oils and Aromatherapy. (s. f.). 
+REF-287. The Complete Book of Essential Oils and Aromatherapy. (s. f.).
 
 YATES, Frances A.
 REF-288. Giordano Bruno y la tradición hermética. (1994). Ariel.
@@ -703,49 +697,31 @@ REF-289. El iluminismo rosacruz. (2008). Siruela.
 REF-290. El arte de la memoria. (2011). Siruela.
 
 ŽIŽEK, Slavoj
-REF-291. Ateísmo cristiano. Ediciones Akal (2025)
-REF-292.Mis chistes, mi filosofia.
+REF-291. Ateísmo cristiano. (2025). Akal.
+REF-292. Mis chistes, mi filosofía.
 
 ZUBOFF, Shoshana
 REF-293. The Age of Surveillance Capitalism. (2019). PublicAffairs.
-REF-294. La era del capitalismo de la vigilancia. (2020). Ediciones Paidós.
+REF-294. La era del capitalismo de la vigilancia. (2020). Paidós.
 
 PODCASTS
 
-AUDIOLIBRO
-REF-295. El informe de Iron Mountain: sobre la posibilidad y conveniencia de la paz.
+AUDIOLIBROS
+REF-295. El informe de Iron Mountain: sobre la posibilidad y conveniencia de la paz. (Audiolibro).
+REF-300. ORÍGENES — Contra Celso. (Audiolibro).
 
-Hernandez, Jon
-REF-296. IVoox IA con Jon Hernandez.
-
-El submarino Subversivo
-REF-297. IVoox - El submarino Subversivo.
-
-Svali interview
-REF-298. Svali interview (parte 1).
-
-ESTO SALDRÁ BIEN
-REF-299. IVoox - ESTO SALDRÁ BIEN.
-
-Contra, Celso
-REF-300. Orígenes. (AUDIOLIBRO)
-
-DESVENDANDO NOTICIAS
-REF-300_1. DESVENDANDO NOTICIAS
-
-DAB Radio
-REF-300_2. DAB RADIO
+IVOOX / PROGRAMAS
+REF-296. HERNANDEZ, Jon — IVoox: IA con Jon Hernandez.
+REF-297. EL SUBMARINO SUBVERSIVO — IVoox: El submarino Subversivo.
+REF-298. SVALI INTERVIEW — Svali interview (parte 1).
+REF-299. ESTO SALDRÁ BIEN — IVoox: ESTO SALDRÁ BIEN.
+REF-300_1. DESVENDANDO NOTICIAS — Podcast.
+REF-300_2. DAB RADIO — Podcast.
 
 BLOGS
-
-The Revealing
 REF-301. The Revealing.
-
-Delirious Heterotopias
 REF-302. Delirious Heterotopias.
-
-BIBLIOTECA PLEYADES
-REF-302_1. BIBLIOTECA PLEYADES.
+REF-302_1. Biblioteca Pleyades.
 
 MANUALES
 
@@ -787,151 +763,112 @@ REF-328. El sagrado Corán.
 REF-329. El Talmud: Código sagrado y secreto.
 REF-330. Los Annunakis.
 
-DOCTRINAS DE MANDO (POLÍTICA Y RÉGIMEN)
+IDEOLOGÍAS / DOCTRINAS DE MANDO (POLÍTICA Y RÉGIMEN)
 
-Orden TOBE (de “organiza” a “absorbe”)
-TOBE-2 a TOBE-3
-
-Bujarin & Preobrazhenski · 
-REF-331. El ABC del comunismo (TOBE-2/3)
-Catecismo didáctico: convierte teoría en instrucciones para cuadros.
+BUKHARIN, NikolÁI; PREOBRAZHENSKY, EVGUENI
+REF-331. El ABC del comunismo. (TOBE-2/3).
 Link: https://www.marxists.org/archive/bukharin/works/1920/abc/
 
-Lenin · 
-REF-332. El Estado y la revolución (TOBE-3)
-El Estado como herramienta de transición: ingeniería política con justificación histórica.
+LENIN, Vladímir I.
+REF-332. El Estado y la revolución. (TOBE-3).
 Link: https://www.marxists.org/archive/lenin/works/1917/staterev/
-
-Lenin · 
-REF-333. ¿Qué hacer? (TOBE-3/4)
-Diseño del partido-vanguardia: disciplina, profesionalización, “línea”.
+REF-333. ¿Qué hacer?. (TOBE-3/4).
 Link: https://www.marxists.org/archive/lenin/works/1901/witbd/
 
-TOBE-4
-
-Trotsky · 
-REF-334. ¿Qué hacer? (TOBE-3/4)
-REF-335. Terrorismo y comunismo (TOBE-4)
-Normaliza el “uso revolucionario” de la coerción como argumento moral y técnico.
+TROTSKY, León
+REF-334. (Reservado para obra adicional / por definir). (TOBE-4).
+REF-335. Terrorismo y comunismo. (TOBE-4).
 Link: https://www.marxists.org/archive/trotsky/1920/terrcomm/
 
-TOBE-5
-
-Stalin · 
-REF-336. Los fundamentos del leninismo (TOBE-5)
-Fija ortodoxia: lo ambiguo se vuelve “desviación”, la política se vuelve catecismo.
+STALIN, Iósif
+REF-336. Los fundamentos del leninismo. (TOBE-5).
 Link: https://www.marxists.org/reference/archive/stalin/works/1924/foundations-leninism/
+REF-337. Historia del PCUS (bolchevique): Curso breve. (TOBE-5/6).
 
-REF-337. Historia del PCUS (bolchevique): Curso breve (TOBE-5/6)
-Manual para cerrar la historia: canoniza, simplifica, legitima purgas como higiene.
+MAO, Zedong
+REF-338. Citas del Presidente Mao (Libro Rojo). (TOBE-6).
+Link: https://www.marxists.org/ebooks/mao/Quotations_from_Chairman_Mao_Tse-tung.pdf
 
-TOBE-6
+KIM, Jong-il
+REF-339. Textos doctrinales (Juche) — recopilación/Selected Works. (TOBE-7).
+Link: https://www.marxists.org/archive/kim-jong-il/works/Selected-Works-15.pdf
 
-Mao · 
-REF-338. Citas del Presidente Mao (Libro Rojo) (TOBE-6)
-Frase corta, repetible, portable: texto diseñado para ritual, señalización de pureza y vigilancia social.
-PDF: https://www.marxists.org/ebooks/mao/Quotations_from_Chairman_Mao_Tse-tung.pdf
-
-TOBE-7
-
-Corpus Juche 
-REF-339. (Corea del Norte, textos doctrinales oficiales) (TOBE-7)
-Texto como Estado: doctrina como clima, no como opinión. Lectura = pertenencia.
-Ejemplo (recopilación): https://www.marxists.org/archive/kim-jong-il/works/Selected-Works-15.pdf
-
-Hoxha · 
-REF-340. Imperialismo y revolución (TOBE-6/7)
-Manual anti-desviación: “pureza” como sistema, crítica como infección.
+HOXHA, Enver
+REF-340. Imperialismo y revolución. (TOBE-6/7).
 Link: https://www.marxists.org/reference/archive/hoxha/works/imp_rev/imp_ch0.htm
 
-Núcleo “fascista” clásico (fuentes primarias)
-https://www.britannica.com/topic/Political-Theology
+IDEOLOGÍAS (CARTOGRAFÍA HISTÓRICA)
 
-MUSSOLINI, Benito; GENTILE, Giovanni — 
-REF-341. The Doctrine of Fascism (La doctrina del fascismo). (1932). (Traducción/fuente en Fordham).
-https://sourcebooks.fordham.edu/mod/mussolini-fascism.asp
+MUSSOLINI, Benito; GENTILE, Giovanni
+REF-341. The Doctrine of Fascism (La doctrina del fascismo). (1932).
+Link: https://sourcebooks.fordham.edu/mod/mussolini-fascism.asp
 
-HITLER, Adolf — 
-REF-342. Mein Kampf. (1925–1926). (Contexto histórico y función propagandística).
+HITLER, Adolf
+REF-342. Mein Kampf. (1925–1926). (Entrada bibliográfica / ediciones citadas).
 
-2) Autoridad, Estado, enemigo (teoría política afín o reapropiada)
-
-SCHMITT, Carl — 
-REF-343. Political Theology (Teología política). (1922). (Ficha de referencia).
-
-SCHMITT, Carl — 
+SCHMITT, Carl
+REF-343. Political Theology (Teología política). (1922). (Ficha bibliográfica).
 REF-344. The Concept of the Political (El concepto de lo político). (1932). (Ficha bibliográfica).
 
-SOREL, Georges — 
+SOREL, Georges
 REF-345. Reflections on Violence (Reflexiones sobre la violencia). (1908). (Ficha bibliográfica).
 
-Tradicionalismo radical / “perennialismo” en órbita ultra
-
-EVOLA, Julius — 
+EVOLA, Julius
 REF-346. Revolt Against the Modern World (Revuelta contra el mundo moderno). (1934). (Ficha bibliográfica).
-
-EVOLA, Julius — 
 REF-347. Men Among the Ruins (Los hombres entre las ruinas). (1953). (Ficha bibliográfica).
 
-GUÉNON, René — 
+GUÉNON, René
 REF-348. The Crisis of the Modern World (La crisis del mundo moderno). (1927). (Ficha bibliográfica).
 
-“Nueva Derecha” europea y metapolítica (2ª mitad s. XX →)
+DE BENOIST, Alain
+REF-349. Ensayos centrales de la Nouvelle Droite. (Referencias / por concretar).
 
-DE BENOIST, Alain — 
-REF-349. (referencias y marco académico sobre su papel en la Nouvelle Droite).
+FAYE, Guillaume
+REF-350. Textos identitarios (referencias / por concretar).
 
-FAYE, Guillaume — 
-REF-350. (referencias y marco académico sobre su lugar en la derecha radical contemporánea).
+ANÓNIMO
+REF-351. Protocolos de los Sabios de Sion / Protocols of the Elders of Zion. (c. 1903). (Falsificación; objeto de estudio).
+Link: https://encyclopedia.ushmm.org/content/en/article/protocols-of-the-elders-of-zion
 
-“Manual” conspirativo histórico (falsificación antisemita, objeto de estudio)
-REF-351. ANÓNIMO — Protocolos de los Sabios de Sion / Protocols of the Elders of Zion. (c. 1903). 
-Falsificación antisemita: útil solo como pieza histórica para estudiar propaganda.
-https://encyclopedia.ushmm.org/content/en/article/protocols-of-the-elders-of-zion
-
-Contrapesos(para leer todo lo anterior )
-
-ECO, Umberto — 
+CONTRAPESOS / HISTORIOGRAFÍA CRÍTICA
+ECO, Umberto
 REF-352. Ur-Fascism / Eternal Fascism. (1995). (Texto de referencia).
 
-GRIFFIN, Roger — 
+GRIFFIN, Roger
 REF-353. The Nature of Fascism. (1991). (Ficha editorial).
-https://www.routledge.com/The-Nature-of-Fascism/Griffin/p/book/9780415096614
+Link: https://www.routledge.com/The-Nature-of-Fascism/Griffin/p/book/9780415096614
 
-PAXTON, Robert O. — 
-REF-354. The Anatomy of Fascism. (2004). (Referencia bibliográfica citada en ficha de autor)
+PAXTON, Robert O.
+REF-354. The Anatomy of Fascism. (2004). (Ficha bibliográfica).
 
 ANTI-TECNOLOGÍA (OBJETOS HISTÓRICOS)
-
 KACZYNSKI, Theodore J.
-REF-355. Industrial Society and Its Future (también llamado “Unabomber Manifesto”, 1995). 
-REF-356. Technological Slavery: The Collected Writings of Theodore J. Kaczynski
-REF-357. Anti-Tech Revolution: Why and How (ensayo-libro de tesis anti-tecnología)
+REF-355. Industrial Society and Its Future. (1995).
+REF-356. Technological Slavery: The Collected Writings of Theodore J. Kaczynski.
+REF-357. Anti-Tech Revolution: Why and How.
 
 CRÍTICA DE LA TÉCNICA (CANON)
+ELLUL, Jacques
+REF-358. The Technological Society; Propaganda.
 
-ELLUL, Jacques — 
-REF-358. The Technological Society; Propaganda
+MUMFORD, Lewis
+REF-359. Technics and Civilization; The Myth of the Machine.
 
-MUMFORD, Lewis — 
-REF-359. Technics and Civilization; The Myth of the Machine
+ILLICH, Ivan
+REF-360. Tools for Conviviality; Energy and Equity.
 
-ILLICH, Ivan — 
-REF-360. Tools for Conviviality; Energy and Equity
+WINNER, Langdon
+REF-361. The Whale and the Reactor.
 
-WINNER, Langdon — 
-REF-361. The Whale and the Reactor
+POSTMAN, Neil
+REF-362. Technopoly; Amusing Ourselves to Death.
 
-POSTMAN, Neil — 
-REF-362. Technopoly; Amusing Ourselves to Death
-
-HEIDEGGER, Martin — 
-REF-363. The Question Concerning Technology (ensayo)
+HEIDEGGER, Martin
+REF-363. The Question Concerning Technology.
 
 RADICALISMOS ANTI-CIVILIZACIÓN (CARTOGRAFÍA)
+ZERZAN, John
+REF-364. Ensayos y libros de crítica civilizatoria.
 
-ZERZAN, John — 
-REF-364. ensayos y libros de crítica civilizatoria
-
-PERLMAN, Fredy — 
+PERLMAN, Fredy
 REF-365. Against His-Story, Against Leviathan!
