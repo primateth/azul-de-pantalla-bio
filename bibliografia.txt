@@ -842,12 +842,14 @@ PAXTON, Robert O.
 REF-354. The Anatomy of Fascism. (2004). (Ficha bibliográfica).
 
 ANTI-TECNOLOGÍA (OBJETOS HISTÓRICOS)
+
 KACZYNSKI, Theodore J.
 REF-355. Industrial Society and Its Future. (1995).
 REF-356. Technological Slavery: The Collected Writings of Theodore J. Kaczynski.
 REF-357. Anti-Tech Revolution: Why and How.
 
 CRÍTICA DE LA TÉCNICA (CANON)
+
 ELLUL, Jacques
 REF-358. The Technological Society; Propaganda.
 
@@ -867,6 +869,7 @@ HEIDEGGER, Martin
 REF-363. The Question Concerning Technology.
 
 RADICALISMOS ANTI-CIVILIZACIÓN (CARTOGRAFÍA)
+
 ZERZAN, John
 REF-364. Ensayos y libros de crítica civilizatoria.
 
