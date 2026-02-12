@@ -94,7 +94,7 @@
     }
     .sideInner{padding:14px}
     .label{font-size:12px; color:var(--muted); margin:12px 0 6px}
-    .input, .select, textarea{
+    .input, .select{
       width:100%;
       padding:10px 12px;
       border-radius:12px;
@@ -104,16 +104,8 @@
       font-size:13px;
       outline:none;
     }
-    textarea{
-      min-height:120px;
-      font-family:var(--mono);
-      font-size:12px;
-      line-height:1.35;
-      resize:vertical;
-    }
     .row{display:flex; gap:10px}
     .row > *{flex:1}
-    .small{font-size:12px; color:var(--muted); line-height:1.4}
     .pill{
       display:inline-flex; gap:8px; align-items:center;
       padding:7px 10px;
@@ -203,22 +195,6 @@
       line-height:1.45;
       margin-top:8px;
     }
-    .checkRow{
-      display:flex;
-      gap:10px;
-      align-items:center;
-      flex-wrap:wrap;
-      margin-top:10px;
-      padding:10px;
-      border:1px solid var(--border);
-      border-radius:14px;
-      background: rgba(18,28,40,.25);
-    }
-    .checkRow label{
-      display:flex; gap:8px; align-items:center;
-      font-size:12px; color:rgba(233,238,246,.86);
-      user-select:none;
-    }
     @media (max-width: 980px){
       .layout{grid-template-columns:1fr}
       .side{position:relative; top:auto; height:auto}
@@ -232,7 +208,10 @@
     <div class="topInner">
       <div class="titleWrap">
         <h1>Bibliografía Azul de Pantalla · <span class="tag">Templo del dato</span></h1>
-        <p class="sub">Lee <span style="font-family:var(--mono)">BIOGRAFIA.txt</span> desde la repo y renumera desde <span style="font-family:var(--mono)">REF-001</span> (sin sufijos).</p>
+        <p class="sub">
+          Lee <span style="font-family:var(--mono)">bibliografia.txt</span> desde la repo.
+          Botón opcional para reenumerar desde <span style="font-family:var(--mono)">REF-001</span>.
+        </p>
         <div class="quote">
           <div>Quizás es mejor la bibliografía que el propio libro.</div>
           <div>Si el libro es malo, la bibliografía siempre queda bien.</div>
@@ -242,11 +221,14 @@
       </div>
 
       <div class="btnRow">
-        <button class="btn primary" id="btnTop" title="Volver arriba">↑ Arriba</button>
-        <button class="btn" id="btnCopyAnchor" title="Copia el enlace interno a la sección actual">⛓ Copiar ancla</button>
-        <a class="btn" id="btnTxt" href="BIOGRAFIA.txt" target="_blank" rel="noopener noreferrer" title="Ver el TXT de la repo">📄 TXT</a>
+        <button class="btn" id="btnTop" title="Volver arriba">↑ Arriba</button>
+        <button class="btn" id="btnCopyAnchor" title="Copia el enlace interno a la sección más cercana">⛓ Copiar ancla</button>
+
+        <a class="btn" id="btnTxtOpen" href="bibliografia.txt" target="_blank" rel="noopener noreferrer" title="Abrir el TXT de la repo">📄 Abrir TXT</a>
+        <button class="btn" id="btnTxtDownload" title="Descargar el TXT actual">⬇ Descargar TXT</button>
+
         <a class="btn" href="mailto:mercurius81@proton.me" title="Contacto por email">✉ Contacto</a>
-        <button class="btn" id="btnComprar" disabled title="Sin link de compra todavía">🛒 Comprar</button>
+        <a class="btn primary" id="btnBuy" href="#" target="_blank" rel="noopener noreferrer" title="Link provisional de compra">🛒 Comprar</a>
       </div>
     </div>
   </div>
@@ -255,17 +237,24 @@
     <aside class="card side">
       <div class="sideInner">
         <div class="label">Archivo en la repo</div>
-        <input class="input" id="repoPath" value="BIOGRAFIA.txt" placeholder="BIOGRAFIA.txt" />
+        <input class="input" id="repoPath" value="bibliografia.txt" placeholder="bibliografia.txt" />
         <div class="row" style="margin-top:10px">
           <button class="btn primary" id="btnLoadRepo">⬇ Cargar desde repo</button>
-          <button class="btn" id="btnExport" disabled>⬇ Descargar TXT renumerado</button>
+          <button class="btn" id="btnRenumber" disabled>🔢 Reenumerar</button>
         </div>
 
-        <div class="checkRow">
-          <label>
-            <input type="checkbox" id="chkRenumber" checked />
-            Renumerar todo desde REF-001 (recomendado)
-          </label>
+        <div class="row" style="margin-top:10px">
+          <button class="btn" id="btnToggleView" disabled>👁 Ver renumerado</button>
+          <button class="btn" id="btnDownloadView" disabled>⬇ Descargar (vista)</button>
+        </div>
+
+        <div class="hr"></div>
+
+        <div class="label">Link de compra (provisional)</div>
+        <input class="input" id="buyUrl" placeholder="https://…" />
+        <div class="row" style="margin-top:10px">
+          <button class="btn" id="btnSaveBuy">💾 Guardar link</button>
+          <button class="btn" id="btnClearBuy">🧽 Reset</button>
         </div>
 
         <div class="hr"></div>
@@ -289,7 +278,8 @@
         </div>
 
         <p class="hint">
-          Nota: <span style="font-family:var(--mono)">fetch()</span> funciona en GitHub Pages. Si abres el HTML como <span style="font-family:var(--mono)">file://</span>, el navegador puede bloquear la lectura del TXT.
+          Nota: <span style="font-family:var(--mono)">fetch()</span> funciona en GitHub Pages.
+          Si abres como <span style="font-family:var(--mono)">file://</span>, el navegador puede bloquear la lectura del TXT.
         </p>
       </div>
     </aside>
@@ -303,6 +293,25 @@
   </div>
 
 <script>
+/* ======================
+   CONFIG (rápido de tocar)
+   ====================== */
+const DEFAULT_TXT_PATH = "bibliografia.txt";
+const CONTACT_EMAIL = "mercurius81@proton.me";
+const BUY_URL_KEY = "azul_buy_url";
+const DEFAULT_BUY_URL = "https://example.com/compra-provisional"; // cámbialo si quieres
+
+/* ======================
+   Estado
+   ====================== */
+const state = {
+  path: DEFAULT_TXT_PATH,
+  rawText: "",
+  renumberedText: "",
+  viewText: "",
+  viewMode: "original" // "original" | "renumbered"
+};
+
 /* ======================
    Utilidades
    ====================== */
@@ -361,24 +370,26 @@ function looksLikeSectionHeading(title){
   if(/\(.+\)/.test(T) && (T === T.toUpperCase())) return true;
   return false;
 }
+function parseRefFromLine(line){
+  const m = line.match(/^(REF-\d+)\.\s*(.*)$/);
+  if(!m) return null;
+  return { ref: m[1], text: m[2].trim() };
+}
 
 /* ======================
-   Renumeración global (desde REF-001)
-   - Reescribe SOLO refs al inicio de línea: REF-xxx[_y]. -> REF-001..N.
+   Renumeración (manual, por botón)
+   - Reescribe refs al inicio de línea: REF-xxx[_y]. -> REF-001..N.
    - Sin sufijos.
-   - Estrictamente ascendente por aparición en el archivo.
+   - Ascendente por aparición en el archivo.
    ====================== */
 function renumberAllFrom001(raw){
   const lines = raw.split(/\r?\n/);
   let n = 1;
-
-  // Acepta REF-001, REF-114_1, REF-114-1, REF-1200 (si algún día crece)
   const re = /^(REF-(\d+)(?:[_-]\d+)?)\./;
 
   const out = lines.map(line=>{
     const m = line.match(re);
     if(!m) return line;
-
     const newRef = `REF-${String(n).padStart(3,"0")}`;
     n++;
     return line.replace(re, `${newRef}.`);
@@ -388,14 +399,8 @@ function renumberAllFrom001(raw){
 }
 
 /* ======================
-   Parser bibliografía (ya con refs limpias)
+   Parser bibliografía
    ====================== */
-function parseRefFromLine(line){
-  const m = line.match(/^(REF-\d+)\.\s*(.*)$/);
-  if(!m) return null;
-  return { ref: m[1], text: m[2].trim() };
-}
-
 function parseBibliography(raw){
   const lines = raw.split(/\r?\n/);
 
@@ -632,11 +637,8 @@ function setupSearch(){
 }
 
 /* ======================
-   Botones + carga repo
+   Descarga + anclas
    ====================== */
-let lastRawText = "";
-let lastRenumberedText = "";
-
 function downloadText(filename, text){
   const blob = new Blob([text], { type: "text/plain;charset=utf-8" });
   const url = URL.createObjectURL(blob);
@@ -666,36 +668,98 @@ function getNearestAnchorId(){
   return best && best.id ? best.id : null;
 }
 
-async function loadFromRepo(path){
-  const status = document.getElementById("status");
-  status.textContent = `Cargando: ${path} …`;
+function setStatus(msg){
+  document.getElementById("status").textContent = msg;
+}
 
+function setButtonsEnabled(loaded){
+  document.getElementById("btnRenumber").disabled = !loaded;
+  document.getElementById("btnDownloadView").disabled = !loaded;
+  document.getElementById("btnTxtDownload").disabled = !loaded;
+  document.getElementById("btnToggleView").disabled = !(loaded && state.renumberedText);
+  document.getElementById("btnToggleView").textContent = (state.viewMode === "original") ? "👁 Ver renumerado" : "👁 Ver original";
+}
+
+/* ======================
+   Carga desde repo / local
+   ====================== */
+async function loadFromRepo(path){
+  setStatus(`Cargando: ${path} …`);
   try{
     const res = await fetch(path, { cache: "no-store" });
     if(!res.ok) throw new Error(`HTTP ${res.status}`);
     const text = await res.text();
 
-    lastRawText = text;
+    state.path = path;
+    state.rawText = text;
+    state.renumberedText = "";
+    state.viewMode = "original";
+    state.viewText = state.rawText;
 
-    const renum = document.getElementById("chkRenumber").checked;
-    if(renum){
-      const r = renumberAllFrom001(text);
-      lastRenumberedText = r.text;
-      document.getElementById("btnExport").disabled = false;
-      status.textContent = `OK. Renumerado desde REF-001 (${r.count} entradas).`;
-      render(parseBibliography(r.text));
-    }else{
-      lastRenumberedText = "";
-      document.getElementById("btnExport").disabled = true;
-      status.textContent = `OK. Cargado sin renumerar.`;
-      render(parseBibliography(text));
-    }
+    // actualizar enlace "Abrir TXT"
+    document.getElementById("btnTxtOpen").setAttribute("href", path);
+
+    render(parseBibliography(state.viewText));
+    setStatus(`OK. Cargado (vista: original).`);
+    setButtonsEnabled(true);
   }catch(err){
-    status.textContent = `Error cargando "${path}". Revisa que exista en la repo y que Pages sirva esa ruta.`;
     console.error(err);
+    setStatus(`Error cargando "${path}". Revisa que exista y que GitHub Pages sirva esa ruta.`);
+    setButtonsEnabled(false);
   }
 }
 
+function applyRenumber(){
+  const r = renumberAllFrom001(state.rawText);
+  state.renumberedText = r.text;
+  state.viewMode = "renumbered";
+  state.viewText = state.renumberedText;
+
+  render(parseBibliography(state.viewText));
+  setStatus(`Renumerado desde REF-001 (${r.count} entradas). Vista: renumerado.`);
+  setButtonsEnabled(true);
+}
+
+function toggleView(){
+  if(!state.renumberedText) return;
+  if(state.viewMode === "original"){
+    state.viewMode = "renumbered";
+    state.viewText = state.renumberedText;
+    setStatus(`Vista: renumerado (derivado).`);
+  }else{
+    state.viewMode = "original";
+    state.viewText = state.rawText;
+    setStatus(`Vista: original.`);
+  }
+  render(parseBibliography(state.viewText));
+  setButtonsEnabled(true);
+}
+
+/* ======================
+   Compra (provisional) + persistencia
+   ====================== */
+function loadBuyUrl(){
+  const saved = localStorage.getItem(BUY_URL_KEY);
+  const url = saved && saved.trim() ? saved.trim() : DEFAULT_BUY_URL;
+  document.getElementById("buyUrl").value = url;
+  document.getElementById("btnBuy").setAttribute("href", url);
+}
+function saveBuyUrl(){
+  const url = (document.getElementById("buyUrl").value || "").trim();
+  const finalUrl = url || DEFAULT_BUY_URL;
+  localStorage.setItem(BUY_URL_KEY, finalUrl);
+  document.getElementById("btnBuy").setAttribute("href", finalUrl);
+  setStatus(`Link de compra actualizado.`);
+}
+function clearBuyUrl(){
+  localStorage.removeItem(BUY_URL_KEY);
+  loadBuyUrl();
+  setStatus(`Link de compra reseteado a provisional.`);
+}
+
+/* ======================
+   Eventos UI
+   ====================== */
 function setupButtons(){
   document.getElementById("btnTop").addEventListener("click", ()=>{
     window.scrollTo({top:0, behavior:"smooth"});
@@ -716,64 +780,89 @@ function setupButtons(){
     }
   });
 
-  document.getElementById("btnExport").addEventListener("click", ()=>{
-    if(!lastRenumberedText){
-      alert("No hay TXT renumerado. Activa renumeración y recarga.");
+  document.getElementById("btnLoadRepo").addEventListener("click", ()=>{
+    const p = (document.getElementById("repoPath").value || "").trim() || DEFAULT_TXT_PATH;
+    loadFromRepo(p);
+  });
+
+  document.getElementById("btnRenumber").addEventListener("click", ()=>{
+    if(!state.rawText){
+      alert("No hay TXT cargado.");
       return;
     }
-    downloadText("BIOGRAFIA_RENUMERADA.txt", lastRenumberedText);
+    applyRenumber();
   });
 
-  document.getElementById("btnLoadRepo").addEventListener("click", ()=>{
-    const p = document.getElementById("repoPath").value.trim() || "BIOGRAFIA.txt";
-    document.getElementById("btnTxt").setAttribute("href", p);
-    loadFromRepo(p);
+  document.getElementById("btnToggleView").addEventListener("click", ()=>{
+    toggleView();
   });
 
-  document.getElementById("chkRenumber").addEventListener("change", ()=>{
-    const p = document.getElementById("repoPath").value.trim() || "BIOGRAFIA.txt";
-    loadFromRepo(p);
+  document.getElementById("btnDownloadView").addEventListener("click", ()=>{
+    if(!state.viewText) return;
+    const base = state.path.split("/").pop() || "bibliografia.txt";
+    const name = (state.viewMode === "renumbered")
+      ? base.replace(/\.txt$/i, "") + "_REN" + ".txt"
+      : base;
+    downloadText(name, state.viewText);
+  });
+
+  // Descarga directa del TXT actual (igual que vista si estás en original; útil como “botón grande” arriba)
+  document.getElementById("btnTxtDownload").addEventListener("click", ()=>{
+    if(!state.viewText){
+      alert("No hay TXT cargado.");
+      return;
+    }
+    const base = state.path.split("/").pop() || "bibliografia.txt";
+    downloadText(base, state.viewMode === "original" ? state.rawText : state.viewText);
   });
 
   document.getElementById("fileInput").addEventListener("change", async (ev)=>{
     const file = ev.target.files && ev.target.files[0];
     if(!file) return;
     const text = await file.text();
+    state.path = file.name || "bibliografia.txt";
+    state.rawText = text;
+    state.renumberedText = "";
+    state.viewMode = "original";
+    state.viewText = state.rawText;
 
-    lastRawText = text;
+    document.getElementById("repoPath").value = state.path;
+    document.getElementById("btnTxtOpen").setAttribute("href", state.path);
 
-    const renum = document.getElementById("chkRenumber").checked;
-    if(renum){
-      const r = renumberAllFrom001(text);
-      lastRenumberedText = r.text;
-      document.getElementById("btnExport").disabled = false;
-      document.getElementById("status").textContent = `Local OK. Renumerado desde REF-001 (${r.count} entradas).`;
-      render(parseBibliography(r.text));
-    }else{
-      lastRenumberedText = "";
-      document.getElementById("btnExport").disabled = true;
-      document.getElementById("status").textContent = `Local OK. Cargado sin renumerar.`;
-      render(parseBibliography(text));
-    }
+    render(parseBibliography(state.viewText));
+    setStatus(`Local OK. Cargado (vista: original).`);
+    setButtonsEnabled(true);
   });
 
   document.getElementById("btnClear").addEventListener("click", ()=>{
     document.getElementById("content").innerHTML = "";
     document.getElementById("jumpSelect").innerHTML = `<option value="">(elige…)</option>`;
-    document.getElementById("status").textContent = "Limpio. Carga desde la repo.";
     document.getElementById("countsPill").textContent = "Sin datos cargados";
-    document.getElementById("btnExport").disabled = true;
-    lastRawText = "";
-    lastRenumberedText = "";
+
+    state.path = DEFAULT_TXT_PATH;
+    state.rawText = "";
+    state.renumberedText = "";
+    state.viewText = "";
+    state.viewMode = "original";
+
+    setStatus("Limpio. Carga desde la repo.");
+    setButtonsEnabled(false);
   });
+
+  document.getElementById("btnSaveBuy").addEventListener("click", saveBuyUrl);
+  document.getElementById("btnClearBuy").addEventListener("click", clearBuyUrl);
 }
 
 /* init */
+document.getElementById("repoPath").value = DEFAULT_TXT_PATH;
+document.querySelector('a[href^="mailto:"]').setAttribute("href", `mailto:${CONTACT_EMAIL}`);
+
 setupSearch();
 setupButtons();
+loadBuyUrl();
 
-// Auto-load al abrir (desde la repo)
-loadFromRepo(document.getElementById("repoPath").value.trim() || "BIOGRAFIA.txt");
+// Auto-load desde repo
+loadFromRepo(DEFAULT_TXT_PATH);
 </script>
 </body>
 </html>
