@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Bibliografía Azul de Pantalla · Templo del dato</title>
-  <meta name="description" content="Bibliografía pública del proyecto Azul de Pantalla: Templo del dato. Enlaces, referencias y manuales. QR-friendly." />
+  <meta name="description" content="Bibliografía pública del proyecto Azul de Pantalla: Templo del dato. QR-friendly." />
   <style>
     :root{
       --bg:#07091a;
@@ -17,15 +17,12 @@
       --chip: rgba(10,12,34,.35);
       --chip2: rgba(10,12,34,.7);
       --accent: rgba(110,130,255,.55);
-      --good: rgba(80, 220, 160, .70);
-      --warn: rgba(255, 200, 80, .70);
     }
-
     *{ box-sizing: border-box; }
     html,body{ height:100%; }
     body{
       margin:0;
-      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
       color: var(--ink);
       background:
         radial-gradient(1200px 900px at 10% 10%, rgba(110,130,255,.18), transparent 60%),
@@ -33,10 +30,6 @@
         radial-gradient(900px 700px at 50% 100%, rgba(255,200,80,.08), transparent 60%),
         linear-gradient(180deg, var(--bg), var(--bg2));
     }
-
-    a{ color: inherit; }
-    a:hover{ text-decoration: none; }
-
     .wrap{ max-width: 1160px; margin: 0 auto; padding: 22px 16px 60px; }
     .card{
       background: rgba(7,9,26,.55);
@@ -46,13 +39,11 @@
       overflow: hidden;
       backdrop-filter: blur(10px);
     }
-
     header.hero{
       padding: 18px 18px 14px;
       border-bottom: 1px solid var(--line);
       background: linear-gradient(180deg, rgba(10,12,34,.70), rgba(10,12,34,.25));
     }
-
     .top{
       display:flex;
       gap:12px;
@@ -60,7 +51,6 @@
       align-items:center;
       justify-content: space-between;
     }
-
     .badge{
       display:flex;
       align-items:center;
@@ -77,7 +67,6 @@
       background: rgba(110,130,255,.65);
       box-shadow: 0 0 0 3px rgba(110,130,255,.16);
     }
-
     .nav{
       display:flex;
       gap:10px;
@@ -104,19 +93,13 @@
       border-color: rgba(110,130,255,.35);
       background: rgba(10,12,34,.70);
     }
-
-    h1{
-      margin: 14px 0 0;
-      font-size: 22px;
-      letter-spacing: .2px;
-    }
+    h1{ margin: 14px 0 0; font-size: 22px; letter-spacing: .2px; }
     .sub{
       margin: 6px 0 0;
       font-size: 13.5px;
       color: var(--muted);
       line-height: 1.55;
     }
-
     .epigraph{
       margin-top: 12px;
       padding: 12px 14px;
@@ -127,25 +110,19 @@
       font-size: 13px;
       line-height: 1.55;
     }
-
     .grid{
       display:grid;
       grid-template-columns: 320px 1fr;
       gap: 14px;
       padding: 14px;
     }
-
-    @media (max-width: 980px){
-      .grid{ grid-template-columns: 1fr; }
-    }
-
+    @media (max-width: 980px){ .grid{ grid-template-columns: 1fr; } }
     aside{
       border: 1px solid var(--line);
       border-radius: 16px;
       background: rgba(10,12,34,.22);
       padding: 12px;
     }
-
     .search{
       display:flex;
       gap: 8px;
@@ -171,7 +148,6 @@
       cursor: pointer;
     }
     .search button:hover{ filter: brightness(1.08); }
-
     .tocTitle{
       margin: 10px 0 6px;
       font-size: 12px;
@@ -179,7 +155,6 @@
       text-transform: uppercase;
       color: var(--muted2);
     }
-
     .toc a{
       display:block;
       padding: 8px 10px;
@@ -188,12 +163,19 @@
       border: 1px solid transparent;
       color: rgba(233,236,255,.86);
       font-size: 13px;
+      line-height: 1.25;
+    }
+    .toc a small{
+      display:block;
+      margin-top: 2px;
+      color: rgba(233,236,255,.55);
+      font-size: 11.5px;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace;
     }
     .toc a:hover{
       background: rgba(110,130,255,.10);
       border-color: rgba(110,130,255,.18);
     }
-
     .metaLine{
       margin-top: 10px;
       display:flex;
@@ -208,7 +190,6 @@
       border: 1px solid rgba(110,130,255,.18);
       background: rgba(10,12,34,.35);
     }
-
     main{
       border: 1px solid var(--line);
       border-radius: 16px;
@@ -216,7 +197,6 @@
       padding: 14px;
       min-height: 420px;
     }
-
     .status{
       display:flex;
       gap: 10px;
@@ -225,42 +205,16 @@
       justify-content: space-between;
       margin-bottom: 10px;
     }
-    .status .hint{
-      color: var(--muted2);
-      font-size: 12.5px;
-    }
-    .status .ok{
-      color: rgba(80,220,160,.85);
-      font-size: 12.5px;
-    }
-    .status .bad{
-      color: rgba(255,120,120,.85);
-      font-size: 12.5px;
-    }
-
+    .status .hint{ color: var(--muted2); font-size: 12.5px; }
+    .status .ok{ color: rgba(80,220,160,.85); font-size: 12.5px; }
+    .status .bad{ color: rgba(255,120,120,.85); font-size: 12.5px; }
     section.sec{
       margin-top: 18px;
       padding-top: 10px;
       border-top: 1px solid rgba(110,130,255,.14);
     }
-    section.sec:first-of-type{
-      margin-top: 0;
-      padding-top: 0;
-      border-top: none;
-    }
-
-    h2{
-      margin: 0 0 8px;
-      font-size: 16px;
-      letter-spacing: .2px;
-    }
-    .secNote{
-      margin: 0 0 10px;
-      color: var(--muted2);
-      font-size: 12.5px;
-      line-height: 1.55;
-    }
-
+    section.sec:first-of-type{ margin-top: 0; padding-top: 0; border-top: none; }
+    h2{ margin: 0 0 8px; font-size: 16px; letter-spacing: .2px; }
     details.author{
       border: 1px solid rgba(110,130,255,.16);
       background: rgba(10,12,34,.26);
@@ -278,12 +232,7 @@
       gap: 10px;
     }
     details.author summary::-webkit-details-marker{ display:none; }
-
-    .authorName{
-      font-weight: 600;
-      font-size: 13.8px;
-      color: rgba(233,236,255,.90);
-    }
+    .authorName{ font-weight: 600; font-size: 13.8px; color: rgba(233,236,255,.90); }
     .authorCount{
       font-size: 12px;
       color: rgba(233,236,255,.62);
@@ -292,8 +241,8 @@
       border: 1px solid rgba(110,130,255,.16);
       background: rgba(7,9,26,.35);
       white-space: nowrap;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace;
     }
-
     .items{ padding: 6px 12px 10px; border-top: 1px solid rgba(110,130,255,.12); }
     .item{
       display:flex;
@@ -303,12 +252,11 @@
       align-items:flex-start;
     }
     .item:last-child{ border-bottom: none; }
-
     .ref{
       font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace;
       font-size: 12px;
       color: rgba(110,130,255,.92);
-      min-width: 92px;
+      min-width: 112px;
       padding-top: 1px;
     }
     .txt{
@@ -317,12 +265,6 @@
       color: rgba(233,236,255,.86);
       word-break: break-word;
     }
-    .mutedLine{
-      color: var(--muted2);
-      font-size: 12px;
-      margin-top: 2px;
-    }
-
     .empty{
       padding: 18px 14px;
       border-radius: 14px;
@@ -332,7 +274,6 @@
       font-size: 13px;
       line-height: 1.6;
     }
-
     footer{
       margin-top: 14px;
       color: rgba(233,236,255,.45);
@@ -364,7 +305,7 @@
         </div>
 
         <h1>Bibliografía Azul de Pantalla</h1>
-        <p class="sub">Templo del dato. Una lista que hace de altar: si el libro falla, la bibliografía siempre queda bien. Si el libro acierta, la bibliografía reclama la autoría.</p>
+        <p class="sub">Templo del dato. Lista pública de referencias (y coartada elegante para cualquier libro).</p>
 
         <div class="epigraph" id="bibliografia">
           <div>Quizás es mejor la bibliografía que el propio libro.</div>
@@ -380,8 +321,11 @@
             <button id="clear" type="button" title="Limpiar">✕</button>
           </div>
 
-          <div class="tocTitle">Secciones</div>
-          <div id="toc" class="toc"></div>
+          <div class="tocTitle">Autores (BIBLIOGRAFÍA)</div>
+          <div id="tocAuthors" class="toc"></div>
+
+          <div class="tocTitle" style="margin-top:14px">Secciones</div>
+          <div id="tocSections" class="toc"></div>
 
           <div class="metaLine">
             <span class="pill" id="countAuthors">Autores: …</span>
@@ -391,7 +335,7 @@
 
         <main>
           <div class="status">
-            <div class="hint">Fuente: <span class="pill">bibliografia.txt</span> en la raíz del repo</div>
+            <div class="hint">Fuente: <span class="pill">bibliografia.txt</span> (raíz del repo)</div>
             <div id="loadState" class="ok">Cargando…</div>
           </div>
 
@@ -406,13 +350,12 @@
   </div>
 
   <script>
-    // ===== Utilidades =====
+    // ===== Helpers =====
     function normKey(s){
       return (s || "").trim()
         .normalize("NFD").replace(/[\u0300-\u036f]/g,"")
         .toUpperCase();
     }
-
     function slug(s){
       const t = (s || "").trim()
         .normalize("NFD").replace(/[\u0300-\u036f]/g,"")
@@ -421,7 +364,6 @@
         .replace(/^-+|-+$/g,"");
       return t || "x";
     }
-
     function escapeHtml(s){
       return String(s || "")
         .replaceAll("&","&amp;")
@@ -430,7 +372,6 @@
         .replaceAll('"',"&quot;")
         .replaceAll("'","&#039;");
     }
-
     function nextNonEmpty(lines, i){
       for (let j=i; j<lines.length; j++){
         const t = (lines[j] || "").trim();
@@ -438,19 +379,32 @@
       }
       return "";
     }
-
     function isRefLine(line){
       return /^REF-\d{3}(?:_\d+)?\./.test((line || "").trim());
     }
 
-    function looksUpperish(t){
-      if (!t) return false;
-      const up = t === t.toUpperCase();
-      const sane = /^[A-ZÁÉÍÓÚÜÑ0-9 .,'&\-;()|/:+]+$/.test(t);
-      return up && sane && t.length <= 90;
+    const MAIN_SECTION = "BIBLIOGRAFÍA";
+    const SECTION_ORDER = ["BIBLIOGRAFÍA","PODCASTS","BLOGS","MANUALES","TEXTOS RELIGIOSOS"].map(normKey);
+
+    const HEADER_PREFIXES = [
+      "BIBLIOGRAFIA AZUL",
+      "TEMPLO DEL DATO",
+      "QUIZAS ES MEJOR LA BIBLIOGRAFIA",
+      "SI EL LIBRO ES MALO",
+      "SI EL LIBRO ES BUENO"
+    ];
+
+    function isHeaderLine(t){
+      const k = normKey(t);
+      return HEADER_PREFIXES.some(p => k.startsWith(p));
     }
 
-    // Permite el formato legado: "MANUALES, EPIC GAMES"
+    function isSectionTitle(t){
+      const k = normKey(t);
+      return SECTION_ORDER.includes(k);
+    }
+
+    // Compatibilidad: "MANUALES, EPIC GAMES" = sección MANUALES, autor EPIC GAMES
     function parseSectionAuthorLine(line){
       const t = (line || "").trim();
       if (!t.includes(",")) return null;
@@ -459,95 +413,36 @@
 
       const section = parts[0];
       const author = parts.slice(1).join(", ").trim();
-      const anchors = new Set([
-        "BIBLIOGRAFÍA","PODCASTS","BLOGS","MANUALES","TEXTOS RELIGIOSOS"
-      ].map(normKey));
-
-      if (anchors.has(normKey(section))) return { section, author };
-      // También aceptar si la primera parte es mayúsculas y corta: probable categoría
-      if (looksUpperish(section) && section.length <= 24) return { section, author };
-
+      if (SECTION_ORDER.includes(normKey(section))) return { section, author };
       return null;
     }
 
-    // Líneas de cabecera que NO son ni autor ni sección
-    const HEADER_KEYS = new Set([
-      "Bibliografía Azul de pantalla",
-      "Templo del dato",
-      "Quizás es mejor la bibliografía que el propio libro.",
-      "Si el libro es malo, la bibliografía siempre queda bien.",
-      "Si el libro es bueno, la bibliografía se atribuye el mérito."
-    ].map(normKey));
-
-    function isSectionHeaderAt(lines, i){
-      const t = (lines[i] || "").trim();
-      if (!t) return false;
-      if (t.startsWith("REF-")) return false;
-      if (HEADER_KEYS.has(normKey(t))) return false;
-      if (parseSectionAuthorLine(t)) return false; // "MANUALES, EPIC GAMES" no es sección
-
-      const prev = (lines[i-1] || "").trim();
-      const next = (lines[i+1] || "").trim();
-      const nextNE = nextNonEmpty(lines, i+1);
-
-      const anchors = new Set([
-        "BIBLIOGRAFÍA",
-        "PODCASTS",
-        "BLOGS",
-        "MANUALES",
-        "TEXTOS RELIGIOSOS"
-      ].map(normKey));
-      if (anchors.has(normKey(t))) return true;
-
-      // Heurística: sección = mayúsculas, aislada y "parece categoría"
-      const upperish = t === t.toUpperCase();
-      const sane = /^[A-ZÁÉÍÓÚÜÑ0-9 &/|:+\-()'.]+$/.test(t);
-      const noCommaSemi = !/[;,]/.test(t);
-      const notSentence = !t.endsWith(".");
-      const shortish = t.length <= 70;
-      const separated = (prev === "" || next === "");
-
-      const nextIsRef = isRefLine(nextNE);
-      const looksCategory = (
-        t.includes(" ") ||
-        /[|/]/.test(t) ||
-        normKey(t).endsWith("S")
-      );
-
-      if (!upperish || !sane || !noCommaSemi || !notSentence || !shortish || !separated) return false;
-      if (nextIsRef && !looksCategory) return false; // evita confundir DEAGEL / BOECIO con sección
-
-      return true;
+    // Ref sort key: REF-017_2 => [17,2]
+    function refKey(ref){
+      const m = String(ref || "").match(/^REF-(\d{3})(?:_(\d+))?$/);
+      if (!m) return [999999, 999999];
+      const a = parseInt(m[1],10);
+      const b = m[2] ? parseInt(m[2],10) : 0;
+      return [a,b];
     }
 
-    function isAuthorLine(line, nextLine){
-      const t = (line || "").trim();
-      if (!t) return false;
-      if (t.startsWith("REF-")) return false;
-      if (HEADER_KEYS.has(normKey(t))) return false;
-      if (isSectionHeaderText(t)) return false;
-
-      // Caso clásico: APELLIDO, Nombre o varios autores con ;
-      if (t.includes(",") || t.includes(";")) return true;
-
-      // Caso autor en mayúsculas sin coma: solo si la siguiente línea es REF
-      if (looksUpperish(t) && isRefLine(nextLine)) return true;
-
-      return false;
+    function refRange(items){
+      if (!items || !items.length) return { first:"", last:"", count:0 };
+      const refs = items.map(it => it.ref).filter(Boolean);
+      if (!refs.length) return { first:"", last:"", count: items.length };
+      refs.sort((x,y)=>{
+        const [ax,bx]=refKey(x), [ay,by]=refKey(y);
+        return ax!==ay ? ax-ay : bx-by;
+      });
+      return { first: refs[0], last: refs[refs.length-1], count: items.length };
     }
 
-    function isSectionHeaderText(t){
-      // Para autor detection, reutilizamos anclas + heurística suave
-      const k = normKey(t);
-      if (["BIBLIOGRAFÍA","PODCASTS","BLOGS","MANUALES","TEXTOS RELIGIOSOS"].map(normKey).includes(k)) return true;
-      // Si parece sección por formato y está aislada, se detecta en isSectionHeaderAt en contexto
-      return false;
+    function authorSortKey(name){
+      return normKey(name);
     }
 
-    // Extrae meta muy suave (no obligatorio)
     function splitMeta(raw){
       const s = (raw || "").trim();
-      // Intento: título hasta primer "(YYYY)" si existe
       const m = s.match(/^(.*?)(\(\d{4}\))?(?:\.\s*)?(.*)?$/);
       const title = (m && m[1]) ? m[1].trim() : s;
       const year = (m && m[2]) ? m[2].replace(/[()]/g,"") : "";
@@ -556,12 +451,39 @@
       return { title, year, publisher };
     }
 
+    function isAuthorLine(line, nextLine, currentSectionName){
+      const t = (line || "").trim();
+      if (!t) return false;
+      if (t.startsWith("REF-")) return false;
+      if (isHeaderLine(t)) return false;
+      if (isSectionTitle(t)) return false;
+      if (parseSectionAuthorLine(t)) return false;
+
+      const nextIsRef = isRefLine(nextLine);
+
+      // En BIBLIOGRAFÍA: estricto (coma/; o MAYÚSCULAS + REF)
+      if (normKey(currentSectionName) === normKey(MAIN_SECTION)){
+        if (t.includes(",") || t.includes(";")) return true;
+        if (t === t.toUpperCase() && nextIsRef) return true;
+        return false;
+      }
+
+      // En otras secciones: si la siguiente es REF, aceptamos como autor aunque sea Title Case (Ej: "El submarino Subversivo")
+      if (nextIsRef && t.length <= 90 && !t.endsWith(".")) return true;
+
+      // fallback clásico
+      if (t.includes(",") || t.includes(";")) return true;
+      if (t === t.toUpperCase() && nextIsRef) return true;
+
+      return false;
+    }
+
     function parseBib(text){
       const rawLines = text.replace(/\r/g,"").split("\n");
       const lines = rawLines.map(l => (l || "").trimEnd());
 
       const sections = [];
-      let currentSection = { name:"BIBLIOGRAFÍA", id:"bibliografia", authors:[] };
+      let currentSection = { name: MAIN_SECTION, id: slug(MAIN_SECTION), authors:[] };
       sections.push(currentSection);
 
       let currentAuthor = null;
@@ -571,25 +493,22 @@
         const line = (lines[i] || "").trim();
         if (!line) continue;
 
-        // Ignora cabeceras
-        if (HEADER_KEYS.has(normKey(line))) continue;
+        if (isHeaderLine(line)) continue;
 
-        // Permite formato legado: "MANUALES, EPIC GAMES"
+        // "MANUALES, EPIC GAMES"
         const legacy = parseSectionAuthorLine(line);
         if (legacy){
-          const secName = legacy.section;
-          // crea/cambia sección
-          currentSection = { name: secName, id: slug(secName), authors:[] };
+          currentSection = { name: legacy.section, id: slug(legacy.section), authors:[] };
           sections.push(currentSection);
 
-          currentAuthor = { name: legacy.author, id: slug(legacy.author), items:[] };
+          currentAuthor = { name: legacy.author, id: `${currentSection.id}--${slug(legacy.author)}`, items:[] };
           currentSection.authors.push(currentAuthor);
           lastItem = null;
           continue;
         }
 
-        // Sección (contextual)
-        if (isSectionHeaderAt(lines, i)){
+        // Sección explícita
+        if (isSectionTitle(line)){
           currentSection = { name: line, id: slug(line), authors:[] };
           sections.push(currentSection);
           currentAuthor = null;
@@ -597,23 +516,24 @@
           continue;
         }
 
-        // Autor multilínea (ej: INTERNATIONAL + FACT-CHECKING NETWORK...)
-        const next1 = nextNonEmpty(lines, i+1);
-        const idxNext1 = lines.findIndex((_, idx) => idx > i && (lines[idx] || "").trim() === next1);
-        const next2 = nextNonEmpty(lines, (idxNext1 >= 0 ? idxNext1+1 : i+2));
-        if (looksUpperish(line) && looksUpperish(next1) && isRefLine(next2)){
-          const combined = (line + " " + next1).replace(/\s+/g," ").trim();
-          currentAuthor = { name: combined, id: slug(combined), items:[] };
+        const nextLine = nextNonEmpty(lines, i+1);
+
+        // Autor multilinea (INTERNATIONAL / FACT-CHECKING NETWORK...)
+        const n1 = nextNonEmpty(lines, i+1);
+        const idxN1 = lines.findIndex((_, idx) => idx > i && (lines[idx] || "").trim() === n1);
+        const n2 = nextNonEmpty(lines, (idxN1 >= 0 ? idxN1+1 : i+2));
+        if (line === line.toUpperCase() && n1 && n1 === n1.toUpperCase() && isRefLine(n2)){
+          const combined = (line + " " + n1).replace(/\s+/g," ").trim();
+          currentAuthor = { name: combined, id: `${currentSection.id}--${slug(combined)}`, items:[] };
           currentSection.authors.push(currentAuthor);
           lastItem = null;
-          // saltar la siguiente línea (next1)
-          i = (idxNext1 >= 0 ? idxNext1 : i+1);
+          i = (idxN1 >= 0 ? idxN1 : i+1);
           continue;
         }
 
-        // Autor normal
-        if (isAuthorLine(line, next1)){
-          currentAuthor = { name: line, id: slug(line), items:[] };
+        // Autor
+        if (isAuthorLine(line, nextLine, currentSection.name)){
+          currentAuthor = { name: line, id: `${currentSection.id}--${slug(line)}`, items:[] };
           currentSection.authors.push(currentAuthor);
           lastItem = null;
           continue;
@@ -622,8 +542,11 @@
         // REF
         if (isRefLine(line)){
           if (!currentAuthor){
-            // Si no hay autor, crea uno de contingencia
-            currentAuthor = { name:"SIN AUTOR (REVISAR TXT)", id:"sin-autor", items:[] };
+            // En secciones no principales, es más limpio agrupar en VARIOS
+            const fallbackName = (normKey(currentSection.name) === normKey(MAIN_SECTION))
+              ? "SIN AUTOR (REVISAR TXT)"
+              : "VARIOS";
+            currentAuthor = { name: fallbackName, id: `${currentSection.id}--${slug(fallbackName)}`, items:[] };
             currentSection.authors.push(currentAuthor);
           }
           const m = line.match(/^(REF-\d{3}(?:_\d+)?)\.\s*(.*)$/);
@@ -631,50 +554,48 @@
           const raw = m ? m[2] : line.replace(/^REF-\d{3}(?:_\d+)?\.\s*/,"");
           const meta = splitMeta(raw);
 
-          const item = {
-            ref,
-            raw,
-            title: meta.title,
-            year: meta.year,
-            publisher: meta.publisher
-          };
+          const item = { ref, raw, title: meta.title, year: meta.year, publisher: meta.publisher };
           currentAuthor.items.push(item);
           lastItem = item;
           continue;
         }
 
-        // Continuación: si una entrada se partió en varias líneas
+        // Continuación (líneas partidas)
         if (lastItem){
           lastItem.raw = (lastItem.raw + " " + line).replace(/\s+/g," ").trim();
           const meta = splitMeta(lastItem.raw);
           lastItem.title = meta.title;
           lastItem.year = meta.year;
           lastItem.publisher = meta.publisher;
-          continue;
         }
-
-        // Si no hay contexto, lo ignoramos
       }
 
       return sections;
     }
 
-    function sortSectionsFixed(sections){
-      const ORDER = [
-        "BIBLIOGRAFÍA",
-        "PODCASTS",
-        "BLOGS",
-        "MANUALES",
-        "TEXTOS RELIGIOSOS"
-      ].map(normKey);
-
-      const pos = new Map(ORDER.map((k,i)=>[k,i]));
+    function sortAll(sections){
+      // Orden secciones fijo: BIBLIOGRAFÍA primero, el resto después
+      const pos = new Map(SECTION_ORDER.map((k,i)=>[k,i]));
       sections.sort((a,b)=>{
         const pa = pos.has(normKey(a.name)) ? pos.get(normKey(a.name)) : 999;
         const pb = pos.has(normKey(b.name)) ? pos.get(normKey(b.name)) : 999;
         if (pa !== pb) return pa - pb;
         return (a.name||"").localeCompare((b.name||""), "es", { sensitivity:"base" });
       });
+
+      // Orden autores e items
+      for (const s of sections){
+        for (const a of s.authors){
+          a.items.sort((x,y)=>{
+            const [ax,bx]=refKey(x.ref), [ay,by]=refKey(y.ref);
+            if (ax!==ay) return ax-ay;
+            if (bx!==by) return bx-by;
+            return (x.raw||"").localeCompare((y.raw||""), "es", { sensitivity:"base" });
+          });
+        }
+        s.authors.sort((x,y)=> authorSortKey(x.name).localeCompare(authorSortKey(y.name), "es", { sensitivity:"base" }));
+      }
+
       return sections;
     }
 
@@ -688,8 +609,27 @@
     }
 
     // ===== Render =====
-    function renderTOC(sections){
-      const el = document.getElementById("toc");
+    function renderSidebarAuthors(mainSection){
+      const el = document.getElementById("tocAuthors");
+      el.innerHTML = "";
+
+      if (!mainSection || !mainSection.authors.length){
+        el.innerHTML = `<div class="empty">Sin autores en BIBLIOGRAFÍA (o filtro sin resultados).</div>`;
+        return;
+      }
+
+      for (const a of mainSection.authors){
+        const rr = refRange(a.items);
+        const refText = rr.first ? (rr.first === rr.last ? rr.first : `${rr.first}–${rr.last}`) : "";
+        const link = document.createElement("a");
+        link.href = "#" + a.id;
+        link.innerHTML = `${escapeHtml(a.name)}${refText ? `<small>${escapeHtml(refText)}</small>` : ""}`;
+        el.appendChild(link);
+      }
+    }
+
+    function renderSidebarSections(sections){
+      const el = document.getElementById("tocSections");
       el.innerHTML = "";
 
       for (const s of sections){
@@ -698,6 +638,13 @@
         a.textContent = s.name;
         el.appendChild(a);
       }
+    }
+
+    function authorSummaryChip(author){
+      const rr = refRange(author.items);
+      const refText = rr.first ? (rr.first === rr.last ? rr.first : `${rr.first}–${rr.last}`) : "";
+      const count = rr.count || 0;
+      return refText ? `${refText} · ${count}` : `${count} refs`;
     }
 
     function renderContent(sections){
@@ -711,13 +658,12 @@
 
         const h2 = document.createElement("h2");
         h2.textContent = s.name;
-
         sec.appendChild(h2);
 
         if (!s.authors.length){
           const empty = document.createElement("div");
           empty.className = "empty";
-          empty.textContent = "Sección vacía. Si esto no es intencional, revisa el formato del TXT.";
+          empty.textContent = "Sección vacía. Si no es intencional, revisa el TXT.";
           sec.appendChild(empty);
           root.appendChild(sec);
           continue;
@@ -729,13 +675,14 @@
           det.id = a.id;
 
           const sum = document.createElement("summary");
+
           const left = document.createElement("div");
           left.className = "authorName";
           left.textContent = a.name;
 
           const right = document.createElement("div");
           right.className = "authorCount";
-          right.textContent = (a.items.length || 0) + " refs";
+          right.textContent = authorSummaryChip(a);
 
           sum.appendChild(left);
           sum.appendChild(right);
@@ -747,7 +694,7 @@
           for (const it of a.items){
             const row = document.createElement("div");
             row.className = "item";
-            row.id = slug(it.ref || it.title || (a.name + "-x"));
+            row.id = `${a.id}--${slug(it.ref || it.title || "x")}`;
 
             const ref = document.createElement("div");
             ref.className = "ref";
@@ -774,7 +721,6 @@
       const h = (location.hash || "").replace("#","").trim();
       if (!h) return;
 
-      // abrir sección o autor si existe
       const el = document.getElementById(h);
       if (!el) return;
 
@@ -783,16 +729,19 @@
         el.scrollIntoView({behavior:"smooth", block:"start"});
         return;
       }
-
-      // si es sección, ok
       el.scrollIntoView({behavior:"smooth", block:"start"});
+
+      // si hash apunta a una fila item (div.item), abre su details padre
+      if (el.classList && el.classList.contains("item")){
+        const parentDetails = el.closest("details.author");
+        if (parentDetails) parentDetails.open = true;
+      }
     }
 
     function applyFilter(sections, query){
       const q = normKey(query || "");
       if (!q) return sections;
 
-      // Filtra autores/items, preserva secciones si queda algo
       const out = [];
       for (const s of sections){
         const ns = { ...s, authors: [] };
@@ -822,35 +771,34 @@
 
         const text = await res.text();
         let sections = parseBib(text);
-
-        // Normaliza: elimina sección inicial vacía duplicada si el txt empieza con BIBLIOGRAFÍA como sección
-        sections = sections.filter((s, idx) => !(idx === 0 && normKey(s.name) === normKey("BIBLIOGRAFÍA") && s.authors.length === 0));
-
-        sections = sortSectionsFixed(sections);
+        sections = sortAll(sections);
 
         const counts = countAll(sections);
         document.getElementById("countAuthors").textContent = "Autores: " + counts.authors;
         document.getElementById("countRefs").textContent = "Refs: " + counts.refs;
 
-        renderTOC(sections);
+        const main = sections.find(s => normKey(s.name) === normKey(MAIN_SECTION));
+        renderSidebarAuthors(main);
+        renderSidebarSections(sections);
+
         renderContent(sections);
 
         loadState.className = "ok";
         loadState.textContent = "Listo";
 
-        // Hash navigation
         setTimeout(openFromHash, 50);
         window.addEventListener("hashchange", () => setTimeout(openFromHash, 30));
 
-        // Search
         const input = document.getElementById("q");
         const clear = document.getElementById("clear");
 
         function rerender(){
           const filtered = applyFilter(sections, input.value);
-          renderTOC(filtered);
+          const mainF = filtered.find(s => normKey(s.name) === normKey(MAIN_SECTION));
+          renderSidebarAuthors(mainF);
+          renderSidebarSections(filtered);
           renderContent(filtered);
-          // si hay filtro, abre los details para que se vea el match
+
           if ((input.value || "").trim()){
             document.querySelectorAll("details.author").forEach(d => d.open = true);
           }
@@ -865,11 +813,10 @@
         document.getElementById("content").innerHTML = `
           <div class="empty">
             <div style="margin-bottom:8px"><b>No pude cargar bibliografia.txt</b></div>
-            <div style="margin-bottom:8px">Causas típicas:</div>
             <ul style="margin:0; padding-left:18px; color: rgba(233,236,255,.72)">
-              <li>El archivo no está en la raíz del repo (mismo nivel que index.html).</li>
-              <li>Se llama distinto (debe ser <b>bibliografia.txt</b>).</li>
-              <li>GitHub Pages aún no ha desplegado el último commit.</li>
+              <li>Debe estar en la raíz del repo, junto a <b>index.html</b>.</li>
+              <li>Nombre exacto: <b>bibliografia.txt</b>.</li>
+              <li>Tras el push, espera el despliegue de Pages (a veces tarda un poco).</li>
             </ul>
             <div style="margin-top:10px; color: rgba(233,236,255,.62)">${escapeHtml(err.message || String(err))}</div>
           </div>
