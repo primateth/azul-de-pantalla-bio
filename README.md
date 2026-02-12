@@ -25,7 +25,7 @@ Yves Klein, 1957
 ## Sitio publicado (GitHub Pages)
 
 
-- `https://primateth.github.io/azul-de-pantalla-bio/`
+- `[https://primateth.github.io/azul-de-pantalla-bio/]`
 
 
 **El lector no debería pensar.**  
