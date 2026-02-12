@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Azul de Pantalla · Bibliografía</title>
-  <meta name="description" content="Bibliografía de Azul de Pantalla. Si no te carga, no existes." />
+  <meta name="description" content="Bibliografía de Azul de Pantalla." />
   <meta name="theme-color" content="#0b0c22" />
   <style>
     :root{
@@ -84,7 +84,6 @@
       user-select:none;
     }
     .toggle input{ transform: translateY(1px); }
-
     .stats{ color:var(--muted); font-size:13px; }
 
     .toc{ display:flex; gap:8px; flex-wrap:wrap; margin-top:10px; }
@@ -160,14 +159,11 @@
       font-size:13px;
       color:rgba(233,236,255,.78);
     }
-
     .note{ color:var(--muted); font-size:13px; }
     .hide{ display:none !important; }
 
     body.clean .meta-year,
-    body.clean .meta-pub{
-      display:none;
-    }
+    body.clean .meta-pub{ display:none; }
   </style>
 </head>
 
@@ -175,7 +171,7 @@
   <div class="wrap" id="top">
     <div class="top">
       <div class="badge"><span class="dot"></span><span>Azul de Pantalla · Bibliografía</span></div>
-      <div class="mono">Fuente: <span class="mono">/bibliografia.txt</span> · Clasificación: ABIERTA</div>
+      <div class="mono">Fuente: <span class="mono">/bibliografia.txt</span></div>
     </div>
 
     <h1>Bibliografía</h1>
@@ -189,7 +185,7 @@
       <div class="toolbar">
         <input id="q" type="search" placeholder="Buscar por autor, título, editorial, año, REF-…" autocomplete="off" />
         <div class="toggles">
-          <label class="toggle" title="Oculta años y editoriales en pantalla">
+          <label class="toggle" title="Oculta años y editoriales">
             <input id="clean" type="checkbox" />
             <span>Modo limpio</span>
           </label>
@@ -201,21 +197,14 @@
       <div id="out" style="margin-top:10px;"></div>
 
       <p class="note">
-        Enlace directo para QR: <span class="mono">https://primateth.github.io/azul-de-pantalla-bio/#bibliografia</span>
+        QR recomendado: <span class="mono">https://primateth.github.io/azul-de-pantalla-bio/#bibliografia</span>
       </p>
-    </div>
-
-    <div class="card">
-      <div class="note">
-        Si quieres saltar a un autor concreto: usa <span class="mono">#slug</span> (ej: <span class="mono">#epic-games</span>).
-      </div>
     </div>
   </div>
 
   <script>
     const $ = (id) => document.getElementById(id);
 
-    // slug estable para hashes: #epic-games, #ibn-asad, etc.
     function slug(s){
       return (s || "")
         .trim()
@@ -233,7 +222,7 @@
       return /^REF-\d{3}\./.test((line || "").trim());
     }
 
-    // Secciones: solo explícitas (no confundimos autores en mayúsculas con sección)
+    // Secciones explícitas (no confundimos autores en mayúsculas con sección)
     const SECTION_SET = new Set([
       "MANUALES",
       "WIKI|PODCAST|BLOG",
@@ -258,10 +247,8 @@
       if (!t) return false;
       if (t.startsWith("REF-")) return false;
 
-      // si contiene '|' es sección seguro
       if (t.includes("|")) return true;
 
-      // lista blanca
       const k = normKey(t);
       if (SECTION_SET.has(t.toUpperCase())) return true;
       if (SECTION_SET.has(k)) return true;
@@ -289,17 +276,31 @@
       const s = (t || "").trim();
       const up = s === s.toUpperCase();
       const sane = /^[A-ZÁÉÍÓÚÜÑ0-9 .,'&\-;()]+$/.test(s);
-      return up && sane && s.length <= 90;
+      return up && sane && s.length <= 110;
     }
 
-    // Autor si:
+    function cleanAuthorName(name){
+      let s = (name || "").trim().replace(/\s+/g, " ");
+      // arregla "IBN ,ASAD" -> "IBN, ASAD" (sin inventar)
+      s = s.replace(/\s*,\s*/g, ", ");
+      // si es TODO MAYÚSCULAS y parece un coma-typo corto tipo "IBN, ASAD", lo unimos
+      if (/^[A-ZÁÉÍÓÚÜÑ]{2,8}, [A-ZÁÉÍÓÚÜÑ]{2,12}$/.test(s)) {
+        s = s.replace(", ", " ");
+      }
+      return s;
+    }
+
+    // Caso autor si:
     // - Tiene coma o ';' (clásico)
-    // - O está en mayúsculas y la siguiente línea es REF (EPIC GAMES, BOECIO, DEAGEL…)
+    // - O está en mayúsculas y la siguiente línea es REF (EPIC GAMES, DEAGEL…)
     function isAuthorLine(line, nextLine){
       const t = (line || "").trim();
       if (!t) return false;
       if (t.startsWith("REF-")) return false;
       if (isSectionLine(t)) return false;
+
+      // Evita que "PODCAST, 1" se trate como autor literal (lo gestionamos como cabecera compuesta)
+      if (/^(PODCAST|BLOG)\s*,\s*\d+$/i.test(t)) return false;
 
       if (t.includes(",") || t.includes(";")) return true;
 
@@ -308,10 +309,9 @@
       return false;
     }
 
-    // Extrae título + (año) + editorial si el formato encaja
+    // Extrae título + (año) + editorial si encaja
     function splitMeta(text){
       const t = (text || "").trim();
-      // año o rango o s. f.
       const re = /^(.*?)(\(\s*(?:\d{4}(?:\s*[–-]\s*\d{4})?|s\.\s*f\.)\s*\))\.\s*(.*)$/i;
       const m = t.match(re);
       if (!m) return { title: t, year: "", publisher: "" };
@@ -322,7 +322,6 @@
     }
 
     function buildCopyText(it){
-      // AUTOR - REF-XXX. Título. (Año). Editorial.
       const parts = [];
       if (it.author) parts.push(it.author);
       const core = `${it.ref}. ${it.title || it.raw}`.trim();
@@ -332,6 +331,35 @@
       if (it.publisher) extras.push(it.publisher);
       if (extras.length) parts.push(extras.join(". "));
       return parts.join(" - ").replace(/\s+/g," ").trim();
+    }
+
+    // Detecta cabeceras compuestas:
+    // - "PODCAST, 1" => autor PODCAST (ignora el contador)
+    // - "BLOG,1" => autor BLOG
+    // - "MANUALES, EPIC GAMES" => sección MANUALES + autor EPIC GAMES
+    // - "HTMLs, TEXTOS RELIGIOSOS" => sección HTMLs + autor TEXTOS RELIGIOSOS
+    function parseCompositeHeader(line){
+      const t = (line || "").trim();
+      const m = t.match(/^([^,]+),\s*(.+)$/);
+      if (!m) return null;
+
+      const left = m[1].trim();
+      const right = m[2].trim();
+
+      const leftKey = normKey(left);
+
+      if (leftKey === "PODCAST" || leftKey === "BLOG"){
+        // Si es "PODCAST, 1" usamos PODCAST como autor
+        if (/^\d+$/.test(right)) return { type:"author_only", author: leftKey };
+        // Si no es número, lo tratamos como sección + autor (por si algún día haces "PODCAST, Canal X")
+        return { type:"section_author", section: leftKey, author: right };
+      }
+
+      if (leftKey === "MANUALES" || leftKey === "HTMLS" || leftKey === "HTMLS " || leftKey === "HTMLs".toUpperCase()){
+        return { type:"section_author", section: (leftKey === "HTMLS" ? "HTMLs" : leftKey), author: right };
+      }
+
+      return null;
     }
 
     function parseBib(text){
@@ -349,7 +377,6 @@
         const line = (lines[i] || "").trim();
         if (!line) continue;
 
-        // Ignora epígrafes si están dentro del txt
         if (
           line.startsWith("Quizás es mejor") ||
           line.startsWith("Si el libro es malo") ||
@@ -358,6 +385,32 @@
 
         const nextLine = nextNonEmpty(lines, i+1);
 
+        // 1) Cabeceras compuestas (ARREGLA tu final)
+        const comp = parseCompositeHeader(line);
+        if (comp){
+          if (comp.type === "author_only"){
+            const name = cleanAuthorName(comp.author);
+            currentAuthor = { name, id: slug(name), items:[] };
+            currentSection.authors.push(currentAuthor);
+            lastItem = null;
+            continue;
+          }
+          if (comp.type === "section_author"){
+            const sectionName = comp.section;
+            // si no estamos ya en esa sección, la creamos
+            if (normKey(currentSection.name) !== normKey(sectionName)){
+              currentSection = { name: sectionName, authors:[] };
+              sections.push(currentSection);
+            }
+            const authorName = cleanAuthorName(comp.author);
+            currentAuthor = { name: authorName, id: slug(authorName), items:[] };
+            currentSection.authors.push(currentAuthor);
+            lastItem = null;
+            continue;
+          }
+        }
+
+        // 2) Secciones normales
         if (isSectionLine(line)){
           currentSection = { name: line, authors:[] };
           sections.push(currentSection);
@@ -366,19 +419,22 @@
           continue;
         }
 
+        // 3) Autores normales
         if (isAuthorLine(line, nextLine)){
-          currentAuthor = { name: line, id: slug(line), items:[] };
+          const name = cleanAuthorName(line);
+          currentAuthor = { name, id: slug(name), items:[] };
           currentSection.authors.push(currentAuthor);
           lastItem = null;
           continue;
         }
 
+        // 4) Referencias
         if (isRefLine(line)){
-          // Si falta autor, intenta usar la línea anterior no vacía como autor (si parece autor)
           if (!currentAuthor){
             const prev = prevNonEmpty(lines, i-1);
             if (prev && !prev.startsWith("REF-") && !isSectionLine(prev) && looksUpperishAuthor(prev)){
-              currentAuthor = { name: prev, id: slug(prev), items:[] };
+              const prevName = cleanAuthorName(prev);
+              currentAuthor = { name: prevName, id: slug(prevName), items:[] };
               currentSection.authors.push(currentAuthor);
             } else {
               currentAuthor = { name:"SIN AUTOR (REVISAR TXT)", id:"sin-autor-revisar", items:[] };
@@ -398,8 +454,7 @@
             title: meta.title,
             year: meta.year,
             publisher: meta.publisher,
-            author: currentAuthor.name,
-            copy: ""
+            author: currentAuthor.name
           };
           item.copy = buildCopyText(item);
 
@@ -408,7 +463,7 @@
           continue;
         }
 
-        // Continuación de texto para refs partidas en varias líneas
+        // 5) Continuaciones de una referencia partida en varias líneas
         if (lastItem){
           lastItem.raw = (lastItem.raw + " " + line).replace(/\s+/g," ").trim();
           const meta = splitMeta(lastItem.raw);
@@ -498,6 +553,7 @@
             actions.appendChild(btn);
             row.appendChild(left);
             row.appendChild(actions);
+
             li.appendChild(row);
             ol.appendChild(li);
           }
@@ -513,8 +569,8 @@
 
       hookSearch();
       hookCopyButtons();
-      jumpToHash();         // primera navegación
-      hookHashChange();     // navegación al cambiar hash
+      jumpToHash();
+      hookHashChange();
     }
 
     function hookSearch(){
@@ -599,7 +655,6 @@
       });
     }
 
-    // Abre el details correcto si el hash apunta a un autor (#epic-games)
     function jumpToHash(){
       const h = (location.hash || "").trim();
       if (!h) return;
@@ -607,7 +662,6 @@
       const el = document.querySelector(h);
       if (!el) return;
 
-      // Si es un autor dentro de summary, subimos al details y lo abrimos
       const det = el.closest("details");
       if (det) det.open = true;
 
@@ -621,7 +675,6 @@
     async function main(){
       hookCleanToggle();
 
-      // cache-buster para evitar ver versiones viejas de bibliografia.txt
       const url = "bibliografia.txt?v=" + Date.now();
       const res = await fetch(url);
       if (!res.ok){
@@ -637,3 +690,4 @@
   </script>
 </body>
 </html>
+
