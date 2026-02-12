@@ -697,15 +697,28 @@ REF-293. The Age of Surveillance Capitalism. (2019). PublicAffairs.
 REF-294. La era del capitalismo de la vigilancia. (2020). Ediciones Paidós.
 
 PODCASTS
-REF-295. El informe de Iron Mountain: sobre la posibilidad y conveniencia de la paz. - AUDIOLIBRO
-REF-296. IVoox IA con Jon Hernandez
-REF-297. IVoox El submarino Subversivo
-REF-298. Svali interview (parte 1)
-REF-299. IVoox - ESTO SALDRÁ BIEN
-REF-300. Orígenes - Contra Celso - AUDIOLIBRO
+
+AUDIOLIBRO
+REF-295. El informe de Iron Mountain: sobre la posibilidad y conveniencia de la paz. 
+
+Hernandez, Jon
+REF-296. IVoox IA con 
+
+El submarino Subversivo
+REF-297. IVoox 
+
+Svali interview 
+REF-298. (parte 1)
+
+ESTO SALDRÁ BIEN
+REF-299. IVoox 
+
+Contra, Celso
+REF-300. Orígenes  - AUDIOLIBRO
 
 BLOGS
-REF-300. The Revealing.
+
+REF-301. The Revealing.
 REF-302. Delirious Heterotopias. 
 REF-302_1. BIBLIOTECA PLEYADES
 
