@@ -1,151 +1,639 @@
-function isRefLine(line){ return /^REF-\d{3}\./.test(line.trim()); }
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Azul de Pantalla · Bibliografía</title>
+  <meta name="description" content="Bibliografía de Azul de Pantalla. Si no te carga, no existes." />
+  <meta name="theme-color" content="#0b0c22" />
+  <style>
+    :root{
+      color-scheme: dark;
+      --bg:#050616;
+      --panel:rgba(18,20,56,.35);
+      --panel2:rgba(10,12,34,.55);
+      --border:rgba(110,130,255,.22);
+      --text:#e9ecff;
+      --muted:rgba(233,236,255,.72);
+      --link:#6aa2ff;
+      --btnbg:rgba(10,12,34,.70);
+      --btnbd:rgba(110,130,255,.28);
+    }
+    body{
+      margin:0;
+      font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+      background:var(--bg);
+      color:var(--text);
+      line-height:1.55;
+    }
+    a{ color:var(--link); text-decoration:none; }
+    a:hover{ text-decoration:underline; }
 
-const SECTION_SET = new Set([
-  "MANUALES",
-  "WIKI|PODCAST|BLOG",
-  "WIKI|PODCAST|BLOGS",
-  "DOCUMENTOS|ARTÍCULOS|ENTORNOS",
-  "DOCUMENTOS|ARTICULOS|ENTORNOS",
-  "DOCUMENTOS|ARTÍCULOS|ENTORNO",
-  "DOCUMENTOS|ARTICULOS|ENTORNO",
-  "HTMLS",
-  "HTMLs"
-]);
+    .wrap{ max-width:1100px; margin:0 auto; padding:34px 18px 60px; }
+    .top{ display:flex; gap:12px; flex-wrap:wrap; align-items:center; justify-content:space-between; }
+    .badge{
+      display:inline-flex; align-items:center; gap:10px;
+      padding:8px 12px;
+      border:1px solid var(--border);
+      border-radius:999px;
+      background:var(--panel2);
+      letter-spacing:.6px;
+      text-transform:uppercase;
+      font-size:13px;
+    }
+    .dot{
+      width:8px; height:8px; border-radius:999px;
+      background:#2b3cff;
+      box-shadow:0 0 0 4px rgba(43,60,255,.15);
+    }
+    h1{ margin:14px 0 6px; font-size:40px; }
+    .sub{ margin:0 0 16px; color:var(--muted); max-width:95ch; }
 
-function normKey(s){
-  return s.trim()
-    .normalize("NFD").replace(/[\u0300-\u036f]/g,"") // quita tildes
-    .toUpperCase();
-}
+    .card{
+      margin-top:14px;
+      padding:16px;
+      border:1px solid var(--border);
+      border-radius:18px;
+      background:var(--panel);
+    }
 
-function isSectionLine(line){
-  const t = line.trim();
-  if (!t) return false;
-  if (t.startsWith("REF-")) return false;
+    .toolbar{
+      display:flex; gap:10px; flex-wrap:wrap;
+      align-items:center; justify-content:space-between;
+    }
+    input[type="search"]{
+      width:min(520px,100%);
+      padding:10px 12px;
+      border-radius:12px;
+      border:1px solid rgba(110,130,255,.28);
+      background:rgba(10,12,34,.55);
+      color:var(--text);
+      outline:none;
+    }
+    input[type="search"]::placeholder{ color:rgba(233,236,255,.5); }
 
-  // Sección explícita por '|' o por lista blanca
-  if (t.includes("|")) return true;
+    .toggles{ display:flex; gap:10px; flex-wrap:wrap; align-items:center; }
+    .toggle{
+      display:inline-flex; gap:8px; align-items:center;
+      padding:8px 10px;
+      border:1px solid rgba(110,130,255,.22);
+      border-radius:12px;
+      background:rgba(10,12,34,.35);
+      color:rgba(233,236,255,.86);
+      font-size:13px;
+      user-select:none;
+    }
+    .toggle input{ transform: translateY(1px); }
 
-  const k = normKey(t);
-  // Permitimos variantes con/sin tildes
-  if (SECTION_SET.has(t.trim().toUpperCase()) || SECTION_SET.has(k.replace("Í","I").replace("Ó","O"))) return true;
-  if (SECTION_SET.has(k)) return true;
+    .stats{ color:var(--muted); font-size:13px; }
 
-  return false;
-}
+    .toc{ display:flex; gap:8px; flex-wrap:wrap; margin-top:10px; }
+    .pill{
+      padding:6px 10px;
+      border:1px solid rgba(110,130,255,.22);
+      border-radius:999px;
+      background:rgba(10,12,34,.35);
+      font-size:12px;
+      color:rgba(233,236,255,.82);
+    }
 
-// helper: siguiente línea no vacía
-function nextNonEmpty(lines, i){
-  for (let j=i; j<lines.length; j++){
-    const t = lines[j].trim();
-    if (t) return t;
-  }
-  return "";
-}
+    details{
+      border:1px solid rgba(110,130,255,.18);
+      border-radius:16px;
+      background:rgba(10,12,34,.25);
+      padding:10px 12px;
+      margin:10px 0;
+    }
+    summary{ cursor:pointer; list-style:none; }
+    summary::-webkit-details-marker{ display:none; }
 
-function looksUpperishAuthor(t){
-  // Autores tipo BOECIO / EPIC GAMES / DEAGEL / IBN ASAD
-  // Permitimos mayúsculas + espacios + puntos + guiones + & + apóstrofes
-  const up = t === t.toUpperCase();
-  const sane = /^[A-ZÁÉÍÓÚÜÑ0-9 .,'&\-;()]+$/.test(t);
-  return up && sane && t.length <= 90;
-}
+    .sumline{ display:flex; align-items:baseline; justify-content:space-between; gap:10px; flex-wrap:wrap; }
+    .author{ font-weight:700; letter-spacing:.2px; }
+    .count{ color:var(--muted); font-size:13px; }
 
-function isAuthorLine(line, nextLine){
-  const t = line.trim();
-  if (!t) return false;
-  if (t.startsWith("REF-")) return false;
-  if (isSectionLine(t)) return false;
+    ol{ margin:10px 0 0; padding-left:18px; }
+    li{ margin:10px 0; }
 
-  // Caso clásico: APELLIDO, Nombre  o varios autores con ;
-  if (t.includes(",") || t.includes(";")) return true;
+    .row{
+      display:flex;
+      gap:10px;
+      align-items:flex-start;
+      justify-content:space-between;
+      flex-wrap:wrap;
+    }
+    .left{ min-width:min(780px,100%); flex: 1 1 620px; }
+    .ref{
+      display:inline-block;
+      min-width:84px;
+      font-family:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono",monospace;
+      font-size:13px;
+      color:rgba(233,236,255,.78);
+    }
+    .title{ color:rgba(233,236,255,.94); }
+    .meta-year, .meta-pub{
+      color:rgba(233,236,255,.72);
+      font-size:13px;
+      margin-left:8px;
+    }
+    .meta-year{
+      font-family:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono",monospace;
+    }
 
-  // Caso autor en mayúsculas sin coma (EPIC GAMES, BOECIO, DEAGEL...)
-  // Solo si la siguiente línea es una REF, para no confundir con notas.
-  if (looksUpperishAuthor(t) && isRefLine(nextLine)) return true;
+    .actions{ display:flex; gap:8px; align-items:center; flex:0 0 auto; }
+    button.copy{
+      padding:8px 10px;
+      border-radius:12px;
+      border:1px solid var(--btnbd);
+      background:var(--btnbg);
+      color:rgba(233,236,255,.92);
+      cursor:pointer;
+      font-size:13px;
+      white-space:nowrap;
+    }
+    button.copy:hover{ filter: brightness(1.08); }
+    button.copy:active{ transform: translateY(1px); }
+    button.copy.ok{ border-color: rgba(150,255,200,.35); }
+    button.copy.bad{ border-color: rgba(255,150,170,.35); }
 
-  return false;
-}
+    .mono{
+      font-family:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono",monospace;
+      font-size:13px;
+      color:rgba(233,236,255,.78);
+    }
 
-function parseBib(text){
-  const rawLines = text.replace(/\r/g,"").split("\n");
-  const lines = rawLines.map(l => l.trimEnd());
+    .note{ color:var(--muted); font-size:13px; }
+    .hide{ display:none !important; }
 
-  const sections = [];
-  let currentSection = { name:"BIBLIOGRAFÍA", authors:[] };
-  sections.push(currentSection);
+    body.clean .meta-year,
+    body.clean .meta-pub{
+      display:none;
+    }
+  </style>
+</head>
 
-  let currentAuthor = null;
-  let lastItem = null;
+<body>
+  <div class="wrap" id="top">
+    <div class="top">
+      <div class="badge"><span class="dot"></span><span>Azul de Pantalla · Bibliografía</span></div>
+      <div class="mono">Fuente: <span class="mono">/bibliografia.txt</span> · Clasificación: ABIERTA</div>
+    </div>
 
-  for (let i=0; i<lines.length; i++){
-    const line = (lines[i] || "").trim();
-    if (!line) continue;
+    <h1>Bibliografía</h1>
+    <p class="sub">
+      Quizás es mejor la bibliografía que el propio libro.
+      Si el libro es malo, la bibliografía siempre queda bien.
+      Si el libro es bueno, la bibliografía se atribuye el mérito.
+    </p>
 
-    // Ignora epígrafe repetido si está dentro del txt
-    if (
-      line.startsWith("Quizás es mejor") ||
-      line.startsWith("Si el libro es malo") ||
-      line.startsWith("Si el libro es bueno")
-    ) continue;
+    <div class="card" id="bibliografia">
+      <div class="toolbar">
+        <input id="q" type="search" placeholder="Buscar por autor, título, editorial, año, REF-…" autocomplete="off" />
+        <div class="toggles">
+          <label class="toggle" title="Oculta años y editoriales en pantalla">
+            <input id="clean" type="checkbox" />
+            <span>Modo limpio</span>
+          </label>
+        </div>
+        <div class="stats" id="stats">Cargando…</div>
+      </div>
 
-    const nextLine = nextNonEmpty(lines, i+1);
+      <div class="toc" id="toc"></div>
+      <div id="out" style="margin-top:10px;"></div>
 
-    if (isSectionLine(line)){
-      currentSection = { name: line, authors:[] };
+      <p class="note">
+        Enlace directo para QR: <span class="mono">https://primateth.github.io/azul-de-pantalla-bio/#bibliografia</span>
+      </p>
+    </div>
+
+    <div class="card">
+      <div class="note">
+        Si quieres saltar a un autor concreto: usa <span class="mono">#slug</span> (ej: <span class="mono">#epic-games</span>).
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const $ = (id) => document.getElementById(id);
+
+    // slug estable para hashes: #epic-games, #ibn-asad, etc.
+    function slug(s){
+      return (s || "")
+        .trim()
+        .toLowerCase()
+        .normalize("NFD").replace(/[\u0300-\u036f]/g,"")
+        .replace(/[^a-z0-9]+/g,"-")
+        .replace(/^-+|-+$/g,"");
+    }
+
+    function escapeHtml(s){
+      return (s || "").replace(/[&<>"']/g, (c)=>({ "&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;" }[c]));
+    }
+
+    function isRefLine(line){
+      return /^REF-\d{3}\./.test((line || "").trim());
+    }
+
+    // Secciones: solo explícitas (no confundimos autores en mayúsculas con sección)
+    const SECTION_SET = new Set([
+      "MANUALES",
+      "WIKI|PODCAST|BLOG",
+      "WIKI|PODCAST|BLOGS",
+      "DOCUMENTOS|ARTÍCULOS|ENTORNOS",
+      "DOCUMENTOS|ARTICULOS|ENTORNOS",
+      "DOCUMENTOS|ARTÍCULOS|ENTORNO",
+      "DOCUMENTOS|ARTICULOS|ENTORNO",
+      "HTMLS",
+      "HTMLS ",
+      "HTMLs"
+    ]);
+
+    function normKey(s){
+      return (s || "").trim()
+        .normalize("NFD").replace(/[\u0300-\u036f]/g,"")
+        .toUpperCase();
+    }
+
+    function isSectionLine(line){
+      const t = (line || "").trim();
+      if (!t) return false;
+      if (t.startsWith("REF-")) return false;
+
+      // si contiene '|' es sección seguro
+      if (t.includes("|")) return true;
+
+      // lista blanca
+      const k = normKey(t);
+      if (SECTION_SET.has(t.toUpperCase())) return true;
+      if (SECTION_SET.has(k)) return true;
+
+      return false;
+    }
+
+    function nextNonEmpty(lines, i){
+      for (let j=i; j<lines.length; j++){
+        const t = (lines[j] || "").trim();
+        if (t) return t;
+      }
+      return "";
+    }
+
+    function prevNonEmpty(lines, i){
+      for (let j=i; j>=0; j--){
+        const t = (lines[j] || "").trim();
+        if (t) return t;
+      }
+      return "";
+    }
+
+    function looksUpperishAuthor(t){
+      const s = (t || "").trim();
+      const up = s === s.toUpperCase();
+      const sane = /^[A-ZÁÉÍÓÚÜÑ0-9 .,'&\-;()]+$/.test(s);
+      return up && sane && s.length <= 90;
+    }
+
+    // Autor si:
+    // - Tiene coma o ';' (clásico)
+    // - O está en mayúsculas y la siguiente línea es REF (EPIC GAMES, BOECIO, DEAGEL…)
+    function isAuthorLine(line, nextLine){
+      const t = (line || "").trim();
+      if (!t) return false;
+      if (t.startsWith("REF-")) return false;
+      if (isSectionLine(t)) return false;
+
+      if (t.includes(",") || t.includes(";")) return true;
+
+      if (looksUpperishAuthor(t) && isRefLine(nextLine)) return true;
+
+      return false;
+    }
+
+    // Extrae título + (año) + editorial si el formato encaja
+    function splitMeta(text){
+      const t = (text || "").trim();
+      // año o rango o s. f.
+      const re = /^(.*?)(\(\s*(?:\d{4}(?:\s*[–-]\s*\d{4})?|s\.\s*f\.)\s*\))\.\s*(.*)$/i;
+      const m = t.match(re);
+      if (!m) return { title: t, year: "", publisher: "" };
+      const title = (m[1] || "").trim().replace(/\s+/g," ");
+      const year = (m[2] || "").trim();
+      const publisher = (m[3] || "").trim().replace(/\s+/g," ");
+      return { title, year, publisher };
+    }
+
+    function buildCopyText(it){
+      // AUTOR - REF-XXX. Título. (Año). Editorial.
+      const parts = [];
+      if (it.author) parts.push(it.author);
+      const core = `${it.ref}. ${it.title || it.raw}`.trim();
+      parts.push(core);
+      const extras = [];
+      if (it.year) extras.push(it.year);
+      if (it.publisher) extras.push(it.publisher);
+      if (extras.length) parts.push(extras.join(". "));
+      return parts.join(" - ").replace(/\s+/g," ").trim();
+    }
+
+    function parseBib(text){
+      const rawLines = (text || "").replace(/\r/g,"").split("\n");
+      const lines = rawLines.map(l => (l || "").trimEnd());
+
+      const sections = [];
+      let currentSection = { name:"BIBLIOGRAFÍA", authors:[] };
       sections.push(currentSection);
-      currentAuthor = null;
-      lastItem = null;
-      continue;
-    }
 
-    if (isAuthorLine(line, nextLine)){
-      currentAuthor = { name: line, id: slug(line), items:[] };
-      currentSection.authors.push(currentAuthor);
-      lastItem = null;
-      continue;
-    }
+      let currentAuthor = null;
+      let lastItem = null;
 
-    if (isRefLine(line)){
-      if (!currentAuthor){
-        // fallback: si NO hay autor, intenta usar la línea anterior no vacía como autor
-        // (sirve si el txt tiene algún salto raro)
-        const prev = nextNonEmpty(lines, Math.max(0, i-1));
-        if (prev && !prev.startsWith("REF-") && !isSectionLine(prev)){
-          currentAuthor = { name: prev, id: slug(prev), items:[] };
+      for (let i=0; i<lines.length; i++){
+        const line = (lines[i] || "").trim();
+        if (!line) continue;
+
+        // Ignora epígrafes si están dentro del txt
+        if (
+          line.startsWith("Quizás es mejor") ||
+          line.startsWith("Si el libro es malo") ||
+          line.startsWith("Si el libro es bueno")
+        ) continue;
+
+        const nextLine = nextNonEmpty(lines, i+1);
+
+        if (isSectionLine(line)){
+          currentSection = { name: line, authors:[] };
+          sections.push(currentSection);
+          currentAuthor = null;
+          lastItem = null;
+          continue;
+        }
+
+        if (isAuthorLine(line, nextLine)){
+          currentAuthor = { name: line, id: slug(line), items:[] };
           currentSection.authors.push(currentAuthor);
-        } else {
-          currentAuthor = { name:"SIN AUTOR (REVISAR TXT)", id:"sin-autor", items:[] };
-          currentSection.authors.push(currentAuthor);
+          lastItem = null;
+          continue;
+        }
+
+        if (isRefLine(line)){
+          // Si falta autor, intenta usar la línea anterior no vacía como autor (si parece autor)
+          if (!currentAuthor){
+            const prev = prevNonEmpty(lines, i-1);
+            if (prev && !prev.startsWith("REF-") && !isSectionLine(prev) && looksUpperishAuthor(prev)){
+              currentAuthor = { name: prev, id: slug(prev), items:[] };
+              currentSection.authors.push(currentAuthor);
+            } else {
+              currentAuthor = { name:"SIN AUTOR (REVISAR TXT)", id:"sin-autor-revisar", items:[] };
+              currentSection.authors.push(currentAuthor);
+            }
+          }
+
+          const m = line.match(/^(REF-\d{3})\.\s*(.*)$/);
+          const ref = m ? m[1] : "";
+          const raw = m ? m[2] : line;
+
+          const meta = splitMeta(raw);
+
+          const item = {
+            ref,
+            raw,
+            title: meta.title,
+            year: meta.year,
+            publisher: meta.publisher,
+            author: currentAuthor.name,
+            copy: ""
+          };
+          item.copy = buildCopyText(item);
+
+          currentAuthor.items.push(item);
+          lastItem = item;
+          continue;
+        }
+
+        // Continuación de texto para refs partidas en varias líneas
+        if (lastItem){
+          lastItem.raw = (lastItem.raw + " " + line).replace(/\s+/g," ").trim();
+          const meta = splitMeta(lastItem.raw);
+          lastItem.title = meta.title;
+          lastItem.year = meta.year;
+          lastItem.publisher = meta.publisher;
+          lastItem.copy = buildCopyText(lastItem);
         }
       }
 
-      const m = line.match(/^(REF-\d{3})\.\s*(.*)$/);
-      const item = {
-        ref: m ? m[1] : "",
-        raw: m ? m[2] : line,
-        author: currentAuthor.name
-      };
-      // meta (título/año/editorial) si lo usas en tu render
-      const meta = splitMeta(item.raw);
-      item.title = meta.title;
-      item.year = meta.year;
-      item.publisher = meta.publisher;
-
-      currentAuthor.items.push(item);
-      lastItem = item;
-      continue;
+      return sections;
     }
 
-    // Continuación de texto (líneas partidas tipo "vs. Heteroarcado.")
-    if (lastItem){
-      lastItem.raw = (lastItem.raw + " " + line).replace(/\s+/g," ").trim();
-      const meta = splitMeta(lastItem.raw);
-      lastItem.title = meta.title;
-      lastItem.year = meta.year;
-      lastItem.publisher = meta.publisher;
-    }
-  }
+    function render(sections){
+      const out = $("out");
+      const toc = $("toc");
+      out.innerHTML = "";
+      toc.innerHTML = "";
 
-  return sections;
-}
+      let totalItems = 0;
+      let totalAuthors = 0;
+
+      // TOC por secciones
+      for (const sec of sections){
+        const secId = slug(sec.name);
+        const a = document.createElement("a");
+        a.className = "pill";
+        a.href = "#" + secId;
+        a.textContent = sec.name;
+        toc.appendChild(a);
+      }
+
+      for (const sec of sections){
+        const secId = slug(sec.name);
+        const secEl = document.createElement("section");
+        secEl.id = secId;
+        secEl.style.marginTop = "18px";
+
+        const h = document.createElement("div");
+        h.className = "mono";
+        h.style.margin = "10px 0 6px";
+        h.innerHTML = "<b>" + escapeHtml(sec.name) + "</b>";
+        secEl.appendChild(h);
+
+        for (const au of sec.authors){
+          totalAuthors++;
+          totalItems += au.items.length;
+
+          const det = document.createElement("details");
+          det.open = false;
+
+          const sum = document.createElement("summary");
+          const sumline = document.createElement("div");
+          sumline.className = "sumline";
+          sumline.innerHTML = `
+            <span class="author" id="${au.id}">${escapeHtml(au.name)}</span>
+            <span class="count">${au.items.length} refs</span>
+          `;
+          sum.appendChild(sumline);
+          det.appendChild(sum);
+
+          const ol = document.createElement("ol");
+          for (const it of au.items){
+            const li = document.createElement("li");
+            li.dataset.search = (it.author + " " + it.ref + " " + it.raw + " " + it.year + " " + it.publisher).toLowerCase();
+
+            const row = document.createElement("div");
+            row.className = "row";
+
+            const left = document.createElement("div");
+            left.className = "left";
+            left.innerHTML =
+              `<span class="ref">${escapeHtml(it.ref)}</span>` +
+              `<span class="title">${escapeHtml(it.title || it.raw)}</span>` +
+              (it.year ? `<span class="meta-year">${escapeHtml(it.year)}</span>` : ``) +
+              (it.publisher ? `<span class="meta-pub">${escapeHtml(it.publisher)}</span>` : ``);
+
+            const actions = document.createElement("div");
+            actions.className = "actions";
+
+            const btn = document.createElement("button");
+            btn.className = "copy";
+            btn.type = "button";
+            btn.textContent = "Copiar cita";
+            btn.dataset.copy = it.copy;
+
+            actions.appendChild(btn);
+            row.appendChild(left);
+            row.appendChild(actions);
+            li.appendChild(row);
+            ol.appendChild(li);
+          }
+
+          det.appendChild(ol);
+          secEl.appendChild(det);
+        }
+
+        out.appendChild(secEl);
+      }
+
+      $("stats").textContent = `${totalItems} referencias · ${totalAuthors} autores/secciones`;
+
+      hookSearch();
+      hookCopyButtons();
+      jumpToHash();         // primera navegación
+      hookHashChange();     // navegación al cambiar hash
+    }
+
+    function hookSearch(){
+      const q = $("q");
+      const details = Array.from(document.querySelectorAll("details"));
+
+      q.addEventListener("input", () => {
+        const term = q.value.trim().toLowerCase();
+        let shown = 0;
+
+        for (const det of details){
+          const items = Array.from(det.querySelectorAll("li"));
+          let any = false;
+
+          for (const li of items){
+            const ok = !term || li.dataset.search.includes(term);
+            li.classList.toggle("hide", !ok);
+            if (ok) { any = true; shown++; }
+          }
+
+          det.classList.toggle("hide", !any);
+          det.open = term ? any : false;
+        }
+
+        if (term) $("stats").textContent = `${shown} coincidencias · filtro activo`;
+        else {
+          const total = document.querySelectorAll("li").length;
+          const authors = document.querySelectorAll("details").length;
+          $("stats").textContent = `${total} referencias · ${authors} autores/secciones`;
+        }
+      });
+    }
+
+    async function copyText(text){
+      try{
+        await navigator.clipboard.writeText(text);
+        return true;
+      }catch(e){
+        try{
+          const ta = document.createElement("textarea");
+          ta.value = text;
+          ta.style.position = "fixed";
+          ta.style.left = "-9999px";
+          document.body.appendChild(ta);
+          ta.select();
+          document.execCommand("copy");
+          document.body.removeChild(ta);
+          return true;
+        }catch(_){
+          return false;
+        }
+      }
+    }
+
+    function hookCopyButtons(){
+      document.querySelectorAll("button.copy").forEach(btn=>{
+        btn.addEventListener("click", async () => {
+          const original = btn.textContent;
+          const ok = await copyText(btn.dataset.copy || "");
+          btn.classList.remove("ok","bad");
+          btn.classList.add(ok ? "ok" : "bad");
+          btn.textContent = ok ? "Copiado" : "Error";
+          setTimeout(()=>{
+            btn.classList.remove("ok","bad");
+            btn.textContent = original;
+          }, 900);
+        });
+      });
+    }
+
+    function hookCleanToggle(){
+      const cb = $("clean");
+      const key = "azul_biblio_clean";
+      const saved = localStorage.getItem(key);
+      if (saved === "1"){
+        cb.checked = true;
+        document.body.classList.add("clean");
+      }
+      cb.addEventListener("change", ()=>{
+        document.body.classList.toggle("clean", cb.checked);
+        localStorage.setItem(key, cb.checked ? "1" : "0");
+      });
+    }
+
+    // Abre el details correcto si el hash apunta a un autor (#epic-games)
+    function jumpToHash(){
+      const h = (location.hash || "").trim();
+      if (!h) return;
+
+      const el = document.querySelector(h);
+      if (!el) return;
+
+      // Si es un autor dentro de summary, subimos al details y lo abrimos
+      const det = el.closest("details");
+      if (det) det.open = true;
+
+      el.scrollIntoView({ behavior:"smooth", block:"start" });
+    }
+
+    function hookHashChange(){
+      window.addEventListener("hashchange", () => jumpToHash());
+    }
+
+    async function main(){
+      hookCleanToggle();
+
+      // cache-buster para evitar ver versiones viejas de bibliografia.txt
+      const url = "bibliografia.txt?v=" + Date.now();
+      const res = await fetch(url);
+      if (!res.ok){
+        $("stats").textContent = "No puedo leer bibliografia.txt (¿está en la raíz del repo?)";
+        return;
+      }
+      const text = await res.text();
+      const sections = parseBib(text);
+      render(sections);
+    }
+
+    main();
+  </script>
+</body>
+</html>
