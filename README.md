@@ -2,7 +2,7 @@
 Punto de aterrizaje del QR de Azul de Pantalla: biografía, enlaces y verificación. Si no te carga, no existes. Despliegue en GitHub Pages.
 # Azul de Pantalla · Bio (QR)
 
-**Bio oficial (QR) de _Azul de Pantalla_: enlaces verificados, versión auditable y contacto.  
+**Bibliografía oficial (QR) de _Azul de Pantalla_: enlaces verificados, versión auditable y contacto.  
 Si no te carga, no existes. GitHub Pages.**
 
 ---
