@@ -705,7 +705,7 @@ Hernandez, Jon
 REF-296. IVoox IA con Jon Hernandez.
 
 El submarino Subversivo
-REF-297. IVoox El submarino Subversivo.
+REF-297. IVoox - El submarino Subversivo.
 
 Svali interview
 REF-298. Svali interview (parte 1).
@@ -714,7 +714,13 @@ ESTO SALDRÁ BIEN
 REF-299. IVoox - ESTO SALDRÁ BIEN.
 
 Contra, Celso
-REF-300. Orígenes - Contra Celso. (AUDIOLIBRO)
+REF-300. Orígenes. (AUDIOLIBRO)
+
+DAB, Radio
+REF-300_1. DAB RADIO.
+
+DESVENDANDO, NOTICIAS
+REF-300_2. DESVENDANDO NOTICIAS
 
 BLOGS
 
