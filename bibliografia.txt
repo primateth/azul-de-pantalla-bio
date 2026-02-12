@@ -675,7 +675,7 @@ REF-283. Tristán e Isolda (libreto / notas).
 
 WHITE, J.; FU, Q.; HAYS, S.; SANDBORN, M.; OLEA, C.; GILBERT, H.; ELNASHAR, A.; SPENCER-SMITH, J.; SCHMIDT, D. C.
 REF-284. A Prompt Pattern Catalog to Enhance Prompt Engineering with ChatGPT . (2023). 
-REF-285. A Prompt Pattern Catalog to Enhance Prompt Engineering with ChatGPT (versión revisada; Writers’ Workshop). (2024). 
+REF-285. A Prompt Pattern Catalog to Enhance Prompt Engineering with ChatGPT . (versión revisada). (2024). 
 
 WITTGENSTEIN, Ludwig
 REF-286. Investigaciones filosóficas. (2016). Crítica.
