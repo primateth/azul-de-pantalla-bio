@@ -105,7 +105,7 @@
       outline:none;
     }
     textarea{
-      min-height:130px;
+      min-height:120px;
       font-family:var(--mono);
       font-size:12px;
       line-height:1.35;
@@ -219,17 +219,6 @@
       font-size:12px; color:rgba(233,238,246,.86);
       user-select:none;
     }
-    .num{
-      width:92px;
-      padding:8px 10px;
-      border-radius:12px;
-      border:1px solid var(--border);
-      background: rgba(18,28,40,.55);
-      color:var(--text);
-      font-family:var(--mono);
-      font-size:12px;
-      outline:none;
-    }
     @media (max-width: 980px){
       .layout{grid-template-columns:1fr}
       .side{position:relative; top:auto; height:auto}
@@ -243,7 +232,7 @@
     <div class="topInner">
       <div class="titleWrap">
         <h1>Bibliografía Azul de Pantalla · <span class="tag">Templo del dato</span></h1>
-        <p class="sub">Índice navegable (autores A–Z primero, secciones al final). Renumeración opcional para eliminar <span style="font-family:var(--mono)">REF-XXX_X</span>.</p>
+        <p class="sub">Lee <span style="font-family:var(--mono)">BIOGRAFIA.txt</span> desde la repo y renumera desde <span style="font-family:var(--mono)">REF-001</span> (sin sufijos).</p>
         <div class="quote">
           <div>Quizás es mejor la bibliografía que el propio libro.</div>
           <div>Si el libro es malo, la bibliografía siempre queda bien.</div>
@@ -255,6 +244,7 @@
       <div class="btnRow">
         <button class="btn primary" id="btnTop" title="Volver arriba">↑ Arriba</button>
         <button class="btn" id="btnCopyAnchor" title="Copia el enlace interno a la sección actual">⛓ Copiar ancla</button>
+        <a class="btn" id="btnTxt" href="BIOGRAFIA.txt" target="_blank" rel="noopener noreferrer" title="Ver el TXT de la repo">📄 TXT</a>
         <a class="btn" href="mailto:mercurius81@proton.me" title="Contacto por email">✉ Contacto</a>
         <button class="btn" id="btnComprar" disabled title="Sin link de compra todavía">🛒 Comprar</button>
       </div>
@@ -264,53 +254,49 @@
   <div class="layout">
     <aside class="card side">
       <div class="sideInner">
-        <div class="label">Cargar bibliografía</div>
-        <div class="row">
-          <input class="input" type="file" id="fileInput" accept=".txt,.md,.text" />
-          <button class="btn" id="btnLoadDemo" title="Carga un ejemplo mínimo para probar">⚙ Demo</button>
+        <div class="label">Archivo en la repo</div>
+        <input class="input" id="repoPath" value="BIOGRAFIA.txt" placeholder="BIOGRAFIA.txt" />
+        <div class="row" style="margin-top:10px">
+          <button class="btn primary" id="btnLoadRepo">⬇ Cargar desde repo</button>
+          <button class="btn" id="btnExport" disabled>⬇ Descargar TXT renumerado</button>
         </div>
-
-        <div class="label">O pegar texto (y “Procesar”)</div>
-        <textarea id="pasteBox" placeholder="Pega aquí tu bibliografía completa (tal cual) y pulsa “Procesar”…"></textarea>
 
         <div class="checkRow">
           <label>
             <input type="checkbox" id="chkRenumber" checked />
-            Renumerar (quita _x) desde
+            Renumerar todo desde REF-001 (recomendado)
           </label>
-          <input class="num" id="renumberFrom" type="number" min="1" max="999" value="300" />
-          <span class="small">Ej: 300 para que REF-300_1→301 y desplazar el resto.</span>
-        </div>
-
-        <div class="row" style="margin-top:10px">
-          <button class="btn primary" id="btnProcess">⚡ Procesar</button>
-          <button class="btn" id="btnExport" disabled>⬇ Descargar TXT renumerado</button>
-        </div>
-        <div class="row" style="margin-top:10px">
-          <button class="btn" id="btnClear">🧽 Limpiar</button>
         </div>
 
         <div class="hr"></div>
 
-        <div class="label">Buscar (autor / sección)</div>
+        <div class="label">Buscar (autor / sección / REF)</div>
         <input class="input" id="search" placeholder="Ej: Foucault, REF-152, Podcasts…" />
 
-        <div class="label">Ir a (autores primero, secciones al final)</div>
+        <div class="label">Ir a (autores A–Z primero, secciones al final)</div>
         <select class="select" id="jumpSelect">
           <option value="">(elige…)</option>
         </select>
 
         <div class="pill" id="countsPill">Sin datos cargados</div>
 
+        <div class="hr"></div>
+
+        <div class="label">Override local (opcional)</div>
+        <div class="row">
+          <input class="input" type="file" id="fileInput" accept=".txt,.md,.text" />
+          <button class="btn" id="btnClear">🧽 Limpiar</button>
+        </div>
+
         <p class="hint">
-          Si activas renumeración desde <span style="font-family:var(--mono)">300</span>, el bloque 295–294 no se toca y las colas (podcasts/blogs/manuales/ideologías…) quedan limpias, sin sufijos.
+          Nota: <span style="font-family:var(--mono)">fetch()</span> funciona en GitHub Pages. Si abres el HTML como <span style="font-family:var(--mono)">file://</span>, el navegador puede bloquear la lectura del TXT.
         </p>
       </div>
     </aside>
 
     <main class="card main">
       <div class="toolbar">
-        <div class="status" id="status">Crea el índice cargando tu TXT o pegando el texto.</div>
+        <div class="status" id="status">Cargando desde la repo…</div>
       </div>
       <div class="mainInner" id="content"></div>
     </main>
@@ -377,117 +363,40 @@ function looksLikeSectionHeading(title){
 }
 
 /* ======================
-   Renumeración:
-   - Sustituye REF-300_1 -> REF-301
-   - Desplaza REF-301 -> REF-303 (si hay dos insertados: _1 y _2)
-   - Sólo aplica desde un umbral (por defecto 300)
+   Renumeración global (desde REF-001)
+   - Reescribe SOLO refs al inicio de línea: REF-xxx[_y]. -> REF-001..N.
+   - Sin sufijos.
+   - Estrictamente ascendente por aparición en el archivo.
    ====================== */
-function buildRenumberMap(raw, startBase){
+function renumberAllFrom001(raw){
   const lines = raw.split(/\r?\n/);
+  let n = 1;
 
-  // 1) Detecta subrefs (REF-NNN_1, REF-NNN-1) desde startBase
-  //    y registra su aparición por base (orden real en el texto).
-  const baseSubs = new Map(); // baseInt -> [rawSubRef1, rawSubRef2, ...]
-  const seen = new Map();     // baseInt -> Set(rawSubRef)
+  // Acepta REF-001, REF-114_1, REF-114-1, REF-1200 (si algún día crece)
+  const re = /^(REF-(\d+)(?:[_-]\d+)?)\./;
 
-  function addSub(baseInt, rawRef){
-    if(!seen.has(baseInt)) seen.set(baseInt, new Set());
-    const s = seen.get(baseInt);
-    if(s.has(rawRef)) return;
-    s.add(rawRef);
-    if(!baseSubs.has(baseInt)) baseSubs.set(baseInt, []);
-    baseSubs.get(baseInt).push(rawRef);
-  }
+  const out = lines.map(line=>{
+    const m = line.match(re);
+    if(!m) return line;
 
-  const refLineRe = /^(REF-\d{3}(?:[_-]\d+)?)\./;
+    const newRef = `REF-${String(n).padStart(3,"0")}`;
+    n++;
+    return line.replace(re, `${newRef}.`);
+  });
 
-  for(const L of lines){
-    const line = L.trim();
-    const m = line.match(refLineRe);
-    if(!m) continue;
-
-    const rawRef = m[1];
-    const m2 = rawRef.match(/^REF-(\d{3})(?:[_-](\d+))?$/);
-    if(!m2) continue;
-
-    const baseInt = parseInt(m2[1], 10);
-    const hasSub = !!m2[2];
-
-    if(hasSub && baseInt >= startBase){
-      addSub(baseInt, rawRef);
-    }
-  }
-
-  // 2) subcount por base (desde startBase) para calcular offsets
-  const subcount = new Array(1000).fill(0);
-  for(const [b, arr] of baseSubs.entries()){
-    subcount[b] = arr.length;
-  }
-
-  // prefixOffset[i] = suma subcount desde startBase hasta i-1
-  const prefixOffset = new Array(1000).fill(0);
-  let run = 0;
-  for(let i=0;i<1000;i++){
-    prefixOffset[i] = run;
-    if(i >= startBase){
-      run += subcount[i];
-    }
-  }
-
-  // 3) mapRef: transforma un token REF-xxx(_y) a REF-nnn (sin sufijos)
-  function mapRef(rawRef){
-    const m = rawRef.match(/^REF-(\d{3})(?:[_-](\d+))?$/);
-    if(!m) return rawRef;
-
-    const baseInt = parseInt(m[1], 10);
-    const hasSub = !!m[2];
-
-    if(baseInt < startBase){
-      // no tocar (para no renumerar toda la bibliografía)
-      return rawRef;
-    }
-
-    const off = prefixOffset[baseInt];
-
-    if(!hasSub){
-      const newNum = baseInt + off;
-      return `REF-${String(newNum).padStart(3, "0")}`;
-    }
-
-    // Subref: posición real según aparición en el texto (1..k)
-    const arr = baseSubs.get(baseInt) || [];
-    let pos = arr.indexOf(rawRef) + 1;
-    if(pos <= 0) pos = 1;
-    const newNum = baseInt + off + pos;
-    return `REF-${String(newNum).padStart(3, "0")}`;
-  }
-
-  // 4) rewriteText: reescribe el TXT sustituyendo el REF del inicio de línea
-  function rewriteText(text){
-    const ls = text.split(/\r?\n/);
-    const out = ls.map(line=>{
-      return line.replace(/^(REF-\d{3}(?:[_-]\d+)?)\./, (full, token)=>{
-        return `${mapRef(token)}.`;
-      });
-    });
-    return out.join("\n");
-  }
-
-  return { mapRef, rewriteText };
+  return { text: out.join("\n"), count: n-1 };
 }
 
 /* ======================
-   Parser bibliografía
+   Parser bibliografía (ya con refs limpias)
    ====================== */
-function parseRefFromLine(line, mapRef){
-  const m = line.match(/^(REF-\d{3}(?:[_-]\d+)?)\.\s*(.*)$/);
+function parseRefFromLine(line){
+  const m = line.match(/^(REF-\d+)\.\s*(.*)$/);
   if(!m) return null;
-  const rawRef = m[1];
-  const ref = mapRef ? mapRef(rawRef) : rawRef;
-  return { rawRef, ref, text: m[2].trim() };
+  return { ref: m[1], text: m[2].trim() };
 }
 
-function parseBibliography(raw, mapRef){
+function parseBibliography(raw){
   const lines = raw.split(/\r?\n/);
 
   const blocks = [];
@@ -504,7 +413,7 @@ function parseBibliography(raw, mapRef){
     const line = lines[i].trim();
     if(isIgnorableLine(line)) continue;
 
-    const ref = parseRefFromLine(line, mapRef);
+    const ref = parseRefFromLine(line);
     if(ref){
       if(!current){
         current = { title: "SIN ENCABEZADO", kind: "author", entries:[], links:[] };
@@ -569,7 +478,6 @@ function render(blocks){
   const authorBlocks = blocks.filter(b => b.kind==="author");
   const sectionBlocks = blocks.filter(b => b.kind==="section");
 
-  // Jump select: autores A-Z primero, luego secciones
   const jump = document.getElementById("jumpSelect");
   jump.innerHTML = `<option value="">(elige…)</option>`;
 
@@ -605,7 +513,6 @@ function render(blocks){
   }
   jump.appendChild(optgroupS);
 
-  // Render en orden original
   for(const b of blocks){
     const wrapper = document.createElement("div");
     wrapper.id = b.id;
@@ -725,7 +632,7 @@ function setupSearch(){
 }
 
 /* ======================
-   Botones
+   Botones + carga repo
    ====================== */
 let lastRawText = "";
 let lastRenumberedText = "";
@@ -759,20 +666,39 @@ function getNearestAnchorId(){
   return best && best.id ? best.id : null;
 }
 
+async function loadFromRepo(path){
+  const status = document.getElementById("status");
+  status.textContent = `Cargando: ${path} …`;
+
+  try{
+    const res = await fetch(path, { cache: "no-store" });
+    if(!res.ok) throw new Error(`HTTP ${res.status}`);
+    const text = await res.text();
+
+    lastRawText = text;
+
+    const renum = document.getElementById("chkRenumber").checked;
+    if(renum){
+      const r = renumberAllFrom001(text);
+      lastRenumberedText = r.text;
+      document.getElementById("btnExport").disabled = false;
+      status.textContent = `OK. Renumerado desde REF-001 (${r.count} entradas).`;
+      render(parseBibliography(r.text));
+    }else{
+      lastRenumberedText = "";
+      document.getElementById("btnExport").disabled = true;
+      status.textContent = `OK. Cargado sin renumerar.`;
+      render(parseBibliography(text));
+    }
+  }catch(err){
+    status.textContent = `Error cargando "${path}". Revisa que exista en la repo y que Pages sirva esa ruta.`;
+    console.error(err);
+  }
+}
+
 function setupButtons(){
   document.getElementById("btnTop").addEventListener("click", ()=>{
     window.scrollTo({top:0, behavior:"smooth"});
-  });
-
-  document.getElementById("btnClear").addEventListener("click", ()=>{
-    document.getElementById("pasteBox").value = "";
-    document.getElementById("content").innerHTML = "";
-    document.getElementById("jumpSelect").innerHTML = `<option value="">(elige…)</option>`;
-    document.getElementById("status").textContent = "Limpio. Carga un TXT o pega el texto.";
-    document.getElementById("countsPill").textContent = "Sin datos cargados";
-    document.getElementById("btnExport").disabled = true;
-    lastRawText = "";
-    lastRenumberedText = "";
   });
 
   document.getElementById("btnCopyAnchor").addEventListener("click", async ()=>{
@@ -790,77 +716,64 @@ function setupButtons(){
     }
   });
 
-  document.getElementById("btnLoadDemo").addEventListener("click", ()=>{
-    const demo = `
-Bibliografía Azul de pantalla
-Templo del dato
+  document.getElementById("btnExport").addEventListener("click", ()=>{
+    if(!lastRenumberedText){
+      alert("No hay TXT renumerado. Activa renumeración y recarga.");
+      return;
+    }
+    downloadText("BIOGRAFIA_RENUMERADA.txt", lastRenumberedText);
+  });
 
-PODCASTS
-IVOOX / PROGRAMAS
-REF-300. ORÍGENES — Contra Celso. (Audiolibro).
-REF-300_1. DESVENDANDO NOTICIAS — Podcast.
-REF-300_2. DAB RADIO — Podcast.
-REF-301. The Revealing.
-REF-302. Delirious Heterotopias.
-REF-302_1. Biblioteca Pleyades.
-REF-303. Unreal Engine 5.7 Documentation.
-    `.trim();
-    document.getElementById("pasteBox").value = demo;
-    document.getElementById("btnProcess").click();
+  document.getElementById("btnLoadRepo").addEventListener("click", ()=>{
+    const p = document.getElementById("repoPath").value.trim() || "BIOGRAFIA.txt";
+    document.getElementById("btnTxt").setAttribute("href", p);
+    loadFromRepo(p);
+  });
+
+  document.getElementById("chkRenumber").addEventListener("change", ()=>{
+    const p = document.getElementById("repoPath").value.trim() || "BIOGRAFIA.txt";
+    loadFromRepo(p);
   });
 
   document.getElementById("fileInput").addEventListener("change", async (ev)=>{
     const file = ev.target.files && ev.target.files[0];
     if(!file) return;
     const text = await file.text();
-    document.getElementById("pasteBox").value = text;
-    document.getElementById("btnProcess").click();
+
+    lastRawText = text;
+
+    const renum = document.getElementById("chkRenumber").checked;
+    if(renum){
+      const r = renumberAllFrom001(text);
+      lastRenumberedText = r.text;
+      document.getElementById("btnExport").disabled = false;
+      document.getElementById("status").textContent = `Local OK. Renumerado desde REF-001 (${r.count} entradas).`;
+      render(parseBibliography(r.text));
+    }else{
+      lastRenumberedText = "";
+      document.getElementById("btnExport").disabled = true;
+      document.getElementById("status").textContent = `Local OK. Cargado sin renumerar.`;
+      render(parseBibliography(text));
+    }
   });
 
-  document.getElementById("btnExport").addEventListener("click", ()=>{
-    if(!lastRenumberedText){
-      alert("No hay TXT renumerado. Procesa primero.");
-      return;
-    }
-    downloadText("BIOGRAFIA_RENUMERADA.txt", lastRenumberedText);
-  });
-
-  document.getElementById("btnProcess").addEventListener("click", ()=>{
-    const raw = document.getElementById("pasteBox").value;
-    if(!raw.trim()){
-      alert("Pega tu bibliografía o carga un .txt primero.");
-      return;
-    }
-
-    lastRawText = raw;
-
-    const chk = document.getElementById("chkRenumber").checked;
-    const startBase = Math.max(1, Math.min(999, parseInt(document.getElementById("renumberFrom").value || "300", 10)));
-
-    let mapRef = (x)=>x;
-    let renumbered = raw;
-
-    if(chk){
-      const mapper = buildRenumberMap(raw, startBase);
-      mapRef = mapper.mapRef;
-      renumbered = mapper.rewriteText(raw);
-    }
-
-    lastRenumberedText = renumbered;
-    document.getElementById("btnExport").disabled = !chk;
-
-    const blocks = parseBibliography(raw, mapRef);
-    render(blocks);
-
-    document.getElementById("status").textContent = chk
-      ? `Procesado con renumeración desde ${String(startBase).padStart(3,"0")}. Descarga el TXT renumerado si lo necesitas para Scribus.`
-      : `Procesado sin renumeración.`;
+  document.getElementById("btnClear").addEventListener("click", ()=>{
+    document.getElementById("content").innerHTML = "";
+    document.getElementById("jumpSelect").innerHTML = `<option value="">(elige…)</option>`;
+    document.getElementById("status").textContent = "Limpio. Carga desde la repo.";
+    document.getElementById("countsPill").textContent = "Sin datos cargados";
+    document.getElementById("btnExport").disabled = true;
+    lastRawText = "";
+    lastRenumberedText = "";
   });
 }
 
 /* init */
 setupSearch();
 setupButtons();
+
+// Auto-load al abrir (desde la repo)
+loadFromRepo(document.getElementById("repoPath").value.trim() || "BIOGRAFIA.txt");
 </script>
 </body>
 </html>
