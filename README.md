@@ -69,5 +69,5 @@ Garantizar un destino web estable para QR impreso.
 - 1ª Edición, Editorial UNQUINTO, Marzo de 2026
 
 - © 2026 M. Müller. Todos los derechos reservados. Esta obra se encuentra protegida por la legislación española en materia de propiedad intelectual. Se autoriza su reproducción y difusión íntegra, en cualquier formato y por cualquier medio, siempre que se mantenga la autoría, el presente aviso legal y no exista finalidad comercial ni alteración del contenido. La cita y el análisis crítico quedan amparados por los límites legalmente previstos. Cualquier transformación, edición parcial, adaptación o explotación comercial requerirá autorización previa y expresa del titular de los derechos.
-Contacto: [correo electrónico].
+Contacto: [mercurius81@proton.me].
 
