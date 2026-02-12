@@ -1,4 +1,4 @@
-# azul-de-pantalla-bio
+# azul-de-pantalla-bio-bibliografía
 Punto de aterrizaje del QR de Azul de Pantalla: biografía, enlaces y verificación. Si no te carga, no existes. Despliegue en GitHub Pages.
 # Azul de Pantalla · Bio (QR)
 
@@ -9,7 +9,7 @@ Si no te carga, no existes. GitHub Pages.**
 
 ## Qué es esto
 
-Este repositorio despliega una **landing de biografía** pensada para un **código QR impreso** en el libro **_Azul de Pantalla_**.
+Este repositorio despliega una **landing de bibliografía** pensada para un **código QR impreso** en el libro **_Azul de Pantalla_**.
 
 - **Destino estable** para lectores: una sola puerta, siempre.
 - **Enlaces verificados**: web, dossier, contacto, actualizaciones.
