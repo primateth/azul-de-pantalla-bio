@@ -707,7 +707,8 @@ REF-306. La era del capitalismo de la vigilancia. (2020). Paidós.
 PODCASTS
 
 AUDIOLIBROS
-REF-307. El informe de Iron Mountain: sobre la posibilidad y conveniencia de la paz. (Audiolibro).
+REF-307. El informe de Iron Mountain: sobre la posibilidad y conveniencia de la paz. 
+https://archive.org/details/el-informe-de-iron-mountain/page/n3/mode/2up
 REF-312. ORÍGENES — Contra Celso. (Audiolibro).
 
 IVOOX / PROGRAMAS
@@ -765,7 +766,7 @@ REF-345. Los Annunakis.
 
 IDEOLOGÍAS / DOCTRINAS DE MANDO (POLÍTICA Y RÉGIMEN)
 
-BUKHARIN, NikolÁI; PREOBRAZHENSKY, EVGUENI
+BUKHARIN, Nikolái; PREOBRAZHENSKY, EVGUENI
 REF-346. El ABC del comunismo. (TOBE-2/3).
 Link: https://www.marxists.org/archive/bukharin/works/1920/abc/
 
@@ -776,7 +777,7 @@ REF-348. ¿Qué hacer?. (TOBE-3/4).
 Link: https://www.marxists.org/archive/lenin/works/1901/witbd/
 
 TROTSKY, León
-REF-349. (Reservado para obra adicional / por definir). (TOBE-4).
+REF-349. La lucha contra el fascismo . (TOBE-4).
 REF-350. Terrorismo y comunismo. (TOBE-4).
 Link: https://www.marxists.org/archive/trotsky/1920/terrcomm/
 
