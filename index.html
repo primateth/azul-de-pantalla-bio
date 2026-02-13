@@ -9,22 +9,16 @@
     :root{
       --bg:#070A10;
       --panel:#0C1220;
-      --panel2:#0B1020;
       --text:#E9EEF8;
       --muted:#AAB6D6;
       --line:rgba(255,255,255,.10);
       --accent:#3B82F6;
-      --accent2:#1D4ED8;
-      --good:#22C55E;
-      --warn:#F59E0B;
-      --bad:#EF4444;
       --mark: rgba(59,130,246,.35);
       --radius:14px;
       --shadow: 0 14px 40px rgba(0,0,0,.45);
       --mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
       --sans: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
     }
-
     *{box-sizing:border-box}
     html,body{height:100%}
     body{
@@ -35,74 +29,27 @@
                   var(--bg);
       color:var(--text);
     }
-
     a{color:inherit}
-    .wrap{
-      max-width:1220px;
-      margin:0 auto;
-      padding:22px 16px 30px;
-    }
-
+    .wrap{max-width:1220px;margin:0 auto;padding:22px 16px 30px;}
     header{
-      display:flex;
-      align-items:flex-start;
-      justify-content:space-between;
-      gap:16px;
-      margin-bottom:16px;
+      display:flex;align-items:flex-start;justify-content:space-between;gap:16px;margin-bottom:16px;
     }
-
-    .brand{
-      min-width:260px;
-    }
-    .brand h1{
-      margin:0 0 6px 0;
-      font-size:20px;
-      letter-spacing:.2px;
-      font-weight:650;
-    }
-    .brand p{
-      margin:0;
-      color:var(--muted);
-      font-size:13px;
-      line-height:1.35;
-    }
+    .brand{min-width:260px;}
+    .brand h1{margin:0 0 6px 0;font-size:20px;letter-spacing:.2px;font-weight:650;}
+    .brand p{margin:0;color:var(--muted);font-size:13px;line-height:1.35;}
     .quote{
-      margin-top:10px;
-      padding-left:12px;
-      border-left:2px solid rgba(59,130,246,.35);
-      color:rgba(233,238,248,.90);
-      font-size:13px;
+      margin-top:10px;padding-left:12px;border-left:2px solid rgba(59,130,246,.35);
+      color:rgba(233,238,248,.90);font-size:13px;line-height:1.5;
     }
-    .quote .sig{
-      display:block;
-      margin-top:6px;
-      color:rgba(170,182,214,.9);
-      font-family:var(--mono);
-      font-size:12px;
-    }
+    .quote .sig{display:block;margin-top:6px;color:rgba(170,182,214,.9);font-family:var(--mono);font-size:12px;}
 
-    .topActions{
-      display:flex;
-      gap:10px;
-      flex-wrap:wrap;
-      justify-content:flex-end;
-      align-items:center;
-      padding-top:2px;
-    }
-
+    .topActions{display:flex;gap:10px;flex-wrap:wrap;justify-content:flex-end;align-items:center;padding-top:2px;}
     .btn{
       border:1px solid rgba(255,255,255,.14);
       background: linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,.02));
       color:var(--text);
-      padding:10px 12px;
-      border-radius:12px;
-      text-decoration:none;
-      font-size:13px;
-      cursor:pointer;
-      display:inline-flex;
-      align-items:center;
-      gap:8px;
-      user-select:none;
+      padding:10px 12px;border-radius:12px;text-decoration:none;font-size:13px;
+      cursor:pointer;display:inline-flex;align-items:center;gap:8px;user-select:none;
     }
     .btn:hover{border-color:rgba(255,255,255,.22)}
     .btn.primary{
@@ -110,71 +57,29 @@
       background: linear-gradient(180deg, rgba(59,130,246,.25), rgba(59,130,246,.08));
     }
     .btn.primary:hover{border-color: rgba(59,130,246,.75)}
-    .btn.ghost{
-      background: transparent;
-    }
-    .btn:disabled,
-    .btn.disabled{
-      opacity:.55;
-      cursor:not-allowed;
-      filter:saturate(.7);
-    }
+    .btn.ghost{background: transparent;}
+    .btn:disabled, .btn.disabled{opacity:.55;cursor:not-allowed;filter:saturate(.7);}
 
-    .grid{
-      display:grid;
-      grid-template-columns: 320px 1fr;
-      gap:14px;
-      align-items:start;
-    }
-
+    .grid{display:grid;grid-template-columns: 320px 1fr;gap:14px;align-items:start;}
     aside, main{
       background: linear-gradient(180deg, rgba(255,255,255,.045), rgba(255,255,255,.02));
       border:1px solid rgba(255,255,255,.10);
       border-radius: var(--radius);
       box-shadow: var(--shadow);
     }
+    aside{padding:14px;position:sticky;top:14px;max-height: calc(100vh - 28px);overflow:auto;}
+    main{padding:14px;overflow:hidden;}
 
-    aside{
-      padding:14px;
-      position:sticky;
-      top:14px;
-      max-height: calc(100vh - 28px);
-      overflow:auto;
-    }
-
-    .field{
-      display:flex;
-      flex-direction:column;
-      gap:8px;
-      margin-bottom:12px;
-    }
-
-    .labelRow{
-      display:flex;
-      justify-content:space-between;
-      align-items:baseline;
-      gap:10px;
-    }
-
-    label{
-      font-size:12px;
-      color:var(--muted);
-    }
-    .hint{
-      font-size:11px;
-      color:rgba(170,182,214,.75);
-      font-family:var(--mono);
-    }
-
+    .field{display:flex;flex-direction:column;gap:8px;margin-bottom:12px;}
+    .labelRow{display:flex;justify-content:space-between;align-items:baseline;gap:10px;}
+    label{font-size:12px;color:var(--muted);}
+    .hint{font-size:11px;color:rgba(170,182,214,.75);font-family:var(--mono);}
     input[type="text"], select{
       width:100%;
       border:1px solid rgba(255,255,255,.14);
       background: rgba(3,7,18,.55);
       color:var(--text);
-      padding:10px 10px;
-      border-radius:12px;
-      outline:none;
-      font-size:13px;
+      padding:10px 10px;border-radius:12px;outline:none;font-size:13px;
     }
     input[type="text"]::placeholder{color: rgba(170,182,214,.65)}
     input[type="text"]:focus, select:focus{
@@ -182,188 +87,91 @@
       box-shadow: 0 0 0 3px rgba(59,130,246,.15);
     }
 
-    .rowActions{
-      display:flex;
-      gap:10px;
-      flex-wrap:wrap;
-      margin:10px 0 14px;
-    }
-    .rowActions .btn{
-      flex:1;
-      justify-content:center;
-      min-width:130px;
-    }
+    .rowActions{display:flex;gap:10px;flex-wrap:wrap;margin:10px 0 14px;}
+    .rowActions .btn{flex:1;justify-content:center;min-width:130px;}
 
     .navBlockTitle{
-      margin:14px 0 6px;
-      font-size:12px;
-      color:rgba(233,238,248,.9);
-      letter-spacing:.35px;
-      text-transform:uppercase;
+      margin:14px 0 6px;font-size:12px;color:rgba(233,238,248,.9);
+      letter-spacing:.35px;text-transform:uppercase;
     }
-
-    .navList{
-      display:flex;
-      flex-direction:column;
-      gap:6px;
-      padding-bottom:8px;
-      border-bottom:1px solid rgba(255,255,255,.08);
-    }
+    .navList{display:flex;flex-direction:column;gap:6px;padding-bottom:8px;border-bottom:1px solid rgba(255,255,255,.08);}
     .navList:last-child{border-bottom:none}
-
     .navItem{
-      text-decoration:none;
-      border:1px solid rgba(255,255,255,.10);
+      text-decoration:none;border:1px solid rgba(255,255,255,.10);
       background: rgba(3,7,18,.35);
-      padding:9px 10px;
-      border-radius:12px;
-      font-size:13px;
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      gap:10px;
+      padding:9px 10px;border-radius:12px;font-size:13px;
+      display:flex;align-items:center;justify-content:space-between;gap:10px;
     }
     .navItem:hover{border-color: rgba(255,255,255,.18)}
     .navItem small{
       color: rgba(170,182,214,.85);
-      font-family:var(--mono);
-      font-size:11px;
-      white-space:nowrap;
+      font-family:var(--mono);font-size:11px;white-space:nowrap;
     }
 
-    .metaBar{
-      margin-top:10px;
-      display:flex;
-      gap:10px;
-      flex-wrap:wrap;
-      color:rgba(170,182,214,.85);
-      font-size:12px;
-    }
+    .metaBar{margin-top:10px;display:flex;gap:10px;flex-wrap:wrap;color:rgba(170,182,214,.85);font-size:12px;}
     .pill{
       border:1px solid rgba(255,255,255,.12);
-      padding:6px 8px;
-      border-radius:999px;
-      background: rgba(3,7,18,.35);
+      padding:6px 8px;border-radius:999px;background: rgba(3,7,18,.35);
       font-family:var(--mono);
-    }
-
-    main{
-      padding:14px;
-      overflow:hidden;
     }
 
     .status{
       border:1px solid rgba(255,255,255,.10);
       background: rgba(3,7,18,.35);
-      border-radius:12px;
-      padding:10px 12px;
-      color:rgba(170,182,214,.92);
-      font-size:13px;
-      margin-bottom:12px;
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      gap:10px;
-      flex-wrap:wrap;
+      border-radius:12px;padding:10px 12px;
+      color:rgba(170,182,214,.92);font-size:13px;margin-bottom:12px;
+      display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap;
     }
     .status strong{color:rgba(233,238,248,.95)}
     .status code{
-      font-family:var(--mono);
-      font-size:12px;
-      color:rgba(233,238,248,.9);
+      font-family:var(--mono);font-size:12px;color:rgba(233,238,248,.9);
       background: rgba(59,130,246,.10);
       border:1px solid rgba(59,130,246,.20);
-      padding:2px 6px;
-      border-radius:8px;
+      padding:2px 6px;border-radius:8px;
     }
 
-    .content{
-      display:flex;
-      flex-direction:column;
-      gap:10px;
-    }
+    .content{display:flex;flex-direction:column;gap:10px;}
 
-    details.group{
+    /* Bloque wrapper para que tu setupSearch funcione igual */
+    .block{
       border:1px solid rgba(255,255,255,.10);
       background: rgba(3,7,18,.35);
       border-radius: 14px;
       overflow:hidden;
     }
-    details.group[open]{
-      border-color: rgba(59,130,246,.35);
-    }
+
+    details.group{border:none;background:transparent;border-radius:0;overflow:hidden;}
+    details.group[open]{outline:1px solid rgba(59,130,246,.35); outline-offset:-1px;}
+
     summary{
-      list-style:none;
-      cursor:pointer;
-      padding:12px 12px;
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      gap:12px;
-      user-select:none;
+      list-style:none;cursor:pointer;padding:12px 12px;
+      display:flex;align-items:center;justify-content:space-between;gap:12px;user-select:none;
     }
     summary::-webkit-details-marker{display:none}
-    .sumLeft{
-      display:flex;
-      flex-direction:column;
-      gap:2px;
-      min-width:0;
-    }
+    .sumLeft{display:flex;flex-direction:column;gap:2px;min-width:0;}
     .sumTitle{
-      font-weight:650;
-      font-size:14px;
-      letter-spacing:.2px;
-      white-space:nowrap;
-      overflow:hidden;
-      text-overflow:ellipsis;
+      font-weight:650;font-size:14px;letter-spacing:.2px;
+      white-space:nowrap;overflow:hidden;text-overflow:ellipsis;
     }
-    .sumType{
-      color:rgba(170,182,214,.85);
-      font-size:12px;
-      font-family:var(--mono);
-    }
-    .sumRight{
-      display:flex;
-      align-items:center;
-      gap:10px;
-      flex-shrink:0;
-    }
+    .sumType{color:rgba(170,182,214,.85);font-size:12px;font-family:var(--mono);}
+    .sumRight{display:flex;align-items:center;gap:10px;flex-shrink:0;}
     .range{
-      font-family:var(--mono);
-      font-size:12px;
-      color:rgba(233,238,248,.9);
+      font-family:var(--mono);font-size:12px;color:rgba(233,238,248,.9);
       background: rgba(255,255,255,.06);
       border:1px solid rgba(255,255,255,.10);
-      padding:4px 8px;
-      border-radius:999px;
-      white-space:nowrap;
+      padding:4px 8px;border-radius:999px;white-space:nowrap;
     }
 
-    .body{
-      padding: 0 12px 12px;
-    }
-    .lines{
-      margin:0;
-      padding:0;
-      list-style:none;
-      display:flex;
-      flex-direction:column;
-      gap:7px;
-    }
+    .body{padding: 0 12px 12px;}
+    .lines{margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:7px;}
     .line{
       border:1px solid rgba(255,255,255,.08);
       background: rgba(3,7,18,.28);
       border-radius:12px;
       padding:9px 10px;
-      font-size:13px;
-      line-height:1.35;
+      font-size:13px;line-height:1.35;
       color:rgba(233,238,248,.93);
       word-break:break-word;
-    }
-    .line code{
-      font-family:var(--mono);
-      font-size:12px;
-      color:rgba(233,238,248,.9);
     }
     .line a{
       color: rgba(147,197,253,.95);
@@ -372,27 +180,26 @@
       text-underline-offset: 2px;
     }
 
-    mark[data-hl="1"]{
-      background: var(--mark);
-      color:inherit;
-      padding:0 2px;
-      border-radius:6px;
-      border:1px solid rgba(59,130,246,.35);
+    /* Subapartados dentro de secciones (NO crean bloque nuevo) */
+    .subhead{
+      border:1px solid rgba(255,255,255,.08);
+      background: rgba(255,255,255,.04);
+      border-radius:12px;
+      padding:8px 10px;
+      font-size:12px;
+      font-family:var(--mono);
+      color:rgba(233,238,248,.90);
+      letter-spacing:.35px;
+      text-transform:uppercase;
     }
 
     .footerNote{
-      margin-top:12px;
-      color:rgba(170,182,214,.85);
-      font-size:12px;
-      border-top:1px solid rgba(255,255,255,.08);
-      padding-top:12px;
-      line-height:1.45;
+      margin-top:12px;color:rgba(170,182,214,.85);
+      font-size:12px;border-top:1px solid rgba(255,255,255,.08);
+      padding-top:12px;line-height:1.45;
     }
     .footerNote code{
-      font-family:var(--mono);
-      font-size:12px;
-      padding:2px 6px;
-      border-radius:8px;
+      font-family:var(--mono);font-size:12px;padding:2px 6px;border-radius:8px;
       background: rgba(255,255,255,.06);
       border:1px solid rgba(255,255,255,.10);
       color:rgba(233,238,248,.92);
@@ -422,6 +229,8 @@
       </div>
 
       <div class="topActions">
+        <a id="btnRepo" class="btn" href="#" target="_blank" rel="noopener">Repo</a>
+        <a id="btnRaw" class="btn" href="#" target="_blank" rel="noopener">Ver bibliografia.txt</a>
         <a id="btnBuy" class="btn primary disabled" href="#" target="_blank" rel="noopener">Compra (provisional)</a>
         <a class="btn" href="mailto:mercurius81@proton.me">Contacto</a>
         <a class="btn" href="bibliografia.txt" download="bibliografia.txt">Descargar TXT</a>
@@ -441,7 +250,7 @@
         <div class="field">
           <div class="labelRow">
             <label for="jumpSelect">Saltar a…</label>
-            <span class="hint">ordenado</span>
+            <span class="hint">autor / sección + rango REF</span>
           </div>
           <select id="jumpSelect">
             <option value="">Selecciona</option>
@@ -479,504 +288,523 @@
         <div id="content" class="content"></div>
 
         <div class="footerNote">
-          Si subes <code>bibliografia.txt</code> y <code>index.html</code> a la raíz del repo (GitHub Pages),
-          esto se autoconstruye. El botón <code>Renumerar + Descargar</code> no toca tu repo: solo genera un archivo local.
+          Sube <code>index.html</code> + <code>bibliografia.txt</code> al repo. Si GitHub Pages no encuentra el archivo,
+          revisa mayúsculas/minúsculas (Linux es estricto). El botón <code>Renumerar + Descargar</code> no toca tu repo: genera un archivo local.
         </div>
       </main>
     </div>
   </div>
 
 <script>
-(() => {
-  // EDITA AQUÍ tu link de compra provisional (cuando lo tengas).
-  // Si lo dejas vacío, el botón quedará desactivado.
-  const BUY_URL = ""; // ejemplo: "https://tusitio.com/compra"
-
-  const FILE_PATH = "bibliografia.txt";
-
-  const MAJOR_SECTION_TITLES = new Set([
-    "PODCASTS",
-    "BLOGS",
-    "MANUALES",
-    "TEXTOS RELIGIOSOS",
-    "IDEOLOGÍAS / DOCTRINAS DE MANDO (POLÍTICA Y RÉGIMEN)",
-    "IDEOLOGÍAS (CARTOGRAFÍA HISTÓRICA)",
-    "CONTRAPESOS / HISTORIOGRAFÍA CRÍTICA",
-    "ANTI-TECNOLOGÍA (OBJETOS HISTÓRICOS)",
-    "CRÍTICA DE LA TÉCNICA (CANON)",
-    "RADICALISMOS ANTI-CIVILIZACIÓN (CARTOGRAFÍA)"
-  ]);
-
-  const els = {
-    btnBuy: document.getElementById("btnBuy"),
-    search: document.getElementById("search"),
-    jump: document.getElementById("jumpSelect"),
-    authorsList: document.getElementById("authorsList"),
-    sectionsList: document.getElementById("sectionsList"),
-    content: document.getElementById("content"),
-    status: document.getElementById("status"),
-    statusHint: document.getElementById("statusHint"),
-    metaGroups: document.getElementById("metaGroups"),
-    metaRefs: document.getElementById("metaRefs"),
-    btnExpandAll: document.getElementById("btnExpandAll"),
-    btnCollapseAll: document.getElementById("btnCollapseAll"),
-    btnRenumber: document.getElementById("btnRenumber"),
-    btnClear: document.getElementById("btnClear")
-  };
-
-  // ==========
-  // Utilities
-  // ==========
-  const pad3 = (n) => String(n).padStart(3, "0");
-
-  const escapeHTML = (s) =>
-    s.replaceAll("&","&amp;").replaceAll("<","&lt;").replaceAll(">","&gt;").replaceAll('"',"&quot;").replaceAll("'","&#39;");
-
-  const isProbablyHeading = (line) => {
-    const t = line.trim();
-    if (!t) return false;
-    if (/^REF-\d+/i.test(t)) return false;
-    if (/^(Link|PDF)\s*:/i.test(t)) return false;
-
-    // Heurística: líneas "título de grupo" suelen ser cortas, sin punto final, y con mayúsculas predominantes.
-    // Permitimos paréntesis, barras, comas, puntos, guiones.
-    if (t.length > 120) return false;
-    if (/\.\s*$/.test(t)) return false; // si termina en punto, suele ser entrada, no encabezado
-    // Debe tener letras
-    if (!/[A-Za-zÁÉÍÓÚÜÑáéíóúüñ]/.test(t)) return false;
-
-    // Si tiene estructura típica de autor (COMA) o está en mayúsculas (o casi)
-    const upperish = t === t.toUpperCase();
-    const hasComma = t.includes(",");
-    const looksLikeNetwork = /INTERNATIONAL|NETWORK|GOBIERNO|MINISTERIO/i.test(t);
-    return upperish || hasComma || looksLikeNetwork;
-  };
-
-  const extractRefsFromText = (s) => {
-    const refs = [];
-    const re = /REF-(\d+)(?:[_-]\d+)?/gi;
-    let m;
-    while ((m = re.exec(s)) !== null) refs.push(parseInt(m[1], 10));
-    return refs;
-  };
-
-  const refRangeLabel = (min, max) => {
-    if (!Number.isFinite(min) || !Number.isFinite(max)) return "";
-    if (min === max) return `REF-${pad3(min)}`;
-    return `REF-${pad3(min)}–REF-${pad3(max)}`;
-  };
-
-  const makeId = (prefix, idx) => `${prefix}-${idx}`;
-
-  // Linkifica URLs, sin tocar ya-anchored (esto funciona porque aquí trabajamos en texto plano de una línea)
-  const linkify = (text) => {
-    // Detecta URLs sueltas
-    const urlRe = /(https?:\/\/[^\s)]+)|(www\.[^\s)]+)/gi;
-    return text.replace(urlRe, (m) => {
-      const href = m.startsWith("http") ? m : `https://${m}`;
-      return `<a href="${escapeHTML(href)}" target="_blank" rel="noopener">${escapeHTML(m)}</a>`;
-    });
-  };
-
-  // ==========
-  // Highlight
-  // ==========
-  function clearHighlights(root){
-    root.querySelectorAll('mark[data-hl="1"]').forEach(mark => {
-      const txt = document.createTextNode(mark.textContent);
-      mark.replaceWith(txt);
-    });
-    // compacta text nodes contiguos
-    root.normalize();
-  }
-
-  function highlightInElement(el, query){
-    if (!query) return;
-    const q = query.toLowerCase();
-
-    const walker = document.createTreeWalker(
-      el,
-      NodeFilter.SHOW_TEXT,
-      {
-        acceptNode(node){
-          const v = node.nodeValue;
-          if (!v || !v.trim()) return NodeFilter.FILTER_REJECT;
-
-          const p = node.parentElement;
-          if (!p) return NodeFilter.FILTER_REJECT;
-          if (p.closest("a, mark, script, style, textarea, input, select, button")) return NodeFilter.FILTER_REJECT;
-
-          if (!v.toLowerCase().includes(q)) return NodeFilter.FILTER_REJECT;
-          return NodeFilter.FILTER_ACCEPT;
-        }
-      }
-    );
-
-    const targets = [];
-    while (walker.nextNode()) targets.push(walker.currentNode);
-
-    for (const node of targets){
-      const text = node.nodeValue;
-      const lower = text.toLowerCase();
-      let idx = 0;
-
-      const frag = document.createDocumentFragment();
-
-      while (true){
-        const i = lower.indexOf(q, idx);
-        if (i === -1){
-          frag.appendChild(document.createTextNode(text.slice(idx)));
-          break;
-        }
-        frag.appendChild(document.createTextNode(text.slice(idx, i)));
-
-        const mark = document.createElement("mark");
-        mark.dataset.hl = "1";
-        mark.textContent = text.slice(i, i + query.length);
-        frag.appendChild(mark);
-
-        idx = i + query.length;
-      }
-
-      node.parentNode.replaceChild(frag, node);
-    }
-  }
-
-  // ==========
-  // Parsing
-  // ==========
-  function parseBibliography(raw){
-    const lines = raw.replace(/\r\n/g,"\n").split("\n");
-
-    const groups = [];
-    let current = null;
-
-    let sectionMode = false;
-
-    const pushCurrent = () => {
-      if (!current) return;
-      // Limpia líneas vacías al final
-      while (current.lines.length && !current.lines[current.lines.length - 1].trim()) current.lines.pop();
-
-      const allText = current.lines.join("\n");
-      const refs = extractRefsFromText(allText);
-      current.refMin = refs.length ? Math.min(...refs) : null;
-      current.refMax = refs.length ? Math.max(...refs) : null;
-      current.refCount = refs.length;
-
-      groups.push(current);
-      current = null;
-    };
-
-    for (let i=0;i<lines.length;i++){
-      const line = lines[i];
-      const t = line.trim();
-
-      // ignorar encabezado "poético" inicial: lo dejamos en el html, no en el archivo
-      // Pero el archivo puede contenerlo igual; aquí simplemente no lo usamos como grupo.
-      if (!t) continue;
-
-      if (isProbablyHeading(t)){
-        // activa modo secciones cuando aparezca un gran bloque
-        if (!sectionMode && MAJOR_SECTION_TITLES.has(t)) sectionMode = true;
-
-        pushCurrent();
-
-        current = {
-          id: makeId(sectionMode ? "sec" : "auth", groups.length + 1),
-          type: sectionMode ? "section" : "author",
-          title: t,
-          lines: []
-        };
-        continue;
-      }
-
-      // Línea normal
-      if (!current){
-        // si por lo que sea hay líneas antes del primer encabezado, las ignoramos
-        continue;
-      }
-      current.lines.push(line);
-    }
-
-    pushCurrent();
-
-    // Separa autores y secciones
-    const authors = groups.filter(g => g.type === "author");
-    const sections = groups.filter(g => g.type === "section");
-
-    // orden alfabético de autores
-    authors.sort((a,b) => a.title.localeCompare(b.title, "es", {sensitivity:"base"}));
-
-    // secciones mantienen orden de aparición
-    return { authors, sections, all: [...authors, ...sections], raw };
-  }
-
-  // ==========
-  // Rendering
-  // ==========
-  function renderAll(model){
-    els.content.innerHTML = "";
-    els.authorsList.innerHTML = "";
-    els.sectionsList.innerHTML = "";
-    els.jump.innerHTML = `<option value="">Selecciona</option>`;
-
-    const allGroups = model.all;
-
-    // meta
-    const totalGroups = allGroups.length;
-    const totalRefs = allGroups.reduce((acc,g)=>acc + (g.refCount||0), 0);
-    els.metaGroups.textContent = `grupos: ${totalGroups}`;
-    els.metaRefs.textContent = `refs: ${totalRefs}`;
-
-    // jump + nav
-    const addNavItem = (container, g) => {
-      const a = document.createElement("a");
-      a.href = `#${g.id}`;
-      a.className = "navItem";
-      a.dataset.groupId = g.id;
-      a.innerHTML = `
-        <span>${escapeHTML(g.title)}</span>
-        <small>${escapeHTML(refRangeLabel(g.refMin, g.refMax) || "")}</small>
-      `;
-      a.addEventListener("click", (ev) => {
-        ev.preventDefault();
-        jumpTo(g.id);
-      });
-      container.appendChild(a);
-    };
-
-    for (const g of model.authors){
-      const opt = document.createElement("option");
-      opt.value = g.id;
-      opt.textContent = `${g.title}${g.refMin ? " — " + refRangeLabel(g.refMin, g.refMax) : ""}`;
-      opt.dataset.groupId = g.id;
-      els.jump.appendChild(opt);
-
-      addNavItem(els.authorsList, g);
-    }
-
-    for (const g of model.sections){
-      const opt = document.createElement("option");
-      opt.value = g.id;
-      opt.textContent = `${g.title}${g.refMin ? " — " + refRangeLabel(g.refMin, g.refMax) : ""}`;
-      opt.dataset.groupId = g.id;
-      els.jump.appendChild(opt);
-
-      addNavItem(els.sectionsList, g);
-    }
-
-    // content
-    for (const g of allGroups){
-      const details = document.createElement("details");
-      details.className = "group";
-      details.id = g.id;
-
-      const range = refRangeLabel(g.refMin, g.refMax);
-      const typeLabel = g.type === "author" ? "autor" : "sección";
-
-      const summary = document.createElement("summary");
-      summary.innerHTML = `
-        <div class="sumLeft">
-          <div class="sumTitle">${escapeHTML(g.title)}</div>
-          <div class="sumType">${escapeHTML(typeLabel)}</div>
-        </div>
-        <div class="sumRight">
-          <span class="range">${escapeHTML(range || "—")}</span>
-        </div>
-      `;
-
-      const body = document.createElement("div");
-      body.className = "body";
-
-      const ul = document.createElement("ul");
-      ul.className = "lines";
-
-      // render lines as list items (linkify URLs)
-      for (const rawLine of g.lines){
-        const t = rawLine.trim();
-        if (!t) continue;
-
-        const li = document.createElement("li");
-        li.className = "line";
-
-        // Si empieza por "Link:" o "PDF:", preserva etiqueta
-        const html = linkify(escapeHTML(rawLine));
-        li.innerHTML = html;
-
-        ul.appendChild(li);
-      }
-
-      body.appendChild(ul);
-
-      details.appendChild(summary);
-      details.appendChild(body);
-      els.content.appendChild(details);
-    }
-  }
-
-  function jumpTo(id){
-    const el = document.getElementById(id);
-    if (!el) return;
-    el.scrollIntoView({behavior:"smooth", block:"start"});
-    if (el.tagName.toLowerCase() === "details") el.open = true;
-  }
-
-  // ==========
-  // Search & Filter
-  // ==========
-  function setupSearch(model){
-    const allGroups = model.all;
-
-    const applyFilter = (qRaw) => {
-      const q = (qRaw || "").trim();
-      const qLower = q.toLowerCase();
-
-      // 1) limpia highlights anteriores
-      clearHighlights(els.content);
-
-      // 2) filtra grupos
-      for (const g of allGroups){
-        const el = document.getElementById(g.id);
-        if (!el) continue;
-
-        if (!q){
-          el.style.display = "";
-          continue;
-        }
-
-        // texto del grupo (incluye títulos)
-        const hay = (el.innerText || el.textContent || "").toLowerCase();
-        el.style.display = hay.includes(qLower) ? "" : "none";
-      }
-
-      // 3) filtra nav + select
-      const filterNav = (container) => {
-        container.querySelectorAll(".navItem").forEach(item => {
-          const id = item.dataset.groupId;
-          const el = document.getElementById(id);
-          const visible = el && el.style.display !== "none";
-          item.style.display = visible ? "" : "none";
-        });
-      };
-      filterNav(els.authorsList);
-      filterNav(els.sectionsList);
-
-      els.jump.querySelectorAll("option").forEach(opt => {
-        if (!opt.value) return;
-        const el = document.getElementById(opt.value);
-        const visible = el && el.style.display !== "none";
-        opt.hidden = !visible;
-      });
-
-      // 4) aplica highlights SOLO a visibles
-      if (q){
-        els.content.querySelectorAll("details.group").forEach(d => {
-          if (d.style.display === "none") return;
-          highlightInElement(d, q);
-        });
-      }
-
-      // status hint
-      if (!q){
-        els.statusHint.textContent = "";
-        return;
-      }
-      const visibles = els.content.querySelectorAll('details.group:not([style*="display: none"])').length;
-      els.statusHint.textContent = `coincidencias: mostrando ${visibles} grupo(s)`;
-    };
-
-    els.search.addEventListener("input", () => applyFilter(els.search.value));
-
-    els.btnClear.addEventListener("click", () => {
-      els.search.value = "";
-      applyFilter("");
-      els.search.focus();
-    });
-
-    els.jump.addEventListener("change", () => {
-      const id = els.jump.value;
-      if (!id) return;
-      jumpTo(id);
-    });
-
-    // Expand/Collapse
-    els.btnExpandAll.addEventListener("click", () => {
-      els.content.querySelectorAll("details.group").forEach(d => {
-        if (d.style.display === "none") return;
-        d.open = true;
-      });
-    });
-
-    els.btnCollapseAll.addEventListener("click", () => {
-      els.content.querySelectorAll("details.group").forEach(d => d.open = false);
-    });
-  }
-
-  // ==========
-  // Renumber (local download)
-  // ==========
-  function setupRenumber(rawText){
-    els.btnRenumber.addEventListener("click", () => {
-      // renumera en el orden de aparición, eliminando variantes tipo REF-300_1
-      let i = 1;
-
-      // Reemplaza cada token REF-###(_#)? por REF-### secuencial
-      const out = rawText.replace(/REF-(\d+)(?:[_-]\d+)?/gi, () => {
-        const v = `REF-${pad3(i)}`;
-        i++;
-        return v;
-      });
-
-      const blob = new Blob([out], {type:"text/plain;charset=utf-8"});
-      const url = URL.createObjectURL(blob);
-      const a = document.createElement("a");
-      a.href = url;
-      a.download = "bibliografia_renumerada.txt";
-      document.body.appendChild(a);
-      a.click();
-      a.remove();
-      URL.revokeObjectURL(url);
-    });
-  }
-
-  // ==========
-  // Init
-  // ==========
-  function setupBuyButton(){
-    if (BUY_URL && BUY_URL.trim() && BUY_URL !== "#"){
-      els.btnBuy.href = BUY_URL.trim();
-      els.btnBuy.classList.remove("disabled");
-    }else{
-      els.btnBuy.classList.add("disabled");
-      els.btnBuy.setAttribute("aria-disabled","true");
-      els.btnBuy.addEventListener("click", (e)=>e.preventDefault());
-      els.btnBuy.title = "Edita BUY_URL en el código para activar la compra provisional.";
-    }
-  }
-
-  async function init(){
-    setupBuyButton();
-
+/* ==========
+   CONFIG
+   ========== */
+
+// Link de compra provisional (cuando lo tengas). Si está vacío, se desactiva.
+const BUY_URL = ""; // ej: "https://amazon.es/dp/XXXX"
+
+// Candidatos por si el archivo se llama distinto (case/acentos)
+const FILE_CANDIDATES = [
+  "bibliografia.txt",
+  "Bibliografia.txt",
+  "BIBLIOGRAFIA.TXT",
+  "bibliografía.txt",
+  "Bibliografía.txt"
+];
+
+// Secciones MAYORES: SOLO estas crean bloque propio al final.
+const MAJOR_SECTION_TITLES = new Set([
+  "PODCASTS",
+  "BLOGS",
+  "MANUALES",
+  "TEXTOS RELIGIOSOS",
+  "IDEOLOGÍAS / DOCTRINAS DE MANDO (POLÍTICA Y RÉGIMEN)",
+  "IDEOLOGÍAS (CARTOGRAFÍA HISTÓRICA)",
+  "CONTRAPESOS / HISTORIOGRAFÍA CRÍTICA",
+  "ANTI-TECNOLOGÍA (OBJETOS HISTÓRICOS)",
+  "CRÍTICA DE LA TÉCNICA (CANON)",
+  "RADICALISMOS ANTI-CIVILIZACIÓN (CARTOGRAFÍA)"
+]);
+
+/* ==========
+   DOM
+   ========== */
+const els = {
+  btnRepo: document.getElementById("btnRepo"),
+  btnRaw: document.getElementById("btnRaw"),
+  btnBuy: document.getElementById("btnBuy"),
+  search: document.getElementById("search"),
+  jump: document.getElementById("jumpSelect"),
+  authorsList: document.getElementById("authorsList"),
+  sectionsList: document.getElementById("sectionsList"),
+  content: document.getElementById("content"),
+  status: document.getElementById("status"),
+  statusHint: document.getElementById("statusHint"),
+  metaGroups: document.getElementById("metaGroups"),
+  metaRefs: document.getElementById("metaRefs"),
+  btnExpandAll: document.getElementById("btnExpandAll"),
+  btnCollapseAll: document.getElementById("btnCollapseAll"),
+  btnRenumber: document.getElementById("btnRenumber"),
+  btnClear: document.getElementById("btnClear")
+};
+
+/* ==========
+   Helpers
+   ========== */
+const pad3 = (n) => String(n).padStart(3, "0");
+
+const escapeHTML = (s) =>
+  s.replaceAll("&","&amp;").replaceAll("<","&lt;").replaceAll(">","&gt;").replaceAll('"',"&quot;").replaceAll("'","&#39;");
+
+const extractRefs = (s) => {
+  const refs = [];
+  const re = /REF-(\d+)(?:[_-]\d+)?/gi;
+  let m;
+  while ((m = re.exec(s)) !== null) refs.push(parseInt(m[1],10));
+  return refs;
+};
+
+const refRangeLabel = (min,max) => {
+  if(!Number.isFinite(min) || !Number.isFinite(max)) return "";
+  if(min===max) return `REF-${pad3(min)}`;
+  return `REF-${pad3(min)}–REF-${pad3(max)}`;
+};
+
+const linkify = (text) => {
+  const urlRe = /(https?:\/\/[^\s)]+)|(www\.[^\s)]+)/gi;
+  return text.replace(urlRe, (m) => {
+    const href = m.startsWith("http") ? m : `https://${m}`;
+    return `<a href="${escapeHTML(href)}" target="_blank" rel="noopener">${escapeHTML(m)}</a>`;
+  });
+};
+
+const isRefLine = (t) => /^REF-\d+/i.test(t);
+const isLinkLine = (t) => /^(Link|PDF)\s*:/i.test(t);
+const isUrlLine  = (t) => /^https?:\/\//i.test(t);
+
+const isAllCapsish = (t) => {
+  // “capsish”: tolera tildes y signos
+  const letters = t.replace(/[^A-Za-zÁÉÍÓÚÜÑáéíóúüñ]/g,"");
+  if(!letters) return false;
+  // si hay minúsculas “de verdad”, no es capsish
+  const hasLower = /[a-záéíóúüñ]/.test(letters);
+  const hasUpper = /[A-ZÁÉÍÓÚÜÑ]/.test(letters);
+  return hasUpper && !hasLower;
+};
+
+// Autor heading en la parte principal
+const isAuthorHeading = (t) => {
+  if(!t) return false;
+  if(isRefLine(t) || isLinkLine(t) || isUrlLine(t)) return false;
+  // autor suele tener coma o ser capsish (EMPÉDOCLES, EPICURO, etc.)
+  return t.includes(",") || isAllCapsish(t);
+};
+
+// Subapartado dentro de secciones (no bloque nuevo)
+const isSectionSubhead = (t) => {
+  if(!t) return false;
+  if(isRefLine(t) || isLinkLine(t) || isUrlLine(t)) return false;
+  if(MAJOR_SECTION_TITLES.has(t)) return false;
+  // típicos: AUDIOLIBROS, IVOOX / PROGRAMAS, EPIC GAMES, ANÓNIMOS, etc.
+  return isAllCapsish(t) || t.includes("/") || t.includes("—");
+};
+
+/* ==========
+   Repo links (auto)
+   ========== */
+function computeRepoURLs(){
+  // Intenta deducir user/repo si es GitHub Pages: https://user.github.io/repo/
+  const host = location.hostname;
+  const pathParts = location.pathname.split("/").filter(Boolean);
+  const isGhPages = host.endsWith("github.io") && pathParts.length >= 1;
+  const user = isGhPages ? host.split(".")[0] : null;
+  const repo = isGhPages ? pathParts[0] : null;
+
+  const repoUrl = (user && repo) ? `https://github.com/${user}/${repo}` : "#";
+  const rawUrl  = (user && repo) ? `${repoUrl}/blob/main/` : "#";
+
+  return { repoUrl, rawBase: rawUrl };
+}
+
+/* ==========
+   Fetch with fallback
+   ========== */
+async function fetchFirstAvailable(paths){
+  const tried = [];
+  for(const p of paths){
+    tried.push(p);
     try{
-      const res = await fetch(FILE_PATH, {cache:"no-store"});
-      if (!res.ok) throw new Error(`HTTP ${res.status}`);
-      const raw = await res.text();
+      const res = await fetch(p, {cache:"no-store"});
+      if(res.ok){
+        const txt = await res.text();
+        return { ok:true, path:p, text:txt, tried };
+      }
+    }catch(e){
+      // sigue probando
+    }
+  }
+  return { ok:false, path:null, text:"", tried };
+}
 
-      const model = parseBibliography(raw);
-      renderAll(model);
-      setupSearch(model);
-      setupRenumber(raw);
+/* ==========
+   Parse: autores (bloques) + secciones mayores (bloques)
+   Dentro de secciones: subheads como líneas especiales.
+   ========== */
+function parseBibliography(raw){
+  const lines = raw.replace(/\r\n/g,"\n").split("\n");
+  const authors = [];
+  const sections = [];
 
-      els.status.innerHTML = `<div><strong>Estado:</strong> listo · leyendo <code>${FILE_PATH}</code></div><div class="hint" id="statusHint"></div>`;
-      // vuelve a enlazar statusHint (recreado)
-      els.statusHint = document.getElementById("statusHint");
-    }catch(err){
-      els.status.innerHTML = `<div><strong>Estado:</strong> error cargando <code>${FILE_PATH}</code></div><div class="hint">${escapeHTML(String(err))}</div>`;
+  let mode = "authors"; // authors -> sections
+  let current = null;
+
+  function pushCurrent(){
+    if(!current) return;
+    // limpia vacíos finales
+    while(current.items.length && current.items[current.items.length-1].text.trim()==="") current.items.pop();
+
+    const allText = current.items.map(i=>i.text).join("\n");
+    const refs = extractRefs(allText);
+    current.refMin = refs.length ? Math.min(...refs) : null;
+    current.refMax = refs.length ? Math.max(...refs) : null;
+    current.refCount = refs.length;
+
+    (current.type==="author" ? authors : sections).push(current);
+    current = null;
+  }
+
+  function startGroup(type, title){
+    pushCurrent();
+    const idx = (type==="author" ? authors.length : sections.length) + 1;
+    current = {
+      id: `${type==="author" ? "auth" : "sec"}-${pad3(idx)}`,
+      type,
+      title,
+      items: []
+    };
+  }
+
+  for(const rawLine of lines){
+    const line = rawLine;
+    const t = line.trim();
+
+    if(!t) continue;
+
+    if(mode==="authors"){
+      if(MAJOR_SECTION_TITLES.has(t)){
+        // entra en modo secciones
+        pushCurrent();
+        mode = "sections";
+        startGroup("section", t);
+        continue;
+      }
+      if(isAuthorHeading(t)){
+        startGroup("author", t);
+        continue;
+      }
+      if(!current){
+        // ignora preámbulos si llegan antes del primer autor
+        continue;
+      }
+      current.items.push({ kind:"line", text: line });
+    }else{
+      // mode sections: SOLO títulos mayores crean nuevo bloque
+      if(MAJOR_SECTION_TITLES.has(t)){
+        startGroup("section", t);
+        continue;
+      }
+      if(!current){
+        // si por lo que sea falta sección, crea una genérica
+        startGroup("section", "SECCIONES");
+      }
+
+      if(isSectionSubhead(t)){
+        current.items.push({ kind:"subhead", text: t });
+      }else{
+        current.items.push({ kind:"line", text: line });
+      }
     }
   }
 
-  init();
+  pushCurrent();
+
+  // Autores: orden alfabético suave (por si se desordena al añadir)
+  authors.sort((a,b)=>a.title.localeCompare(b.title, "es", {sensitivity:"base"}));
+
+  // Recalcula ids tras ordenar autores
+  authors.forEach((g,i)=> g.id = `auth-${pad3(i+1)}`);
+
+  return { authors, sections, all:[...authors, ...sections], raw };
+}
+
+/* ==========
+   Render
+   ========== */
+function renderAll(model){
+  els.content.innerHTML = "";
+  els.authorsList.innerHTML = "";
+  els.sectionsList.innerHTML = "";
+  els.jump.innerHTML = `<option value="">Selecciona</option>`;
+
+  const allGroups = model.all;
+  const totalGroups = allGroups.length;
+  const totalRefs = allGroups.reduce((acc,g)=>acc + (g.refCount||0), 0);
+  els.metaGroups.textContent = `grupos: ${totalGroups}`;
+  els.metaRefs.textContent = `refs: ${totalRefs}`;
+
+  function addNavItem(container, g){
+    const a = document.createElement("a");
+    a.href = `#${g.id}`;
+    a.className = "navItem";
+    a.dataset.groupId = g.id;
+    a.innerHTML = `<span>${escapeHTML(g.title)}</span><small>${escapeHTML(refRangeLabel(g.refMin,g.refMax) || "")}</small>`;
+    a.addEventListener("click",(ev)=>{
+      ev.preventDefault();
+      const el = document.getElementById(g.id);
+      if(el) el.scrollIntoView({behavior:"smooth", block:"start"});
+      const det = el ? el.querySelector("details") : null;
+      if(det) det.open = true;
+    });
+    container.appendChild(a);
+  }
+
+  function addJumpOption(g){
+    const range = refRangeLabel(g.refMin,g.refMax) || "—";
+    const opt = document.createElement("option");
+    opt.value = g.id;
+    opt.textContent = `${g.title} · ${range}`;
+    els.jump.appendChild(opt);
+  }
+
+  // Nav: autores
+  for(const g of model.authors){
+    addJumpOption(g);
+    addNavItem(els.authorsList, g);
+  }
+  // Nav: secciones
+  for(const g of model.sections){
+    addJumpOption(g);
+    addNavItem(els.sectionsList, g);
+  }
+
+  // Content blocks
+  for(const g of allGroups){
+    const block = document.createElement("section");
+    block.className = "block";
+    block.id = g.id;
+
+    const details = document.createElement("details");
+    details.className = "group";
+
+    const typeLabel = (g.type==="author") ? "autor" : "sección";
+    const range = refRangeLabel(g.refMin,g.refMax) || "—";
+
+    const summary = document.createElement("summary");
+    summary.innerHTML = `
+      <div class="sumLeft">
+        <div class="sumTitle">${escapeHTML(g.title)}</div>
+        <div class="sumType">${escapeHTML(typeLabel)}</div>
+      </div>
+      <div class="sumRight">
+        <span class="range">${escapeHTML(range)}</span>
+      </div>
+    `;
+
+    const body = document.createElement("div");
+    body.className = "body";
+
+    const ul = document.createElement("ul");
+    ul.className = "lines";
+
+    for(const item of g.items){
+      if(item.kind==="subhead"){
+        const li = document.createElement("li");
+        li.className = "subhead";
+        li.textContent = item.text;
+        ul.appendChild(li);
+        continue;
+      }
+
+      const rawLine = item.text;
+      const li = document.createElement("li");
+      li.className = "line";
+      li.innerHTML = linkify(escapeHTML(rawLine));
+      ul.appendChild(li);
+    }
+
+    body.appendChild(ul);
+    details.appendChild(summary);
+    details.appendChild(body);
+
+    block.appendChild(details);
+    els.content.appendChild(block);
+  }
+}
+
+/* ==========
+   TU setupSearch (con mini-fix para abrir details si el ID está en el wrapper)
+   + filtra también nav lateral (sin romper tu lógica)
+   ========== */
+function setupSearch(){
+  const search = document.getElementById("search");
+  const jump = document.getElementById("jumpSelect");
+
+  // Filtra:
+  // 1) el desplegable (autor/sección/REF-range)
+  // 2) los bloques renderizados (incluye títulos de obras dentro de cada REF)
+  search.addEventListener("input", ()=>{
+    const q = search.value.trim().toLowerCase();
+
+    // (A) Filtrar opciones del select (autor/sección/REF-range)
+    const opts = jump.querySelectorAll("option");
+    for(const opt of opts){
+      if(!opt.value) continue;
+      opt.hidden = q ? !opt.textContent.toLowerCase().includes(q) : false;
+    }
+
+    // (B) Filtrar bloques del contenido (incluye texto de entradas = títulos/obras)
+    const content = document.getElementById("content");
+    const blocks = Array.from(content.children);
+
+    if(!q){
+      for(const b of blocks) b.style.display = "";
+      // nav
+      document.querySelectorAll(".navItem").forEach(n=>n.style.display="");
+      els.statusHint.textContent = "";
+      return;
+    }
+
+    let shown = 0;
+    for(const b of blocks){
+      const hay = (b.innerText || b.textContent || "").toLowerCase();
+      const ok = hay.includes(q);
+      b.style.display = ok ? "" : "none";
+      if(ok) shown++;
+    }
+
+    // nav lateral: solo lo visible
+    document.querySelectorAll(".navItem").forEach(n=>{
+      const id = n.dataset.groupId;
+      const el = document.getElementById(id);
+      const visible = el && el.style.display !== "none";
+      n.style.display = visible ? "" : "none";
+    });
+
+    els.statusHint.textContent = `coincidencias: mostrando ${shown} bloque(s)`;
+  });
+
+  jump.addEventListener("change", ()=>{
+    const id = jump.value;
+    if(!id) return;
+    const el = document.getElementById(id);
+    if(!el) return;
+    el.scrollIntoView({behavior:"smooth", block:"start"});
+    const det = el.querySelector("details") || (el.matches("details") ? el : null);
+    if(det) det.open = true;
+  });
+}
+
+/* ==========
+   Expand/Collapse + Clear
+   ========== */
+function setupUIButtons(){
+  els.btnExpandAll.addEventListener("click", ()=>{
+    document.querySelectorAll("details.group").forEach(d=>{
+      const wrapper = d.closest(".block");
+      if(wrapper && wrapper.style.display==="none") return;
+      d.open = true;
+    });
+  });
+
+  els.btnCollapseAll.addEventListener("click", ()=>{
+    document.querySelectorAll("details.group").forEach(d=> d.open = false);
+  });
+
+  els.btnClear.addEventListener("click", ()=>{
+    els.search.value = "";
+    els.search.dispatchEvent(new Event("input"));
+    els.search.focus();
+  });
+}
+
+/* ==========
+   Renumber local download (REF-###_# -> REF-### secuencial)
+   ========== */
+function setupRenumber(rawText){
+  els.btnRenumber.addEventListener("click", ()=>{
+    let i = 1;
+    const out = rawText.replace(/REF-(\d+)(?:[_-]\d+)?/gi, ()=>{
+      const v = `REF-${pad3(i)}`;
+      i++;
+      return v;
+    });
+
+    const blob = new Blob([out], {type:"text/plain;charset=utf-8"});
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement("a");
+    a.href = url;
+    a.download = "bibliografia_renumerada.txt";
+    document.body.appendChild(a);
+    a.click();
+    a.remove();
+    URL.revokeObjectURL(url);
+  });
+}
+
+/* ==========
+   Buy button + Repo button
+   ========== */
+function setupTopLinks(foundPath){
+  const { repoUrl } = computeRepoURLs();
+
+  if(repoUrl !== "#"){
+    els.btnRepo.href = repoUrl;
+  }else{
+    els.btnRepo.classList.add("disabled");
+    els.btnRepo.addEventListener("click",(e)=>e.preventDefault());
+  }
+
+  // link directo al archivo en el sitio (no raw github)
+  els.btnRaw.href = foundPath || "bibliografia.txt";
+
+  if(BUY_URL && BUY_URL.trim() && BUY_URL !== "#"){
+    els.btnBuy.href = BUY_URL.trim();
+    els.btnBuy.classList.remove("disabled");
+  }else{
+    els.btnBuy.classList.add("disabled");
+    els.btnBuy.setAttribute("aria-disabled","true");
+    els.btnBuy.addEventListener("click",(e)=>e.preventDefault());
+    els.btnBuy.title = "Edita BUY_URL en el código para activar la compra provisional.";
+  }
+}
+
+/* ==========
+   Init
+   ========== */
+(async function init(){
+  setupUIButtons();
+
+  // Intentar cargar bibliografia.txt (con fallbacks)
+  const result = await fetchFirstAvailable(FILE_CANDIDATES);
+
+  if(!result.ok){
+    els.status.innerHTML = `<div><strong>Estado:</strong> no se pudo cargar <code>bibliografia.txt</code></div>
+      <div class="hint">Probados: ${escapeHTML(result.tried.join(", "))}</div>`;
+    // Deja enlaces mínimos
+    setupTopLinks("bibliografia.txt");
+    return;
+  }
+
+  const raw = result.text;
+  const model = parseBibliography(raw);
+
+  renderAll(model);
+  setupSearch();
+  setupRenumber(raw);
+  setupTopLinks(result.path);
+
+  els.status.innerHTML = `<div><strong>Estado:</strong> listo · leyendo <code>${escapeHTML(result.path)}</code></div><div class="hint" id="statusHint"></div>`;
+  els.statusHint = document.getElementById("statusHint");
 })();
 </script>
 </body>
