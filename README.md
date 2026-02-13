@@ -1,4 +1,4 @@
-# azul-de-pantalla-bio-bibliografía
+# azul-de-pantalla-bibliografía incompleta
 Punto de aterrizaje del QR de Azul de Pantalla: biografía, enlaces y verificación. Si no te carga, no existes. Despliegue en GitHub Pages.
 # Azul de Pantalla · Bio (QR)
 
