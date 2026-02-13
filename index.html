@@ -2,358 +2,502 @@
 <html lang="es">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Bibliografía Azul de Pantalla · Templo del dato</title>
+  <meta name="description" content="Índice navegable y buscable de la bibliografía de Azul de Pantalla." />
   <style>
     :root{
-      --bg:#0b0f14;
-      --panel:#0f1620;
-      --panel2:#121c28;
-      --text:#e9eef6;
-      --muted:#a7b3c6;
-      --accent:#0b4dff;
-      --accent2:#2bd4ff;
-      --border:rgba(255,255,255,.10);
-      --shadow:0 18px 40px rgba(0,0,0,.38);
-      --radius:18px;
-      --radius2:14px;
+      --bg:#070A10;
+      --panel:#0C1220;
+      --panel2:#0B1020;
+      --text:#E9EEF8;
+      --muted:#AAB6D6;
+      --line:rgba(255,255,255,.10);
+      --accent:#3B82F6;
+      --accent2:#1D4ED8;
+      --good:#22C55E;
+      --warn:#F59E0B;
+      --bad:#EF4444;
+      --mark: rgba(59,130,246,.35);
+      --radius:14px;
+      --shadow: 0 14px 40px rgba(0,0,0,.45);
       --mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
-      --sans: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+      --sans: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
     }
+
     *{box-sizing:border-box}
+    html,body{height:100%}
     body{
       margin:0;
       font-family:var(--sans);
-      background:radial-gradient(1200px 800px at 20% 0%, rgba(11,77,255,.15), transparent 60%),
-                 radial-gradient(900px 700px at 90% 10%, rgba(43,212,255,.10), transparent 55%),
-                 var(--bg);
+      background: radial-gradient(1200px 700px at 30% -10%, rgba(59,130,246,.18), transparent 55%),
+                  radial-gradient(1000px 600px at 100% 0%, rgba(29,78,216,.14), transparent 55%),
+                  var(--bg);
       color:var(--text);
     }
-    a{color:var(--accent2); text-decoration:none}
-    a:hover{text-decoration:underline}
-    .top{
-      position:sticky; top:0; z-index:10;
-      backdrop-filter: blur(10px);
-      background: linear-gradient(to bottom, rgba(11,15,20,.92), rgba(11,15,20,.70));
-      border-bottom:1px solid var(--border);
+
+    a{color:inherit}
+    .wrap{
+      max-width:1220px;
+      margin:0 auto;
+      padding:22px 16px 30px;
     }
-    .topInner{
-      max-width:1200px; margin:0 auto; padding:18px 18px 14px;
-      display:flex; gap:16px; align-items:flex-start; justify-content:space-between;
+
+    header{
+      display:flex;
+      align-items:flex-start;
+      justify-content:space-between;
+      gap:16px;
+      margin-bottom:16px;
     }
-    .titleWrap{min-width:260px}
-    h1{font-size:18px; margin:0 0 6px 0; letter-spacing:.2px;}
-    .sub{margin:0; color:var(--muted); font-size:13px; line-height:1.35;}
+
+    .brand{
+      min-width:260px;
+    }
+    .brand h1{
+      margin:0 0 6px 0;
+      font-size:20px;
+      letter-spacing:.2px;
+      font-weight:650;
+    }
+    .brand p{
+      margin:0;
+      color:var(--muted);
+      font-size:13px;
+      line-height:1.35;
+    }
     .quote{
-      margin:10px 0 0; color:rgba(233,238,246,.85);
-      font-size:13px; line-height:1.45;
-      border-left:3px solid rgba(11,77,255,.55);
-      padding-left:10px;
+      margin-top:10px;
+      padding-left:12px;
+      border-left:2px solid rgba(59,130,246,.35);
+      color:rgba(233,238,248,.90);
+      font-size:13px;
     }
-    .btnRow{
-      display:flex; gap:10px; flex-wrap:wrap; justify-content:flex-end;
+    .quote .sig{
+      display:block;
+      margin-top:6px;
+      color:rgba(170,182,214,.9);
+      font-family:var(--mono);
+      font-size:12px;
+    }
+
+    .topActions{
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+      justify-content:flex-end;
       align-items:center;
-      margin-top:2px;
+      padding-top:2px;
     }
+
     .btn{
+      border:1px solid rgba(255,255,255,.14);
+      background: linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,.02));
+      color:var(--text);
       padding:10px 12px;
       border-radius:12px;
-      border:1px solid var(--border);
-      background: linear-gradient(180deg, rgba(18,28,40,.95), rgba(15,22,32,.75));
-      color:var(--text);
-      cursor:pointer;
-      box-shadow: 0 10px 22px rgba(0,0,0,.22);
+      text-decoration:none;
       font-size:13px;
-      display:inline-flex; gap:8px; align-items:center;
+      cursor:pointer;
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
       user-select:none;
     }
-    .btn:hover{border-color:rgba(255,255,255,.18)}
+    .btn:hover{border-color:rgba(255,255,255,.22)}
     .btn.primary{
-      border-color:rgba(11,77,255,.55);
-      background: linear-gradient(180deg, rgba(11,77,255,.32), rgba(15,22,32,.75));
+      border-color: rgba(59,130,246,.55);
+      background: linear-gradient(180deg, rgba(59,130,246,.25), rgba(59,130,246,.08));
     }
-    .btn[disabled]{opacity:.5; cursor:not-allowed}
-    .layout{
-      max-width:1200px;
-      margin:0 auto;
-      padding:16px 18px 30px;
+    .btn.primary:hover{border-color: rgba(59,130,246,.75)}
+    .btn.ghost{
+      background: transparent;
+    }
+    .btn:disabled,
+    .btn.disabled{
+      opacity:.55;
+      cursor:not-allowed;
+      filter:saturate(.7);
+    }
+
+    .grid{
       display:grid;
-      grid-template-columns: 330px 1fr;
-      gap:16px;
+      grid-template-columns: 320px 1fr;
+      gap:14px;
+      align-items:start;
     }
-    .card{
-      background: linear-gradient(180deg, rgba(15,22,32,.92), rgba(12,18,26,.88));
-      border:1px solid var(--border);
+
+    aside, main{
+      background: linear-gradient(180deg, rgba(255,255,255,.045), rgba(255,255,255,.02));
+      border:1px solid rgba(255,255,255,.10);
       border-radius: var(--radius);
       box-shadow: var(--shadow);
     }
-    .side{
-      position:sticky; top:110px;
-      height: calc(100vh - 130px);
+
+    aside{
+      padding:14px;
+      position:sticky;
+      top:14px;
+      max-height: calc(100vh - 28px);
       overflow:auto;
     }
-    .sideInner{padding:14px}
-    .label{font-size:12px; color:var(--muted); margin:12px 0 6px}
-    .input, .select{
-      width:100%;
-      padding:10px 12px;
-      border-radius:12px;
-      border:1px solid var(--border);
-      background: rgba(18,28,40,.55);
-      color:var(--text);
-      font-size:13px;
-      outline:none;
+
+    .field{
+      display:flex;
+      flex-direction:column;
+      gap:8px;
+      margin-bottom:12px;
     }
-    .row{display:flex; gap:10px}
-    .row > *{flex:1}
-    .pill{
-      display:inline-flex; gap:8px; align-items:center;
-      padding:7px 10px;
-      border-radius:999px;
-      border:1px solid var(--border);
-      background: rgba(18,28,40,.35);
+
+    .labelRow{
+      display:flex;
+      justify-content:space-between;
+      align-items:baseline;
+      gap:10px;
+    }
+
+    label{
       font-size:12px;
       color:var(--muted);
-      margin-top:10px;
     }
-    .main{overflow:hidden;}
-    .mainInner{padding:16px}
-    .toolbar{
-      display:flex; gap:10px; align-items:center; flex-wrap:wrap;
-      padding:14px 14px 0;
-    }
-    .status{
+    .hint{
+      font-size:11px;
+      color:rgba(170,182,214,.75);
       font-family:var(--mono);
-      font-size:12px;
-      color:rgba(233,238,246,.75);
-      padding:8px 10px;
-      border-radius:12px;
-      border:1px solid var(--border);
-      background: rgba(18,28,40,.25);
     }
-    .hr{height:1px; background:var(--border); margin:14px 0;}
-    details{
-      border:1px solid var(--border);
-      border-radius: var(--radius2);
-      background: rgba(18,28,40,.25);
-      margin:10px 0;
+
+    input[type="text"], select{
+      width:100%;
+      border:1px solid rgba(255,255,255,.14);
+      background: rgba(3,7,18,.55);
+      color:var(--text);
+      padding:10px 10px;
+      border-radius:12px;
+      outline:none;
+      font-size:13px;
+    }
+    input[type="text"]::placeholder{color: rgba(170,182,214,.65)}
+    input[type="text"]:focus, select:focus{
+      border-color: rgba(59,130,246,.75);
+      box-shadow: 0 0 0 3px rgba(59,130,246,.15);
+    }
+
+    .rowActions{
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+      margin:10px 0 14px;
+    }
+    .rowActions .btn{
+      flex:1;
+      justify-content:center;
+      min-width:130px;
+    }
+
+    .navBlockTitle{
+      margin:14px 0 6px;
+      font-size:12px;
+      color:rgba(233,238,248,.9);
+      letter-spacing:.35px;
+      text-transform:uppercase;
+    }
+
+    .navList{
+      display:flex;
+      flex-direction:column;
+      gap:6px;
+      padding-bottom:8px;
+      border-bottom:1px solid rgba(255,255,255,.08);
+    }
+    .navList:last-child{border-bottom:none}
+
+    .navItem{
+      text-decoration:none;
+      border:1px solid rgba(255,255,255,.10);
+      background: rgba(3,7,18,.35);
+      padding:9px 10px;
+      border-radius:12px;
+      font-size:13px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:10px;
+    }
+    .navItem:hover{border-color: rgba(255,255,255,.18)}
+    .navItem small{
+      color: rgba(170,182,214,.85);
+      font-family:var(--mono);
+      font-size:11px;
+      white-space:nowrap;
+    }
+
+    .metaBar{
+      margin-top:10px;
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+      color:rgba(170,182,214,.85);
+      font-size:12px;
+    }
+    .pill{
+      border:1px solid rgba(255,255,255,.12);
+      padding:6px 8px;
+      border-radius:999px;
+      background: rgba(3,7,18,.35);
+      font-family:var(--mono);
+    }
+
+    main{
+      padding:14px;
       overflow:hidden;
     }
+
+    .status{
+      border:1px solid rgba(255,255,255,.10);
+      background: rgba(3,7,18,.35);
+      border-radius:12px;
+      padding:10px 12px;
+      color:rgba(170,182,214,.92);
+      font-size:13px;
+      margin-bottom:12px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:10px;
+      flex-wrap:wrap;
+    }
+    .status strong{color:rgba(233,238,248,.95)}
+    .status code{
+      font-family:var(--mono);
+      font-size:12px;
+      color:rgba(233,238,248,.9);
+      background: rgba(59,130,246,.10);
+      border:1px solid rgba(59,130,246,.20);
+      padding:2px 6px;
+      border-radius:8px;
+    }
+
+    .content{
+      display:flex;
+      flex-direction:column;
+      gap:10px;
+    }
+
+    details.group{
+      border:1px solid rgba(255,255,255,.10);
+      background: rgba(3,7,18,.35);
+      border-radius: 14px;
+      overflow:hidden;
+    }
+    details.group[open]{
+      border-color: rgba(59,130,246,.35);
+    }
     summary{
+      list-style:none;
       cursor:pointer;
       padding:12px 12px;
-      display:flex; gap:10px; align-items:center; justify-content:space-between;
-      list-style:none;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:12px;
+      user-select:none;
     }
     summary::-webkit-details-marker{display:none}
     .sumLeft{
-      display:flex; gap:10px; align-items:baseline; flex-wrap:wrap;
+      display:flex;
+      flex-direction:column;
+      gap:2px;
+      min-width:0;
     }
-    .who{font-weight:650; letter-spacing:.2px}
-    .refRange{
+    .sumTitle{
+      font-weight:650;
+      font-size:14px;
+      letter-spacing:.2px;
+      white-space:nowrap;
+      overflow:hidden;
+      text-overflow:ellipsis;
+    }
+    .sumType{
+      color:rgba(170,182,214,.85);
+      font-size:12px;
+      font-family:var(--mono);
+    }
+    .sumRight{
+      display:flex;
+      align-items:center;
+      gap:10px;
+      flex-shrink:0;
+    }
+    .range{
       font-family:var(--mono);
       font-size:12px;
-      color:rgba(233,238,246,.72);
-      border:1px solid rgba(255,255,255,.12);
+      color:rgba(233,238,248,.9);
+      background: rgba(255,255,255,.06);
+      border:1px solid rgba(255,255,255,.10);
       padding:4px 8px;
       border-radius:999px;
-      background: rgba(11,77,255,.10);
+      white-space:nowrap;
     }
-    .blockBody{padding:0 12px 12px}
-    ul.entries{margin:8px 0 0 0; padding:0 0 0 18px}
-    ul.entries li{margin:6px 0; color:rgba(233,238,246,.90); line-height:1.45}
-    .ref{
+
+    .body{
+      padding: 0 12px 12px;
+    }
+    .lines{
+      margin:0;
+      padding:0;
+      list-style:none;
+      display:flex;
+      flex-direction:column;
+      gap:7px;
+    }
+    .line{
+      border:1px solid rgba(255,255,255,.08);
+      background: rgba(3,7,18,.28);
+      border-radius:12px;
+      padding:9px 10px;
+      font-size:13px;
+      line-height:1.35;
+      color:rgba(233,238,248,.93);
+      word-break:break-word;
+    }
+    .line code{
       font-family:var(--mono);
       font-size:12px;
-      color:rgba(233,238,246,.75);
-      margin-right:6px;
+      color:rgba(233,238,248,.9);
     }
-    .metaLine{
-      font-family:var(--mono);
+    .line a{
+      color: rgba(147,197,253,.95);
+      text-decoration: underline;
+      text-decoration-thickness: 1px;
+      text-underline-offset: 2px;
+    }
+
+    mark[data-hl="1"]{
+      background: var(--mark);
+      color:inherit;
+      padding:0 2px;
+      border-radius:6px;
+      border:1px solid rgba(59,130,246,.35);
+    }
+
+    .footerNote{
+      margin-top:12px;
+      color:rgba(170,182,214,.85);
       font-size:12px;
-      color:rgba(167,179,198,.92);
-      margin-top:8px;
-    }
-    .secTitle{
-      margin:18px 0 6px;
-      font-size:15px;
-      color:rgba(233,238,246,.92);
-      letter-spacing:.2px;
-    }
-    .tag{
-      font-family:var(--mono);
-      font-size:11px;
-      color:rgba(167,179,198,.9);
-      border:1px solid rgba(255,255,255,.10);
-      padding:3px 8px;
-      border-radius:999px;
-      background: rgba(18,28,40,.25);
-    }
-    .hint{
-      font-size:12px;
-      color:rgba(167,179,198,.95);
+      border-top:1px solid rgba(255,255,255,.08);
+      padding-top:12px;
       line-height:1.45;
-      margin-top:8px;
     }
+    .footerNote code{
+      font-family:var(--mono);
+      font-size:12px;
+      padding:2px 6px;
+      border-radius:8px;
+      background: rgba(255,255,255,.06);
+      border:1px solid rgba(255,255,255,.10);
+      color:rgba(233,238,248,.92);
+    }
+
     @media (max-width: 980px){
-      .layout{grid-template-columns:1fr}
-      .side{position:relative; top:auto; height:auto}
-      .topInner{flex-direction:column; align-items:stretch}
-      .btnRow{justify-content:flex-start}
+      .grid{grid-template-columns: 1fr}
+      aside{position:relative; top:auto; max-height:none}
+      header{flex-direction:column}
+      .topActions{justify-content:flex-start}
     }
   </style>
 </head>
+
 <body>
-  <div class="top">
-    <div class="topInner">
-      <div class="titleWrap">
-        <h1>Bibliografía Azul de Pantalla · <span class="tag">Templo del dato</span></h1>
-        <p class="sub">
-          Lee <span style="font-family:var(--mono)">bibliografia.txt</span> desde la repo.
-          Botón opcional para reenumerar desde <span style="font-family:var(--mono)">REF-001</span>.
-        </p>
+  <div class="wrap">
+    <header>
+      <div class="brand">
+        <h1>Bibliografía <span style="color:rgba(147,197,253,.95)">Azul de Pantalla</span> · <span style="color:rgba(170,182,214,.95)">Templo del dato</span></h1>
+        <p>Índice navegable desde <code style="font-family:var(--mono);font-size:12px">bibliografia.txt</code> en el repositorio.</p>
         <div class="quote">
-          <div>Quizás es mejor la bibliografía que el propio libro.</div>
-          <div>Si el libro es malo, la bibliografía siempre queda bien.</div>
-          <div>Si el libro es bueno, la bibliografía se atribuye el mérito.</div>
-          <div style="opacity:.75;margin-top:6px">© M. MÜLLER</div>
+          Quizás es mejor la bibliografía que el propio libro.<br>
+          Si el libro es malo, la bibliografía siempre queda bien.<br>
+          Si el libro es bueno, la bibliografía se atribuye el mérito.
+          <span class="sig">© M. MÜLLER</span>
         </div>
       </div>
 
-      <div class="btnRow">
-        <button class="btn" id="btnTop" title="Volver arriba">↑ Arriba</button>
-        <button class="btn" id="btnCopyAnchor" title="Copia el enlace interno a la sección más cercana">⛓ Copiar ancla</button>
-
-        <a class="btn" id="btnTxtOpen" href="bibliografia.txt" target="_blank" rel="noopener noreferrer" title="Abrir el TXT de la repo">📄 Abrir TXT</a>
-        <button class="btn" id="btnTxtDownload" title="Descargar el TXT actual">⬇ Descargar TXT</button>
-
-        <a class="btn" href="mailto:mercurius81@proton.me" title="Contacto por email">✉ Contacto</a>
-        <a class="btn primary" id="btnBuy" href="#" target="_blank" rel="noopener noreferrer" title="Link provisional de compra">🛒 Comprar</a>
+      <div class="topActions">
+        <a id="btnBuy" class="btn primary disabled" href="#" target="_blank" rel="noopener">Compra (provisional)</a>
+        <a class="btn" href="mailto:mercurius81@proton.me">Contacto</a>
+        <a class="btn" href="bibliografia.txt" download="bibliografia.txt">Descargar TXT</a>
       </div>
+    </header>
+
+    <div class="grid">
+      <aside>
+        <div class="field">
+          <div class="labelRow">
+            <label for="search">Buscar</label>
+            <span class="hint">autor · sección · REF · título</span>
+          </div>
+          <input type="text" id="search" placeholder="Ej: Foucault, REF-152, Podcasts, 'Vigilar y castigar'…" />
+        </div>
+
+        <div class="field">
+          <div class="labelRow">
+            <label for="jumpSelect">Saltar a…</label>
+            <span class="hint">ordenado</span>
+          </div>
+          <select id="jumpSelect">
+            <option value="">Selecciona</option>
+          </select>
+        </div>
+
+        <div class="rowActions">
+          <button id="btnExpandAll" class="btn ghost" type="button">Abrir todo</button>
+          <button id="btnCollapseAll" class="btn ghost" type="button">Cerrar todo</button>
+        </div>
+
+        <div class="rowActions">
+          <button id="btnRenumber" class="btn" type="button" title="Renumeración local: genera un TXT nuevo y lo descarga">Renumerar + Descargar</button>
+          <button id="btnClear" class="btn" type="button">Limpiar búsqueda</button>
+        </div>
+
+        <div class="navBlockTitle">Autores</div>
+        <div id="authorsList" class="navList"></div>
+
+        <div class="navBlockTitle">Secciones</div>
+        <div id="sectionsList" class="navList"></div>
+
+        <div class="metaBar">
+          <span class="pill" id="metaGroups">grupos: …</span>
+          <span class="pill" id="metaRefs">refs: …</span>
+        </div>
+      </aside>
+
+      <main>
+        <div class="status" id="status">
+          <div><strong>Estado:</strong> cargando <code>bibliografia.txt</code></div>
+          <div class="hint" id="statusHint"></div>
+        </div>
+
+        <div id="content" class="content"></div>
+
+        <div class="footerNote">
+          Si subes <code>bibliografia.txt</code> y <code>index.html</code> a la raíz del repo (GitHub Pages),
+          esto se autoconstruye. El botón <code>Renumerar + Descargar</code> no toca tu repo: solo genera un archivo local.
+        </div>
+      </main>
     </div>
   </div>
 
-  <div class="layout">
-    <aside class="card side">
-      <div class="sideInner">
-        <div class="label">Archivo en la repo</div>
-        <input class="input" id="repoPath" value="bibliografia.txt" placeholder="bibliografia.txt" />
-        <div class="row" style="margin-top:10px">
-          <button class="btn primary" id="btnLoadRepo">⬇ Cargar desde repo</button>
-          <button class="btn" id="btnRenumber" disabled>🔢 Reenumerar</button>
-        </div>
-
-        <div class="row" style="margin-top:10px">
-          <button class="btn" id="btnToggleView" disabled>👁 Ver renumerado</button>
-          <button class="btn" id="btnDownloadView" disabled>⬇ Descargar (vista)</button>
-        </div>
-
-        <div class="hr"></div>
-
-        <div class="label">Link de compra (provisional)</div>
-        <input class="input" id="buyUrl" placeholder="https://…" />
-        <div class="row" style="margin-top:10px">
-          <button class="btn" id="btnSaveBuy">💾 Guardar link</button>
-          <button class="btn" id="btnClearBuy">🧽 Reset</button>
-        </div>
-
-        <div class="hr"></div>
-
-        <div class="label">Buscar (autor / sección / REF)</div>
-        <input class="input" id="search" placeholder="Ej: Foucault, REF-152, Podcasts…" />
-
-        <div class="label">Ir a (autores A–Z primero, secciones al final)</div>
-        <select class="select" id="jumpSelect">
-          <option value="">(elige…)</option>
-        </select>
-
-        <div class="pill" id="countsPill">Sin datos cargados</div>
-
-        <div class="hr"></div>
-
-        <div class="label">Override local (opcional)</div>
-        <div class="row">
-          <input class="input" type="file" id="fileInput" accept=".txt,.md,.text" />
-          <button class="btn" id="btnClear">🧽 Limpiar</button>
-        </div>
-
-        <p class="hint">
-          Nota: <span style="font-family:var(--mono)">fetch()</span> funciona en GitHub Pages.
-          Si abres como <span style="font-family:var(--mono)">file://</span>, el navegador puede bloquear la lectura del TXT.
-        </p>
-      </div>
-    </aside>
-
-    <main class="card main">
-      <div class="toolbar">
-        <div class="status" id="status">Cargando desde la repo…</div>
-      </div>
-      <div class="mainInner" id="content"></div>
-    </main>
-  </div>
-
 <script>
-/* ======================
-   CONFIG (rápido de tocar)
-   ====================== */
-const DEFAULT_TXT_PATH = "bibliografia.txt";
-const CONTACT_EMAIL = "mercurius81@proton.me";
-const BUY_URL_KEY = "azul_buy_url";
-const DEFAULT_BUY_URL = "https://example.com/compra-provisional"; // cámbialo si quieres
+(() => {
+  // EDITA AQUÍ tu link de compra provisional (cuando lo tengas).
+  // Si lo dejas vacío, el botón quedará desactivado.
+  const BUY_URL = ""; // ejemplo: "https://tusitio.com/compra"
 
-/* ======================
-   Estado
-   ====================== */
-const state = {
-  path: DEFAULT_TXT_PATH,
-  rawText: "",
-  renumberedText: "",
-  viewText: "",
-  viewMode: "original" // "original" | "renumbered"
-};
+  const FILE_PATH = "bibliografia.txt";
 
-/* ======================
-   Utilidades
-   ====================== */
-function slugify(s){
-  return s
-    .toLowerCase()
-    .normalize("NFD").replace(/[\u0300-\u036f]/g, "")
-    .replace(/[^\w\s-]/g,"")
-    .trim()
-    .replace(/\s+/g,"-")
-    .replace(/-+/g,"-");
-}
-function escapeHtml(s){
-  return String(s)
-    .replaceAll("&","&amp;")
-    .replaceAll("<","&lt;")
-    .replaceAll(">","&gt;")
-    .replaceAll('"',"&quot;")
-    .replaceAll("'","&#039;");
-}
-function isIgnorableLine(line){
-  const t = line.trim();
-  if(!t) return true;
-  const ignoreStarts = [
-    "Bibliografía Azul de pantalla",
-    "Templo del dato",
-    "Quizás es mejor",
-    "Si el libro es malo",
-    "Si el libro es bueno",
-    "©"
-  ];
-  return ignoreStarts.some(x => t.startsWith(x));
-}
-function looksLikeSectionHeading(title){
-  const T = title.trim();
-  const known = new Set([
+  const MAJOR_SECTION_TITLES = new Set([
     "PODCASTS",
-    "AUDIOLIBROS",
-    "IVOOX / PROGRAMAS",
     "BLOGS",
     "MANUALES",
-    "EPIC GAMES",
     "TEXTOS RELIGIOSOS",
     "IDEOLOGÍAS / DOCTRINAS DE MANDO (POLÍTICA Y RÉGIMEN)",
     "IDEOLOGÍAS (CARTOGRAFÍA HISTÓRICA)",
@@ -362,507 +506,478 @@ function looksLikeSectionHeading(title){
     "CRÍTICA DE LA TÉCNICA (CANON)",
     "RADICALISMOS ANTI-CIVILIZACIÓN (CARTOGRAFÍA)"
   ]);
-  if(known.has(T)) return true;
 
-  const isAllCaps = (T === T.toUpperCase()) && /[A-ZÁÉÍÓÚÜÑ]/.test(T);
-  if(isAllCaps && T.length >= 8 && !T.includes(",")) return true;
-  if(T.includes(" / ") && (T === T.toUpperCase())) return true;
-  if(/\(.+\)/.test(T) && (T === T.toUpperCase())) return true;
-  return false;
-}
-function parseRefFromLine(line){
-  const m = line.match(/^(REF-\d+)\.\s*(.*)$/);
-  if(!m) return null;
-  return { ref: m[1], text: m[2].trim() };
-}
+  const els = {
+    btnBuy: document.getElementById("btnBuy"),
+    search: document.getElementById("search"),
+    jump: document.getElementById("jumpSelect"),
+    authorsList: document.getElementById("authorsList"),
+    sectionsList: document.getElementById("sectionsList"),
+    content: document.getElementById("content"),
+    status: document.getElementById("status"),
+    statusHint: document.getElementById("statusHint"),
+    metaGroups: document.getElementById("metaGroups"),
+    metaRefs: document.getElementById("metaRefs"),
+    btnExpandAll: document.getElementById("btnExpandAll"),
+    btnCollapseAll: document.getElementById("btnCollapseAll"),
+    btnRenumber: document.getElementById("btnRenumber"),
+    btnClear: document.getElementById("btnClear")
+  };
 
-/* ======================
-   Renumeración (manual, por botón)
-   - Reescribe refs al inicio de línea: REF-xxx[_y]. -> REF-001..N.
-   - Sin sufijos.
-   - Ascendente por aparición en el archivo.
-   ====================== */
-function renumberAllFrom001(raw){
-  const lines = raw.split(/\r?\n/);
-  let n = 1;
-  const re = /^(REF-(\d+)(?:[_-]\d+)?)\./;
+  // ==========
+  // Utilities
+  // ==========
+  const pad3 = (n) => String(n).padStart(3, "0");
 
-  const out = lines.map(line=>{
-    const m = line.match(re);
-    if(!m) return line;
-    const newRef = `REF-${String(n).padStart(3,"0")}`;
-    n++;
-    return line.replace(re, `${newRef}.`);
-  });
+  const escapeHTML = (s) =>
+    s.replaceAll("&","&amp;").replaceAll("<","&lt;").replaceAll(">","&gt;").replaceAll('"',"&quot;").replaceAll("'","&#39;");
 
-  return { text: out.join("\n"), count: n-1 };
-}
+  const isProbablyHeading = (line) => {
+    const t = line.trim();
+    if (!t) return false;
+    if (/^REF-\d+/i.test(t)) return false;
+    if (/^(Link|PDF)\s*:/i.test(t)) return false;
 
-/* ======================
-   Parser bibliografía
-   ====================== */
-function parseBibliography(raw){
-  const lines = raw.split(/\r?\n/);
+    // Heurística: líneas "título de grupo" suelen ser cortas, sin punto final, y con mayúsculas predominantes.
+    // Permitimos paréntesis, barras, comas, puntos, guiones.
+    if (t.length > 120) return false;
+    if (/\.\s*$/.test(t)) return false; // si termina en punto, suele ser entrada, no encabezado
+    // Debe tener letras
+    if (!/[A-Za-zÁÉÍÓÚÜÑáéíóúüñ]/.test(t)) return false;
 
-  const blocks = [];
-  let current = null;
+    // Si tiene estructura típica de autor (COMA) o está en mayúsculas (o casi)
+    const upperish = t === t.toUpperCase();
+    const hasComma = t.includes(",");
+    const looksLikeNetwork = /INTERNATIONAL|NETWORK|GOBIERNO|MINISTERIO/i.test(t);
+    return upperish || hasComma || looksLikeNetwork;
+  };
 
-  function pushCurrent(){
-    if(current){
-      blocks.push(current);
-      current = null;
+  const extractRefsFromText = (s) => {
+    const refs = [];
+    const re = /REF-(\d+)(?:[_-]\d+)?/gi;
+    let m;
+    while ((m = re.exec(s)) !== null) refs.push(parseInt(m[1], 10));
+    return refs;
+  };
+
+  const refRangeLabel = (min, max) => {
+    if (!Number.isFinite(min) || !Number.isFinite(max)) return "";
+    if (min === max) return `REF-${pad3(min)}`;
+    return `REF-${pad3(min)}–REF-${pad3(max)}`;
+  };
+
+  const makeId = (prefix, idx) => `${prefix}-${idx}`;
+
+  // Linkifica URLs, sin tocar ya-anchored (esto funciona porque aquí trabajamos en texto plano de una línea)
+  const linkify = (text) => {
+    // Detecta URLs sueltas
+    const urlRe = /(https?:\/\/[^\s)]+)|(www\.[^\s)]+)/gi;
+    return text.replace(urlRe, (m) => {
+      const href = m.startsWith("http") ? m : `https://${m}`;
+      return `<a href="${escapeHTML(href)}" target="_blank" rel="noopener">${escapeHTML(m)}</a>`;
+    });
+  };
+
+  // ==========
+  // Highlight
+  // ==========
+  function clearHighlights(root){
+    root.querySelectorAll('mark[data-hl="1"]').forEach(mark => {
+      const txt = document.createTextNode(mark.textContent);
+      mark.replaceWith(txt);
+    });
+    // compacta text nodes contiguos
+    root.normalize();
+  }
+
+  function highlightInElement(el, query){
+    if (!query) return;
+    const q = query.toLowerCase();
+
+    const walker = document.createTreeWalker(
+      el,
+      NodeFilter.SHOW_TEXT,
+      {
+        acceptNode(node){
+          const v = node.nodeValue;
+          if (!v || !v.trim()) return NodeFilter.FILTER_REJECT;
+
+          const p = node.parentElement;
+          if (!p) return NodeFilter.FILTER_REJECT;
+          if (p.closest("a, mark, script, style, textarea, input, select, button")) return NodeFilter.FILTER_REJECT;
+
+          if (!v.toLowerCase().includes(q)) return NodeFilter.FILTER_REJECT;
+          return NodeFilter.FILTER_ACCEPT;
+        }
+      }
+    );
+
+    const targets = [];
+    while (walker.nextNode()) targets.push(walker.currentNode);
+
+    for (const node of targets){
+      const text = node.nodeValue;
+      const lower = text.toLowerCase();
+      let idx = 0;
+
+      const frag = document.createDocumentFragment();
+
+      while (true){
+        const i = lower.indexOf(q, idx);
+        if (i === -1){
+          frag.appendChild(document.createTextNode(text.slice(idx)));
+          break;
+        }
+        frag.appendChild(document.createTextNode(text.slice(idx, i)));
+
+        const mark = document.createElement("mark");
+        mark.dataset.hl = "1";
+        mark.textContent = text.slice(i, i + query.length);
+        frag.appendChild(mark);
+
+        idx = i + query.length;
+      }
+
+      node.parentNode.replaceChild(frag, node);
     }
   }
 
-  for(let i=0;i<lines.length;i++){
-    const line = lines[i].trim();
-    if(isIgnorableLine(line)) continue;
+  // ==========
+  // Parsing
+  // ==========
+  function parseBibliography(raw){
+    const lines = raw.replace(/\r\n/g,"\n").split("\n");
 
-    const ref = parseRefFromLine(line);
-    if(ref){
-      if(!current){
-        current = { title: "SIN ENCABEZADO", kind: "author", entries:[], links:[] };
-      }
-      current.entries.push(ref);
-      continue;
-    }
+    const groups = [];
+    let current = null;
 
-    const linkMatch = line.match(/^(Link:|PDF:)\s*(.+)$/i);
-    if(linkMatch){
-      if(!current){
-        current = { title: "ENLACES", kind:"section", entries:[], links:[] };
-      }
-      current.links.push(linkMatch[2].trim());
-      continue;
-    }
+    let sectionMode = false;
 
-    if(/^https?:\/\/\S+$/i.test(line)){
-      if(!current){
-        current = { title: "ENLACES", kind:"section", entries:[], links:[] };
+    const pushCurrent = () => {
+      if (!current) return;
+      // Limpia líneas vacías al final
+      while (current.lines.length && !current.lines[current.lines.length - 1].trim()) current.lines.pop();
+
+      const allText = current.lines.join("\n");
+      const refs = extractRefsFromText(allText);
+      current.refMin = refs.length ? Math.min(...refs) : null;
+      current.refMax = refs.length ? Math.max(...refs) : null;
+      current.refCount = refs.length;
+
+      groups.push(current);
+      current = null;
+    };
+
+    for (let i=0;i<lines.length;i++){
+      const line = lines[i];
+      const t = line.trim();
+
+      // ignorar encabezado "poético" inicial: lo dejamos en el html, no en el archivo
+      // Pero el archivo puede contenerlo igual; aquí simplemente no lo usamos como grupo.
+      if (!t) continue;
+
+      if (isProbablyHeading(t)){
+        // activa modo secciones cuando aparezca un gran bloque
+        if (!sectionMode && MAJOR_SECTION_TITLES.has(t)) sectionMode = true;
+
+        pushCurrent();
+
+        current = {
+          id: makeId(sectionMode ? "sec" : "auth", groups.length + 1),
+          type: sectionMode ? "section" : "author",
+          title: t,
+          lines: []
+        };
+        continue;
       }
-      current.links.push(line);
-      continue;
+
+      // Línea normal
+      if (!current){
+        // si por lo que sea hay líneas antes del primer encabezado, las ignoramos
+        continue;
+      }
+      current.lines.push(line);
     }
 
     pushCurrent();
-    const title = line;
-    const kind = looksLikeSectionHeading(title) ? "section" : "author";
-    current = { title, kind, entries:[], links:[] };
-  }
-  pushCurrent();
 
-  // ids únicos + rango refs
-  const usedIds = new Map();
-  for(const b of blocks){
-    const base = (b.kind==="author" ? "a-" : "s-") + slugify(b.title || "bloque");
-    const count = (usedIds.get(base) || 0) + 1;
-    usedIds.set(base, count);
-    b.id = count===1 ? base : `${base}-${count}`;
+    // Separa autores y secciones
+    const authors = groups.filter(g => g.type === "author");
+    const sections = groups.filter(g => g.type === "section");
 
-    if(b.entries.length){
-      b.firstRef = b.entries[0].ref;
-      b.lastRef  = b.entries[b.entries.length-1].ref;
-      b.refLabel = (b.firstRef === b.lastRef) ? b.firstRef : `${b.firstRef}–${b.lastRef}`;
-    } else if(b.links.length){
-      b.refLabel = "links";
-    } else {
-      b.refLabel = "";
-    }
+    // orden alfabético de autores
+    authors.sort((a,b) => a.title.localeCompare(b.title, "es", {sensitivity:"base"}));
+
+    // secciones mantienen orden de aparición
+    return { authors, sections, all: [...authors, ...sections], raw };
   }
 
-  return blocks;
-}
+  // ==========
+  // Rendering
+  // ==========
+  function renderAll(model){
+    els.content.innerHTML = "";
+    els.authorsList.innerHTML = "";
+    els.sectionsList.innerHTML = "";
+    els.jump.innerHTML = `<option value="">Selecciona</option>`;
 
-/* ======================
-   Render
-   ====================== */
-function render(blocks){
-  const content = document.getElementById("content");
-  content.innerHTML = "";
+    const allGroups = model.all;
 
-  const authorBlocks = blocks.filter(b => b.kind==="author");
-  const sectionBlocks = blocks.filter(b => b.kind==="section");
+    // meta
+    const totalGroups = allGroups.length;
+    const totalRefs = allGroups.reduce((acc,g)=>acc + (g.refCount||0), 0);
+    els.metaGroups.textContent = `grupos: ${totalGroups}`;
+    els.metaRefs.textContent = `refs: ${totalRefs}`;
 
-  const jump = document.getElementById("jumpSelect");
-  jump.innerHTML = `<option value="">(elige…)</option>`;
+    // jump + nav
+    const addNavItem = (container, g) => {
+      const a = document.createElement("a");
+      a.href = `#${g.id}`;
+      a.className = "navItem";
+      a.dataset.groupId = g.id;
+      a.innerHTML = `
+        <span>${escapeHTML(g.title)}</span>
+        <small>${escapeHTML(refRangeLabel(g.refMin, g.refMax) || "")}</small>
+      `;
+      a.addEventListener("click", (ev) => {
+        ev.preventDefault();
+        jumpTo(g.id);
+      });
+      container.appendChild(a);
+    };
 
-  const collator = new Intl.Collator("es", { sensitivity:"base", numeric:true });
-  const authorsSorted = [...authorBlocks].sort((x,y)=>{
-    const c = collator.compare(x.title, y.title);
-    if(c!==0) return c;
-    return collator.compare(x.refLabel||"", y.refLabel||"");
-  });
+    for (const g of model.authors){
+      const opt = document.createElement("option");
+      opt.value = g.id;
+      opt.textContent = `${g.title}${g.refMin ? " — " + refRangeLabel(g.refMin, g.refMax) : ""}`;
+      opt.dataset.groupId = g.id;
+      els.jump.appendChild(opt);
 
-  const optgroupA = document.createElement("optgroup");
-  optgroupA.label = "AUTORES (A–Z)";
-  for(const b of authorsSorted){
-    const opt = document.createElement("option");
-    opt.value = b.id;
-    const ref = b.refLabel ? ` — ${b.refLabel}` : "";
-    opt.textContent = `${b.title}${ref}`;
-    optgroupA.appendChild(opt);
-  }
-  jump.appendChild(optgroupA);
-
-  const optgroupS = document.createElement("optgroup");
-  optgroupS.label = "SECCIONES (al final)";
-  const seen = new Set();
-  for(const b of sectionBlocks){
-    const key = b.title.trim();
-    if(seen.has(key)) continue;
-    seen.add(key);
-    const opt = document.createElement("option");
-    opt.value = b.id;
-    opt.textContent = b.title;
-    optgroupS.appendChild(opt);
-  }
-  jump.appendChild(optgroupS);
-
-  for(const b of blocks){
-    const wrapper = document.createElement("div");
-    wrapper.id = b.id;
-
-    if(b.kind === "section"){
-      const h = document.createElement("div");
-      h.className = "secTitle";
-      h.textContent = b.title;
-      wrapper.appendChild(h);
-
-      if(b.links.length){
-        const p = document.createElement("div");
-        p.className = "metaLine";
-        p.innerHTML = b.links.map(u => `• <a href="${escapeHtml(u)}" target="_blank" rel="noopener noreferrer">${escapeHtml(u)}</a>`).join("<br>");
-        wrapper.appendChild(p);
-      }
-
-      if(b.entries.length){
-        const ul = document.createElement("ul");
-        ul.className = "entries";
-        for(const e of b.entries){
-          const li = document.createElement("li");
-          li.innerHTML = `<span class="ref">${escapeHtml(e.ref)}.</span> ${escapeHtml(e.text)}`;
-          ul.appendChild(li);
-        }
-        wrapper.appendChild(ul);
-      }
-
-      content.appendChild(wrapper);
-      continue;
+      addNavItem(els.authorsList, g);
     }
 
-    const details = document.createElement("details");
-    details.open = false;
+    for (const g of model.sections){
+      const opt = document.createElement("option");
+      opt.value = g.id;
+      opt.textContent = `${g.title}${g.refMin ? " — " + refRangeLabel(g.refMin, g.refMax) : ""}`;
+      opt.dataset.groupId = g.id;
+      els.jump.appendChild(opt);
 
-    const summary = document.createElement("summary");
+      addNavItem(els.sectionsList, g);
+    }
 
-    const left = document.createElement("div");
-    left.className = "sumLeft";
+    // content
+    for (const g of allGroups){
+      const details = document.createElement("details");
+      details.className = "group";
+      details.id = g.id;
 
-    const who = document.createElement("div");
-    who.className = "who";
-    who.textContent = b.title;
+      const range = refRangeLabel(g.refMin, g.refMax);
+      const typeLabel = g.type === "author" ? "autor" : "sección";
 
-    const ref = document.createElement("div");
-    ref.className = "refRange";
-    ref.textContent = b.refLabel || "—";
+      const summary = document.createElement("summary");
+      summary.innerHTML = `
+        <div class="sumLeft">
+          <div class="sumTitle">${escapeHTML(g.title)}</div>
+          <div class="sumType">${escapeHTML(typeLabel)}</div>
+        </div>
+        <div class="sumRight">
+          <span class="range">${escapeHTML(range || "—")}</span>
+        </div>
+      `;
 
-    left.appendChild(who);
-    left.appendChild(ref);
+      const body = document.createElement("div");
+      body.className = "body";
 
-    const right = document.createElement("div");
-    right.style.opacity = ".75";
-    right.style.fontSize = "12px";
-    right.textContent = "ver";
-
-    summary.appendChild(left);
-    summary.appendChild(right);
-
-    const body = document.createElement("div");
-    body.className = "blockBody";
-
-    if(b.entries.length){
       const ul = document.createElement("ul");
-      ul.className = "entries";
-      for(const e of b.entries){
+      ul.className = "lines";
+
+      // render lines as list items (linkify URLs)
+      for (const rawLine of g.lines){
+        const t = rawLine.trim();
+        if (!t) continue;
+
         const li = document.createElement("li");
-        li.innerHTML = `<span class="ref">${escapeHtml(e.ref)}.</span> ${escapeHtml(e.text)}`;
+        li.className = "line";
+
+        // Si empieza por "Link:" o "PDF:", preserva etiqueta
+        const html = linkify(escapeHTML(rawLine));
+        li.innerHTML = html;
+
         ul.appendChild(li);
       }
+
       body.appendChild(ul);
+
+      details.appendChild(summary);
+      details.appendChild(body);
+      els.content.appendChild(details);
     }
-
-    if(b.links.length){
-      const p = document.createElement("div");
-      p.className = "metaLine";
-      p.innerHTML = b.links.map(u => `• <a href="${escapeHtml(u)}" target="_blank" rel="noopener noreferrer">${escapeHtml(u)}</a>`).join("<br>");
-      body.appendChild(p);
-    }
-
-    details.appendChild(summary);
-    details.appendChild(body);
-
-    wrapper.appendChild(details);
-    content.appendChild(wrapper);
   }
 
-  document.getElementById("countsPill").textContent =
-    `${authorBlocks.length} autores · ${sectionBlocks.length} secciones/bloques · ${blocks.length} bloques total`;
-}
-
-/* ======================
-   Búsqueda / navegación
-   ====================== */
-function setupSearch(){
-  const search = document.getElementById("search");
-  const jump = document.getElementById("jumpSelect");
-
-  search.addEventListener("input", ()=>{
-    const q = search.value.trim().toLowerCase();
-    const opts = jump.querySelectorAll("option");
-    for(const opt of opts){
-      if(!opt.value) continue;
-      opt.hidden = q ? !opt.textContent.toLowerCase().includes(q) : false;
-    }
-  });
-
-  jump.addEventListener("change", ()=>{
-    const id = jump.value;
-    if(!id) return;
+  function jumpTo(id){
     const el = document.getElementById(id);
-    if(!el) return;
+    if (!el) return;
     el.scrollIntoView({behavior:"smooth", block:"start"});
-    const det = el.querySelector("details");
-    if(det) det.open = true;
-  });
-}
+    if (el.tagName.toLowerCase() === "details") el.open = true;
+  }
 
-/* ======================
-   Descarga + anclas
-   ====================== */
-function downloadText(filename, text){
-  const blob = new Blob([text], { type: "text/plain;charset=utf-8" });
-  const url = URL.createObjectURL(blob);
-  const a = document.createElement("a");
-  a.href = url;
-  a.download = filename;
-  document.body.appendChild(a);
-  a.click();
-  a.remove();
-  URL.revokeObjectURL(url);
-}
+  // ==========
+  // Search & Filter
+  // ==========
+  function setupSearch(model){
+    const allGroups = model.all;
 
-function getNearestAnchorId(){
-  const content = document.getElementById("content");
-  const blocks = Array.from(content.children);
-  const top = window.scrollY + 140;
-  let best = null, bestDist = Infinity;
-  for(const b of blocks){
-    const r = b.getBoundingClientRect();
-    const y = window.scrollY + r.top;
-    const d = Math.abs(y - top);
-    if(d < bestDist){
-      bestDist = d;
-      best = b;
+    const applyFilter = (qRaw) => {
+      const q = (qRaw || "").trim();
+      const qLower = q.toLowerCase();
+
+      // 1) limpia highlights anteriores
+      clearHighlights(els.content);
+
+      // 2) filtra grupos
+      for (const g of allGroups){
+        const el = document.getElementById(g.id);
+        if (!el) continue;
+
+        if (!q){
+          el.style.display = "";
+          continue;
+        }
+
+        // texto del grupo (incluye títulos)
+        const hay = (el.innerText || el.textContent || "").toLowerCase();
+        el.style.display = hay.includes(qLower) ? "" : "none";
+      }
+
+      // 3) filtra nav + select
+      const filterNav = (container) => {
+        container.querySelectorAll(".navItem").forEach(item => {
+          const id = item.dataset.groupId;
+          const el = document.getElementById(id);
+          const visible = el && el.style.display !== "none";
+          item.style.display = visible ? "" : "none";
+        });
+      };
+      filterNav(els.authorsList);
+      filterNav(els.sectionsList);
+
+      els.jump.querySelectorAll("option").forEach(opt => {
+        if (!opt.value) return;
+        const el = document.getElementById(opt.value);
+        const visible = el && el.style.display !== "none";
+        opt.hidden = !visible;
+      });
+
+      // 4) aplica highlights SOLO a visibles
+      if (q){
+        els.content.querySelectorAll("details.group").forEach(d => {
+          if (d.style.display === "none") return;
+          highlightInElement(d, q);
+        });
+      }
+
+      // status hint
+      if (!q){
+        els.statusHint.textContent = "";
+        return;
+      }
+      const visibles = els.content.querySelectorAll('details.group:not([style*="display: none"])').length;
+      els.statusHint.textContent = `coincidencias: mostrando ${visibles} grupo(s)`;
+    };
+
+    els.search.addEventListener("input", () => applyFilter(els.search.value));
+
+    els.btnClear.addEventListener("click", () => {
+      els.search.value = "";
+      applyFilter("");
+      els.search.focus();
+    });
+
+    els.jump.addEventListener("change", () => {
+      const id = els.jump.value;
+      if (!id) return;
+      jumpTo(id);
+    });
+
+    // Expand/Collapse
+    els.btnExpandAll.addEventListener("click", () => {
+      els.content.querySelectorAll("details.group").forEach(d => {
+        if (d.style.display === "none") return;
+        d.open = true;
+      });
+    });
+
+    els.btnCollapseAll.addEventListener("click", () => {
+      els.content.querySelectorAll("details.group").forEach(d => d.open = false);
+    });
+  }
+
+  // ==========
+  // Renumber (local download)
+  // ==========
+  function setupRenumber(rawText){
+    els.btnRenumber.addEventListener("click", () => {
+      // renumera en el orden de aparición, eliminando variantes tipo REF-300_1
+      let i = 1;
+
+      // Reemplaza cada token REF-###(_#)? por REF-### secuencial
+      const out = rawText.replace(/REF-(\d+)(?:[_-]\d+)?/gi, () => {
+        const v = `REF-${pad3(i)}`;
+        i++;
+        return v;
+      });
+
+      const blob = new Blob([out], {type:"text/plain;charset=utf-8"});
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement("a");
+      a.href = url;
+      a.download = "bibliografia_renumerada.txt";
+      document.body.appendChild(a);
+      a.click();
+      a.remove();
+      URL.revokeObjectURL(url);
+    });
+  }
+
+  // ==========
+  // Init
+  // ==========
+  function setupBuyButton(){
+    if (BUY_URL && BUY_URL.trim() && BUY_URL !== "#"){
+      els.btnBuy.href = BUY_URL.trim();
+      els.btnBuy.classList.remove("disabled");
+    }else{
+      els.btnBuy.classList.add("disabled");
+      els.btnBuy.setAttribute("aria-disabled","true");
+      els.btnBuy.addEventListener("click", (e)=>e.preventDefault());
+      els.btnBuy.title = "Edita BUY_URL en el código para activar la compra provisional.";
     }
   }
-  return best && best.id ? best.id : null;
-}
 
-function setStatus(msg){
-  document.getElementById("status").textContent = msg;
-}
+  async function init(){
+    setupBuyButton();
 
-function setButtonsEnabled(loaded){
-  document.getElementById("btnRenumber").disabled = !loaded;
-  document.getElementById("btnDownloadView").disabled = !loaded;
-  document.getElementById("btnTxtDownload").disabled = !loaded;
-  document.getElementById("btnToggleView").disabled = !(loaded && state.renumberedText);
-  document.getElementById("btnToggleView").textContent = (state.viewMode === "original") ? "👁 Ver renumerado" : "👁 Ver original";
-}
-
-/* ======================
-   Carga desde repo / local
-   ====================== */
-async function loadFromRepo(path){
-  setStatus(`Cargando: ${path} …`);
-  try{
-    const res = await fetch(path, { cache: "no-store" });
-    if(!res.ok) throw new Error(`HTTP ${res.status}`);
-    const text = await res.text();
-
-    state.path = path;
-    state.rawText = text;
-    state.renumberedText = "";
-    state.viewMode = "original";
-    state.viewText = state.rawText;
-
-    // actualizar enlace "Abrir TXT"
-    document.getElementById("btnTxtOpen").setAttribute("href", path);
-
-    render(parseBibliography(state.viewText));
-    setStatus(`OK. Cargado (vista: original).`);
-    setButtonsEnabled(true);
-  }catch(err){
-    console.error(err);
-    setStatus(`Error cargando "${path}". Revisa que exista y que GitHub Pages sirva esa ruta.`);
-    setButtonsEnabled(false);
-  }
-}
-
-function applyRenumber(){
-  const r = renumberAllFrom001(state.rawText);
-  state.renumberedText = r.text;
-  state.viewMode = "renumbered";
-  state.viewText = state.renumberedText;
-
-  render(parseBibliography(state.viewText));
-  setStatus(`Renumerado desde REF-001 (${r.count} entradas). Vista: renumerado.`);
-  setButtonsEnabled(true);
-}
-
-function toggleView(){
-  if(!state.renumberedText) return;
-  if(state.viewMode === "original"){
-    state.viewMode = "renumbered";
-    state.viewText = state.renumberedText;
-    setStatus(`Vista: renumerado (derivado).`);
-  }else{
-    state.viewMode = "original";
-    state.viewText = state.rawText;
-    setStatus(`Vista: original.`);
-  }
-  render(parseBibliography(state.viewText));
-  setButtonsEnabled(true);
-}
-
-/* ======================
-   Compra (provisional) + persistencia
-   ====================== */
-function loadBuyUrl(){
-  const saved = localStorage.getItem(BUY_URL_KEY);
-  const url = saved && saved.trim() ? saved.trim() : DEFAULT_BUY_URL;
-  document.getElementById("buyUrl").value = url;
-  document.getElementById("btnBuy").setAttribute("href", url);
-}
-function saveBuyUrl(){
-  const url = (document.getElementById("buyUrl").value || "").trim();
-  const finalUrl = url || DEFAULT_BUY_URL;
-  localStorage.setItem(BUY_URL_KEY, finalUrl);
-  document.getElementById("btnBuy").setAttribute("href", finalUrl);
-  setStatus(`Link de compra actualizado.`);
-}
-function clearBuyUrl(){
-  localStorage.removeItem(BUY_URL_KEY);
-  loadBuyUrl();
-  setStatus(`Link de compra reseteado a provisional.`);
-}
-
-/* ======================
-   Eventos UI
-   ====================== */
-function setupButtons(){
-  document.getElementById("btnTop").addEventListener("click", ()=>{
-    window.scrollTo({top:0, behavior:"smooth"});
-  });
-
-  document.getElementById("btnCopyAnchor").addEventListener("click", async ()=>{
-    const id = getNearestAnchorId();
-    if(!id){
-      alert("No encuentro ancla cerca (haz scroll a un bloque).");
-      return;
-    }
-    const anchor = `#${id}`;
     try{
-      await navigator.clipboard.writeText(anchor);
-      alert(`Copiado: ${anchor}`);
-    }catch{
-      prompt("Copia manual:", anchor);
+      const res = await fetch(FILE_PATH, {cache:"no-store"});
+      if (!res.ok) throw new Error(`HTTP ${res.status}`);
+      const raw = await res.text();
+
+      const model = parseBibliography(raw);
+      renderAll(model);
+      setupSearch(model);
+      setupRenumber(raw);
+
+      els.status.innerHTML = `<div><strong>Estado:</strong> listo · leyendo <code>${FILE_PATH}</code></div><div class="hint" id="statusHint"></div>`;
+      // vuelve a enlazar statusHint (recreado)
+      els.statusHint = document.getElementById("statusHint");
+    }catch(err){
+      els.status.innerHTML = `<div><strong>Estado:</strong> error cargando <code>${FILE_PATH}</code></div><div class="hint">${escapeHTML(String(err))}</div>`;
     }
-  });
+  }
 
-  document.getElementById("btnLoadRepo").addEventListener("click", ()=>{
-    const p = (document.getElementById("repoPath").value || "").trim() || DEFAULT_TXT_PATH;
-    loadFromRepo(p);
-  });
-
-  document.getElementById("btnRenumber").addEventListener("click", ()=>{
-    if(!state.rawText){
-      alert("No hay TXT cargado.");
-      return;
-    }
-    applyRenumber();
-  });
-
-  document.getElementById("btnToggleView").addEventListener("click", ()=>{
-    toggleView();
-  });
-
-  document.getElementById("btnDownloadView").addEventListener("click", ()=>{
-    if(!state.viewText) return;
-    const base = state.path.split("/").pop() || "bibliografia.txt";
-    const name = (state.viewMode === "renumbered")
-      ? base.replace(/\.txt$/i, "") + "_REN" + ".txt"
-      : base;
-    downloadText(name, state.viewText);
-  });
-
-  // Descarga directa del TXT actual (igual que vista si estás en original; útil como “botón grande” arriba)
-  document.getElementById("btnTxtDownload").addEventListener("click", ()=>{
-    if(!state.viewText){
-      alert("No hay TXT cargado.");
-      return;
-    }
-    const base = state.path.split("/").pop() || "bibliografia.txt";
-    downloadText(base, state.viewMode === "original" ? state.rawText : state.viewText);
-  });
-
-  document.getElementById("fileInput").addEventListener("change", async (ev)=>{
-    const file = ev.target.files && ev.target.files[0];
-    if(!file) return;
-    const text = await file.text();
-    state.path = file.name || "bibliografia.txt";
-    state.rawText = text;
-    state.renumberedText = "";
-    state.viewMode = "original";
-    state.viewText = state.rawText;
-
-    document.getElementById("repoPath").value = state.path;
-    document.getElementById("btnTxtOpen").setAttribute("href", state.path);
-
-    render(parseBibliography(state.viewText));
-    setStatus(`Local OK. Cargado (vista: original).`);
-    setButtonsEnabled(true);
-  });
-
-  document.getElementById("btnClear").addEventListener("click", ()=>{
-    document.getElementById("content").innerHTML = "";
-    document.getElementById("jumpSelect").innerHTML = `<option value="">(elige…)</option>`;
-    document.getElementById("countsPill").textContent = "Sin datos cargados";
-
-    state.path = DEFAULT_TXT_PATH;
-    state.rawText = "";
-    state.renumberedText = "";
-    state.viewText = "";
-    state.viewMode = "original";
-
-    setStatus("Limpio. Carga desde la repo.");
-    setButtonsEnabled(false);
-  });
-
-  document.getElementById("btnSaveBuy").addEventListener("click", saveBuyUrl);
-  document.getElementById("btnClearBuy").addEventListener("click", clearBuyUrl);
-}
-
-/* init */
-document.getElementById("repoPath").value = DEFAULT_TXT_PATH;
-document.querySelector('a[href^="mailto:"]').setAttribute("href", `mailto:${CONTACT_EMAIL}`);
-
-setupSearch();
-setupButtons();
-loadBuyUrl();
-
-// Auto-load desde repo
-loadFromRepo(DEFAULT_TXT_PATH);
+  init();
+})();
 </script>
 </body>
 </html>
