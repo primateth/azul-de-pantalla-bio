@@ -804,27 +804,27 @@ REF-356. The Doctrine of Fascism (La doctrina del fascismo). (1932).
 Link: https://sourcebooks.fordham.edu/mod/mussolini-fascism.asp
 
 HITLER, Adolf
-REF-357. Mein Kampf. (1925–1926). (Entrada bibliográfica / ediciones citadas).
+REF-357. Mein Kampf. (1925–1926). 
 
 SCHMITT, Carl
-REF-358. Political Theology (Teología política). (1922). (Ficha bibliográfica).
-REF-359. The Concept of the Political (El concepto de lo político). (1932). (Ficha bibliográfica).
+REF-358. Political Theology (Teología política). (1922). 
+REF-359. The Concept of the Political (El concepto de lo político). (1932). 
 
 SOREL, Georges
-REF-360. Reflections on Violence (Reflexiones sobre la violencia). (1908). (Ficha bibliográfica).
+REF-360. Reflections on Violence (Reflexiones sobre la violencia). (1908). 
 
 EVOLA, Julius
-REF-361. Revolt Against the Modern World (Revuelta contra el mundo moderno). (1934). (Ficha bibliográfica).
-REF-362. Men Among the Ruins (Los hombres entre las ruinas). (1953). (Ficha bibliográfica).
+REF-361. Revolt Against the Modern World (Revuelta contra el mundo moderno). (1934). 
+REF-362. Men Among the Ruins (Los hombres entre las ruinas). (1953). 
 
 GUÉNON, René
-REF-363. The Crisis of the Modern World (La crisis del mundo moderno). (1927). (Ficha bibliográfica).
+REF-363. The Crisis of the Modern World (La crisis del mundo moderno). (1927). 
 
 DE BENOIST, Alain
-REF-364. Ensayos centrales de la Nouvelle Droite. (Referencias / por concretar).
+REF-364. Ensayos centrales de la Nouvelle Droite.
 
 FAYE, Guillaume
-REF-365. Textos identitarios (referencias / por concretar).
+REF-365. Textos identitarios 
 
 ANÓNIMO
 REF-366. Protocolos de los Sabios de Sion / Protocols of the Elders of Zion. (c. 1903). (Falsificación; objeto de estudio).
@@ -832,14 +832,14 @@ Link: https://encyclopedia.ushmm.org/content/en/article/protocols-of-the-elders-
 
 CONTRAPESOS / HISTORIOGRAFÍA CRÍTICA
 ECO, Umberto
-REF-367. Ur-Fascism / Eternal Fascism. (1995). (Texto de referencia).
+REF-367. Ur-Fascism / Eternal Fascism. (1995). 
 
 GRIFFIN, Roger
-REF-368. The Nature of Fascism. (1991). (Ficha editorial).
+REF-368. The Nature of Fascism. (1991). 
 Link: https://www.routledge.com/The-Nature-of-Fascism/Griffin/p/book/9780415096614
 
 PAXTON, Robert O.
-REF-369. The Anatomy of Fascism. (2004). (Ficha bibliográfica).
+REF-369. The Anatomy of Fascism. (2004). 
 
 ANTI-TECNOLOGÍA (OBJETOS HISTÓRICOS)
 
@@ -848,7 +848,7 @@ REF-370. Industrial Society and Its Future. (1995).
 REF-371. Technological Slavery: The Collected Writings of Theodore J. Kaczynski.
 REF-372. Anti-Tech Revolution: Why and How.
 
-CRÍTICA DE LA TÉCNICA (CANON)
+CRÍTICA DE LA TÉCNICA 
 
 ELLUL, Jacques
 REF-373. The Technological Society; Propaganda.
