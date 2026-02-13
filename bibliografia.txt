@@ -10,7 +10,7 @@ AGAMBEN, Giorgio
 REF-001. El Reino y la Gloria. (2008).
 REF-002. Signatura rerum. (2008).
 
-ACHARYA, S.
+ACHARYA, S
 REF-003. La conspiración de Cristo. (2005). Valdemar.
 
 AGLIETTA, Michel; ORLÉAN, André
@@ -19,7 +19,7 @@ REF-004. La violencia de la moneda. (1990). Siglo XXI.
 AGUSTÍN, San
 REF-005. Las confesiones. (2018). BAC.
 
-AÏVANHOV, O. M.
+AÏVANHOV, O. M
 REF-006. La balanza cósmica: El número 2. (1998). Prosveta.
 
 ALLAN, Rayelan
@@ -42,7 +42,7 @@ REF-013. Hollywood Babilonia (edición en castellano). (1985). Tusquets.
 AROLA, Raimon
 REF-014. Alquimia y religión. (2021). Siruela.
 
-ARMOUR, Robert A.
+ARMOUR, Robert A
 REF-015. Dioses y mitos del antiguo Egipto. (2004). Alianza.
 
 ARTAUD, Antonin
@@ -222,7 +222,7 @@ REF-099. El aciago demiurgo. (2000). Taurus.
 CLASTRES, Pierre
 REF-100. La sociedad contra el Estado. (2018). Virus Editorial.
 
-COLLINGWOOD, R. G.
+COLLINGWOOD, R. G
 REF-101. Idea de la historia. (2018). Fondo de Cultura Económica.
 
 CORBIN, Henry
@@ -252,7 +252,7 @@ REF-113. Magick. (2007).
 CROWLEY, Aleister; HARRIS, Lady Frieda
 REF-114. El libro de Thoth. (2021). Edaf.
 
-DANTAS, J.
+DANTAS, J
 REF-115. El libro del Tao. (2014).
 
 DE LA CADENA, Marisol
@@ -359,7 +359,7 @@ REF-159. Historia de la sexualidad (I–III). (s. f.).
 REF-160. Defender la sociedad.
 REF-161. Los anormales.
 
-FRAZER, James G.
+FRAZER, James G
 REF-162. El totemismo. (1987). Eyras.
 REF-163. La rama dorada. (2011). Fondo de Cultura Económica.
 
@@ -410,13 +410,13 @@ REF-183. España 2050: Resumen ejecutivo (PDF). (2021). Ministerio de la Preside
 GOBIERNO DE ESPAÑA, Ministerio de Defensa
 REF-184. Entorno operativo 2035. (s. f.).
 
-GOETHE, J. W.
+GOETHE, J. W
 REF-185. Fausto. (2006). Cátedra.
 
 GOFFMAN, Erving
 REF-186. La presentación de la persona en la vida cotidiana. (2006). Amorrortu.
 
-GRIFFITHS, Paul J.
+GRIFFITHS, Paul J
 REF-187. Obra citada en notas.
 
 GUÉNON, René
