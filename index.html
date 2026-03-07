@@ -30,13 +30,15 @@
     body{
       margin:0;
       font-family:var(--sans);
-      background: radial-gradient(1200px 600px at 20% -10%, rgba(43,87,255,.25), transparent 55%),
-                  radial-gradient(900px 500px at 90% 10%, rgba(60,255,180,.08), transparent 60%),
-                  var(--bg);
+      background:
+        radial-gradient(1200px 600px at 20% -10%, rgba(43,87,255,.25), transparent 55%),
+        radial-gradient(900px 500px at 90% 10%, rgba(60,255,180,.08), transparent 60%),
+        var(--bg);
       color:var(--text);
     }
 
     a{color:inherit}
+
     .topbar{
       position:sticky; top:0; z-index:10;
       backdrop-filter: blur(10px);
@@ -51,10 +53,10 @@
       align-items:center;
       gap:12px;
     }
+
     .brand{
       display:flex; align-items:baseline; gap:10px;
-      flex:1;
-      min-width:0;
+      flex:1; min-width:0;
     }
     .brand h1{
       margin:0;
@@ -76,7 +78,8 @@
     }
 
     .btn{
-      appearance:none; border:1px solid var(--line);
+      appearance:none;
+      border:1px solid var(--line);
       background: linear-gradient(180deg, rgba(255,255,255,.08), rgba(255,255,255,.04));
       color:var(--text);
       padding:10px 12px;
@@ -119,6 +122,17 @@
       padding:18px;
       box-shadow: var(--shadow);
       margin-bottom:16px;
+      position:relative;
+      overflow:hidden;
+    }
+    .hero::after{
+      content:"";
+      position:absolute;
+      inset:auto -10% -40% auto;
+      width:420px;
+      height:420px;
+      background: radial-gradient(circle, rgba(43,87,255,.12), transparent 65%);
+      pointer-events:none;
     }
     .hero h2{
       margin:0 0 6px 0;
@@ -126,22 +140,33 @@
       letter-spacing:.3px;
     }
     .hero .sub{
-      margin:0 0 12px 0;
+      margin:0 0 14px 0;
       color:var(--muted);
       font-family:var(--mono);
       font-size:12px;
       line-height:1.35;
     }
-    .hero .note{
-      margin:10px 0 0 0;
-      color:rgba(232,236,255,.85);
+
+    .manifesto{
+      margin:14px 0 0 0;
+      padding:14px 16px;
+      border:1px solid rgba(255,255,255,.08);
+      border-left: 2px solid rgba(43,87,255,.65);
+      border-radius:14px;
+      background:
+        linear-gradient(180deg, rgba(255,255,255,.035), rgba(255,255,255,.02));
+      color:rgba(232,236,255,.92);
+      font-family:var(--mono);
       font-size:13px;
-      line-height:1.45;
-      max-width: 92ch;
+      line-height:1.62;
+      white-space:pre-line;
+      letter-spacing:.18px;
+      max-width:72ch;
+      box-shadow: inset 0 1px 0 rgba(255,255,255,.03);
     }
-    .hero .note em{color:var(--muted)}
+
     .hero .status{
-      margin-top:12px;
+      margin-top:14px;
       display:flex;
       flex-wrap:wrap;
       gap:10px;
@@ -188,7 +213,6 @@
       box-shadow: var(--shadow);
       overflow:hidden;
     }
-
     .panel .phead{
       padding:14px 14px 12px;
       border-bottom:1px solid var(--line);
@@ -215,11 +239,6 @@
     }
     .panel .pbody{padding:14px}
 
-    .field{
-      display:flex;
-      gap:10px;
-      flex-wrap:wrap;
-    }
     input[type="search"], select{
       width:100%;
       border:1px solid var(--line);
@@ -244,6 +263,14 @@
       border-radius:12px;
       padding:10px 12px;
       font-size:12px;
+    }
+
+    .results{
+      margin-top:10px;
+      font-family:var(--mono);
+      font-size:11px;
+      color:var(--muted);
+      min-height:16px;
     }
 
     .list{
@@ -290,9 +317,7 @@
     }
 
     article .panel{padding:0}
-    .content{
-      padding:14px;
-    }
+    .content{padding:14px}
 
     details{
       border:1px solid rgba(255,255,255,.08);
@@ -401,6 +426,7 @@
       background: rgba(255,255,255,.03);
     }
     .links a:hover{border-color: rgba(43,87,255,.28)}
+
     .muted{color:var(--muted)}
     .error{
       border:1px solid rgba(255,92,138,.35);
@@ -412,12 +438,16 @@
       font-size:12px;
       white-space:pre-wrap;
     }
+
     footer{
       margin-top:18px;
-      color:rgba(169,178,214,.85);
+      padding-top:14px;
+      border-top:1px solid rgba(255,255,255,.08);
+      color:rgba(169,178,214,.88);
       font-family:var(--mono);
       font-size:11px;
-      opacity:.9;
+      line-height:1.7;
+      white-space:pre-line;
     }
   </style>
 </head>
@@ -430,19 +460,19 @@
         <small id="smallPath">cargando…</small>
       </div>
 
-      <a class="btn" id="btnRepo" href="https://github.com/primateth/azul-de-pantalla-bio" target="_blank" rel="noopener">
+      <a class="btn" href="https://github.com/primateth/azul-de-pantalla-bio" target="_blank" rel="noopener">
         <span class="dot"></span> Repo
       </a>
 
-      <a class="btn" id="btnDownloadTxt" href="bibliografia.txt" download>
+      <a class="btn" href="bibliografia.txt" download>
         Descargar TXT
       </a>
 
-      <a class="btn" id="btnContact" href="mailto:mercurius81@proton.me">
+      <a class="btn" href="mailto:mercurius81@proton.me">
         Contacto
       </a>
 
-      <a class="btn primary" id="btnBuy" href="https://www.amazon.es/s?k=Azul+de+Pantalla" target="_blank" rel="noopener">
+      <a class="btn primary" href="https://www.amazon.es/s?k=Azul+de+Pantalla" target="_blank" rel="noopener">
         Compra (provisional)
       </a>
     </div>
@@ -453,11 +483,16 @@
       <h2>Templo del dato</h2>
       <div class="sub">Índice navegable · búsqueda · descarga · GitHub Pages</div>
 
-      <p class="note" id="preface">
-        Cargando bibliografía desde <em>bibliografia.txt</em>…
-      </p>
+      <div class="manifesto" id="preface">
+E s t e libro no bus c a adeptos .
+No t eme a l a máquina que c a l cul a .
+Teme a l humano que abdi c a .
+Nadi e gobi e rna lo que no puede
+apa g a r.
+Pre c io pa r a adultos .
+      </div>
 
-      <div class="status" id="statusRow">
+      <div class="status">
         <span class="pill"><span class="ok">●</span> <b id="stLoaded">0</b> entradas</span>
         <span class="pill"><span class="warn">●</span> <b id="stAuthors">0</b> autores/bloques</span>
         <span class="pill"><span class="bad">●</span> <b id="stSections">0</b> secciones</span>
@@ -492,6 +527,8 @@
               </button>
             </div>
 
+            <div class="results" id="resultsInfo"></div>
+
             <div class="list" id="navList">
               <h4>Autores (A–Z)</h4>
               <div id="navAuthors"></div>
@@ -512,10 +549,9 @@
           </div>
         </div>
 
-        <footer>
-          © M. MÜLLER · Esta página indexa un TXT; el orden y los títulos son editable en el repo.
-          Nota: referencias sensibles se muestran como bibliografía/objeto de estudio, no como adhesión.
-        </footer>
+        <footer id="footerNote">La bibliograf ía, incompleta y digital, es
+super ior al libro.
+© M. MÜLLER</footer>
       </article>
     </div>
   </div>
@@ -561,43 +597,37 @@ function nextNonEmpty(lines, i){
 }
 
 function isRefLine(line){
-  const t = (line ?? "").trim();
-  return /^REF-\d{1,4}(?:[_-]\d+)?\./.test(t);
+  return /^REF-\d{1,4}(?:[_-]\d+)?\./.test((line ?? "").trim());
 }
 
 function parseRefLine(line){
-  const t = line.trim();
-  const m = t.match(/^(REF-\d{1,4}(?:[_-]\d+)?)\.\s*(.*)$/);
-  if(!m) return { ref:"", raw:t };
+  const m = line.trim().match(/^(REF-\d{1,4}(?:[_-]\d+)?)\.\s*(.*)$/);
+  if(!m) return { ref:"", raw:line.trim() };
   return { ref:m[1], raw:m[2] };
 }
 
 function isLinkLine(line){
-  const t = (line ?? "").trim();
-  return /^(Link|LINK|Url|URL|PDF|Pdf)\s*:/.test(t);
+  return /^(Link|LINK|Url|URL|PDF|Pdf)\s*:/.test((line ?? "").trim());
 }
 
 function extractLinks(line){
-  const t = line.trim();
-  const idx = t.indexOf(":");
+  const idx = line.indexOf(":");
   if(idx === -1) return [];
-  const tail = t.slice(idx+1).trim();
-  const urls = tail.match(/https?:\/\/\S+/g) || [];
+  const urls = line.slice(idx+1).trim().match(/https?:\/\/\S+/g) || [];
   return urls.map(u => u.replace(/[)\].,;]+$/,""));
 }
 
 function looksAllCapsHeader(line){
   const t = line.trim();
   if(!t) return false;
-  const up = (t === t.toUpperCase());
-  const sane = /^[A-ZÁÉÍÓÚÜÑ0-9 /()·.,;:&\-]+$/.test(t);
-  return up && sane && t.length <= 110;
+  return t === t.toUpperCase()
+    && /^[A-ZÁÉÍÓÚÜÑ0-9 /()·.,;:&\-]+$/.test(t)
+    && t.length <= 110;
 }
 
 function isSectionLine(line, nextLine){
   const t = (line ?? "").trim();
-  if(!t) return false;
-  if(isRefLine(t)) return false;
+  if(!t || isRefLine(t)) return false;
 
   const known = new Set([
     "PODCASTS",
@@ -614,56 +644,38 @@ function isSectionLine(line, nextLine){
 
   const k = normKey(t);
   if(known.has(t) || known.has(k)) return true;
-
-  if(looksAllCapsHeader(t) && nextLine && !isRefLine(nextLine)) return true;
-
-  return false;
+  return looksAllCapsHeader(t) && nextLine && !isRefLine(nextLine);
 }
 
 function isAuthorLine(line, nextLine){
   const t = (line ?? "").trim();
-  if(!t) return false;
-  if(isRefLine(t)) return false;
-  if(isSectionLine(t, nextLine)) return false;
+  if(!t || isRefLine(t) || isSectionLine(t, nextLine)) return false;
   if(t.includes(",") || t.includes(";")) return true;
-  if(nextLine && isRefLine(nextLine)) return true;
-  return false;
+  return nextLine && isRefLine(nextLine);
 }
 
 function splitMeta(raw){
   const s = (raw ?? "").replace(/\s+/g," ").trim();
-  let year = "";
-  let publisher = "";
-  let title = s;
-
   const ym = s.match(/\((\d{4})\)/);
-  if(ym) year = ym[1];
-
   const parts = s.split(".").map(p=>p.trim()).filter(Boolean);
-  if(parts.length >= 2) publisher = parts[parts.length-1];
-
-  return { title, year, publisher };
+  return {
+    title: s,
+    year: ym ? ym[1] : "",
+    publisher: parts.length >= 2 ? parts[parts.length-1] : ""
+  };
 }
 
 function parseBib(text){
-  const rawLines = text.replace(/\r/g,"").split("\n");
-  const lines = rawLines.map(l => (l ?? "").trimEnd());
+  const lines = text.replace(/\r/g,"").split("\n").map(l => (l ?? "").trimEnd());
 
-  let prefaceLines = [];
   let idxStart = 0;
-
   for(let i=0;i<lines.length;i++){
     const line = (lines[i] ?? "").trim();
-    if(!line){ prefaceLines.push(""); continue; }
-
     const nextLine = nextNonEmpty(lines, i+1);
-
-    if(isRefLine(line) || isAuthorLine(line, nextLine) || isSectionLine(line, nextLine)){
+    if(line && (isRefLine(line) || isAuthorLine(line, nextLine) || isSectionLine(line, nextLine))){
       idxStart = i;
       break;
     }
-
-    prefaceLines.push(lines[i]);
     idxStart = i+1;
   }
 
@@ -681,8 +693,7 @@ function parseBib(text){
     const nextLine = nextNonEmpty(lines, i+1);
 
     if(isSectionLine(line, nextLine)){
-      const sid = slug(line) || ("sec-"+sections.length);
-      currentSection = { name: line, id: sid, blocks:[], kind:"section" };
+      currentSection = { name: line, id: slug(line) || ("sec-"+sections.length), blocks:[], kind:"section" };
       sections.push(currentSection);
       currentBlock = null;
       lastItem = null;
@@ -702,12 +713,12 @@ function parseBib(text){
         currentSection.blocks.push(currentBlock);
       }
 
-      const it0 = parseRefLine(line);
-      const meta = splitMeta(it0.raw);
+      const parsedRef = parseRefLine(line);
+      const meta = splitMeta(parsedRef.raw);
 
       const item = {
-        ref: it0.ref,
-        raw: it0.raw,
+        ref: parsedRef.ref,
+        raw: parsedRef.raw,
         title: meta.title,
         year: meta.year,
         publisher: meta.publisher,
@@ -739,33 +750,15 @@ function parseBib(text){
     }
   }
 
-  return {
-    preface: prefaceLines.join("\n").trim(),
-    sections
-  };
+  return { sections };
 }
 
 function renumberRefsInText(text){
-  const lines = text.replace(/\r/g,"").split("\n");
   let n = 1;
-
-  const out = lines.map(l=>{
-    const line = (l ?? "");
-    const t = line.trim();
-
-    if(isRefLine(t)){
-      const pr = parseRefLine(t);
-      const refNew = "REF-" + String(n).padStart(3,"0");
-      n++;
-      const after = pr.raw ? (". " + pr.raw) : ".";
-      const indent = line.match(/^\s*/)?.[0] ?? "";
-      return indent + refNew + after;
-    }
-
-    return line;
+  return text.replace(/^(\s*)REF-\d{1,4}(?:[_-]\d+)?\.\s*(.*)$/gm, (_, indent, rest) => {
+    const refNew = "REF-" + String(n++).padStart(3,"0");
+    return indent + refNew + ". " + rest;
   });
-
-  return out.join("\n");
 }
 
 function blockAnchorId(sec, blk){
@@ -775,8 +768,7 @@ function blockAnchorId(sec, blk){
 function blockRefRange(blk){
   const refs = blk.items.map(it=>it.ref).filter(Boolean);
   if(!refs.length) return "—";
-  const first = refs[0], last = refs[refs.length-1];
-  return first === last ? first : (first + " → " + last);
+  return refs[0] === refs[refs.length-1] ? refs[0] : `${refs[0]} → ${refs[refs.length-1]}`;
 }
 
 function countAll(parsed){
@@ -785,25 +777,21 @@ function countAll(parsed){
     blocks += s.blocks.length;
     for(const b of s.blocks) items += b.items.length;
   }
-  return {items, blocks, sections: parsed.sections.length};
+  return { items, blocks, sections: parsed.sections.length };
 }
 
 function renderBlock(sec, blk){
-  const id = blockAnchorId(sec, blk);
-
   const det = document.createElement("details");
-  det.id = id;
+  det.id = blockAnchorId(sec, blk);
   det.dataset.kind = "block";
 
   const sum = document.createElement("summary");
-  const range = blockRefRange(blk);
-
   sum.innerHTML = `
     <div class="left">
       <div class="who">${escapeHTML(blk.name)}</div>
       <div class="range">
         <span>Sección: <b>${escapeHTML(sec.name)}</b></span>
-        <span>Refs: <b>${escapeHTML(range)}</b></span>
+        <span>Refs: <b>${escapeHTML(blockRefRange(blk))}</b></span>
         <span>Entradas: <b>${blk.items.length}</b></span>
       </div>
     </div>
@@ -813,16 +801,14 @@ function renderBlock(sec, blk){
 
   const box = document.createElement("div");
   box.className = "items";
-
   const ul = document.createElement("ul");
 
   for(const it of blk.items){
     const li = document.createElement("li");
     li.className = "it";
 
-    const links = (it.links || []).filter(Boolean);
-    const linksHtml = links.length
-      ? `<div class="links">${links.map(u => `<a href="${escapeHTML(u)}" target="_blank" rel="noopener">link</a>`).join("")}</div>`
+    const linksHtml = (it.links || []).length
+      ? `<div class="links">${it.links.map(u => `<a href="${escapeHTML(u)}" target="_blank" rel="noopener">link</a>`).join("")}</div>`
       : "";
 
     li.innerHTML = `
@@ -841,7 +827,6 @@ function renderBlock(sec, blk){
 
   box.appendChild(ul);
   det.appendChild(box);
-
   return det;
 }
 
@@ -857,7 +842,6 @@ function render(parsed){
   jump.innerHTML = `<option value="">Saltar a…</option>`;
 
   const frag = document.createDocumentFragment();
-
   const main = parsed.sections[0];
   const rest = parsed.sections.slice(1);
 
@@ -877,15 +861,17 @@ function render(parsed){
 
   for(const sec of rest){
     const sep = document.createElement("div");
+    sep.id = sec.id;
+    sep.dataset.kind = "section";
     sep.style.margin = "18px 0 10px";
     sep.style.padding = "10px 12px";
     sep.style.border = "1px solid rgba(255,255,255,.08)";
     sep.style.borderRadius = "14px";
     sep.style.background = "rgba(255,255,255,.03)";
-    sep.id = sec.id;
-    sep.dataset.kind = "section";
-    sep.innerHTML = `<div style="font-weight:850;letter-spacing:.3px;">${escapeHTML(sec.name)}</div>
-                     <div style="font-family:var(--mono);font-size:11px;color:var(--muted);margin-top:6px;">Sección</div>`;
+    sep.innerHTML = `
+      <div style="font-weight:850;letter-spacing:.3px;">${escapeHTML(sec.name)}</div>
+      <div style="font-family:var(--mono);font-size:11px;color:var(--muted);margin-top:6px;">Sección</div>
+    `;
     frag.appendChild(sep);
 
     for(const blk of sec.blocks){
@@ -906,8 +892,10 @@ function render(parsed){
       const div = document.createElement("div");
       div.className = "navitem";
       div.dataset.jump = id;
-      div.innerHTML = `<div class="name">${escapeHTML(blk.name)}</div>
-                       <div class="meta">${escapeHTML(blockRefRange(blk))}</div>`;
+      div.innerHTML = `
+        <div class="name">${escapeHTML(blk.name)}</div>
+        <div class="meta">${escapeHTML(blockRefRange(blk))}</div>
+      `;
       div.addEventListener("click", ()=> jumpTo(id));
       navAuthors.appendChild(div);
 
@@ -926,8 +914,10 @@ function render(parsed){
     const div = document.createElement("div");
     div.className = "navitem";
     div.dataset.jump = sec.id;
-    div.innerHTML = `<div class="name">${escapeHTML(sec.name)}</div>
-                     <div class="meta">${sec.blocks.length} bloques</div>`;
+    div.innerHTML = `
+      <div class="name">${escapeHTML(sec.name)}</div>
+      <div class="meta">${sec.blocks.length} bloques</div>
+    `;
     div.addEventListener("click", ()=> jumpTo(sec.id));
     navSections.appendChild(div);
 
@@ -937,11 +927,11 @@ function render(parsed){
     ogS.appendChild(opt);
   }
 
-  const {items, blocks, sections} = countAll(parsed);
-  byId("stLoaded").textContent = String(items);
-  byId("stAuthors").textContent = String(blocks);
-  byId("stSections").textContent = String(sections);
-  byId("tinyInfo").textContent = `${blocks} bloques · ${items} refs`;
+  const counts = countAll(parsed);
+  byId("stLoaded").textContent = String(counts.items);
+  byId("stAuthors").textContent = String(counts.blocks);
+  byId("stSections").textContent = String(counts.sections);
+  byId("tinyInfo").textContent = `${counts.blocks} bloques · ${counts.items} refs`;
 }
 
 function jumpTo(id){
@@ -950,13 +940,22 @@ function jumpTo(id){
 
   const parentDetails = el.closest("details");
   if(parentDetails) parentDetails.open = true;
-
   if(el.tagName?.toLowerCase() === "details") el.open = true;
 
-  const innerDetails = el.querySelector?.("details");
-  if(innerDetails) innerDetails.open = true;
+  el.scrollIntoView({ behavior:"smooth", block:"start" });
+}
 
-  el.scrollIntoView({behavior:"smooth", block:"start"});
+function updateResultsInfo(){
+  const visibleBlocks = [...byId("content").querySelectorAll('[data-kind="block"]')]
+    .filter(n => n.style.display !== "none").length;
+
+  const visibleSections = [...byId("content").querySelectorAll('[data-kind="section"]')]
+    .filter(n => n.style.display !== "none").length;
+
+  const q = byId("search").value.trim();
+  byId("resultsInfo").textContent = q
+    ? `Filtro activo · ${visibleBlocks} bloques · ${visibleSections} secciones visibles`
+    : "";
 }
 
 function setupSearch(){
@@ -969,68 +968,59 @@ function setupSearch(){
   search.addEventListener("input", ()=>{
     const q = search.value.trim().toLowerCase();
 
-    const opts = jump.querySelectorAll("option");
-    for(const opt of opts){
+    for(const opt of jump.querySelectorAll("option")){
       if(!opt.value) continue;
       opt.hidden = q ? !opt.textContent.toLowerCase().includes(q) : false;
     }
 
-    const navCards = byId("navList").querySelectorAll(".navitem");
-    for(const c of navCards){
-      const txt = (c.innerText || c.textContent || "").toLowerCase();
-      c.style.display = (!q || txt.includes(q)) ? "" : "none";
+    for(const card of byId("navList").querySelectorAll(".navitem")){
+      const txt = (card.innerText || card.textContent || "").toLowerCase();
+      card.style.display = (!q || txt.includes(q)) ? "" : "none";
     }
 
     const nodes = byId("content").querySelectorAll('[data-kind="block"], [data-kind="section"]');
 
     if(!q){
-      for(const n of nodes) n.style.display = "";
+      for(const n of nodes){
+        n.style.display = "";
+        if(n.tagName?.toLowerCase() === "details") n.open = false;
+      }
+      updateResultsInfo();
       return;
     }
 
     for(const n of nodes){
       const hay = (n.innerText || n.textContent || "").toLowerCase();
-      n.style.display = hay.includes(q) ? "" : "none";
+      const show = hay.includes(q);
+      n.style.display = show ? "" : "none";
+      if(show && n.tagName?.toLowerCase() === "details") n.open = true;
     }
+
+    updateResultsInfo();
   });
 
   jump.addEventListener("change", ()=>{
-    const id = jump.value;
-    if(!id) return;
-    jumpTo(id);
+    if(jump.value) jumpTo(jump.value);
   });
 }
 
 async function loadTxt(){
   const txtUrl = new URL(TXT_FILE, window.location.href);
   txtUrl.searchParams.set("v", Date.now().toString());
-
   byId("smallPath").textContent = txtUrl.pathname;
 
   try{
     const res = await fetch(txtUrl.toString(), { cache:"no-store" });
     if(!res.ok) throw new Error(`HTTP ${res.status} al cargar ${TXT_FILE}`);
 
-    const text = await res.text();
-
-    originalText = text;
-    workingText = text;
-
+    originalText = await res.text();
+    workingText = originalText;
     parsed = parseBib(workingText);
 
-    byId("preface").innerHTML = parsed.preface
-      ? escapeHTML(parsed.preface).replace(/\n/g,"<br>")
-      : `Bibliografía Azul de Pantalla.<br><span class="muted">TXT cargado.</span>`;
-
     render(parsed);
-
-    const counts = countAll(parsed);
-    byId("tinyInfo").textContent = `${counts.blocks} bloques · ${counts.items} refs`;
-
     byId("search").dispatchEvent(new Event("input"));
   }catch(err){
     byId("content").innerHTML = `<div class="error">ERROR\n\n${escapeHTML(String(err))}\n\nVerifica:\n- existe bibliografia.txt en la raíz del repo\n- GitHub Pages está sirviendo el fichero\n- el nombre es EXACTO: bibliografia.txt</div>`;
-    byId("preface").innerHTML = `No se pudo cargar <em>bibliografia.txt</em>.`;
     byId("smallPath").textContent = "error";
   }
 }
@@ -1057,16 +1047,10 @@ byId("btnRenumber").addEventListener("click", ()=>{
   if(!originalText) return;
 
   renumberMode = !renumberMode;
+  workingText = renumberMode ? renumberRefsInText(originalText) : originalText;
 
-  if(renumberMode){
-    workingText = renumberRefsInText(originalText);
-    byId("btnRenumber").classList.add("primary");
-    byId("btnRenumber").textContent = "Reenumerado ✓ (vista)";
-  }else{
-    workingText = originalText;
-    byId("btnRenumber").classList.remove("primary");
-    byId("btnRenumber").textContent = "Reenumerar (vista)";
-  }
+  byId("btnRenumber").classList.toggle("primary", renumberMode);
+  byId("btnRenumber").textContent = renumberMode ? "Reenumerado ✓ (vista)" : "Reenumerar (vista)";
 
   parsed = parseBib(workingText);
   render(parsed);
@@ -1075,8 +1059,10 @@ byId("btnRenumber").addEventListener("click", ()=>{
 
 byId("btnDownloadView").addEventListener("click", ()=>{
   if(!workingText) return;
-  const name = renumberMode ? "bibliografia_renumerada.txt" : "bibliografia_vista.txt";
-  downloadText(name, workingText);
+  downloadText(
+    renumberMode ? "bibliografia_renumerada.txt" : "bibliografia_vista.txt",
+    workingText
+  );
 });
 
 setupSearch();
