@@ -872,17 +872,16 @@ function parseBib(text){
       continue;
     }
 
-    if(isRefLine(line)){
-      if(!currentBlock){
-        currentBlock = {
-          name: "SIN BLOQUE (REVISAR TXT)",
-          id: "sin-bloque-" + currentSection.blocks.length,
-          items: [],
-          sectionId: currentSection.id
-        };
-        currentSection.blocks.push(currentBlock);
-      }
-
+    if(!currentBlock){
+  currentBlock = {
+    name: currentSection.name,
+    id: currentSection.id + "-auto",
+    items: [],
+    sectionId: currentSection.id,
+    auto: true
+  };
+  currentSection.blocks.push(currentBlock);
+}
       const parsedRef = parseRefLine(line);
       const meta = splitMeta(parsedRef.raw);
       const item = {
