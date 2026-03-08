@@ -243,10 +243,11 @@
     }
 
     aside{
-      position:sticky;
-      top:76px;
-      align-self:start;
-    }
+  position:sticky;
+  top:76px;
+  align-self:start;
+  min-height:0;
+}
 
     .panel{
       background:linear-gradient(180deg, rgba(14,22,48,.93), rgba(11,16,34,.89));
@@ -255,6 +256,12 @@
       box-shadow:var(--shadow);
       overflow:hidden;
     }
+
+    aside .panel{
+  max-height:calc(100vh - 96px);
+  display:flex;
+  flex-direction:column;
+}
 
     .phead{
       padding:14px 14px 12px;
@@ -283,8 +290,35 @@
       white-space:nowrap;
     }
 
-    .pbody{padding:14px}
+    .pbody{
+  padding:14px;
+  overflow:auto;
+  min-height:0;
+  scrollbar-width:thin;
+  scrollbar-color:rgba(255,255,255,.18) transparent;
+}
 
+    .pbody::-webkit-scrollbar{
+  width:8px;
+}
+
+.pbody::-webkit-scrollbar-track{
+  background:transparent;
+}
+
+.pbody::-webkit-scrollbar-thumb{
+  background:rgba(255,255,255,.14);
+  border-radius:999px;
+  border:2px solid transparent;
+  background-clip:padding-box;
+}
+
+.pbody::-webkit-scrollbar-thumb:hover{
+  background:rgba(255,255,255,.24);
+  border-radius:999px;
+  border:2px solid transparent;
+  background-clip:padding-box;
+}
     input[type="search"], select{
       width:100%;
       border:1px solid var(--line);
@@ -321,12 +355,10 @@
     }
 
     .list{
-      margin-top:12px;
-      border-top:1px dashed rgba(255,255,255,.10);
-      padding-top:12px;
-      max-height:64vh;
-      overflow:auto;
-    }
+  margin-top:12px;
+  border-top:1px dashed rgba(255,255,255,.10);
+  padding-top:12px;
+}
 
     .list h4{
       margin:12px 0 6px;
