@@ -1,417 +1,1272 @@
 <!doctype html>
 <html lang="es">
 <head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Azul de Pantalla · Fuentes y Constelaciones</title>
+  <meta name="description" content="Azul de Pantalla · Fuentes y Constelaciones. Biblioteca bibliográfica navegable con canon, bloques, secciones y enlaces tipados." />
 
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    :root{
+      --bg:#070A12;
+      --panel:#0B1022;
+      --panel2:#0E1630;
+      --text:#E8ECFF;
+      --muted:#A9B2D6;
+      --line:rgba(255,255,255,.08);
+      --blue:#2B57FF;
+      --gold:#FFC46B;
+      --good:#3CFFB4;
+      --warn:#FFC46B;
+      --bad:#FF5C8A;
+      --shadow:0 10px 30px rgba(0,0,0,.35);
+      --radius:16px;
+      --mono:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace;
+      --sans:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Arial,"Noto Sans","Helvetica Neue",sans-serif;
+    }
 
-<title>Azul de Pantalla · Fuentes y Constelaciones</title>
+    *{box-sizing:border-box}
+    html,body{height:100%}
 
-<style>
+    body{
+      margin:0;
+      font-family:var(--sans);
+      color:var(--text);
+      background:
+        radial-gradient(1200px 600px at 20% -10%, rgba(43,87,255,.25), transparent 55%),
+        radial-gradient(900px 500px at 90% 10%, rgba(255,196,107,.05), transparent 60%),
+        var(--bg);
+    }
 
-:root{
---bg:#060912;
---panel:#0b1022;
---text:#e8ecff;
---muted:#aab2d4;
---line:rgba(255,255,255,.08);
---blue:#2b57ff;
---gold:#ffc46b;
---mono:ui-monospace, SFMono-Regular, Menlo, monospace;
---sans:system-ui,-apple-system,Segoe UI,Roboto,Arial;
-}
+    a{color:inherit}
 
-*{box-sizing:border-box}
+    .topbar{
+      position:sticky;
+      top:0;
+      z-index:50;
+      backdrop-filter:blur(10px);
+      background:rgba(7,10,18,.76);
+      border-bottom:1px solid var(--line);
+    }
 
-body{
-margin:0;
-font-family:var(--sans);
-color:var(--text);
-background:
-radial-gradient(900px 500px at 20% -10%, rgba(43,87,255,.2), transparent),
-var(--bg);
-}
+    .topbar-inner{
+      max-width:1440px;
+      margin:0 auto;
+      padding:14px 16px;
+      display:flex;
+      align-items:center;
+      gap:12px;
+    }
 
-a{color:inherit;text-decoration:none}
+    .brand{
+      flex:1;
+      min-width:0;
+      display:flex;
+      align-items:baseline;
+      gap:10px;
+    }
 
-.top{
-position:sticky;
-top:0;
-background:rgba(6,9,18,.8);
-backdrop-filter:blur(8px);
-border-bottom:1px solid var(--line);
-}
+    .brand h1{
+      margin:0;
+      font-size:16px;
+      font-weight:800;
+      text-transform:uppercase;
+      letter-spacing:.7px;
+      white-space:nowrap;
+      overflow:hidden;
+      text-overflow:ellipsis;
+    }
 
-.top-inner{
-max-width:1400px;
-margin:auto;
-padding:14px 18px;
-display:flex;
-gap:10px;
-align-items:center;
-}
+    .brand small{
+      font-family:var(--mono);
+      color:rgba(169,178,214,.82);
+      font-size:12px;
+      white-space:nowrap;
+      overflow:hidden;
+      text-overflow:ellipsis;
+    }
 
-.brand{
-flex:1;
-font-weight:700;
-letter-spacing:.5px;
-}
+    .btn{
+      appearance:none;
+      border:1px solid var(--line);
+      background:linear-gradient(180deg, rgba(255,255,255,.08), rgba(255,255,255,.03));
+      color:var(--text);
+      padding:10px 12px;
+      border-radius:999px;
+      font-size:13px;
+      text-decoration:none;
+      cursor:pointer;
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      white-space:nowrap;
+      box-shadow:0 8px 18px rgba(0,0,0,.22);
+    }
 
-.btn{
-border:1px solid var(--line);
-padding:8px 12px;
-border-radius:999px;
-font-size:13px;
-background:rgba(255,255,255,.05);
-}
+    .btn:hover{border-color:rgba(255,255,255,.18)}
 
-.btn:hover{border-color:rgba(255,255,255,.2)}
+    .btn.primary{
+      border-color:rgba(43,87,255,.45);
+      background:linear-gradient(180deg, rgba(43,87,255,.34), rgba(18,48,168,.22));
+    }
 
-.wrap{
-max-width:1400px;
-margin:auto;
-padding:24px 18px 60px;
-}
+    .btn .dot{
+      width:8px;height:8px;border-radius:50%;
+      background:var(--blue);
+      box-shadow:0 0 0 3px rgba(43,87,255,.18);
+    }
 
-.hero{
-background:linear-gradient(180deg, rgba(11,16,34,.95), rgba(11,16,34,.75));
-border:1px solid var(--line);
-border-radius:16px;
-padding:26px;
-margin-bottom:20px;
-}
+    .wrap{
+      max-width:1440px;
+      margin:0 auto;
+      padding:18px 16px 40px;
+    }
 
-.hero h1{
-margin:0;
-font-size:28px;
-}
+    .hero{
+      position:relative;
+      overflow:hidden;
+      background:linear-gradient(180deg, rgba(11,16,34,.95), rgba(11,16,34,.76));
+      border:1px solid var(--line);
+      border-radius:var(--radius);
+      padding:26px;
+      box-shadow:var(--shadow);
+      margin-bottom:16px;
+    }
 
-.liturgia{
-font-family:var(--mono);
-color:var(--gold);
-letter-spacing:1.5px;
-margin-top:6px;
-font-size:12px;
-}
+    .hero::after{
+      content:"";
+      position:absolute;
+      right:-80px;
+      bottom:-80px;
+      width:320px;
+      height:320px;
+      background:radial-gradient(circle, rgba(43,87,255,.14), transparent 65%);
+      pointer-events:none;
+    }
 
-.sub{
-margin-top:4px;
-color:rgba(255,255,255,.8);
-font-size:14px;
-}
+    .hero h2{
+      margin:0 0 6px;
+      font-size:24px;
+      font-weight:800;
+      letter-spacing:.2px;
+    }
 
-.manifesto{
-margin-top:16px;
-font-family:var(--mono);
-font-size:13px;
-line-height:1.8;
-border-left:2px solid var(--blue);
-padding-left:14px;
-color:rgba(255,255,255,.9);
-white-space:pre-line;
-}
+    .hero .sub{
+      margin:2px 0 4px;
+      color:rgba(255,196,107,.92);
+      font-family:var(--mono);
+      font-size:12px;
+      line-height:1.35;
+      letter-spacing:1.2px;
+    }
 
-.stats{
-display:flex;
-gap:12px;
-margin-top:18px;
-flex-wrap:wrap;
-}
+    .hero .subelegant{
+      margin:0 0 14px;
+      color:rgba(232,236,255,.84);
+      font-size:14px;
+      line-height:1.45;
+      letter-spacing:.15px;
+    }
 
-.stat{
-background:rgba(255,255,255,.04);
-border:1px solid var(--line);
-padding:12px 14px;
-border-radius:10px;
-}
+    .manifesto{
+      margin:16px 0 0;
+      padding:16px 18px;
+      border:1px solid rgba(255,255,255,.08);
+      border-left:2px solid rgba(43,87,255,.65);
+      border-radius:14px;
+      background:linear-gradient(180deg, rgba(255,255,255,.035), rgba(255,255,255,.02));
+      color:rgba(232,236,255,.92);
+      font-family:var(--mono);
+      font-size:13px;
+      line-height:1.85;
+      white-space:pre-line;
+      letter-spacing:.12px;
+      max-width:70ch;
+      box-shadow:inset 0 1px 0 rgba(255,255,255,.03);
+    }
 
-.stat small{
-display:block;
-color:var(--muted);
-font-family:var(--mono);
-font-size:11px;
-}
+    .stats{
+      margin-top:14px;
+      display:grid;
+      grid-template-columns:repeat(4, minmax(0,1fr));
+      gap:10px;
+    }
 
-.stat b{
-font-size:20px;
-}
+    @media (max-width:900px){
+      .stats{grid-template-columns:repeat(2, minmax(0,1fr))}
+    }
 
-.layout{
-display:grid;
-grid-template-columns:380px 1fr;
-gap:18px;
-}
+    .stat{
+      border:1px solid var(--line);
+      background:rgba(255,255,255,.04);
+      border-radius:14px;
+      padding:12px;
+    }
 
-@media(max-width:1000px){
-.layout{grid-template-columns:1fr}
-}
+    .stat .k{
+      font-family:var(--mono);
+      color:var(--muted);
+      font-size:11px;
+      text-transform:uppercase;
+      letter-spacing:.5px;
+    }
 
-.panel{
-background:var(--panel);
-border:1px solid var(--line);
-border-radius:16px;
-padding:18px;
-}
+    .stat .v{
+      margin-top:6px;
+      font-size:24px;
+      font-weight:800;
+      letter-spacing:.2px;
+    }
 
-.search{
-width:100%;
-padding:12px;
-border-radius:10px;
-border:1px solid var(--line);
-background:#050812;
-color:white;
-}
+    .grid{
+      display:grid;
+      grid-template-columns:400px 1fr;
+      gap:16px;
+      align-items:start;
+    }
 
-.section{
-margin-top:20px;
-font-weight:700;
-}
+    @media (max-width:1100px){
+      .grid{grid-template-columns:1fr}
+      aside{position:relative!important;top:auto!important}
+    }
 
-.block{
-margin-top:14px;
-border:1px solid var(--line);
-border-radius:10px;
-padding:10px;
-cursor:pointer;
-}
+    aside{
+      position:sticky;
+      top:76px;
+      align-self:start;
+    }
 
-.block:hover{
-border-color:rgba(255,255,255,.2);
-}
+    .panel{
+      background:linear-gradient(180deg, rgba(14,22,48,.93), rgba(11,16,34,.89));
+      border:1px solid var(--line);
+      border-radius:var(--radius);
+      box-shadow:var(--shadow);
+      overflow:hidden;
+    }
 
-.ref{
-font-family:var(--mono);
-font-size:12px;
-background:rgba(43,87,255,.2);
-padding:3px 7px;
-border-radius:999px;
-margin-right:6px;
-}
+    .phead{
+      padding:14px 14px 12px;
+      border-bottom:1px solid var(--line);
+      display:flex;
+      gap:10px;
+      align-items:center;
+      justify-content:space-between;
+    }
 
-.item{
-margin-top:8px;
-font-size:14px;
-}
+    .phead .title{
+      font-weight:800;
+      text-transform:uppercase;
+      letter-spacing:.6px;
+      font-size:12px;
+      color:rgba(232,236,255,.92);
+    }
 
-.links{
-margin-top:6px;
-display:flex;
-gap:6px;
-flex-wrap:wrap;
-}
+    .phead .tiny{
+      font-family:var(--mono);
+      font-size:11px;
+      color:var(--muted);
+      max-width:200px;
+      overflow:hidden;
+      text-overflow:ellipsis;
+      white-space:nowrap;
+    }
 
-.links a{
-font-family:var(--mono);
-font-size:11px;
-padding:5px 8px;
-border:1px solid rgba(43,87,255,.2);
-border-radius:999px;
-background:rgba(43,87,255,.1);
-}
+    .pbody{padding:14px}
 
-footer{
-margin-top:30px;
-border-top:1px solid var(--line);
-padding-top:14px;
-font-family:var(--mono);
-font-size:11px;
-color:var(--muted);
-white-space:pre-line;
-}
+    input[type="search"], select{
+      width:100%;
+      border:1px solid var(--line);
+      background:rgba(7,10,18,.66);
+      color:var(--text);
+      padding:12px;
+      border-radius:12px;
+      outline:none;
+      font-size:13px;
+    }
 
-</style>
+    input[type="search"]::placeholder{color:rgba(169,178,214,.75)}
+    select{cursor:pointer;font-family:var(--mono);font-size:12px}
+
+    .actions{
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+      margin-top:10px;
+    }
+
+    .actions .btn{
+      border-radius:12px;
+      padding:10px 12px;
+      font-size:12px;
+    }
+
+    .results{
+      margin-top:10px;
+      font-family:var(--mono);
+      font-size:11px;
+      color:var(--muted);
+      min-height:16px;
+    }
+
+    .list{
+      margin-top:12px;
+      border-top:1px dashed rgba(255,255,255,.10);
+      padding-top:12px;
+      max-height:64vh;
+      overflow:auto;
+    }
+
+    .list h4{
+      margin:12px 0 6px;
+      font-size:11px;
+      letter-spacing:.6px;
+      text-transform:uppercase;
+      color:var(--muted);
+    }
+
+    .navitem{
+      display:flex;
+      justify-content:space-between;
+      gap:10px;
+      align-items:center;
+      padding:10px;
+      border:1px solid rgba(255,255,255,.06);
+      border-radius:12px;
+      margin:8px 0;
+      background:rgba(255,255,255,.03);
+      cursor:pointer;
+      user-select:none;
+    }
+
+    .navitem:hover{border-color:rgba(43,87,255,.28)}
+
+    .navitem .name{
+      font-size:13px;
+      color:rgba(232,236,255,.94);
+      overflow:hidden;
+      text-overflow:ellipsis;
+      white-space:nowrap;
+      max-width:260px;
+    }
+
+    .navitem .meta{
+      font-family:var(--mono);
+      font-size:11px;
+      color:var(--muted);
+      white-space:nowrap;
+    }
+
+    .chips{
+      display:flex;
+      flex-wrap:wrap;
+      gap:8px;
+      margin-top:8px;
+    }
+
+    .chip{
+      border:1px solid rgba(255,196,107,.2);
+      background:rgba(255,196,107,.08);
+      color:var(--text);
+      border-radius:999px;
+      padding:6px 10px;
+      font-family:var(--mono);
+      font-size:11px;
+      cursor:pointer;
+    }
+
+    .chip:hover{
+      border-color:rgba(255,196,107,.42);
+      background:rgba(255,196,107,.14);
+    }
+
+    .content{padding:14px}
+
+    .section-card{
+      margin:18px 0 10px;
+      padding:10px 12px;
+      border:1px solid rgba(255,255,255,.08);
+      border-radius:14px;
+      background:rgba(255,255,255,.03);
+    }
+
+    .section-card .name{font-weight:850;letter-spacing:.3px}
+    .section-card .meta{font-family:var(--mono);font-size:11px;color:var(--muted);margin-top:6px}
+
+    details{
+      border:1px solid rgba(255,255,255,.08);
+      border-radius:14px;
+      background:rgba(255,255,255,.03);
+      margin:10px 0;
+      overflow:hidden;
+    }
+
+    summary{
+      list-style:none;
+      cursor:pointer;
+      padding:14px;
+      display:flex;
+      justify-content:space-between;
+      gap:10px;
+      align-items:center;
+      user-select:none;
+    }
+
+    summary::-webkit-details-marker{display:none}
+
+    summary .left{
+      display:flex;
+      flex-direction:column;
+      min-width:0;
+      gap:4px;
+    }
+
+    summary .who{
+      font-weight:850;
+      letter-spacing:.2px;
+      font-size:14px;
+      overflow:hidden;
+      text-overflow:ellipsis;
+      white-space:nowrap;
+      max-width:74ch;
+    }
+
+    summary .range{
+      font-family:var(--mono);
+      font-size:11px;
+      color:var(--muted);
+      display:flex;
+      gap:8px;
+      flex-wrap:wrap;
+    }
+
+    summary .chev{
+      font-family:var(--mono);
+      color:rgba(232,236,255,.78);
+      opacity:.9;
+    }
+
+    .items{
+      border-top:1px solid rgba(255,255,255,.08);
+      padding:12px 14px 14px;
+    }
+
+    .items ul{
+      margin:0;
+      padding:0;
+      list-style:none;
+      display:flex;
+      flex-direction:column;
+      gap:10px;
+    }
+
+    .it{
+      display:flex;
+      gap:12px;
+      align-items:flex-start;
+      padding:10px;
+      border:1px solid rgba(255,255,255,.06);
+      border-radius:12px;
+      background:rgba(7,10,18,.35);
+    }
+
+    .ref{
+      font-family:var(--mono);
+      font-size:12px;
+      padding:4px 8px;
+      border-radius:999px;
+      background:rgba(43,87,255,.18);
+      border:1px solid rgba(43,87,255,.28);
+      white-space:nowrap;
+      height:fit-content;
+    }
+
+    .desc{min-width:0;flex:1}
+
+    .title{
+      font-size:13px;
+      line-height:1.42;
+      color:rgba(232,236,255,.92);
+      margin:0 0 6px;
+    }
+
+    .meta2{
+      font-family:var(--mono);
+      font-size:11px;
+      color:var(--muted);
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+    }
+
+    .links{
+      margin-top:8px;
+      display:flex;
+      flex-wrap:wrap;
+      gap:8px;
+    }
+
+    .links a{
+      font-family:var(--mono);
+      font-size:11px;
+      text-decoration:none;
+      border:1px solid rgba(43,87,255,.22);
+      border-radius:999px;
+      padding:6px 10px;
+      background:rgba(43,87,255,.08);
+      color:rgba(232,236,255,.92);
+    }
+
+    .links a:hover{
+      border-color:rgba(43,87,255,.42);
+      background:rgba(43,87,255,.14);
+    }
+
+    .canon{
+      margin-bottom:16px;
+      border:1px solid rgba(255,255,255,.08);
+      border-left:2px solid rgba(255,196,107,.65);
+      border-radius:14px;
+      padding:14px 16px;
+      background:linear-gradient(180deg, rgba(255,255,255,.03), rgba(255,255,255,.015));
+    }
+
+    .canon h3{
+      margin:0 0 8px;
+      font-size:14px;
+      text-transform:uppercase;
+      letter-spacing:.6px;
+    }
+
+    .canon p{
+      margin:0 0 10px;
+      font-size:13px;
+      line-height:1.55;
+      color:rgba(232,236,255,.9);
+    }
+
+    .canon-grid{
+      display:grid;
+      grid-template-columns:repeat(2, minmax(0,1fr));
+      gap:10px;
+    }
+
+    @media (max-width:900px){
+      .canon-grid{grid-template-columns:1fr}
+    }
+
+    .canon-card{
+      border:1px solid rgba(255,255,255,.06);
+      border-radius:12px;
+      padding:10px;
+      background:rgba(7,10,18,.26);
+    }
+
+    .canon-card .cname{
+      font-weight:800;
+      font-size:13px;
+      margin-bottom:6px;
+    }
+
+    .canon-card .cmeta{
+      font-family:var(--mono);
+      font-size:11px;
+      color:var(--muted);
+      margin-bottom:6px;
+    }
+
+    .canon-card .canon-refs{
+      display:flex;
+      flex-wrap:wrap;
+      gap:6px;
+    }
+
+    .canon-card .canon-refs button{
+      border:1px solid rgba(255,196,107,.22);
+      background:rgba(255,196,107,.08);
+      color:var(--text);
+      border-radius:999px;
+      padding:5px 8px;
+      font-family:var(--mono);
+      font-size:11px;
+      cursor:pointer;
+    }
+
+    .canon-card .canon-refs button:hover{
+      border-color:rgba(255,196,107,.4);
+      background:rgba(255,196,107,.14);
+    }
+
+    .error{
+      border:1px solid rgba(255,92,138,.35);
+      background:rgba(255,92,138,.08);
+      padding:12px 14px;
+      border-radius:14px;
+      color:rgba(232,236,255,.92);
+      font-family:var(--mono);
+      font-size:12px;
+      white-space:pre-wrap;
+    }
+
+    footer{
+      margin-top:18px;
+      padding-top:14px;
+      border-top:1px solid rgba(255,255,255,.08);
+      color:rgba(169,178,214,.88);
+      font-family:var(--mono);
+      font-size:11px;
+      line-height:1.7;
+      white-space:pre-line;
+    }
+  </style>
 </head>
-
 <body>
+  <div class="topbar">
+    <div class="topbar-inner">
+      <div class="brand">
+        <h1>AZUL DE PANTALLA · FUENTES Y CONSTELACIONES</h1>
+        <small id="smallPath">cargando…</small>
+      </div>
+      <a class="btn" href="bibliografia.txt" download>Descargar TXT</a>
+      <a class="btn" href="https://github.com/primateth/azul-de-pantalla-bio" target="_blank" rel="noopener"><span class="dot"></span> Repo</a>
+      <a class="btn" href="mailto:mercurius81@proton.me">Contacto</a>
+      <a class="btn primary" id="buyBookBtn" href="https://www.amazon.es/s?k=Azul+de+Pantalla+M.+M%C3%BCller" target="_blank" rel="noopener">Comprar el libro</a>
+    </div>
+  </div>
 
-<div class="top">
-<div class="top-inner">
+  <div class="wrap">
+    <section class="hero">
+      <h2>Bibliografía Azul de Pantalla</h2>
+      <div class="sub">LITURGIA.SUCIA.DEL.DATO</div>
+      <div class="subelegant">Doctrina del poder que ya no manda: programa</div>
 
-<div class="brand">
-AZUL DE PANTALLA · FUENTES Y CONSTELACIONES
-</div>
-
-<a class="btn" href="bibliografia.txt">Descargar TXT</a>
-<a class="btn" href="#">Repo</a>
-<a class="btn" href="mailto:">Contacto</a>
-<a class="btn" href="#">Comprar el libro</a>
-
-</div>
-</div>
-
-<div class="wrap">
-
-<div class="hero">
-
-<h1>Bibliografía Azul de Pantalla</h1>
-
-<div class="liturgia">
-LITURGIA.SUCIA.DEL.DATO
-</div>
-
-<div class="sub">
-Doctrina del poder que ya no manda: programa
-</div>
-
-<div class="manifesto">
-Este libro no busca adeptos.
+      <div class="manifesto" id="preface">Este libro no busca adeptos.
 No teme a la máquina que calcula.
 Teme al humano que abdica.
 Nadie gobierna lo que no puede apagar.
-Precio para adultos.
-</div>
+Precio para adultos.</div>
 
-<div class="stats">
+      <div class="stats">
+        <div class="stat"><div class="k">Obras</div><div class="v" id="stLoaded">0</div></div>
+        <div class="stat"><div class="k">Bloques</div><div class="v" id="stBlocks">0</div></div>
+        <div class="stat"><div class="k">Secciones</div><div class="v" id="stSections">0</div></div>
+        <div class="stat"><div class="k">Canon</div><div class="v" id="stCanon">6</div></div>
+      </div>
+    </section>
 
-<div class="stat">
-<small>Obras</small>
-<b id="nRefs">0</b>
-</div>
+    <div class="grid">
+      <aside>
+        <div class="panel">
+          <div class="phead">
+            <div>
+              <div class="title">Navegación</div>
+              <div class="tiny" id="tinyInfo">lista</div>
+            </div>
+            <button class="btn" id="btnReload" title="Recargar">↻</button>
+          </div>
 
-<div class="stat">
-<small>Bloques</small>
-<b id="nBlocks">0</b>
-</div>
+          <div class="pbody">
+            <input id="search" type="search" placeholder="Buscar autor / sección / REF / título / enlace…" autocomplete="off" />
 
-<div class="stat">
-<small>Secciones</small>
-<b id="nSections">0</b>
-</div>
+            <div class="actions">
+              <select id="jumpSelect">
+                <option value="">Saltar a…</option>
+              </select>
+              <button class="btn" id="btnRenumber">Reenumerar</button>
+              <button class="btn" id="btnDownloadView">Descargar vista</button>
+            </div>
 
-</div>
+            <div class="results" id="resultsInfo"></div>
 
-</div>
+            <div class="chips" id="canonChips"></div>
 
-<div class="layout">
+            <div class="list" id="navList">
+              <h4>Bloques</h4>
+              <div id="navBlocks"></div>
+              <h4>Secciones</h4>
+              <div id="navSections"></div>
+            </div>
+          </div>
+        </div>
+      </aside>
 
-<div class="panel">
+      <article>
+        <div class="panel">
+          <div class="content" id="content">
+            <div class="error">Preparando estructura…</div>
+          </div>
+        </div>
 
-<input class="search" id="search" placeholder="Buscar autor / REF / obra">
-
-<div id="nav"></div>
-
-</div>
-
-<div class="panel" id="content">
-Cargando bibliografía…
-</div>
-
-</div>
-
-<footer>
-
-La bibliografía, incompleta y digital, es superior al libro.
-
-© M. MÜLLER
-
-</footer>
-
-</div>
+        <footer>La bibliografía, incompleta y digital, es superior al libro.
+© M. MÜLLER</footer>
+      </article>
+    </div>
+  </div>
 
 <script>
+const TXT_FILE = "bibliografia.txt";
+const BUY_BOOK_URL = "https://www.amazon.es/s?k=Azul+de+Pantalla+M.+M%C3%BCller";
 
-const file="bibliografia.txt"
+let originalText = "";
+let workingText = "";
+let renumberMode = false;
+let parsed = null;
+let searchBound = false;
 
-async function load(){
+const TOP_SECTIONS = new Set([
+  "PODCASTS",
+  "BLOGS",
+  "MANUALES",
+  "TEXTOS RELIGIOSOS",
+  "IDEOLOGÍAS / DOCTRINAS DE MANDO (POLÍTICA Y RÉGIMEN)",
+  "IDEOLOGÍAS (CARTOGRAFÍA HISTÓRICA)",
+  "CONTRAPESOS / HISTORIOGRAFÍA CRÍTICA",
+  "ANTI-TECNOLOGÍA (OBJETOS HISTÓRICOS)",
+  "CRÍTICA DE LA TÉCNICA",
+  "RADICALISMOS ANTI-CIVILIZACIÓN (CARTOGRAFÍA)",
+  "AUDIOLIBROS",
+  "IVOOX / PROGRAMAS",
+  "EPIC GAMES"
+]);
 
-let txt=await fetch(file).then(r=>r.text())
+const CANON = [
+  { id:"canon-teologia-politica", name:"Teología política", meta:"liturgia · soberanía · excepción", refs:["REF-001","REF-002","REF-157","REF-158","REF-160","REF-161","REF-188","REF-190","REF-194","REF-195","REF-202","REF-269","REF-279","REF-286","REF-287","REF-288","REF-289","REF-290","REF-358","REF-359","REF-361","REF-362","REF-363"] },
+  { id:"canon-sacrificio-ritual", name:"Sacrificio y ritual", meta:"violencia · víctima · cohesión", refs:["REF-016","REF-034","REF-035","REF-036","REF-037","REF-067","REF-068","REF-071","REF-072","REF-073","REF-076","REF-077","REF-083","REF-105","REF-130","REF-133","REF-163","REF-178","REF-179","REF-180","REF-252","REF-253","REF-254","REF-292"] },
+  { id:"canon-tecnica-control", name:"Técnica y control", meta:"dispositivo · captura · entorno", refs:["REF-062","REF-182","REF-183","REF-184","REF-192","REF-193","REF-194","REF-195","REF-296","REF-297","REF-305","REF-306","REF-373","REF-374","REF-375","REF-376","REF-377","REF-378"] },
+  { id:"canon-capitalismo-simbolico", name:"Capitalismo simbólico", meta:"simulacro · espectáculo · moneda", refs:["REF-004","REF-013","REF-023","REF-040","REF-041","REF-042","REF-045","REF-058","REF-071","REF-079","REF-080","REF-117","REF-186","REF-222","REF-244","REF-257","REF-258","REF-259","REF-261","REF-262"] },
+  { id:"canon-antropologia-poder", name:"Antropología del poder", meta:"parentesco · rito · cosmología", refs:["REF-055","REF-100","REF-127","REF-177","REF-215","REF-216","REF-233","REF-234","REF-235","REF-243","REF-278","REF-285","REF-294"] },
+  { id:"canon-textos-fundacionales", name:"Textos fundacionales", meta:"depósito simbólico · mito · tradición", refs:["REF-005","REF-009","REF-052","REF-141","REF-197","REF-201","REF-203","REF-204","REF-228","REF-240","REF-270","REF-271","REF-291","REF-342","REF-343"] }
+];
 
-let lines=txt.split("\n")
+function byId(id){ return document.getElementById(id); }
 
-let start=lines.findIndex((l,i)=>lines[i+1] && lines[i+1].startsWith("REF-"))
-
-let blocks=[]
-let current=null
-
-for(let i=start;i<lines.length;i++){
-
-let l=lines[i].trim()
-
-if(!l)continue
-
-if(!l.startsWith("REF-") && lines[i+1] && lines[i+1].startsWith("REF-")){
-
-current={name:l,items:[]}
-
-blocks.push(current)
-
-continue
+function escapeHTML(s){
+  return (s ?? "").replace(/[&<>"']/g, ch => ({
+    "&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"
+  }[ch]));
 }
 
-if(l.startsWith("REF-")){
-
-let parts=l.split(". ")
-
-let ref=parts[0]
-
-let title=parts.slice(1).join(". ")
-
-current.items.push({ref,title})
-
+function nextNonEmpty(lines, i){
+  for(let j=i; j<lines.length; j++){
+    const t = (lines[j] ?? "").trim();
+    if(t) return t;
+  }
+  return "";
 }
 
+function normKey(s){
+  return (s ?? "").trim().normalize("NFD").replace(/[\u0300-\u036f]/g,"").toUpperCase();
 }
 
-render(blocks)
-
+function slug(s){
+  return normKey(s).toLowerCase().replace(/[^a-z0-9]+/g,"-").replace(/(^-|-$)/g,"").slice(0,80);
 }
 
-function render(blocks){
-
-document.getElementById("nBlocks").innerText=blocks.length
-
-let refs=0
-
-let nav=""
-let content=""
-
-blocks.forEach(b=>{
-
-refs+=b.items.length
-
-nav+=`<div class="block" onclick="jump('${b.name}')">${b.name}</div>`
-
-content+=`<div class="section" id="${b.name}">${b.name}</div>`
-
-b.items.forEach(i=>{
-
-content+=`
-<div class="item">
-<span class="ref">${i.ref}</span>
-${i.title}
-</div>`
-
-})
-
-})
-
-document.getElementById("nav").innerHTML=nav
-document.getElementById("content").innerHTML=content
-document.getElementById("nRefs").innerText=refs
-
+function isRefLine(line){
+  return /^REF-\d{1,4}(?:[_-]\d+)?\./.test((line ?? "").trim());
 }
 
-function jump(id){
-
-document.getElementById(id).scrollIntoView({behavior:"smooth"})
-
+function parseRefLine(line){
+  const m = line.trim().match(/^(REF-\d{1,4}(?:[_-]\d+)?)\.\s*(.*)$/);
+  if(!m) return { ref:"", raw:line.trim() };
+  return { ref:m[1], raw:m[2] };
 }
 
-document.getElementById("search").addEventListener("input",e=>{
+function isSectionHeading(line){
+  return TOP_SECTIONS.has((line ?? "").trim());
+}
 
-let q=e.target.value.toLowerCase()
+function isTypedLink(line){
+  return /^(Fuente|Lectura|Archivo|Gutenberg|PDF|Link|Editorial|Url|URL|Libro libre)\s*:\s*https?:\/\/\S+/i.test((line ?? "").trim());
+}
 
-document.querySelectorAll(".item").forEach(i=>{
+function isBareUrl(line){
+  return /^https?:\/\/\S+$/i.test((line ?? "").trim());
+}
 
-i.style.display=i.innerText.toLowerCase().includes(q)?"":"none"
+function normalizeTypedLink(line){
+  let t = (line ?? "").trim();
+  if(isBareUrl(t)) t = "Archivo: " + t;
+  const m = t.match(/^([^:]+):\s*(https?:\/\/\S+)$/i);
+  if(!m) return null;
 
-})
+  let type = m[1].trim().toLowerCase();
+  const url = m[2].trim().replace(/[)\].,;]+$/,"");
 
-})
+  if(["gutenberg","pdf","link","url","libro libre"].includes(type)) type = "lectura";
+  else if(["editorial","fuente","repo"].includes(type)) type = "fuente";
+  else if(type === "archivo") type = "archivo";
 
-load()
+  return { type, url };
+}
 
+function looksAuthorLine(line){
+  const t = (line ?? "").trim();
+  if(!t) return false;
+  if(isRefLine(t) || isSectionHeading(t) || isTypedLink(t) || isBareUrl(t)) return false;
+  return true;
+}
+
+function splitMeta(raw){
+  const s = (raw ?? "").replace(/\s+/g," ").trim();
+  const ym = s.match(/\((\d{4}(?:–\d{4})?)\)/);
+  const parts = s.split(".").map(p => p.trim()).filter(Boolean);
+  return {
+    title:s,
+    year: ym ? ym[1] : "",
+    publisher: parts.length >= 2 ? parts[parts.length - 1] : ""
+  };
+}
+
+function prettyLinkLabel(type){
+  const t = (type || "").toLowerCase();
+  if(t === "fuente") return "fuente";
+  if(t === "lectura") return "leer";
+  if(t === "archivo") return "archivo";
+  return t;
+}
+
+function parseBib(text){
+  const lines = text.replace(/\r/g,"").split("\n").map(x => (x ?? "").trimEnd());
+
+  let start = -1;
+  for(let i=0;i<lines.length-1;i++){
+    const a = (lines[i] ?? "").trim();
+    const b = nextNonEmpty(lines, i+1);
+    if(looksAuthorLine(a) && isRefLine(b)){
+      start = i;
+      break;
+    }
+  }
+
+  if(start === -1){
+    throw new Error("No se pudo detectar el inicio real de la bibliografía.");
+  }
+
+  const sections = [];
+  let currentSection = { name:"BIBLIOGRAFÍA GENERAL", id:"bibliografia-general", kind:"main", blocks:[] };
+  sections.push(currentSection);
+
+  let currentBlock = null;
+  let lastItem = null;
+
+  for(let i=start; i<lines.length; i++){
+    const line = (lines[i] ?? "").trim();
+    if(!line) continue;
+
+    const next = nextNonEmpty(lines, i+1);
+
+    if(isSectionHeading(line)){
+      currentSection = { name:line, id:slug(line), kind:"section", blocks:[] };
+      sections.push(currentSection);
+      currentBlock = null;
+      lastItem = null;
+      continue;
+    }
+
+    if(looksAuthorLine(line) && isRefLine(next)){
+      currentBlock = {
+        name: line,
+        id: slug(line) || ("block-" + currentSection.blocks.length),
+        items: [],
+        sectionId: currentSection.id
+      };
+      currentSection.blocks.push(currentBlock);
+      lastItem = null;
+      continue;
+    }
+
+    if(isRefLine(line)){
+      if(!currentBlock){
+        currentBlock = {
+          name: "SIN BLOQUE (REVISAR TXT)",
+          id: "sin-bloque-" + currentSection.blocks.length,
+          items: [],
+          sectionId: currentSection.id
+        };
+        currentSection.blocks.push(currentBlock);
+      }
+
+      const parsedRef = parseRefLine(line);
+      const meta = splitMeta(parsedRef.raw);
+      const item = {
+        ref: parsedRef.ref,
+        raw: parsedRef.raw,
+        title: meta.title,
+        year: meta.year,
+        publisher: meta.publisher,
+        links: []
+      };
+      currentBlock.items.push(item);
+      lastItem = item;
+      continue;
+    }
+
+    const link = normalizeTypedLink(line);
+    if(link && lastItem){
+      const already = lastItem.links.some(x => x.type === link.type && x.url === link.url);
+      if(!already && lastItem.links.length < 3) lastItem.links.push(link);
+      continue;
+    }
+
+    if(lastItem){
+      lastItem.raw = (lastItem.raw + " " + line).replace(/\s+/g, " ").trim();
+      const meta = splitMeta(lastItem.raw);
+      lastItem.title = meta.title;
+      lastItem.year = meta.year;
+      lastItem.publisher = meta.publisher;
+    }
+  }
+
+  return { sections };
+}
+
+function renumberRefsInText(text){
+  let n = 1;
+  return text.replace(/^(\s*)REF-\d{1,4}(?:[_-]\d+)?\.\s*(.*)$/gm, (_, indent, rest) => {
+    const refNew = "REF-" + String(n++).padStart(3,"0");
+    return indent + refNew + ". " + rest;
+  });
+}
+
+function blockAnchorId(sec, blk){
+  return sec.id + "-" + blk.id;
+}
+
+function blockRefRange(blk){
+  const refs = blk.items.map(x => x.ref).filter(Boolean);
+  if(!refs.length) return "—";
+  return refs[0] === refs[refs.length - 1] ? refs[0] : `${refs[0]} → ${refs[refs.length - 1]}`;
+}
+
+function countAll(parsed){
+  let items = 0;
+  let blocks = 0;
+  for(const sec of parsed.sections){
+    blocks += sec.blocks.length;
+    for(const blk of sec.blocks) items += blk.items.length;
+  }
+  return { items, blocks, sections: parsed.sections.length - 1 + 1 };
+}
+
+function renderCanon(){
+  const box = document.createElement("div");
+  box.className = "canon";
+  box.id = "canon-azul-de-pantalla";
+  box.dataset.kind = "canon";
+
+  let html = `
+    <h3>Canon Azul de Pantalla</h3>
+    <p>El canon no sustituye el archivo. Lo atraviesa. No agota la biblioteca: marca sus nervios, sus cámaras y sus zonas de combustión.</p>
+    <div class="canon-grid">
+  `;
+
+  for(const c of CANON){
+    html += `
+      <div class="canon-card" id="${escapeHTML(c.id)}">
+        <div class="cname">${escapeHTML(c.name)}</div>
+        <div class="cmeta">${escapeHTML(c.meta)}</div>
+        <div class="canon-refs">
+          ${c.refs.map(r => `<button type="button" data-refjump="${escapeHTML(r)}">${escapeHTML(r)}</button>`).join("")}
+        </div>
+      </div>
+    `;
+  }
+
+  html += `</div>`;
+  box.innerHTML = html;
+  return box;
+}
+
+function renderBlock(sec, blk){
+  const det = document.createElement("details");
+  det.id = blockAnchorId(sec, blk);
+  det.dataset.kind = "block";
+
+  const sum = document.createElement("summary");
+  sum.innerHTML = `
+    <div class="left">
+      <div class="who">${escapeHTML(blk.name)}</div>
+      <div class="range">
+        <span>Sección: <b>${escapeHTML(sec.name)}</b></span>
+        <span>Refs: <b>${escapeHTML(blockRefRange(blk))}</b></span>
+        <span>Entradas: <b>${blk.items.length}</b></span>
+      </div>
+    </div>
+    <div class="chev">↳</div>
+  `;
+  det.appendChild(sum);
+
+  const box = document.createElement("div");
+  box.className = "items";
+  const ul = document.createElement("ul");
+
+  for(const it of blk.items){
+    const li = document.createElement("li");
+    li.className = "it";
+    li.dataset.ref = it.ref;
+    li.id = "item-" + it.ref.toLowerCase().replace(/[^a-z0-9]+/g, "-");
+
+    const linksHtml = it.links.length
+      ? `<div class="links">${it.links.map(link => `<a href="${escapeHTML(link.url)}" target="_blank" rel="noopener">${escapeHTML(prettyLinkLabel(link.type))}</a>`).join("")}</div>`
+      : "";
+
+    li.innerHTML = `
+      <div class="ref">${escapeHTML(it.ref)}</div>
+      <div class="desc">
+        <div class="title">${escapeHTML(it.raw)}</div>
+        <div class="meta2">
+          ${it.year ? `<span>Año: ${escapeHTML(it.year)}</span>` : ""}
+          ${it.publisher ? `<span>Ed.: ${escapeHTML(it.publisher)}</span>` : ""}
+        </div>
+        ${linksHtml}
+      </div>
+    `;
+    ul.appendChild(li);
+  }
+
+  box.appendChild(ul);
+  det.appendChild(box);
+  return det;
+}
+
+function renderCanonChips(){
+  const host = byId("canonChips");
+  host.innerHTML = "";
+  for(const c of CANON){
+    const btn = document.createElement("button");
+    btn.className = "chip";
+    btn.type = "button";
+    btn.textContent = c.name;
+    btn.addEventListener("click", () => jumpTo(c.id));
+    host.appendChild(btn);
+  }
+}
+
+function render(parsed){
+  const content = byId("content");
+  const navBlocks = byId("navBlocks");
+  const navSections = byId("navSections");
+  const jump = byId("jumpSelect");
+
+  content.innerHTML = "";
+  navBlocks.innerHTML = "";
+  navSections.innerHTML = "";
+  jump.innerHTML = `<option value="">Saltar a…</option>`;
+
+  const frag = document.createDocumentFragment();
+  frag.appendChild(renderCanon());
+
+  for(const sec of parsed.sections){
+    const sc = document.createElement("div");
+    sc.className = "section-card";
+    sc.id = sec.id;
+    sc.dataset.kind = "section";
+    sc.innerHTML = `
+      <div class="name">${escapeHTML(sec.name)}</div>
+      <div class="meta">${sec.blocks.length} bloques</div>
+    `;
+    frag.appendChild(sc);
+
+    for(const blk of sec.blocks){
+      frag.appendChild(renderBlock(sec, blk));
+    }
+  }
+
+  content.appendChild(frag);
+
+  for(const c of CANON){
+    const opt = document.createElement("option");
+    opt.value = c.id;
+    opt.textContent = `${c.name} · canon`;
+    jump.appendChild(opt);
+  }
+
+  const og = document.createElement("optgroup");
+  og.label = "Bloques";
+  jump.appendChild(og);
+
+  for(const sec of parsed.sections){
+    const sdiv = document.createElement("div");
+    sdiv.className = "navitem";
+    sdiv.dataset.jump = sec.id;
+    sdiv.innerHTML = `<div class="name">${escapeHTML(sec.name)}</div><div class="meta">${sec.blocks.length} bloques</div>`;
+    sdiv.addEventListener("click", () => jumpTo(sec.id));
+    navSections.appendChild(sdiv);
+
+    const sopt = document.createElement("option");
+    sopt.value = sec.id;
+    sopt.textContent = `${sec.name} · sección`;
+    jump.appendChild(sopt);
+
+    for(const blk of sec.blocks){
+      const id = blockAnchorId(sec, blk);
+      const div = document.createElement("div");
+      div.className = "navitem";
+      div.dataset.jump = id;
+      div.innerHTML = `<div class="name">${escapeHTML(blk.name)}</div><div class="meta">${escapeHTML(blockRefRange(blk))}</div>`;
+      div.addEventListener("click", () => jumpTo(id));
+      navBlocks.appendChild(div);
+
+      const opt = document.createElement("option");
+      opt.value = id;
+      opt.textContent = `${blk.name} · ${blockRefRange(blk)}`;
+      og.appendChild(opt);
+    }
+  }
+
+  const counts = countAll(parsed);
+  byId("stLoaded").textContent = String(counts.items);
+  byId("stBlocks").textContent = String(counts.blocks);
+  byId("stSections").textContent = String(counts.sections);
+  byId("tinyInfo").textContent = `${counts.blocks} bloques · ${counts.items} refs`;
+  renderCanonChips();
+
+  content.querySelectorAll("[data-refjump]").forEach(btn => {
+    btn.addEventListener("click", () => jumpToRef(btn.dataset.refjump));
+  });
+}
+
+function jumpTo(id){
+  const el = document.getElementById(id);
+  if(!el) return;
+  const parentDetails = el.closest("details");
+  if(parentDetails) parentDetails.open = true;
+  if(el.tagName && el.tagName.toLowerCase() === "details") el.open = true;
+  el.scrollIntoView({ behavior:"smooth", block:"start" });
+}
+
+function jumpToRef(ref){
+  const target = document.querySelector(`[data-ref="${ref}"]`);
+  if(!target) return;
+  const parentDetails = target.closest("details");
+  if(parentDetails) parentDetails.open = true;
+  target.scrollIntoView({ behavior:"smooth", block:"center" });
+}
+
+function updateResultsInfo(){
+  const visibleBlocks = [...byId("content").querySelectorAll('[data-kind="block"]')].filter(n => n.style.display !== "none").length;
+  const visibleSections = [...byId("content").querySelectorAll('[data-kind="section"]')].filter(n => n.style.display !== "none").length;
+  const q = byId("search").value.trim();
+  byId("resultsInfo").textContent = q ? `Filtro activo · ${visibleBlocks} bloques · ${visibleSections} secciones visibles` : "";
+}
+
+function setupSearch(){
+  if(searchBound) return;
+  searchBound = true;
+
+  const search = byId("search");
+  const jump = byId("jumpSelect");
+
+  search.addEventListener("input", () => {
+    const q = search.value.trim().toLowerCase();
+
+    for(const opt of jump.querySelectorAll("option")){
+      if(!opt.value) continue;
+      opt.hidden = q ? !opt.textContent.toLowerCase().includes(q) : false;
+    }
+
+    for(const card of byId("navList").querySelectorAll(".navitem")){
+      const txt = (card.innerText || card.textContent || "").toLowerCase();
+      card.style.display = (!q || txt.includes(q)) ? "" : "none";
+    }
+
+    const chips = byId("canonChips").querySelectorAll(".chip");
+    chips.forEach(ch => {
+      const txt = (ch.innerText || ch.textContent || "").toLowerCase();
+      ch.style.display = (!q || txt.includes(q)) ? "" : "none";
+    });
+
+    const nodes = byId("content").querySelectorAll('[data-kind="block"], [data-kind="section"], [data-kind="canon"]');
+
+    if(!q){
+      for(const n of nodes){
+        n.style.display = "";
+        if(n.tagName && n.tagName.toLowerCase() === "details") n.open = false;
+      }
+      updateResultsInfo();
+      return;
+    }
+
+    for(const n of nodes){
+      const hay = (n.innerText || n.textContent || "").toLowerCase();
+      const show = hay.includes(q);
+      n.style.display = show ? "" : "none";
+      if(show && n.tagName && n.tagName.toLowerCase() === "details") n.open = true;
+    }
+
+    updateResultsInfo();
+  });
+
+  jump.addEventListener("change", () => {
+    if(jump.value) jumpTo(jump.value);
+  });
+}
+
+async function loadTxt(){
+  const txtUrl = new URL(TXT_FILE, window.location.href);
+  txtUrl.searchParams.set("v", Date.now().toString());
+
+  byId("smallPath").textContent = txtUrl.pathname;
+  byId("buyBookBtn").href = BUY_BOOK_URL;
+
+  try{
+    const res = await fetch(txtUrl.toString(), { cache:"no-store" });
+    if(!res.ok) throw new Error(`HTTP ${res.status} al cargar ${TXT_FILE}`);
+    originalText = await res.text();
+    workingText = originalText;
+    parsed = parseBib(workingText);
+    render(parsed);
+    byId("search").dispatchEvent(new Event("input"));
+  }catch(err){
+    byId("content").innerHTML = `<div class="error">ERROR\n\n${escapeHTML(String(err))}\n\nVerifica:\n- existe bibliografia.txt en la raíz del repo\n- el nombre es exacto\n- GitHub Pages sirve el fichero</div>`;
+    byId("smallPath").textContent = "error";
+  }
+}
+
+function downloadText(filename, text){
+  const blob = new Blob([text], {type:"text/plain;charset=utf-8"});
+  const a = document.createElement("a");
+  a.href = URL.createObjectURL(blob);
+  a.download = filename;
+  document.body.appendChild(a);
+  a.click();
+  a.remove();
+  setTimeout(() => URL.revokeObjectURL(a.href), 800);
+}
+
+function renumberRefsInText(text){
+  let n = 1;
+  return text.replace(/^(\s*)REF-\d{1,4}(?:[_-]\d+)?\.\s*(.*)$/gm, (_, indent, rest) => {
+    const refNew = "REF-" + String(n++).padStart(3,"0");
+    return indent + refNew + ". " + rest;
+  });
+}
+
+byId("btnReload").addEventListener("click", () => {
+  renumberMode = false;
+  byId("btnRenumber").classList.remove("primary");
+  byId("btnRenumber").textContent = "Reenumerar";
+  loadTxt();
+});
+
+byId("btnRenumber").addEventListener("click", () => {
+  if(!originalText) return;
+  renumberMode = !renumberMode;
+  workingText = renumberMode ? renumberRefsInText(originalText) : originalText;
+  byId("btnRenumber").classList.toggle("primary", renumberMode);
+  byId("btnRenumber").textContent = renumberMode ? "Reenumerado ✓" : "Reenumerar";
+  parsed = parseBib(workingText);
+  render(parsed);
+  byId("search").dispatchEvent(new Event("input"));
+});
+
+byId("btnDownloadView").addEventListener("click", () => {
+  if(!workingText) return;
+  downloadText(renumberMode ? "bibliografia_renumerada.txt" : "bibliografia_vista.txt", workingText);
+});
+
+setupSearch();
+loadTxt();
 </script>
-
 </body>
 </html>
