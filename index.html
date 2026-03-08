@@ -1246,7 +1246,7 @@ async function loadTxt(){
   const txtUrl = new URL(TXT_FILE, window.location.href);
   txtUrl.searchParams.set("v", Date.now().toString());
 
-  byId("smallPath").textContent = txtUrl.pathname;
+  byId("smallPath").textContent = "archivo documental";
   byId("buyBookBtn").href = BUY_BOOK_URL;
 
   try{
