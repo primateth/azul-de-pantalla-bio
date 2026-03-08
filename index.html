@@ -773,7 +773,7 @@ function isSectionHeading(line){
 }
 
 function isTypedLink(line){
-  return /^(Fuente|Lectura|Archivo|Gutenberg|PDF|Link|Editorial|Url|URL|Libro libre)\s*:\s*https?:\/\/\S+/i.test((line ?? "").trim());
+  return /^(Fuente|Lectura|Archivo|Gutenberg|PDF|Link|Editorial|Url|URL|Libro libre)\s*:\s*\S+/i.test((line ?? "").trim());
 }
 
 function isBareUrl(line){
@@ -783,7 +783,7 @@ function isBareUrl(line){
 function normalizeTypedLink(line){
   let t = (line ?? "").trim();
   if(isBareUrl(t)) t = "Archivo: " + t;
-  const m = t.match(/^([^:]+):\s*(https?:\/\/\S+)$/i);
+  const m = t.match(/^([^:]+):\s*(\S+)$/i);
   if(!m) return null;
 
   let type = m[1].trim().toLowerCase();
@@ -1017,8 +1017,13 @@ function renderBlock(sec, blk){
     li.id = "item-" + it.ref.toLowerCase().replace(/[^a-z0-9]+/g, "-");
 
     const linksHtml = it.links.length
-      ? `<div class="links">${it.links.map(link => `<a href="${escapeHTML(link.url)}" target="_blank" rel="noopener">${escapeHTML(prettyLinkLabel(link.type))}</a>`).join("")}</div>`
-      : "";
+  ? `<div class="links">${it.links.map(link => {
+      const isLocalFile = !/^https?:\/\//i.test(link.url);
+      const isArchivo = link.type === "archivo";
+      const extra = (isLocalFile && isArchivo) ? ' download' : '';
+      return `<a href="${escapeHTML(link.url)}" target="_blank" rel="noopener"${extra}>${escapeHTML(prettyLinkLabel(link.type))}</a>`;
+    }).join("")}</div>`
+  : "";
 
     li.innerHTML = `
       <div class="ref">${escapeHTML(it.ref)}</div>
