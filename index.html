@@ -5,8 +5,8 @@ html = r'''<!doctype html>
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Azul de Pantalla · Archivo bibliográfico</title>
-  <meta name="description" content="Archivo bibliográfico navegable de Azul de Pantalla." />
+  <title>Biblioteca Azul de Pantalla</title>
+  <meta name="description" content="Biblioteca Azul de Pantalla. Archivo bibliográfico navegable con búsqueda, canon, secciones y estadísticas." />
   <style>
     :root{
       --bg:#070A12;
@@ -16,10 +16,8 @@ html = r'''<!doctype html>
       --muted:#A9B2D6;
       --line:rgba(255,255,255,.08);
       --blue:#2B57FF;
-      --blue2:#1230A8;
+      --gold:#FFC46B;
       --good:#3CFFB4;
-      --warn:#FFC46B;
-      --bad:#FF5C8A;
       --shadow:0 10px 30px rgba(0,0,0,.35);
       --radius:16px;
       --mono:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace;
@@ -34,7 +32,7 @@ html = r'''<!doctype html>
       color:var(--text);
       background:
         radial-gradient(1200px 600px at 20% -10%, rgba(43,87,255,.25), transparent 55%),
-        radial-gradient(900px 500px at 90% 10%, rgba(60,255,180,.06), transparent 60%),
+        radial-gradient(900px 500px at 90% 10%, rgba(255,196,107,.05), transparent 60%),
         var(--bg);
     }
 
@@ -43,14 +41,14 @@ html = r'''<!doctype html>
     .topbar{
       position:sticky;
       top:0;
-      z-index:30;
+      z-index:50;
       backdrop-filter:blur(10px);
-      background:rgba(7,10,18,.75);
+      background:rgba(7,10,18,.76);
       border-bottom:1px solid var(--line);
     }
 
     .topbar-inner{
-      max-width:1360px;
+      max-width:1440px;
       margin:0 auto;
       padding:14px 16px;
       display:flex;
@@ -104,22 +102,19 @@ html = r'''<!doctype html>
     }
 
     .btn:hover{border-color:rgba(255,255,255,.18)}
-
     .btn.primary{
       border-color:rgba(43,87,255,.45);
       background:linear-gradient(180deg, rgba(43,87,255,.34), rgba(18,48,168,.22));
     }
 
     .btn .dot{
-      width:8px;
-      height:8px;
-      border-radius:50%;
+      width:8px;height:8px;border-radius:50%;
       background:var(--blue);
       box-shadow:0 0 0 3px rgba(43,87,255,.18);
     }
 
     .wrap{
-      max-width:1360px;
+      max-width:1440px;
       margin:0 auto;
       padding:18px 16px 40px;
     }
@@ -146,12 +141,7 @@ html = r'''<!doctype html>
       pointer-events:none;
     }
 
-    .hero h2{
-      margin:0 0 6px;
-      font-size:22px;
-      letter-spacing:.3px;
-    }
-
+    .hero h2{margin:0 0 6px;font-size:22px;letter-spacing:.3px}
     .hero .sub{
       margin:0 0 14px;
       color:var(--muted);
@@ -176,40 +166,46 @@ html = r'''<!doctype html>
       max-width:78ch;
     }
 
-    .status{
+    .stats{
       margin-top:14px;
-      display:flex;
-      flex-wrap:wrap;
+      display:grid;
+      grid-template-columns:repeat(4, minmax(0,1fr));
       gap:10px;
-      align-items:center;
-      color:var(--muted);
-      font-size:12px;
-      font-family:var(--mono);
     }
 
-    .pill{
-      display:inline-flex;
-      align-items:center;
-      gap:8px;
+    @media (max-width:900px){
+      .stats{grid-template-columns:repeat(2, minmax(0,1fr))}
+    }
+
+    .stat{
       border:1px solid var(--line);
-      border-radius:999px;
-      padding:6px 10px;
       background:rgba(255,255,255,.04);
+      border-radius:14px;
+      padding:12px;
     }
 
-    .pill b{color:var(--text);font-weight:700}
-    .pill .ok{color:var(--good)}
-    .pill .warn{color:var(--warn)}
-    .pill .bad{color:var(--bad)}
+    .stat .k{
+      font-family:var(--mono);
+      color:var(--muted);
+      font-size:11px;
+      text-transform:uppercase;
+      letter-spacing:.5px;
+    }
+
+    .stat .v{
+      margin-top:6px;
+      font-size:22px;
+      font-weight:800;
+    }
 
     .grid{
       display:grid;
-      grid-template-columns:390px 1fr;
+      grid-template-columns:400px 1fr;
       gap:16px;
       align-items:start;
     }
 
-    @media (max-width:1020px){
+    @media (max-width:1100px){
       .grid{grid-template-columns:1fr}
       aside{position:relative!important;top:auto!important}
     }
@@ -249,7 +245,7 @@ html = r'''<!doctype html>
       font-family:var(--mono);
       font-size:11px;
       color:var(--muted);
-      max-width:190px;
+      max-width:200px;
       overflow:hidden;
       text-overflow:ellipsis;
       white-space:nowrap;
@@ -296,7 +292,7 @@ html = r'''<!doctype html>
       margin-top:12px;
       border-top:1px dashed rgba(255,255,255,.10);
       padding-top:12px;
-      max-height:58vh;
+      max-height:64vh;
       overflow:auto;
     }
 
@@ -323,14 +319,13 @@ html = r'''<!doctype html>
     }
 
     .navitem:hover{border-color:rgba(43,87,255,.28)}
-
     .navitem .name{
       font-size:13px;
       color:rgba(232,236,255,.94);
       overflow:hidden;
       text-overflow:ellipsis;
       white-space:nowrap;
-      max-width:255px;
+      max-width:260px;
     }
 
     .navitem .meta{
@@ -338,6 +333,29 @@ html = r'''<!doctype html>
       font-size:11px;
       color:var(--muted);
       white-space:nowrap;
+    }
+
+    .chips{
+      display:flex;
+      flex-wrap:wrap;
+      gap:8px;
+      margin-top:8px;
+    }
+
+    .chip{
+      border:1px solid rgba(255,196,107,.2);
+      background:rgba(255,196,107,.08);
+      color:var(--text);
+      border-radius:999px;
+      padding:6px 10px;
+      font-family:var(--mono);
+      font-size:11px;
+      cursor:pointer;
+    }
+
+    .chip:hover{
+      border-color:rgba(255,196,107,.42);
+      background:rgba(255,196,107,.14);
     }
 
     .content{padding:14px}
@@ -482,6 +500,81 @@ html = r'''<!doctype html>
       background:rgba(43,87,255,.14);
     }
 
+    .canon{
+      margin-bottom:16px;
+      border:1px solid rgba(255,255,255,.08);
+      border-left:2px solid rgba(255,196,107,.65);
+      border-radius:14px;
+      padding:14px 16px;
+      background:linear-gradient(180deg, rgba(255,255,255,.03), rgba(255,255,255,.015));
+    }
+
+    .canon h3{
+      margin:0 0 8px;
+      font-size:14px;
+      text-transform:uppercase;
+      letter-spacing:.6px;
+    }
+
+    .canon p{
+      margin:0 0 10px;
+      font-size:13px;
+      line-height:1.55;
+      color:rgba(232,236,255,.9);
+    }
+
+    .canon-grid{
+      display:grid;
+      grid-template-columns:repeat(2, minmax(0,1fr));
+      gap:10px;
+    }
+
+    @media (max-width:900px){
+      .canon-grid{grid-template-columns:1fr}
+    }
+
+    .canon-card{
+      border:1px solid rgba(255,255,255,.06);
+      border-radius:12px;
+      padding:10px;
+      background:rgba(7,10,18,.26);
+    }
+
+    .canon-card .cname{
+      font-weight:800;
+      font-size:13px;
+      margin-bottom:6px;
+    }
+
+    .canon-card .cmeta{
+      font-family:var(--mono);
+      font-size:11px;
+      color:var(--muted);
+      margin-bottom:6px;
+    }
+
+    .canon-card .canon-refs{
+      display:flex;
+      flex-wrap:wrap;
+      gap:6px;
+    }
+
+    .canon-card .canon-refs button{
+      border:1px solid rgba(255,196,107,.22);
+      background:rgba(255,196,107,.08);
+      color:var(--text);
+      border-radius:999px;
+      padding:5px 8px;
+      font-family:var(--mono);
+      font-size:11px;
+      cursor:pointer;
+    }
+
+    .canon-card .canon-refs button:hover{
+      border-color:rgba(255,196,107,.4);
+      background:rgba(255,196,107,.14);
+    }
+
     .error{
       border:1px solid rgba(255,92,138,.35);
       background:rgba(255,92,138,.08);
@@ -509,11 +602,11 @@ html = r'''<!doctype html>
   <div class="topbar">
     <div class="topbar-inner">
       <div class="brand">
-        <h1>Azul de Pantalla · Archivo bibliográfico</h1>
+        <h1>Azul de Pantalla · Biblioteca</h1>
         <small id="smallPath">cargando…</small>
       </div>
       <a class="btn" href="https://github.com/primateth/azul-de-pantalla-bio" target="_blank" rel="noopener"><span class="dot"></span> Repo</a>
-      <a class="btn" href="bibliografia_normalizada_profunda_v2.txt" download>Descargar TXT</a>
+      <a class="btn" href="bibliografia.txt" download>Descargar TXT</a>
       <a class="btn" href="mailto:mercurius81@proton.me">Contacto</a>
       <a class="btn primary" id="buyBookBtn" href="https://www.amazon.es/s?k=Azul+de+Pantalla+M.+M%C3%BCller" target="_blank" rel="noopener">Comprar el libro</a>
     </div>
@@ -521,17 +614,19 @@ html = r'''<!doctype html>
 
   <div class="wrap">
     <section class="hero">
-      <h2>Templo del dato</h2>
-      <div class="sub">Archivo navegable · orden del TXT intacto · limpieza dataísta editorial</div>
+      <h2>Biblioteca Azul de Pantalla</h2>
+      <div class="sub">limpio · dataísta · editorial · poético</div>
       <div class="manifesto" id="preface">Este libro no busca adeptos.
 No teme a la máquina que calcula.
 Teme al humano que abdica.
 Nadie gobierna lo que no puede apagar.
 Precio para adultos.</div>
-      <div class="status">
-        <span class="pill"><span class="ok">●</span> <b id="stLoaded">0</b> entradas</span>
-        <span class="pill"><span class="warn">●</span> <b id="stBlocks">0</b> bloques</span>
-        <span class="pill"><span class="bad">●</span> <b id="stSections">0</b> secciones</span>
+
+      <div class="stats">
+        <div class="stat"><div class="k">Obras</div><div class="v" id="stLoaded">0</div></div>
+        <div class="stat"><div class="k">Bloques</div><div class="v" id="stBlocks">0</div></div>
+        <div class="stat"><div class="k">Secciones</div><div class="v" id="stSections">0</div></div>
+        <div class="stat"><div class="k">Canon</div><div class="v" id="stCanon">6</div></div>
       </div>
     </section>
 
@@ -555,6 +650,9 @@ Precio para adultos.</div>
               <button class="btn" id="btnDownloadView">Descargar vista</button>
             </div>
             <div class="results" id="resultsInfo"></div>
+
+            <div class="chips" id="canonChips"></div>
+
             <div class="list" id="navList">
               <h4>Bloques</h4>
               <div id="navBlocks"></div>
@@ -578,7 +676,7 @@ Precio para adultos.</div>
   </div>
 
 <script>
-const TXT_FILE = "bibliografia_normalizada_profunda_v2.txt";
+const TXT_FILE = "bibliografia.txt";
 const BUY_BOOK_URL = "https://www.amazon.es/s?k=Azul+de+Pantalla+M.+M%C3%BCller";
 
 let originalText = "";
@@ -603,6 +701,15 @@ const TOP_SECTIONS = new Set([
   "EPIC GAMES"
 ]);
 
+const CANON = [
+  { id:"canon-teologia-politica", name:"Teología política", meta:"liturgia · soberanía · excepción", refs:["REF-001","REF-002","REF-157","REF-158","REF-160","REF-161","REF-188","REF-190","REF-194","REF-195","REF-202","REF-269","REF-279","REF-286","REF-287","REF-288","REF-289","REF-290","REF-358","REF-359","REF-361","REF-362","REF-363"] },
+  { id:"canon-sacrificio-ritual", name:"Sacrificio y ritual", meta:"violencia · víctima · cohesión", refs:["REF-016","REF-034","REF-035","REF-036","REF-037","REF-067","REF-068","REF-071","REF-072","REF-073","REF-076","REF-077","REF-083","REF-105","REF-130","REF-133","REF-163","REF-178","REF-179","REF-180","REF-252","REF-253","REF-254","REF-292"] },
+  { id:"canon-tecnica-control", name:"Técnica y control", meta:"dispositivo · captura · entorno", refs:["REF-062","REF-182","REF-183","REF-184","REF-192","REF-193","REF-194","REF-195","REF-296","REF-297","REF-305","REF-306","REF-373","REF-374","REF-375","REF-376","REF-377","REF-378"] },
+  { id:"canon-capitalismo-simbolico", name:"Capitalismo simbólico", meta:"simulacro · espectáculo · moneda", refs:["REF-004","REF-013","REF-023","REF-040","REF-041","REF-042","REF-045","REF-058","REF-071","REF-079","REF-080","REF-117","REF-186","REF-222","REF-244","REF-257","REF-258","REF-259","REF-261","REF-262"] },
+  { id:"canon-antropologia-poder", name:"Antropología del poder", meta:"parentesco · rito · cosmología", refs:["REF-055","REF-100","REF-127","REF-177","REF-215","REF-216","REF-233","REF-234","REF-235","REF-243","REF-278","REF-285","REF-294"] },
+  { id:"canon-textos-fundacionales", name:"Textos fundacionales", meta:"depósito simbólico · mito · tradición", refs:["REF-005","REF-009","REF-052","REF-141","REF-197","REF-201","REF-203","REF-204","REF-228","REF-240","REF-270","REF-271","REF-291","REF-342","REF-343"] }
+];
+
 function byId(id){ return document.getElementById(id); }
 
 function escapeHTML(s){
@@ -611,23 +718,20 @@ function escapeHTML(s){
   }[ch]));
 }
 
-function normKey(s){
-  return (s ?? "")
-    .trim()
-    .normalize("NFD").replace(/[\u0300-\u036f]/g,"")
-    .toUpperCase();
-}
-
-function slug(s){
-  return normKey(s).toLowerCase().replace(/[^a-z0-9]+/g,"-").replace(/(^-|-$)/g,"").slice(0,80);
-}
-
 function nextNonEmpty(lines, i){
   for(let j=i; j<lines.length; j++){
     const t = (lines[j] ?? "").trim();
     if(t) return t;
   }
   return "";
+}
+
+function normKey(s){
+  return (s ?? "").trim().normalize("NFD").replace(/[\u0300-\u036f]/g,"").toUpperCase();
+}
+
+function slug(s){
+  return normKey(s).toLowerCase().replace(/[^a-z0-9]+/g,"-").replace(/(^-|-$)/g,"").slice(0,80);
 }
 
 function isRefLine(line){
@@ -675,14 +779,6 @@ function looksAuthorLine(line){
   return true;
 }
 
-function prettyLinkLabel(type){
-  const t = (type || "").toLowerCase();
-  if(t === "fuente") return "fuente";
-  if(t === "lectura") return "leer";
-  if(t === "archivo") return "archivo";
-  return t;
-}
-
 function splitMeta(raw){
   const s = (raw ?? "").replace(/\s+/g," ").trim();
   const ym = s.match(/\((\d{4}(?:–\d{4})?)\)/);
@@ -692,6 +788,14 @@ function splitMeta(raw){
     year: ym ? ym[1] : "",
     publisher: parts.length >= 2 ? parts[parts.length - 1] : ""
   };
+}
+
+function prettyLinkLabel(type){
+  const t = (type || "").toLowerCase();
+  if(t === "fuente") return "fuente";
+  if(t === "lectura") return "leer";
+  if(t === "archivo") return "archivo";
+  return t;
 }
 
 function parseBib(text){
@@ -819,6 +923,32 @@ function countAll(parsed){
   return { items, blocks, sections: parsed.sections.length };
 }
 
+function renderCanon(){
+  const box = document.createElement("div");
+  box.className = "canon";
+  box.id = "canon-azul-de-pantalla";
+  box.dataset.kind = "canon";
+  let html = `
+    <h3>Canon Azul de Pantalla</h3>
+    <p>El canon no sustituye el archivo. Lo atraviesa. No agota la biblioteca: marca sus nervios, sus cámaras, sus zonas de combustión.</p>
+    <div class="canon-grid">
+  `;
+  for(const c of CANON){
+    html += `
+      <div class="canon-card" id="${escapeHTML(c.id)}">
+        <div class="cname">${escapeHTML(c.name)}</div>
+        <div class="cmeta">${escapeHTML(c.meta)}</div>
+        <div class="canon-refs">
+          ${c.refs.map(r => `<button type="button" data-refjump="${escapeHTML(r)}">${escapeHTML(r)}</button>`).join("")}
+        </div>
+      </div>
+    `;
+  }
+  html += `</div>`;
+  box.innerHTML = html;
+  return box;
+}
+
 function renderBlock(sec, blk){
   const det = document.createElement("details");
   det.id = blockAnchorId(sec, blk);
@@ -871,6 +1001,19 @@ function renderBlock(sec, blk){
   return det;
 }
 
+function renderCanonChips(){
+  const host = byId("canonChips");
+  host.innerHTML = "";
+  for(const c of CANON){
+    const btn = document.createElement("button");
+    btn.className = "chip";
+    btn.type = "button";
+    btn.textContent = c.name;
+    btn.addEventListener("click", () => jumpTo(c.id));
+    host.appendChild(btn);
+  }
+}
+
 function render(parsed){
   const content = byId("content");
   const navBlocks = byId("navBlocks");
@@ -883,6 +1026,7 @@ function render(parsed){
   jump.innerHTML = `<option value="">Saltar a…</option>`;
 
   const frag = document.createDocumentFragment();
+  frag.appendChild(renderCanon());
 
   for(const sec of parsed.sections){
     const sc = document.createElement("div");
@@ -902,9 +1046,16 @@ function render(parsed){
 
   content.appendChild(frag);
 
-  const ogBlocks = document.createElement("optgroup");
-  ogBlocks.label = "Bloques";
-  jump.appendChild(ogBlocks);
+  for(const c of CANON){
+    const opt = document.createElement("option");
+    opt.value = c.id;
+    opt.textContent = `${c.name} · canon`;
+    jump.appendChild(opt);
+  }
+
+  const og = document.createElement("optgroup");
+  og.label = "Bloques";
+  jump.appendChild(og);
 
   for(const sec of parsed.sections){
     const sdiv = document.createElement("div");
@@ -931,7 +1082,7 @@ function render(parsed){
       const opt = document.createElement("option");
       opt.value = id;
       opt.textContent = `${blk.name} · ${blockRefRange(blk)}`;
-      ogBlocks.appendChild(opt);
+      og.appendChild(opt);
     }
   }
 
@@ -940,6 +1091,11 @@ function render(parsed){
   byId("stBlocks").textContent = String(counts.blocks);
   byId("stSections").textContent = String(counts.sections);
   byId("tinyInfo").textContent = `${counts.blocks} bloques · ${counts.items} refs`;
+  renderCanonChips();
+
+  content.querySelectorAll("[data-refjump]").forEach(btn => {
+    btn.addEventListener("click", () => jumpToRef(btn.dataset.refjump));
+  });
 }
 
 function jumpTo(id){
@@ -949,6 +1105,14 @@ function jumpTo(id){
   if(parentDetails) parentDetails.open = true;
   if(el.tagName && el.tagName.toLowerCase() === "details") el.open = true;
   el.scrollIntoView({ behavior:"smooth", block:"start" });
+}
+
+function jumpToRef(ref){
+  const target = document.querySelector(`[data-ref="${ref}"]`);
+  if(!target) return;
+  const parentDetails = target.closest("details");
+  if(parentDetails) parentDetails.open = true;
+  target.scrollIntoView({ behavior:"smooth", block:"center" });
 }
 
 function updateResultsInfo(){
@@ -978,7 +1142,13 @@ function setupSearch(){
       card.style.display = (!q || txt.includes(q)) ? "" : "none";
     }
 
-    const nodes = byId("content").querySelectorAll('[data-kind="block"], [data-kind="section"]');
+    const chips = byId("canonChips").querySelectorAll(".chip");
+    chips.forEach(ch => {
+      const txt = (ch.innerText || ch.textContent || "").toLowerCase();
+      ch.style.display = (!q || txt.includes(q)) ? "" : "none";
+    });
+
+    const nodes = byId("content").querySelectorAll('[data-kind="block"], [data-kind="section"], [data-kind="canon"]');
 
     if(!q){
       for(const n of nodes){
@@ -1020,7 +1190,7 @@ async function loadTxt(){
     render(parsed);
     byId("search").dispatchEvent(new Event("input"));
   }catch(err){
-    byId("content").innerHTML = `<div class="error">ERROR\n\n${escapeHTML(String(err))}\n\nVerifica:\n- existe ${escapeHTML(TXT_FILE)} en la raíz del repo\n- el nombre es exacto\n- GitHub Pages sirve el fichero</div>`;
+    byId("content").innerHTML = `<div class="error">ERROR\n\n${escapeHTML(String(err))}\n\nVerifica:\n- existe bibliografia.txt en la raíz del repo\n- el nombre es exacto\n- GitHub Pages sirve el fichero</div>`;
     byId("smallPath").textContent = "error";
   }
 }
@@ -1066,6 +1236,6 @@ loadTxt();
 </html>
 '''
 
-path = Path("/mnt/data/index_dataista_editorial_poetico.html")
+path = Path("/mnt/data/index_2_biblioteca_azul_de_pantalla.html")
 path.write_text(html, encoding="utf-8")
 print(path)
