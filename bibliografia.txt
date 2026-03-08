@@ -1,13 +1,13 @@
-Bibliografía Azul de pantalla
+Bibliografía Azul de Pantalla
 Templo del dato
 
 PROTOCOLO DEL ARCHIVO
 
 Cada obra puede contener hasta tres enlaces:
 
-Fuente   → origen institucional o editorial
-Lectura  → acceso directo al texto
-Archivo  → repositorio histórico
+Fuente  → origen institucional o editorial
+Lectura → acceso directo al texto
+Archivo → repositorio histórico
 
 Si no existe una fuente fiable, la obra permanece sin enlace.
 El archivo no simula completitud.
@@ -18,327 +18,98 @@ Teme al humano que abdica.
 Nadie gobierna lo que no puede apagar.
 Precio para adultos.
 
-Bibliografía Azul de pantalla
-Templo del dato
-
-PROTOCOLO DEL ARCHIVO
-
-Cada obra puede contener hasta tres enlaces:
-
-Fuente   → origen institucional o editorial
-Lectura  → acceso directo al texto
-Archivo  → repositorio histórico
-
-Si no existe una fuente fiable, la obra permanece sin enlace.
-El archivo no simula completitud.
-
-Este libro no busca adeptos.
-No teme a la máquina que calcula.
-Teme al humano que abdica.
-Nadie gobierna lo que no puede apagar.
-Precio para adultos.
-
-
-Canon Azul de Pantalla
-Seis cámaras del archivo
-
-Cada bloque tiene dos estratos:
-
-Núcleo: obras imprescindibles
-
-Órbita: obras de expansión, contraste o profundización
-
-I. Teología política
-
-Aquí entra el problema central de Azul de Pantalla: cómo el poder no solo administra, sino que liturgiza, ordena, consagra, decide excepción, produce obediencia y viste de necesidad lo programado.
-
-Núcleo
-
-AGAMBEN, Giorgio — El Reino y la Gloria
-
-SCHMITT, Carl — Teología política
-
-FOUCAULT, Michel — Defender la sociedad
-
-FOUCAULT, Michel — Vigilar y castigar
-
-GUÉNON, René — La crisis del mundo moderno
-
-EVOLA, Julius — Revuelta contra el mundo moderno
-
-HAN, Byung-Chul — Psicopolítica
-
-HAN, Byung-Chul — Infocracia
-
-TAYLOR, Charles — La era secular
-
-TILLICH, Paul — Teología sistemática
-
-Órbita
-
-AGAMBEN — Signatura rerum
-
-SCHMITT — El concepto de lo político
-
-KIERKEGAARD — Temor y temblor
-
-OTTO, Rudolf — Lo santo
-
-DÍAZ, Carlos — Filosofía de la religión
-
-ŽIŽEK, Slavoj — Ateísmo cristiano
-
-HOBBES — Leviatán
-
-HEGEL — Fenomenología del espíritu
-
-Función dentro del libro
-
-Este bloque te da el lenguaje para mostrar que el sistema ya no “manda” solo: consagra, absuelve, excomulga, clasifica y produce liturgia administrativa.
-
-II. Sacrificio y ritual
-
-Este es el corazón negro del proyecto. Sin esta cámara, Azul de Pantalla sería crítica cultural; con ella, se vuelve máquina simbólica.
-
-Núcleo
-
-GIRARD, René — La violencia y lo sagrado
-
-GIRARD, René — El chivo expiatorio
-
-BATAILLE, Georges — El erotismo
-
-BATAILLE, Georges — La parte maldita
-
-BURKERT, Walter — Homo Necans
-
-CAILLOIS, Roger — El hombre y lo sagrado
-
-DURKHEIM, Émile — Las formas elementales de la vida religiosa
-
-DOUGLAS, Mary — Purity and Danger
-
-TURNER, Victor — The Ritual Process
-
-MAUSS, Marcel; HUBERT, Henri — Ensayo sobre la naturaleza y función del sacrificio
-
-Órbita
-
-BUSTAMANTE, Pedro — Sacrificios y hierogamias, vols. 1 y 2
-
-BUSTAMANTE — El ritual de la violencia en el escenario del poder-religión
-
-LÉVI, Sylvain — La doctrine du sacrifice dans les Brâhmanas
-
-FRAZER — La rama dorada
-
-CRAWLEY — The Mystic Rose
-
-ARTAUD — El teatro y su doble
-
-Alicia Liddell — El sacrificio como acto poético
-
-WAGNER — Tristán e Isolda
-
-Función dentro del libro
-
-Este bloque demuestra que toda comunidad, incluso digital, necesita víctima, descarga, escena, goce y recomposición. Ahí tu libro encuentra su musculatura.
-
-III. Técnica y control
-
-Aquí aparece el templo del dato como dispositivo. No solo técnica, sino técnica convertida en ambiente, norma, interfaz y captura.
-
-Núcleo
-
-ZUBOFF, Shoshana — La era del capitalismo de la vigilancia
-
-HAN, Byung-Chul — La sociedad de la transparencia
-
-HAN, Byung-Chul — Psicopolítica
-
-ELLUL, Jacques — The Technological Society
-
-MUMFORD, Lewis — Technics and Civilization
-
-MUMFORD, Lewis — The Myth of the Machine
-
-ILLICH, Ivan — Tools for Conviviality
-
-WINNER, Langdon — The Whale and the Reactor
-
-POSTMAN, Neil — Technopoly
-
-HEIDEGGER, Martin — The Question Concerning Technology
-
-Órbita
-
-SPARS Pandemic 2025–2028
-
-España 2050
-
-Entorno operativo 2035
-
-Epic Games / Virtual Production / In-Camera VFX / nDisplay
-
-WHITE et al. — A Prompt Pattern Catalog to Enhance Prompt Engineering with ChatGPT
-
-KACZYNSKI — Industrial Society and Its Future
-
-REICH — Ether, God and Devil
-
-FOUCAULT — Las palabras y las cosas
-
-Función dentro del libro
-
-Este bloque permite formular lo decisivo: que el poder contemporáneo no solo impone leyes, sino que diseña entornos, anticipa conductas y fabrica el campo de lo pensable.
-
-IV. Capitalismo simbólico
-
-Aquí se cruza moneda, espectáculo, ficción, deseo, propaganda y religión civil. Es una de tus zonas más fértiles.
-
-Núcleo
-
-AGLIETTA, Michel; ORLÉAN, André — La violencia de la moneda
-
-BAUDRILLARD, Jean — El intercambio simbólico y la muerte
-
-BAUDRILLARD, Jean — El pacto de lucidez o la inteligencia del Mal
-
-DEBORD, Guy — núcleo situacionista
-
-BENJAMIN, Walter — El capitalismo como religión
-
-BERNAYS, Edward L. — Propaganda
-
-ATWOOD, Margaret — Pagar (con la misma moneda)
-
-GOFFMAN, Erving — La presentación de la persona en la vida cotidiana
-
-BUSTAMANTE, Pedro — El imperio de la ficción
-
-BUSTAMANTE — Hollycapitalismo: la excepción es la regla
-
-Órbita
-
-BARBA / MONTES — La ceremonia del porno
-
-ANGER, Kenneth — Hollywood Babilonia
-
-MOORE, Alan — Watchmen, V de Vendetta, From Hell
-
-FRANK MILLER — Batman: The Dark Knight Returns, Sin City
-
-ECO — Apocalípticos e integrados
-
-DELEUZE / GUATTARI — El Anti-Edipo, Mil mesetas
-
-MARCUSE — Eros y civilización
-
-BROWN, Norman O. — Eros y Tánatos
-
-Función dentro del libro
-
-Aquí el capitalismo deja de ser solo economía y aparece como máquina sacrificial de signos, pantallas, equivalencias y simulacros.
-
-V. Antropología del poder
-
-Este bloque impide que el libro quede preso del presente. Lo devuelve a lo arcaico, a lo tribal, a lo estructural, a lo amerindio, a lo iniciático.
-
-Núcleo
-
-CLASTRES, Pierre — La sociedad contra el Estado
-
-DESCOLA, Philippe — Más allá de naturaleza y cultura
-
-VIVEIROS DE CASTRO, Eduardo — Metafísicas caníbales
-
-KOHN, Eduardo — How Forests Think
-
-GEERTZ, Clifford — La interpretación de las culturas
-
-MALINOWSKI, Bronislaw — Edipo destronado
-
-LÉVI-STRAUSS, Claude — Las estructuras elementales del parentesco
-
-LÉVI-STRAUSS — El pensamiento salvaje
-
-TAUSSIG, Michael — Shamanism, Colonialism, and the Wild Man
-
-KOPENAWA; ALBERT — La caída del cielo
-
-Órbita
-
-BONFIL BATALLA — México profundo
-
-RIVERA CUSICANQUI — Ch’ixinakax utxiwa
-
-DE LA CADENA, Marisol — Indigenous Mestizos
-
-FAVRE, Henri — El indigenismo
-
-CASTANEDA — Las enseñanzas de Don Juan
-
-FROBENIUS — La cultura como ser viviente
-
-CARDÍN — Dialéctica y canibalismo
-
-MARTÍN-CANO — Sexualidad femenina
-
-Función dentro del libro
-
-Este bloque te da profundidad civilizatoria. Permite mostrar que la pantalla no anula el rito: lo recodifica.
-
-VI. Textos fundacionales
-
-Aquí no se discute. Aquí se bebe. Son los textos de fondo, el subsuelo mítico, filosófico, teológico y poético.
-
-Núcleo
-
-Biblia
-
-El sagrado Corán
-
-Corpus Hermeticum
-
-Platón — La República
-
-Homero — Ilíada, Odisea
-
-Hesíodo — Teogonía
-
-Dante — Divina Comedia
-
-Agustín — Confesiones
-
-Plotino — Enéadas
-
-Boecio — La consolación de la filosofía
-
-Órbita
-
-Esquilo — Tragedias
-
-Empédocles — Poema
-
-Heráclito — Fragmentos
-
-Lucrecio — De la naturaleza de las cosas
-
-Epicuro — Obras completas
-
-Cicerón — Sobre la naturaleza de los dioses
-
-Lao Tsé — Tao Te Ching
-
-Ficino — Teología platónica
-
-Bruno — De la magia, Del infinito, Expulsión de la bestia triunfante
-
-Blake — El matrimonio del cielo y el infierno
-
-Función dentro del libro
-
-Son los depósitos de símbolo. Sin ellos, el libro solo diagnostica. Con ellos, invoca y organiza una cosmología.
+CANON AZUL DE PANTALLA
+Índice doctrinal del archivo
+
+Este canon no sustituye la bibliografía general.
+La atraviesa.
+
+No pretende ser completo.
+Señala los ejes de gravedad del archivo.
+
+I. TEOLOGÍA POLÍTICA
+AGAMBEN, Giorgio — REF-001, REF-002
+SCHMITT, Carl — REF-279, REF-358, REF-359
+FOUCAULT, Michel — REF-157, REF-158, REF-160, REF-161
+GUÉNON, René — REF-188, REF-190, REF-363
+EVOLA, Julius — REF-147, REF-148, REF-361, REF-362
+HAN, Byung-Chul — REF-194, REF-195
+TAYLOR, Charles — REF-286, REF-287
+TILLICH, Paul — REF-288, REF-289, REF-290
+HOBBES, Thomas — REF-202
+OTTO, Rudolf — REF-269
+
+II. SACRIFICIO Y RITUAL
+GIRARD, René — REF-178, REF-179, REF-180
+BATAILLE, Georges — REF-034, REF-035, REF-036, REF-037
+BURKERT, Walter — REF-067, REF-068
+CAILLOIS, Roger — REF-083
+DURKHEIM, Émile — REF-133
+DOUGLAS, Mary — REF-130
+TURNER, Victor — REF-292
+MAUSS, Marcel — REF-253, REF-254
+MAUSS, Marcel; HUBERT, Henri — REF-252
+BUSTAMANTE, Pedro — REF-071, REF-072, REF-073, REF-076, REF-077
+FRAZER, James G. — REF-163
+CRAWLEY, Ernest — REF-105
+ARTAUD, Antonin — REF-016
+
+III. TÉCNICA Y CONTROL
+ZUBOFF, Shoshana — REF-305, REF-306
+HAN, Byung-Chul — REF-192, REF-193, REF-194, REF-195
+ELLUL, Jacques — REF-373
+MUMFORD, Lewis — REF-374
+ILLICH, Ivan — REF-375
+WINNER, Langdon — REF-376
+POSTMAN, Neil — REF-377
+HEIDEGGER, Martin — REF-378
+WHITE et al. — REF-296, REF-297
+BRUNSON et al. — REF-062
+GOBIERNO DE ESPAÑA — REF-182, REF-183, REF-184
+
+IV. CAPITALISMO SIMBÓLICO
+AGLIETTA, Michel; ORLÉAN, André — REF-004
+BAUDRILLARD, Jean — REF-040, REF-041, REF-042
+BENJAMIN, Walter — REF-045
+BERNAYS, Edward L. — REF-222
+DEBORD, Guy — REF-117
+GOFFMAN, Erving — REF-186
+ATWOOD, Margaret — REF-023
+BUSTAMANTE, Pedro — REF-071, REF-079, REF-080
+BROWN, Norman O. — REF-058
+MARCUSE, Herbert — REF-244
+MOORE, Alan — REF-257, REF-258, REF-259
+MILLER, Frank — REF-261, REF-262
+ANGER, Kenneth — REF-013
+
+V. ANTROPOLOGÍA DEL PODER
+CLASTRES, Pierre — REF-100
+DESCOLA, Philippe — REF-127
+VIVEIROS DE CASTRO, Eduardo — REF-294
+KOHN, Eduardo — REF-215
+GEERTZ, Clifford — REF-177
+MALINOWSKI, Bronislaw — REF-243
+LÉVI-STRAUSS, Claude — REF-233, REF-234, REF-235
+TAUSSIG, Michael — REF-285
+KOPENAWA, Davi; ALBERT, Bruce — REF-216
+BONFIL BATALLA, Guillermo — REF-055
+RIVERA CUSICANQUI, Silvia — REF-278
+
+VI. TEXTOS FUNDACIONALES
+BIBLIA — REF-342
+CORÁN — REF-343
+CORPUS HERMETICUM — REF-291
+PLATÓN — REF-271
+HOMERO — REF-203, REF-204
+HESÍODO — REF-201
+DANTE — REF-009
+AGUSTÍN — REF-005
+PLOTINO — REF-270
+BOECIO — REF-052
+HERÁCLITO — REF-197
+EMPÉDOCLES — REF-141
+LUCRECIO — REF-240
+LAO TSÉ — REF-228
 
 AGAMBEN, Giorgio
 REF-001. El Reino y la Gloria. (2008).
@@ -364,9 +135,9 @@ REF-008. Historia de la filosofía oculta. (2014). Valdemar.
 
 ALIGHIERI, Dante
 REF-009. Divina Comedia. (1996). Cátedra.
-Gutenberg: https://www.gutenberg.org/ebooks/8800
+Lectura: https://www.gutenberg.org/ebooks/8800
 Fuente: https://www.gutenberg.org/ebooks/57303
-Gutenberg: https://www.gutenberg.org/files/8800/8800-h/8800-h.htm
+Lectura: https://www.gutenberg.org/files/8800/8800-h/8800-h.htm
 REF-010. Vida nueva. (2003). Cátedra.
 
 ANDRÉS, Ramón
@@ -462,8 +233,7 @@ REF-051. El matrimonio del cielo y el infierno. (2002). Cátedra.
 
 BOECIO
 REF-052. La consolación de la filosofía. (1984). Sarpe.
-Gutenberg: https://www.gutenberg.org/ebooks/14328
-Gutenberg: https://www.gutenberg.org/ebooks/14328
+Lectura: https://www.gutenberg.org/ebooks/14328
 
 BOEHME, Jakob
 REF-053. Aurora. (2012). Siruela.
@@ -491,7 +261,7 @@ REF-062. The SPARS Pandemic 2025–2028: A Futuristic Scenario to Facilitate Med
 Fuente: https://centerforhealthsecurity.org/sites/default/files/2022-12/spars-pandemic-scenario.pdf
 Fuente: https://doi.org/10.30658/jicrcr.3.1.4
 Fuente: https://centerforhealthsecurity.org/sites/default/files/2022-12/spars-pandemic-scenario.pdf
-PDF: https://jicrcr.com/index.php/jicrcr/article/download/30/31/61
+Lectura: https://jicrcr.com/index.php/jicrcr/article/download/30/31/61
 
 BURCKHARDT, Jacob
 REF-063. Historia de la cultura griega I. (2005). RBA.
@@ -547,8 +317,7 @@ REF-092. Neuro-pirates: réflexions sur l’ingénierie sociale. (2016). Kontre 
 
 CERVANTES, Miguel de
 REF-093. Don Quijote de la Mancha. (2004). Santillana.
-Gutenberg: https://www.gutenberg.org/ebooks/2000
-Gutenberg: https://www.gutenberg.org/ebooks/2000
+Lectura: https://www.gutenberg.org/ebooks/2000
 
 CHEVALIER, Jean; GHEERBRANT, Alain
 REF-094. Diccionario de los símbolos. (1986). Herder.
@@ -752,11 +521,11 @@ GOBIERNO DE ESPAÑA, Oficina Nacional de Prospectiva y Estrategia
 REF-182. España 2050: Fundamentos y propuestas para una Estrategia Nacional de Largo Plazo. (2021). Ministerio de la Presidencia.
 Fuente: https://www.lamoncloa.gob.es/presidente/actividades/Documents/2021/200521-Estrategia_Espana_2050.pdf
 Fuente: https://futuros.gob.es/nuestro-trabajo/espana-2050
-PDF: https://futuros.gob.es/sites/default/files/esp2050/pdf/en/Spain_2050.pdf
+Lectura: https://futuros.gob.es/sites/default/files/esp2050/pdf/en/Spain_2050.pdf
 REF-183. España 2050: Resumen ejecutivo (PDF). (2021). Ministerio de la Presidencia.
 Fuente: https://www.lamoncloa.gob.es/presidente/actividades/Documents/2021/200521-Estrategia_Espana_2050_Introduccion.pdf
 Fuente: https://futuros.gob.es/nuestro-trabajo/espana-2050
-PDF: https://futuros.gob.es/sites/default/files/esp2050/pdf/en/Spain_2050_Executive_Summary.pdf
+Lectura: https://futuros.gob.es/sites/default/files/esp2050/pdf/en/Spain_2050_Executive_Summary.pdf
 
 GOBIERNO DE ESPAÑA, Ministerio de Defensa
 REF-184. Entorno operativo 2035. (s. f.).
@@ -802,7 +571,7 @@ REF-201. Teogonía. (2017). Gredos.
 
 HOBBES, Thomas
 REF-202. Leviatán. (2012). Alianza.
-Gutenberg: https://www.gutenberg.org/ebooks/3207
+Lectura: https://www.gutenberg.org/ebooks/3207
 
 HOMERO
 REF-203. Ilíada. (2017). Gredos.
@@ -810,14 +579,13 @@ REF-204. Odisea. (2017). Gredos.
 
 HUME, David
 REF-205. Diálogos sobre la religión natural. (2016). Gredos.
-Gutenberg: https://www.gutenberg.org/ebooks/4583
+Lectura: https://www.gutenberg.org/ebooks/4583
 
 HUXLEY, Aldous
 REF-206. Un mundo feliz. (2003). Debolsillo.
 
 INTERNATIONAL FACT-CHECKING NETWORK (IFCN)
 REF-207. IFCN Code of Principles.
-Fuente: https://ifcncodeofprinciples.poynter.org/
 Fuente: https://ifcncodeofprinciples.poynter.org/
 
 JUNG, C. G.
@@ -896,8 +664,8 @@ REF-237. El sacrificio como acto poético. (2014). Consonni / Continta Me Tienes
 
 LOCKE, John
 REF-238. Ensayo sobre el entendimiento humano. (2012). Fondo de Cultura Económica.
-Gutenberg: https://www.gutenberg.org/ebooks/10615
-Gutenberg: https://www.gutenberg.org/ebooks/10616
+Lectura: https://www.gutenberg.org/ebooks/10615
+Lectura: https://www.gutenberg.org/ebooks/10616
 
 LORENZ, Konrad
 REF-239. Sobre la agresión. (1971). Siglo XXI.
@@ -917,8 +685,7 @@ REF-244. Eros y civilización. (2010). Planeta.
 
 MARCUS AURELIUS
 REF-245. Meditaciones. (2017). Gredos.
-Gutenberg: https://www.gutenberg.org/ebooks/2680
-Gutenberg: https://www.gutenberg.org/ebooks/2680
+Lectura: https://www.gutenberg.org/ebooks/2680
 
 MARTÍN-CANO, Francisca
 REF-246. Sexualidad femenina. (t. 1 y t. 2). (2012–2013). Chiado.
@@ -977,7 +744,7 @@ REF-270. Enéadas. (2011). Gredos.
 
 PLATÓN
 REF-271. La República. (2016). Gredos.
-Gutenberg: https://www.gutenberg.org/ebooks/1497
+Lectura: https://www.gutenberg.org/ebooks/1497
 
 POPPER, Karl
 REF-272. La sociedad abierta y sus enemigos I. (2015). Paidós.
@@ -1068,9 +835,8 @@ REF-306. La era del capitalismo de la vigilancia. (2020). Paidós.
 PODCASTS
 
 AUDIOLIBROS
-REF-307. El informe de Iron Mountain: sobre la posibilidad y conveniencia de la paz. 
+REF-307. El informe de Iron Mountain: sobre la posibilidad y conveniencia de la paz.
 Archivo: https://archive.org/details/el-informe-de-iron-mountain/page/n3/mode/2up
-https://archive.org/details/el-informe-de-iron-mountain/page/n3/mode/2up
 REF-312. ORÍGENES — Contra Celso. (Audiolibro).
 
 IVOOX / PROGRAMAS
@@ -1091,26 +857,19 @@ MANUALES
 EPIC GAMES
 REF-318. Unreal Engine 5.7 Documentation. Epic Developer Community.
 Fuente: https://dev.epicgames.com/documentation/en-us/unreal-engine/unreal-engine-5-7-documentation
-Fuente: https://dev.epicgames.com/documentation/en-us/unreal-engine/unreal-engine-5-7-documentation
 REF-319. Welcome to Virtual Production. Epic Developer Community.
 Fuente: https://dev.epicgames.com/community/learning/paths/Pv/welcome-to-virtual-production
-Fuente: https://dev.epicgames.com/community/learning/paths/Pv/welcome-to-virtual-production
 REF-320. Virtual Production Visualization Guide. Epic Developer Community.
-Fuente: https://dev.epicgames.com/community/learning/paths/XRe/unreal-engine-virtual-production-visualization-guide
 Fuente: https://dev.epicgames.com/community/learning/paths/XRe/unreal-engine-virtual-production-visualization-guide
 REF-321. Introducción a la Virtual Production. Epic Developer Community.
 Fuente: https://dev.epicgames.com/community/learning/tutorials/x4kq/unreal-engine-introduccion-a-la-virtual-production
 REF-322. In-Camera VFX in Unreal Engine. Unreal Engine Documentation.
 Fuente: https://dev.epicgames.com/documentation/en-us/unreal-engine/in-camera-vfx-in-unreal-engine
-Fuente: https://dev.epicgames.com/documentation/en-us/unreal-engine/in-camera-vfx-in-unreal-engine
 REF-323. In-Camera VFX Quick Start for Unreal Engine. Unreal Engine Documentation.
-Fuente: https://dev.epicgames.com/documentation/en-us/unreal-engine/in-camera-vfx-quick-start-for-unreal-engine
 Fuente: https://dev.epicgames.com/documentation/en-us/unreal-engine/in-camera-vfx-quick-start-for-unreal-engine
 REF-324. In-Camera VFX Editor for Unreal Engine. Unreal Engine Documentation.
 Fuente: https://dev.epicgames.com/documentation/en-us/unreal-engine/in-camera-vfx-editor-for-unreal-engine
-Fuente: https://dev.epicgames.com/documentation/en-us/unreal-engine/in-camera-vfx-editor-for-unreal-engine
 REF-325. In-Camera VFX Best Practices in Unreal Engine. Unreal Engine Documentation.
-Fuente: https://dev.epicgames.com/documentation/en-us/unreal-engine/in-camera-vfx-best-practices-in-unreal-engine
 Fuente: https://dev.epicgames.com/documentation/en-us/unreal-engine/in-camera-vfx-best-practices-in-unreal-engine
 REF-326. nDisplay Overview for Unreal Engine. Unreal Engine Documentation.
 Fuente: https://dev.epicgames.com/documentation/en-us/unreal-engine/ndisplay-overview-for-unreal-engine
@@ -1134,9 +893,7 @@ REF-335. Rendering High Quality Frames with Movie Render Queue in Unreal Engine.
 Fuente: https://dev.epicgames.com/documentation/en-us/unreal-engine/rendering-high-quality-frames-with-movie-render-queue-in-unreal-engine
 REF-336. DMX Overview. Unreal Engine Documentation.
 Fuente: https://dev.epicgames.com/documentation/en-us/unreal-engine/dmx-overview
-Fuente: https://dev.epicgames.com/documentation/en-us/unreal-engine/dmx-overview
 REF-337. DMX Quick Start in Unreal Engine. Unreal Engine Documentation.
-Fuente: https://dev.epicgames.com/documentation/en-us/unreal-engine/dmx-quick-start-in-unreal-engine
 Fuente: https://dev.epicgames.com/documentation/en-us/unreal-engine/dmx-quick-start-in-unreal-engine
 
 KADNER, Noah
@@ -1164,42 +921,42 @@ IDEOLOGÍAS / DOCTRINAS DE MANDO (POLÍTICA Y RÉGIMEN)
 BUKHARIN, Nikolái; PREOBRAZHENSKY, EVGUENI
 REF-346. El ABC del comunismo. (TOBE-2/3).
 Fuente: https://www.marxists.org/archive/bukharin/works/1920/abc/
-Link: https://www.marxists.org/archive/bukharin/works/1920/abc/
+Lectura: https://www.marxists.org/archive/bukharin/works/1920/abc/
 
 LENIN, Vladímir I.
 REF-347. El Estado y la revolución. (TOBE-3).
-Link: https://www.marxists.org/archive/lenin/works/1917/staterev/
+Lectura: https://www.marxists.org/archive/lenin/works/1917/staterev/
 REF-348. ¿Qué hacer?. (TOBE-3/4).
-Link: https://www.marxists.org/archive/lenin/works/1901/witbd/
+Lectura: https://www.marxists.org/archive/lenin/works/1901/witbd/
 
 TROTSKY, León
-REF-349. La lucha contra el fascismo . (TOBE-4).
+REF-349. La lucha contra el fascismo. (TOBE-4).
 REF-350. Terrorismo y comunismo. (TOBE-4).
-Link: https://www.marxists.org/archive/trotsky/1920/terrcomm/
+Lectura: https://www.marxists.org/archive/trotsky/1920/terrcomm/
 
 STALIN, Iósif
 REF-351. Los fundamentos del leninismo. (TOBE-5).
-Link: https://www.marxists.org/reference/archive/stalin/works/1924/foundations-leninism/
+Lectura: https://www.marxists.org/reference/archive/stalin/works/1924/foundations-leninism/
 REF-352. Historia del PCUS (bolchevique): Curso breve. (TOBE-5/6).
 
 MAO, Zedong
 REF-353. Citas del Presidente Mao (Libro Rojo). (TOBE-6).
-Link: https://www.marxists.org/ebooks/mao/Quotations_from_Chairman_Mao_Tse-tung.pdf
+Lectura: https://www.marxists.org/ebooks/mao/Quotations_from_Chairman_Mao_Tse-tung.pdf
 
 KIM, Jong-il
 REF-354. Textos doctrinales (Juche) — recopilación/Selected Works. (TOBE-7).
-Link: https://www.marxists.org/archive/kim-jong-il/works/Selected-Works-15.pdf
+Lectura: https://www.marxists.org/archive/kim-jong-il/works/Selected-Works-15.pdf
 
 HOXHA, Enver
 REF-355. Imperialismo y revolución. (TOBE-6/7).
-Link: https://www.marxists.org/reference/archive/hoxha/works/imp_rev/imp_ch0.htm
+Lectura: https://www.marxists.org/reference/archive/hoxha/works/imp_rev/imp_ch0.htm
 
 IDEOLOGÍAS (CARTOGRAFÍA HISTÓRICA)
 
 MUSSOLINI, Benito; GENTILE, Giovanni
 REF-356. The Doctrine of Fascism (La doctrina del fascismo). (1932).
 Fuente: https://sourcebooks.fordham.edu/mod/mussolini-fascism.asp
-Link: https://sourcebooks.fordham.edu/mod/mussolini-fascism.asp
+Lectura: https://sourcebooks.fordham.edu/mod/mussolini-fascism.asp
 
 HITLER, Adolf
 REF-357. Mein Kampf. (1925–1926). 
@@ -1222,11 +979,10 @@ DE BENOIST, Alain
 REF-364. Ensayos centrales de la Nouvelle Droite.
 
 FAYE, Guillaume
-REF-365. Textos identitarios 
+REF-365. Textos identitarios.
 
 ANÓNIMO
 REF-366. Protocolos de los Sabios de Sion / Protocols of the Elders of Zion. (c. 1903). (Falsificación; objeto de estudio).
-Fuente: https://encyclopedia.ushmm.org/content/en/article/protocols-of-the-elders-of-zion
 Fuente: https://encyclopedia.ushmm.org/content/en/article/protocols-of-the-elders-of-zion
 
 CONTRAPESOS / HISTORIOGRAFÍA CRÍTICA
@@ -1235,8 +991,8 @@ REF-367. Ur-Fascism / Eternal Fascism. (1995).
 
 GRIFFIN, Roger
 REF-368. The Nature of Fascism. (1991). 
-Editorial: https://www.routledge.com/The-Nature-of-Fascism/Griffin/p/book/9780415096614
-Link: https://www.routledge.com/The-Nature-of-Fascism/Griffin/p/book/9780415096614
+Fuente: https://www.routledge.com/The-Nature-of-Fascism/Griffin/p/book/9780415096614
+Lectura: https://www.routledge.com/The-Nature-of-Fascism/Griffin/p/book/9780415096614
 
 PAXTON, Robert O.
 REF-369. The Anatomy of Fascism. (2004). 
