@@ -872,13 +872,12 @@ function parseBib(text){
       continue;
     }
 
-    if(!currentBlock){
+   if(!currentBlock){
   currentBlock = {
-    name: currentSection.name,
-    id: currentSection.id + "-auto",
+    name: "SIN BLOQUE (REVISAR TXT)",
+    id: "sin-bloque-" + currentSection.blocks.length,
     items: [],
-    sectionId: currentSection.id,
-    auto: true
+    sectionId: currentSection.id
   };
   currentSection.blocks.push(currentBlock);
 }
