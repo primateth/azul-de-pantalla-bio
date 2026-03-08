@@ -1,9 +1,9 @@
-# Azul-de-pantalla-bibliografía incompleta
-Punto de aterrizaje del QR de Azul de Pantalla: biografía, enlaces y verificación. Si no te carga, no existes. Despliegue en GitHub Pages.
+# Bibliografía incompleta
+Punto de aterrizaje del QR de Azul de Pantalla: Sinopsis, enlaces y verificación. Si no te carga, no existes. 
+Despliegue en GitHub Pages.
 # Azul de Pantalla · Templo del dato  (QR)
 
-**Bibliografía oficial (QR) de _Azul de Pantalla_: FUENTES Y CONSTELACIONES.
-Versión auditable y contacto.  
+**FUENTES Y CONSTELACIONES (QR) de _Azul de Pantalla_: Versión auditable y contacto.  
 La bibliografía, incompleta y digital, es superior al libro.
 GitHub Pages.**
 
