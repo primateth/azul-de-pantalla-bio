@@ -193,8 +193,20 @@
     }
 
     @media (max-width:900px){
-      .stats{grid-template-columns:repeat(2, minmax(0,1fr))}
-    }
+
+  .stats{
+    grid-template-columns:repeat(2, minmax(0,1fr));
+  }
+
+  .canon-grid{
+    grid-template-columns:1fr;
+  }
+
+  .section-card{
+    padding:16px;
+  }
+
+}
 
     .stat{
       border:1px solid var(--line);
@@ -422,14 +434,15 @@
     }
 
     summary .who{
-      font-weight:850;
-      letter-spacing:.2px;
-      font-size:14px;
-      overflow:hidden;
-      text-overflow:ellipsis;
-      white-space:nowrap;
-      max-width:74ch;
-    }
+  font-weight:900;
+  letter-spacing:.28px;
+  font-size:14px;
+  line-height:1.35;
+  overflow:hidden;
+  text-overflow:ellipsis;
+  white-space:nowrap;
+  max-width:74ch;
+}
 
     summary .range{
       font-family:var(--mono);
