@@ -840,7 +840,12 @@ function parseBib(text){
   }
 
   const sections = [];
-  let currentSection = { name:"BIBLIOGRAFÍA GENERAL", id:"bibliografia-general", kind:"main", blocks:[] };
+  let currentSection = {
+    name:"BIBLIOGRAFÍA GENERAL",
+    id:"bibliografia-general",
+    kind:"main",
+    blocks:[]
+  };
   sections.push(currentSection);
 
   let currentBlock = null;
@@ -853,7 +858,12 @@ function parseBib(text){
     const next = nextNonEmpty(lines, i+1);
 
     if(isSectionHeading(line)){
-      currentSection = { name:line, id:slug(line), kind:"section", blocks:[] };
+      currentSection = {
+        name: line,
+        id: slug(line),
+        kind: "section",
+        blocks: []
+      };
       sections.push(currentSection);
       currentBlock = null;
       lastItem = null;
@@ -872,17 +882,21 @@ function parseBib(text){
       continue;
     }
 
-   if(!currentBlock){
-  currentBlock = {
-    name: "SIN BLOQUE (REVISAR TXT)",
-    id: "sin-bloque-" + currentSection.blocks.length,
-    items: [],
-    sectionId: currentSection.id
-  };
-  currentSection.blocks.push(currentBlock);
-}
+    if(isRefLine(line)){
+      if(!currentBlock){
+        currentBlock = {
+          name: currentSection.name,
+          id: currentSection.id + "-auto",
+          items: [],
+          sectionId: currentSection.id,
+          auto: true
+        };
+        currentSection.blocks.push(currentBlock);
+      }
+
       const parsedRef = parseRefLine(line);
       const meta = splitMeta(parsedRef.raw);
+
       const item = {
         ref: parsedRef.ref,
         raw: parsedRef.raw,
@@ -891,6 +905,7 @@ function parseBib(text){
         publisher: meta.publisher,
         links: []
       };
+
       currentBlock.items.push(item);
       lastItem = item;
       continue;
