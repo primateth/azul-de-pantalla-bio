@@ -1,1072 +1,342 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Bibliografía Azul de Pantalla</title>
-  <meta name="description" content="Bibliografía — Azul de Pantalla (Templo del dato). Índice navegable con búsqueda, descarga y contacto." />
 
-  <style>
-    :root{
-      --bg:#070A12;
-      --panel:#0B1022;
-      --panel2:#0E1630;
-      --text:#E8ECFF;
-      --muted:#A9B2D6;
-      --line:rgba(255,255,255,.08);
-      --blue:#2B57FF;
-      --blue2:#1230A8;
-      --good:#3CFFB4;
-      --warn:#FFC46B;
-      --bad:#FF5C8A;
-      --shadow: 0 10px 30px rgba(0,0,0,.35);
-      --radius:16px;
-      --mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
-      --sans: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, "Noto Sans", "Helvetica Neue", sans-serif;
-    }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    *{box-sizing:border-box}
-    html,body{height:100%}
-    body{
-      margin:0;
-      font-family:var(--sans);
-      background:
-        radial-gradient(1200px 600px at 20% -10%, rgba(43,87,255,.25), transparent 55%),
-        radial-gradient(900px 500px at 90% 10%, rgba(60,255,180,.08), transparent 60%),
-        var(--bg);
-      color:var(--text);
-    }
+<title>Bibliografía — Azul de Pantalla</title>
 
-    a{color:inherit}
+<style>
 
-    .topbar{
-      position:sticky; top:0; z-index:10;
-      backdrop-filter: blur(10px);
-      background: rgba(7,10,18,.65);
-      border-bottom:1px solid var(--line);
-    }
-    .topbar-inner{
-      max-width:1280px;
-      margin:0 auto;
-      padding:14px 16px;
-      display:flex;
-      align-items:center;
-      gap:12px;
-    }
+body{
+font-family: Georgia, serif;
+background:#f4f4f4;
+margin:0;
+padding:0;
+color:#111;
+}
 
-    .brand{
-      display:flex; align-items:baseline; gap:10px;
-      flex:1; min-width:0;
-    }
-    .brand h1{
-      margin:0;
-      font-size:16px;
-      letter-spacing:.6px;
-      text-transform:uppercase;
-      font-weight:800;
-      white-space:nowrap;
-      overflow:hidden;
-      text-overflow:ellipsis;
-    }
-    .brand small{
-      color:var(--muted);
-      font-family:var(--mono);
-      font-size:12px;
-      white-space:nowrap;
-      overflow:hidden;
-      text-overflow:ellipsis;
-    }
+header{
+background:#0a1a2f;
+color:white;
+padding:30px;
+}
 
-    .btn{
-      appearance:none;
-      border:1px solid var(--line);
-      background: linear-gradient(180deg, rgba(255,255,255,.08), rgba(255,255,255,.04));
-      color:var(--text);
-      padding:10px 12px;
-      border-radius:999px;
-      font-size:13px;
-      cursor:pointer;
-      box-shadow: 0 8px 18px rgba(0,0,0,.22);
-      display:inline-flex;
-      align-items:center;
-      gap:8px;
-      user-select:none;
-      text-decoration:none;
-      white-space:nowrap;
-    }
-    .btn:hover{border-color:rgba(255,255,255,.18)}
-    .btn.primary{
-      border-color: rgba(43,87,255,.45);
-      background: linear-gradient(180deg, rgba(43,87,255,.35), rgba(18,48,168,.25));
-    }
-    .btn.ghost{
-      background: transparent;
-      box-shadow:none;
-    }
-    .btn .dot{
-      width:8px; height:8px; border-radius:50%;
-      background: var(--blue);
-      box-shadow: 0 0 0 3px rgba(43,87,255,.18);
-    }
+header h1{
+margin:0;
+font-size:28px;
+}
 
-    .wrap{
-      max-width:1280px;
-      margin:0 auto;
-      padding:18px 16px 40px;
-    }
+.manifesto{
+padding:25px;
+background:white;
+font-size:16px;
+line-height:1.6;
+border-bottom:1px solid #ddd;
+}
 
-    .hero{
-      background: linear-gradient(180deg, rgba(11,16,34,.92), rgba(11,16,34,.70));
-      border:1px solid var(--line);
-      border-radius: var(--radius);
-      padding:18px;
-      box-shadow: var(--shadow);
-      margin-bottom:16px;
-      position:relative;
-      overflow:hidden;
-    }
-    .hero::after{
-      content:"";
-      position:absolute;
-      inset:auto -10% -40% auto;
-      width:420px;
-      height:420px;
-      background: radial-gradient(circle, rgba(43,87,255,.12), transparent 65%);
-      pointer-events:none;
-    }
-    .hero h2{
-      margin:0 0 6px 0;
-      font-size:22px;
-      letter-spacing:.3px;
-    }
-    .hero .sub{
-      margin:0 0 14px 0;
-      color:var(--muted);
-      font-family:var(--mono);
-      font-size:12px;
-      line-height:1.35;
-    }
+.controls{
+padding:20px;
+background:#fafafa;
+border-bottom:1px solid #ddd;
+}
 
-    .manifesto{
-      margin:14px 0 0 0;
-      padding:14px 16px;
-      border:1px solid rgba(255,255,255,.08);
-      border-left: 2px solid rgba(43,87,255,.65);
-      border-radius:14px;
-      background:
-        linear-gradient(180deg, rgba(255,255,255,.035), rgba(255,255,255,.02));
-      color:rgba(232,236,255,.92);
-      font-family:var(--mono);
-      font-size:13px;
-      line-height:1.62;
-      white-space:pre-line;
-      letter-spacing:.18px;
-      max-width:72ch;
-      box-shadow: inset 0 1px 0 rgba(255,255,255,.03);
-    }
+input{
+padding:8px;
+font-size:14px;
+width:250px;
+}
 
-    .hero .status{
-      margin-top:14px;
-      display:flex;
-      flex-wrap:wrap;
-      gap:10px;
-      align-items:center;
-      color:var(--muted);
-      font-size:12px;
-      font-family:var(--mono);
-    }
-    .pill{
-      display:inline-flex; align-items:center; gap:8px;
-      border:1px solid var(--line);
-      border-radius:999px;
-      padding:6px 10px;
-      background: rgba(255,255,255,.04);
-    }
-    .pill b{color:var(--text); font-weight:700}
-    .pill .ok{color:var(--good)}
-    .pill .warn{color:var(--warn)}
-    .pill .bad{color:var(--bad)}
+select{
+padding:8px;
+font-size:14px;
+}
 
-    .grid{
-      display:grid;
-      grid-template-columns: 360px 1fr;
-      gap:16px;
-      align-items:start;
-    }
-    @media (max-width: 980px){
-      .grid{grid-template-columns:1fr}
-    }
+#content{
+padding:30px;
+max-width:900px;
+margin:auto;
+}
 
-    aside{
-      position:sticky;
-      top:76px;
-      align-self:start;
-    }
-    @media (max-width: 980px){
-      aside{position:relative; top:auto}
-    }
+.ref{
+margin-bottom:25px;
+padding-bottom:15px;
+border-bottom:1px solid #eee;
+}
 
-    .panel{
-      background: linear-gradient(180deg, rgba(14,22,48,.92), rgba(11,16,34,.88));
-      border:1px solid var(--line);
-      border-radius: var(--radius);
-      box-shadow: var(--shadow);
-      overflow:hidden;
-    }
-    .panel .phead{
-      padding:14px 14px 12px;
-      border-bottom:1px solid var(--line);
-      display:flex;
-      gap:10px;
-      align-items:center;
-      justify-content:space-between;
-    }
-    .panel .phead .title{
-      font-weight:800;
-      text-transform:uppercase;
-      letter-spacing:.6px;
-      font-size:12px;
-      color:rgba(232,236,255,.92);
-    }
-    .panel .phead .tiny{
-      font-family:var(--mono);
-      font-size:11px;
-      color:var(--muted);
-      max-width: 160px;
-      overflow:hidden;
-      text-overflow:ellipsis;
-      white-space:nowrap;
-    }
-    .panel .pbody{padding:14px}
+.ref-title{
+font-weight:bold;
+}
 
-    input[type="search"], select{
-      width:100%;
-      border:1px solid var(--line);
-      background: rgba(7,10,18,.65);
-      color:var(--text);
-      padding:12px 12px;
-      border-radius:12px;
-      outline:none;
-      font-size:13px;
-    }
-    input[type="search"]::placeholder{color:rgba(169,178,214,.75)}
-    select{
-      cursor:pointer;
-      font-family:var(--mono);
-      font-size:12px;
-    }
+.links a{
+display:inline-block;
+margin-right:10px;
+font-size:12px;
+background:#eaeaea;
+padding:4px 8px;
+text-decoration:none;
+color:#333;
+border-radius:4px;
+}
 
-    .actions{
-      display:flex; gap:10px; flex-wrap:wrap; margin-top:10px;
-    }
-    .actions .btn{
-      border-radius:12px;
-      padding:10px 12px;
-      font-size:12px;
-    }
+footer{
+margin-top:40px;
+padding:30px;
+background:#111;
+color:white;
+font-size:13px;
+text-align:center;
+}
 
-    .results{
-      margin-top:10px;
-      font-family:var(--mono);
-      font-size:11px;
-      color:var(--muted);
-      min-height:16px;
-    }
+</style>
 
-    .list{
-      margin-top:12px;
-      border-top:1px dashed rgba(255,255,255,.10);
-      padding-top:12px;
-      max-height: 54vh;
-      overflow:auto;
-    }
-    .list h4{
-      margin:10px 0 6px;
-      font-size:11px;
-      letter-spacing:.6px;
-      text-transform:uppercase;
-      color:var(--muted);
-    }
-    .navitem{
-      display:flex;
-      justify-content:space-between;
-      gap:10px;
-      align-items:center;
-      padding:10px 10px;
-      border:1px solid rgba(255,255,255,.06);
-      border-radius:12px;
-      margin:8px 0;
-      background: rgba(255,255,255,.03);
-      cursor:pointer;
-      user-select:none;
-    }
-    .navitem:hover{border-color: rgba(43,87,255,.28)}
-    .navitem .name{
-      font-size:13px;
-      color:rgba(232,236,255,.94);
-      overflow:hidden;
-      text-overflow:ellipsis;
-      white-space:nowrap;
-      max-width: 250px;
-    }
-    .navitem .meta{
-      font-family:var(--mono);
-      font-size:11px;
-      color:var(--muted);
-      white-space:nowrap;
-    }
-
-    article .panel{padding:0}
-    .content{padding:14px}
-
-    details{
-      border:1px solid rgba(255,255,255,.08);
-      border-radius:14px;
-      background: rgba(255,255,255,.03);
-      margin:10px 0;
-      overflow:hidden;
-    }
-    summary{
-      list-style:none;
-      cursor:pointer;
-      padding:14px 14px;
-      display:flex;
-      justify-content:space-between;
-      gap:10px;
-      align-items:center;
-      user-select:none;
-    }
-    summary::-webkit-details-marker{display:none}
-    summary .left{
-      display:flex;
-      flex-direction:column;
-      min-width:0;
-      gap:4px;
-    }
-    summary .who{
-      font-weight:850;
-      letter-spacing:.2px;
-      font-size:14px;
-      overflow:hidden;
-      text-overflow:ellipsis;
-      white-space:nowrap;
-      max-width: 74ch;
-    }
-    summary .range{
-      font-family:var(--mono);
-      font-size:11px;
-      color:var(--muted);
-      display:flex; gap:8px; flex-wrap:wrap;
-    }
-    summary .chev{
-      font-family:var(--mono);
-      color:rgba(232,236,255,.78);
-      opacity:.9;
-    }
-
-    .items{
-      border-top:1px solid rgba(255,255,255,.08);
-      padding:12px 14px 14px;
-    }
-    .items ul{
-      margin:0; padding:0;
-      list-style:none;
-      display:flex;
-      flex-direction:column;
-      gap:10px;
-    }
-    .it{
-      display:flex;
-      gap:12px;
-      align-items:flex-start;
-      padding:10px 10px;
-      border:1px solid rgba(255,255,255,.06);
-      border-radius:12px;
-      background: rgba(7,10,18,.35);
-    }
-    .ref{
-      font-family:var(--mono);
-      font-size:12px;
-      padding:4px 8px;
-      border-radius:999px;
-      background: rgba(43,87,255,.18);
-      border:1px solid rgba(43,87,255,.28);
-      white-space:nowrap;
-      height: fit-content;
-    }
-    .desc{
-      min-width:0;
-      flex:1;
-    }
-    .title{
-      font-size:13px;
-      line-height:1.35;
-      color:rgba(232,236,255,.92);
-      margin:0 0 6px 0;
-    }
-    .meta2{
-      font-family:var(--mono);
-      font-size:11px;
-      color:var(--muted);
-      display:flex; gap:10px; flex-wrap:wrap;
-    }
-    .links{
-      margin-top:6px;
-      display:flex;
-      flex-wrap:wrap;
-      gap:8px;
-    }
-    .links a{
-      font-family:var(--mono);
-      font-size:11px;
-      text-decoration:none;
-      border:1px solid rgba(255,255,255,.10);
-      border-radius:999px;
-      padding:6px 10px;
-      background: rgba(255,255,255,.03);
-    }
-    .links a:hover{border-color: rgba(43,87,255,.28)}
-
-    .muted{color:var(--muted)}
-    .error{
-      border:1px solid rgba(255,92,138,.35);
-      background: rgba(255,92,138,.08);
-      padding:12px 14px;
-      border-radius:14px;
-      color:rgba(232,236,255,.92);
-      font-family:var(--mono);
-      font-size:12px;
-      white-space:pre-wrap;
-    }
-
-    footer{
-      margin-top:18px;
-      padding-top:14px;
-      border-top:1px solid rgba(255,255,255,.08);
-      color:rgba(169,178,214,.88);
-      font-family:var(--mono);
-      font-size:11px;
-      line-height:1.7;
-      white-space:pre-line;
-    }
-  </style>
 </head>
 
 <body>
-  <div class="topbar">
-    <div class="topbar-inner">
-      <div class="brand">
-        <h1>Azul de Pantalla · Bibliografía</h1>
-        <small id="smallPath">cargando…</small>
-      </div>
 
-      <a class="btn" href="https://github.com/primateth/azul-de-pantalla-bio" target="_blank" rel="noopener">
-        <span class="dot"></span> Repo
-      </a>
+<header>
 
-      <a class="btn" href="bibliografia.txt" download>
-        Descargar TXT
-      </a>
+<h1>Bibliografía — Azul de Pantalla</h1>
 
-      <a class="btn" href="mailto:mercurius81@proton.me">
-        Contacto
-      </a>
+</header>
 
-      <a class="btn primary" href="https://www.amazon.es/s?k=Azul+de+Pantalla" target="_blank" rel="noopener">
-        Compra (provisional)
-      </a>
-    </div>
-  </div>
+<div class="manifesto">
 
-  <div class="wrap">
-    <section class="hero">
-      <h2>Templo del dato</h2>
-      <div class="sub">Índice navegable · búsqueda · descarga · GitHub Pages</div>
+Este libro no busca adeptos.<br>
+No teme a la máquina que calcula.<br>
+Teme al humano que abdica.<br>
+Nadie gobierna lo que no puede apagar.<br>
+Precio para adultos.
 
-      <div class="manifesto" id="preface">
-E s t e libro no bus c a adeptos .
-No t eme a l a máquina que c a l cul a .
-Teme a l humano que abdi c a .
-Nadi e gobi e rna lo que no puede
-apa g a r.
-Pre c io pa r a adultos .
-      </div>
+</div>
 
-      <div class="status">
-        <span class="pill"><span class="ok">●</span> <b id="stLoaded">0</b> entradas</span>
-        <span class="pill"><span class="warn">●</span> <b id="stAuthors">0</b> autores/bloques</span>
-        <span class="pill"><span class="bad">●</span> <b id="stSections">0</b> secciones</span>
-      </div>
-    </section>
+<div class="controls">
 
-    <div class="grid">
-      <aside>
-        <div class="panel">
-          <div class="phead">
-            <div>
-              <div class="title">Navegación</div>
-              <div class="tiny" id="tinyInfo">lista</div>
-            </div>
-            <button class="btn ghost" id="btnReload" title="Recargar bibliografia.txt">↻</button>
-          </div>
+<input id="search" placeholder="Buscar autor o obra">
 
-          <div class="pbody">
-            <input id="search" type="search" placeholder="Buscar (autor / sección / REF / título / link)…" autocomplete="off"/>
+<select id="jumpSelect">
+<option value="">Ir a referencia</option>
+</select>
 
-            <div class="actions">
-              <select id="jumpSelect" aria-label="Saltar a autor o sección">
-                <option value="">Saltar a…</option>
-              </select>
+</div>
 
-              <button class="btn" id="btnRenumber" title="Reenumera REF-001… en memoria (no cambia el fichero)">
-                Reenumerar (vista)
-              </button>
+<div id="content"></div>
 
-              <button class="btn" id="btnDownloadView" title="Descargar lo que estás viendo (original o renumerado)">
-                Descargar vista
-              </button>
-            </div>
+<footer>
 
-            <div class="results" id="resultsInfo"></div>
+La bibliografía, incompleta y digital, es superior al libro.<br>
+© M. MÜLLER
 
-            <div class="list" id="navList">
-              <h4>Autores (A–Z)</h4>
-              <div id="navAuthors"></div>
-
-              <h4>Secciones</h4>
-              <div id="navSections"></div>
-            </div>
-          </div>
-        </div>
-      </aside>
-
-      <article>
-        <div class="panel">
-          <div class="content" id="content">
-            <div class="muted" style="font-family:var(--mono);font-size:12px;">
-              Preparando estructura…
-            </div>
-          </div>
-        </div>
-
-        <footer id="footerNote">La bibliograf ía, incompleta y digital, es
-super ior al libro.
-© M. MÜLLER</footer>
-      </article>
-    </div>
-  </div>
+</footer>
 
 <script>
-const TXT_FILE = "bibliografia.txt";
 
-let originalText = "";
-let workingText = "";
-let renumberMode = false;
-let parsed = null;
-let searchBound = false;
-
-function byId(id){ return document.getElementById(id); }
-
-function escapeHTML(s){
-  return (s ?? "").replace(/[&<>"']/g, ch => ({
-    "&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"
-  }[ch]));
-}
-
-function normKey(s){
-  return (s ?? "")
-    .trim()
-    .normalize("NFD").replace(/[\u0300-\u036f]/g,"")
-    .toUpperCase();
-}
-
-function slug(s){
-  return normKey(s)
-    .toLowerCase()
-    .replace(/[^a-z0-9]+/g,"-")
-    .replace(/(^-|-$)/g,"")
-    .slice(0,80);
-}
-
-function nextNonEmpty(lines, i){
-  for(let j=i; j<lines.length; j++){
-    const t = (lines[j] ?? "").trim();
-    if(t) return t;
-  }
-  return "";
-}
-
-function isRefLine(line){
-  return /^REF-\d{1,4}(?:[_-]\d+)?\./.test((line ?? "").trim());
-}
-
-function parseRefLine(line){
-  const m = line.trim().match(/^(REF-\d{1,4}(?:[_-]\d+)?)\.\s*(.*)$/);
-  if(!m) return { ref:"", raw:line.trim() };
-  return { ref:m[1], raw:m[2] };
-}
+let bibliography = [];
 
 function isLinkLine(line){
-  return /^(Link|LINK|Url|URL|PDF|Pdf)\s*:/.test((line ?? "").trim());
+
+return /^(Link|URL|Fuente|Editorial|Gutenberg|PDF|Archivo)\s*:/i.test(line);
+
 }
 
-function extractLinks(line){
-  const idx = line.indexOf(":");
-  if(idx === -1) return [];
-  const urls = line.slice(idx+1).trim().match(/https?:\/\/\S+/g) || [];
-  return urls.map(u => u.replace(/[)\].,;]+$/,""));
-}
+function extractTypedLinks(line){
 
-function looksAllCapsHeader(line){
-  const t = line.trim();
-  if(!t) return false;
-  return t === t.toUpperCase()
-    && /^[A-ZÁÉÍÓÚÜÑ0-9 /()·.,;:&\-]+$/.test(t)
-    && t.length <= 110;
-}
+let match = line.match(/^([^:]+):\s*(.*)$/);
 
-function isSectionLine(line, nextLine){
-  const t = (line ?? "").trim();
-  if(!t || isRefLine(t)) return false;
+if(!match) return [];
 
-  const known = new Set([
-    "PODCASTS",
-    "BLOGS",
-    "MANUALES",
-    "TEXTOS RELIGIOSOS",
-    "IDEOLOGÍAS / DOCTRINAS DE MANDO (POLÍTICA Y RÉGIMEN)",
-    "IDEOLOGÍAS (CARTOGRAFÍA HISTÓRICA)",
-    "CONTRAPESOS / HISTORIOGRAFÍA CRÍTICA",
-    "ANTI-TECNOLOGÍA (OBJETOS HISTÓRICOS)",
-    "CRÍTICA DE LA TÉCNICA (CANON)",
-    "RADICALISMOS ANTI-CIVILIZACIÓN (CARTOGRAFÍA)"
-  ]);
+let type = match[1].toLowerCase();
+let rest = match[2];
 
-  const k = normKey(t);
-  if(known.has(t) || known.has(k)) return true;
-  return looksAllCapsHeader(t) && nextLine && !isRefLine(nextLine);
-}
+let urls = rest.match(/https?:\/\/\S+/g) || [];
 
-function isAuthorLine(line, nextLine){
-  const t = (line ?? "").trim();
-  if(!t || isRefLine(t) || isSectionLine(t, nextLine)) return false;
-  if(t.includes(",") || t.includes(";")) return true;
-  return nextLine && isRefLine(nextLine);
-}
+return urls.map(url => ({
 
-function splitMeta(raw){
-  const s = (raw ?? "").replace(/\s+/g," ").trim();
-  const ym = s.match(/\((\d{4})\)/);
-  const parts = s.split(".").map(p=>p.trim()).filter(Boolean);
-  return {
-    title: s,
-    year: ym ? ym[1] : "",
-    publisher: parts.length >= 2 ? parts[parts.length-1] : ""
-  };
+type:type,
+url:url
+
+}));
+
 }
 
 function parseBib(text){
-  const lines = text.replace(/\r/g,"").split("\n").map(l => (l ?? "").trimEnd());
 
-  let idxStart = 0;
-  for(let i=0;i<lines.length;i++){
-    const line = (lines[i] ?? "").trim();
-    const nextLine = nextNonEmpty(lines, i+1);
-    if(line && (isRefLine(line) || isAuthorLine(line, nextLine) || isSectionLine(line, nextLine))){
-      idxStart = i;
-      break;
-    }
-    idxStart = i+1;
-  }
+let lines = text.split("\n");
 
-  const sections = [];
-  let currentSection = { name:"BIBLIOGRAFÍA", id:"bibliografia", blocks:[], kind:"main" };
-  sections.push(currentSection);
+let currentAuthor = "";
+let lastItem = null;
 
-  let currentBlock = null;
-  let lastItem = null;
+for(let line of lines){
 
-  for(let i=idxStart; i<lines.length; i++){
-    const line = (lines[i] ?? "").trim();
-    if(!line) continue;
+line=line.trim();
 
-    const nextLine = nextNonEmpty(lines, i+1);
+if(!line) continue;
 
-    if(isSectionLine(line, nextLine)){
-      currentSection = { name: line, id: slug(line) || ("sec-"+sections.length), blocks:[], kind:"section" };
-      sections.push(currentSection);
-      currentBlock = null;
-      lastItem = null;
-      continue;
-    }
+if(!line.startsWith("REF-") && !line.includes(".")){
 
-    if(isAuthorLine(line, nextLine)){
-      currentBlock = { name: line, id: slug(line) || ("blk-"+currentSection.blocks.length), items:[], sectionId: currentSection.id };
-      currentSection.blocks.push(currentBlock);
-      lastItem = null;
-      continue;
-    }
+currentAuthor=line;
+continue;
 
-    if(isRefLine(line)){
-      if(!currentBlock){
-        currentBlock = { name:"SIN AUTOR (REVISAR TXT)", id:"sin-autor-"+currentSection.blocks.length, items:[], sectionId: currentSection.id };
-        currentSection.blocks.push(currentBlock);
-      }
-
-      const parsedRef = parseRefLine(line);
-      const meta = splitMeta(parsedRef.raw);
-
-      const item = {
-        ref: parsedRef.ref,
-        raw: parsedRef.raw,
-        title: meta.title,
-        year: meta.year,
-        publisher: meta.publisher,
-        links: []
-      };
-
-      currentBlock.items.push(item);
-      lastItem = item;
-      continue;
-    }
-
-    if(isLinkLine(line) && lastItem){
-      lastItem.links.push(...extractLinks(line));
-      continue;
-    }
-
-    if(lastItem){
-      lastItem.raw = (lastItem.raw + " " + line).replace(/\s+/g," ").trim();
-      const meta = splitMeta(lastItem.raw);
-      lastItem.title = meta.title;
-      lastItem.year = meta.year;
-      lastItem.publisher = meta.publisher;
-    }
-  }
-
-  for(const sec of sections){
-    if(sec.kind === "main"){
-      sec.blocks.sort((a,b)=> normKey(a.name).localeCompare(normKey(b.name), "es"));
-    }
-  }
-
-  return { sections };
 }
 
-function renumberRefsInText(text){
-  let n = 1;
-  return text.replace(/^(\s*)REF-\d{1,4}(?:[_-]\d+)?\.\s*(.*)$/gm, (_, indent, rest) => {
-    const refNew = "REF-" + String(n++).padStart(3,"0");
-    return indent + refNew + ". " + rest;
-  });
+if(line.startsWith("REF-")){
+
+let title=line;
+
+let obj={
+
+author:currentAuthor,
+title:title,
+links:[]
+
+};
+
+bibliography.push(obj);
+lastItem=obj;
+
+continue;
+
 }
 
-function blockAnchorId(sec, blk){
-  return sec.id + "-" + blk.id;
+if(isLinkLine(line) && lastItem){
+
+lastItem.links.push(...extractTypedLinks(line));
+continue;
+
 }
 
-function blockRefRange(blk){
-  const refs = blk.items.map(it=>it.ref).filter(Boolean);
-  if(!refs.length) return "—";
-  return refs[0] === refs[refs.length-1] ? refs[0] : `${refs[0]} → ${refs[refs.length-1]}`;
 }
 
-function countAll(parsed){
-  let items = 0, blocks = 0;
-  for(const s of parsed.sections){
-    blocks += s.blocks.length;
-    for(const b of s.blocks) items += b.items.length;
-  }
-  return { items, blocks, sections: parsed.sections.length };
 }
 
-function renderBlock(sec, blk){
-  const det = document.createElement("details");
-  det.id = blockAnchorId(sec, blk);
-  det.dataset.kind = "block";
+function prettyLinkLabel(type){
 
-  const sum = document.createElement("summary");
-  sum.innerHTML = `
-    <div class="left">
-      <div class="who">${escapeHTML(blk.name)}</div>
-      <div class="range">
-        <span>Sección: <b>${escapeHTML(sec.name)}</b></span>
-        <span>Refs: <b>${escapeHTML(blockRefRange(blk))}</b></span>
-        <span>Entradas: <b>${blk.items.length}</b></span>
-      </div>
-    </div>
-    <div class="chev">↳</div>
-  `;
-  det.appendChild(sum);
+type=type.toLowerCase();
 
-  const box = document.createElement("div");
-  box.className = "items";
-  const ul = document.createElement("ul");
+if(type==="fuente") return "fuente";
+if(type==="editorial") return "editorial";
+if(type==="gutenberg") return "leer";
+if(type==="pdf") return "pdf";
+if(type==="archivo") return "archivo";
 
-  for(const it of blk.items){
-    const li = document.createElement("li");
-    li.className = "it";
+return "link";
 
-    const linksHtml = (it.links || []).length
-      ? `<div class="links">${it.links.map(u => `<a href="${escapeHTML(u)}" target="_blank" rel="noopener">link</a>`).join("")}</div>`
-      : "";
-
-    li.innerHTML = `
-      <div class="ref">${escapeHTML(it.ref)}</div>
-      <div class="desc">
-        <div class="title">${escapeHTML(it.raw || it.title || "")}</div>
-        <div class="meta2">
-          ${it.year ? `<span>Año: ${escapeHTML(it.year)}</span>` : ""}
-          ${it.publisher ? `<span>Ed.: ${escapeHTML(it.publisher)}</span>` : ""}
-        </div>
-        ${linksHtml}
-      </div>
-    `;
-    ul.appendChild(li);
-  }
-
-  box.appendChild(ul);
-  det.appendChild(box);
-  return det;
 }
 
-function render(parsed){
-  const content = byId("content");
-  const navAuthors = byId("navAuthors");
-  const navSections = byId("navSections");
-  const jump = byId("jumpSelect");
+function render(){
 
-  content.innerHTML = "";
-  navAuthors.innerHTML = "";
-  navSections.innerHTML = "";
-  jump.innerHTML = `<option value="">Saltar a…</option>`;
+let content=document.getElementById("content");
+content.innerHTML="";
 
-  const frag = document.createDocumentFragment();
-  const main = parsed.sections[0];
-  const rest = parsed.sections.slice(1);
+for(let item of bibliography){
 
-  if(main){
-    const h = document.createElement("div");
-    h.className = "muted";
-    h.style.fontFamily = "var(--mono)";
-    h.style.fontSize = "12px";
-    h.style.marginBottom = "10px";
-    h.textContent = "Autores (A–Z)";
-    frag.appendChild(h);
+let div=document.createElement("div");
+div.className="ref";
 
-    for(const blk of main.blocks){
-      frag.appendChild(renderBlock(main, blk));
-    }
-  }
+let links="";
 
-  for(const sec of rest){
-    const sep = document.createElement("div");
-    sep.id = sec.id;
-    sep.dataset.kind = "section";
-    sep.style.margin = "18px 0 10px";
-    sep.style.padding = "10px 12px";
-    sep.style.border = "1px solid rgba(255,255,255,.08)";
-    sep.style.borderRadius = "14px";
-    sep.style.background = "rgba(255,255,255,.03)";
-    sep.innerHTML = `
-      <div style="font-weight:850;letter-spacing:.3px;">${escapeHTML(sec.name)}</div>
-      <div style="font-family:var(--mono);font-size:11px;color:var(--muted);margin-top:6px;">Sección</div>
-    `;
-    frag.appendChild(sep);
+for(let link of item.links){
 
-    for(const blk of sec.blocks){
-      frag.appendChild(renderBlock(sec, blk));
-    }
-  }
+links+=`<a href="${link.url}" target="_blank">${prettyLinkLabel(link.type)}</a>`;
 
-  content.appendChild(frag);
-
-  const ogA = document.createElement("optgroup");
-  ogA.label = "Autores (A–Z)";
-  jump.appendChild(ogA);
-
-  if(main){
-    for(const blk of main.blocks){
-      const id = blockAnchorId(main, blk);
-
-      const div = document.createElement("div");
-      div.className = "navitem";
-      div.dataset.jump = id;
-      div.innerHTML = `
-        <div class="name">${escapeHTML(blk.name)}</div>
-        <div class="meta">${escapeHTML(blockRefRange(blk))}</div>
-      `;
-      div.addEventListener("click", ()=> jumpTo(id));
-      navAuthors.appendChild(div);
-
-      const opt = document.createElement("option");
-      opt.value = id;
-      opt.textContent = `${blk.name} · ${blockRefRange(blk)}`;
-      ogA.appendChild(opt);
-    }
-  }
-
-  const ogS = document.createElement("optgroup");
-  ogS.label = "Secciones";
-  jump.appendChild(ogS);
-
-  for(const sec of rest){
-    const div = document.createElement("div");
-    div.className = "navitem";
-    div.dataset.jump = sec.id;
-    div.innerHTML = `
-      <div class="name">${escapeHTML(sec.name)}</div>
-      <div class="meta">${sec.blocks.length} bloques</div>
-    `;
-    div.addEventListener("click", ()=> jumpTo(sec.id));
-    navSections.appendChild(div);
-
-    const opt = document.createElement("option");
-    opt.value = sec.id;
-    opt.textContent = `${sec.name} · ${sec.blocks.length} bloques`;
-    ogS.appendChild(opt);
-  }
-
-  const counts = countAll(parsed);
-  byId("stLoaded").textContent = String(counts.items);
-  byId("stAuthors").textContent = String(counts.blocks);
-  byId("stSections").textContent = String(counts.sections);
-  byId("tinyInfo").textContent = `${counts.blocks} bloques · ${counts.items} refs`;
 }
 
-function jumpTo(id){
-  const el = document.getElementById(id);
-  if(!el) return;
+div.innerHTML=`
 
-  const parentDetails = el.closest("details");
-  if(parentDetails) parentDetails.open = true;
-  if(el.tagName?.toLowerCase() === "details") el.open = true;
+<div class="ref-title">${item.title}</div>
+<div>${item.author}</div>
+<div class="links">${links}</div>
 
-  el.scrollIntoView({ behavior:"smooth", block:"start" });
+`;
+
+content.appendChild(div);
+
 }
 
-function updateResultsInfo(){
-  const visibleBlocks = [...byId("content").querySelectorAll('[data-kind="block"]')]
-    .filter(n => n.style.display !== "none").length;
+}
 
-  const visibleSections = [...byId("content").querySelectorAll('[data-kind="section"]')]
-    .filter(n => n.style.display !== "none").length;
+function populateSelect(){
 
-  const q = byId("search").value.trim();
-  byId("resultsInfo").textContent = q
-    ? `Filtro activo · ${visibleBlocks} bloques · ${visibleSections} secciones visibles`
-    : "";
+let select=document.getElementById("jumpSelect");
+
+bibliography.forEach((item,i)=>{
+
+let opt=document.createElement("option");
+opt.value=i;
+opt.text=item.title;
+
+select.appendChild(opt);
+
+});
+
 }
 
 function setupSearch(){
-  if(searchBound) return;
-  searchBound = true;
 
-  const search = byId("search");
-  const jump = byId("jumpSelect");
+let search=document.getElementById("search");
 
-  search.addEventListener("input", ()=>{
-    const q = search.value.trim().toLowerCase();
+search.addEventListener("input",()=>{
 
-    for(const opt of jump.querySelectorAll("option")){
-      if(!opt.value) continue;
-      opt.hidden = q ? !opt.textContent.toLowerCase().includes(q) : false;
-    }
+let q=search.value.toLowerCase();
 
-    for(const card of byId("navList").querySelectorAll(".navitem")){
-      const txt = (card.innerText || card.textContent || "").toLowerCase();
-      card.style.display = (!q || txt.includes(q)) ? "" : "none";
-    }
+let filtered=bibliography.filter(b=>
 
-    const nodes = byId("content").querySelectorAll('[data-kind="block"], [data-kind="section"]');
+b.title.toLowerCase().includes(q) ||
+b.author.toLowerCase().includes(q)
 
-    if(!q){
-      for(const n of nodes){
-        n.style.display = "";
-        if(n.tagName?.toLowerCase() === "details") n.open = false;
-      }
-      updateResultsInfo();
-      return;
-    }
+);
 
-    for(const n of nodes){
-      const hay = (n.innerText || n.textContent || "").toLowerCase();
-      const show = hay.includes(q);
-      n.style.display = show ? "" : "none";
-      if(show && n.tagName?.toLowerCase() === "details") n.open = true;
-    }
+renderFiltered(filtered);
 
-    updateResultsInfo();
-  });
-
-  jump.addEventListener("change", ()=>{
-    if(jump.value) jumpTo(jump.value);
-  });
-}
-
-async function loadTxt(){
-  const txtUrl = new URL(TXT_FILE, window.location.href);
-  txtUrl.searchParams.set("v", Date.now().toString());
-  byId("smallPath").textContent = txtUrl.pathname;
-
-  try{
-    const res = await fetch(txtUrl.toString(), { cache:"no-store" });
-    if(!res.ok) throw new Error(`HTTP ${res.status} al cargar ${TXT_FILE}`);
-
-    originalText = await res.text();
-    workingText = originalText;
-    parsed = parseBib(workingText);
-
-    render(parsed);
-    byId("search").dispatchEvent(new Event("input"));
-  }catch(err){
-    byId("content").innerHTML = `<div class="error">ERROR\n\n${escapeHTML(String(err))}\n\nVerifica:\n- existe bibliografia.txt en la raíz del repo\n- GitHub Pages está sirviendo el fichero\n- el nombre es EXACTO: bibliografia.txt</div>`;
-    byId("smallPath").textContent = "error";
-  }
-}
-
-function downloadText(filename, text){
-  const blob = new Blob([text], {type:"text/plain;charset=utf-8"});
-  const a = document.createElement("a");
-  a.href = URL.createObjectURL(blob);
-  a.download = filename;
-  document.body.appendChild(a);
-  a.click();
-  a.remove();
-  setTimeout(()=>URL.revokeObjectURL(a.href), 800);
-}
-
-byId("btnReload").addEventListener("click", ()=>{
-  renumberMode = false;
-  byId("btnRenumber").classList.remove("primary");
-  byId("btnRenumber").textContent = "Reenumerar (vista)";
-  loadTxt();
 });
 
-byId("btnRenumber").addEventListener("click", ()=>{
-  if(!originalText) return;
+}
 
-  renumberMode = !renumberMode;
-  workingText = renumberMode ? renumberRefsInText(originalText) : originalText;
+function renderFiltered(list){
 
-  byId("btnRenumber").classList.toggle("primary", renumberMode);
-  byId("btnRenumber").textContent = renumberMode ? "Reenumerado ✓ (vista)" : "Reenumerar (vista)";
+let content=document.getElementById("content");
+content.innerHTML="";
 
-  parsed = parseBib(workingText);
-  render(parsed);
-  byId("search").dispatchEvent(new Event("input"));
+list.forEach(item=>{
+
+let links="";
+
+for(let link of item.links){
+
+links+=`<a href="${link.url}" target="_blank">${prettyLinkLabel(link.type)}</a>`;
+
+}
+
+let div=document.createElement("div");
+div.className="ref";
+
+div.innerHTML=`
+
+<div class="ref-title">${item.title}</div>
+<div>${item.author}</div>
+<div class="links">${links}</div>
+
+`;
+
+content.appendChild(div);
+
 });
 
-byId("btnDownloadView").addEventListener("click", ()=>{
-  if(!workingText) return;
-  downloadText(
-    renumberMode ? "bibliografia_renumerada.txt" : "bibliografia_vista.txt",
-    workingText
-  );
-});
+}
 
+fetch("bibliografia.txt")
+.then(r=>r.text())
+.then(text=>{
+
+parseBib(text);
+render();
+populateSelect();
 setupSearch();
-loadTxt();
+
+});
+
 </script>
+
 </body>
 </html>
