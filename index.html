@@ -1191,18 +1191,30 @@ function render(parsed){
 function jumpTo(id){
   const el = document.getElementById(id);
   if(!el) return;
+
   const parentDetails = el.closest("details");
   if(parentDetails) parentDetails.open = true;
   if(el.tagName && el.tagName.toLowerCase() === "details") el.open = true;
+
   el.scrollIntoView({ behavior:"smooth", block:"start" });
+
+  el.classList.remove("target-flash");
+  void el.offsetWidth;
+  el.classList.add("target-flash");
 }
 
 function jumpToRef(ref){
   const target = document.querySelector(`[data-ref="${ref}"]`);
   if(!target) return;
+
   const parentDetails = target.closest("details");
   if(parentDetails) parentDetails.open = true;
+
   target.scrollIntoView({ behavior:"smooth", block:"center" });
+
+  target.classList.remove("target-flash");
+  void target.offsetWidth;
+  target.classList.add("target-flash");
 }
 
 function updateResultsInfo(){
