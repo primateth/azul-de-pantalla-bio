@@ -631,6 +631,28 @@
       font-size:12px;
       white-space:pre-wrap;
     }
+    .target-flash{
+  animation:targetFlash 1.8s ease;
+}
+
+@keyframes targetFlash{
+  0%{
+    box-shadow:0 0 0 0 rgba(43,87,255,.0);
+    border-color:rgba(43,87,255,.18);
+    background:rgba(43,87,255,.04);
+  }
+  20%{
+    box-shadow:0 0 0 3px rgba(43,87,255,.10);
+    border-color:rgba(43,87,255,.42);
+    background:rgba(43,87,255,.10);
+  }
+  100%{
+    box-shadow:0 0 0 0 rgba(43,87,255,.0);
+    border-color:rgba(255,255,255,.08);
+    background:rgba(255,255,255,.03);
+  }
+}
+    
 
     footer{
       margin-top:18px;
