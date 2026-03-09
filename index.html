@@ -623,30 +623,59 @@
       gap:8px;
     }
 
-    .auto-list li{
+    .auto-group{
+      margin-top:14px;
+      padding:12px;
+      border:1px solid rgba(255,255,255,.06);
+      border-radius:12px;
+      background:rgba(7,10,18,.22);
+    }
+
+    .auto-group:first-child{
+      margin-top:12px;
+    }
+
+    .auto-group-title{
+      font-family:var(--mono);
+      font-size:11px;
+      text-transform:uppercase;
+      letter-spacing:.6px;
+      color:rgba(169,178,214,.88);
+      margin-bottom:10px;
+    }
+
+    .auto-group-list{
+      margin:0;
+      padding:0;
+      list-style:none;
+      display:flex;
+      flex-direction:column;
+      gap:8px;
+    }
+
+    .auto-group-list li{
       padding:10px 12px;
       border:1px solid rgba(255,255,255,.06);
       border-radius:12px;
-      background:rgba(7,10,18,.26);
+      background:rgba(255,255,255,.03);
       line-height:1.45;
     }
 
-    .auto-list .folder{
-      display:inline-block;
-      font-family:var(--mono);
-      font-size:11px;
-      color:var(--muted);
-      margin-bottom:4px;
-    }
-
-    .auto-list a{
+    .auto-group-list a{
       color:rgba(232,236,255,.96);
       text-decoration:none;
       border-bottom:1px dotted rgba(255,255,255,.18);
     }
 
-    .auto-list a:hover{
+    .auto-group-list a:hover{
       border-bottom-color:rgba(255,255,255,.42);
+    }
+
+    .auto-empty{
+      font-family:var(--mono);
+      font-size:11px;
+      color:var(--muted);
+      padding:10px 0;
     }
 
     .canon{
@@ -734,61 +763,6 @@
     .target-flash{
       animation:targetFlash 1.8s ease;
     }
-
-    .auto-group{
-  margin-top:14px;
-  padding:12px;
-  border:1px solid rgba(255,255,255,.06);
-  border-radius:12px;
-  background:rgba(7,10,18,.22);
-}
-
-.auto-group:first-child{
-  margin-top:12px;
-}
-
-.auto-group-title{
-  font-family:var(--mono);
-  font-size:11px;
-  text-transform:uppercase;
-  letter-spacing:.6px;
-  color:rgba(169,178,214,.88);
-  margin-bottom:10px;
-}
-
-.auto-group-list{
-  margin:0;
-  padding:0;
-  list-style:none;
-  display:flex;
-  flex-direction:column;
-  gap:8px;
-}
-
-.auto-group-list li{
-  padding:10px 12px;
-  border:1px solid rgba(255,255,255,.06);
-  border-radius:12px;
-  background:rgba(255,255,255,.03);
-  line-height:1.45;
-}
-
-.auto-group-list a{
-  color:rgba(232,236,255,.96);
-  text-decoration:none;
-  border-bottom:1px dotted rgba(255,255,255,.18);
-}
-
-.auto-group-list a:hover{
-  border-bottom-color:rgba(255,255,255,.42);
-}
-
-.auto-empty{
-  font-family:var(--mono);
-  font-size:11px;
-  color:var(--muted);
-}
-    
 
     @keyframes targetFlash{
       0%{
@@ -1290,47 +1264,10 @@ function renderAutoArchiveSection(){
 }
 
 async function loadAutoArchive(){
-  const folders = [
-    "archivo/tecnica",
-    "archivo/politica",
-    "archivo/ritual",
-    "archivo/sombra",
-    "archivo/pliegue",
-    "archivo/bustamante/articulos",
-    "archivo/bustamante/collage",
-    "audio/entrevistas",
-    "audio/conferencias",
-    "audio/sombra"
-  ];
-
   const list = byId("autoList");
   if(!list) return;
 
   list.innerHTML = "";
-
-  const grouped = {};
-
-  for(const folder of folders){
-    try{
-      const url = `https://api.github.com/repos/${GITHUB_REPO}/contents/${folder}`;
-      const res = await fetch(url, { cache:"no-store" });
-      if(!res.ok) continue;
-
-      const files = await res.json();
-      if(!Array.isArray(files)) continue;
-
-      const validFiles = files.filter(f =>
-        f.type === "file" &&
-        /\.(pdf|mp3|wav|ogg|m4a|jpg|jpeg|png|webp)$/i.test(f.name)
-      );
-
-      if(validFiles.length){
-        grouped[folder] = validFiles;
-      }
-    }catch(e){
-      console.warn("error leyendo carpeta", folder, e);
-    }
-  }
 
   const folderOrder = [
     "archivo/tecnica",
@@ -1358,39 +1295,74 @@ async function loadAutoArchive(){
     "audio/sombra": "Audio / Sombra"
   };
 
-  let found = 0;
+  try{
+    const treeUrl = `https://api.github.com/repos/${GITHUB_REPO}/git/trees/main?recursive=1`;
+    const res = await fetch(treeUrl, { cache:"no-store" });
 
-  for(const folder of folderOrder){
-    const files = grouped[folder];
-    if(!files || !files.length) continue;
-
-    found += files.length;
-
-    const wrapper = document.createElement("li");
-    wrapper.className = "auto-group";
-
-    const title = document.createElement("div");
-    title.className = "auto-group-title";
-    title.textContent = folderLabels[folder] || folder;
-
-    const innerList = document.createElement("ul");
-    innerList.className = "auto-group-list";
-
-    for(const f of files){
-      const li = document.createElement("li");
-      li.innerHTML = `<a href="${escapeHTML(f.download_url || f.html_url)}" target="_blank" rel="noopener">${escapeHTML(f.name)}</a>`;
-      innerList.appendChild(li);
+    if(!res.ok){
+      throw new Error(`GitHub API respondió ${res.status}`);
     }
 
-    wrapper.appendChild(title);
-    wrapper.appendChild(innerList);
-    list.appendChild(wrapper);
-  }
+    const data = await res.json();
+    const tree = Array.isArray(data.tree) ? data.tree : [];
 
-  if(found === 0){
+    const validFiles = tree.filter(item =>
+      item.type === "blob" &&
+      /\.(pdf|mp3|wav|ogg|m4a|jpg|jpeg|png|webp)$/i.test(item.path)
+    );
+
+    const grouped = {};
+
+    for(const folder of folderOrder){
+      grouped[folder] = validFiles.filter(file =>
+        file.path.startsWith(folder + "/")
+      );
+    }
+
+    let found = 0;
+
+    for(const folder of folderOrder){
+      const files = grouped[folder];
+      if(!files || !files.length) continue;
+
+      found += files.length;
+
+      const wrapper = document.createElement("li");
+      wrapper.className = "auto-group";
+
+      const title = document.createElement("div");
+      title.className = "auto-group-title";
+      title.textContent = folderLabels[folder] || folder;
+
+      const innerList = document.createElement("ul");
+      innerList.className = "auto-group-list";
+
+      files
+        .sort((a,b) => a.path.localeCompare(b.path, "es"))
+        .forEach(f => {
+          const li = document.createElement("li");
+          const localHref = encodeURI(f.path);
+          li.innerHTML = `<a href="${escapeHTML(localHref)}" target="_blank" rel="noopener">${escapeHTML(f.path.split("/").pop())}</a>`;
+          innerList.appendChild(li);
+        });
+
+      wrapper.appendChild(title);
+      wrapper.appendChild(innerList);
+      list.appendChild(wrapper);
+    }
+
+    if(found === 0){
+      const li = document.createElement("li");
+      li.className = "auto-empty";
+      li.textContent = "sin documentos detectados por ahora";
+      list.appendChild(li);
+    }
+
+  }catch(e){
+    console.warn("error cargando archivo automático", e);
     const li = document.createElement("li");
     li.className = "auto-empty";
-    li.textContent = "sin documentos detectados por ahora";
+    li.textContent = "no se pudo leer el archivo automático";
     list.appendChild(li);
   }
 }
