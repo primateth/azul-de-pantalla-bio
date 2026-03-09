@@ -876,6 +876,121 @@
       animation:targetFlash 1.8s ease;
     }
 
+    .lightbox{
+  position:fixed;
+  inset:0;
+  z-index:9999;
+  display:none;
+  align-items:center;
+  justify-content:center;
+  background:rgba(4,8,18,.88);
+  backdrop-filter:blur(10px);
+  padding:28px;
+}
+
+.lightbox.is-open{
+  display:flex;
+}
+
+.lightbox-stage{
+  position:relative;
+  max-width:min(92vw, 1400px);
+  max-height:88vh;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:12px;
+}
+
+.lightbox-image{
+  display:block;
+  max-width:100%;
+  max-height:78vh;
+  object-fit:contain;
+  border-radius:14px;
+  border:1px solid rgba(255,255,255,.10);
+  box-shadow:0 20px 50px rgba(0,0,0,.45);
+  background:rgba(255,255,255,.02);
+}
+
+.lightbox-caption{
+  max-width:min(90vw, 1000px);
+  text-align:center;
+  font-family:var(--mono);
+  font-size:11px;
+  line-height:1.5;
+  color:rgba(232,236,255,.88);
+  word-break:break-word;
+}
+
+.lightbox-close{
+  position:absolute;
+  top:18px;
+  right:18px;
+  z-index:3;
+  width:44px;
+  height:44px;
+  border-radius:999px;
+  border:1px solid rgba(255,255,255,.14);
+  background:rgba(7,10,18,.66);
+  color:rgba(232,236,255,.94);
+  font-size:28px;
+  line-height:1;
+  cursor:pointer;
+}
+
+.lightbox-close:hover{
+  border-color:rgba(255,255,255,.28);
+  background:rgba(255,255,255,.08);
+}
+
+.lightbox-nav{
+  position:absolute;
+  top:50%;
+  transform:translateY(-50%);
+  z-index:3;
+  width:48px;
+  height:48px;
+  border-radius:999px;
+  border:1px solid rgba(255,255,255,.14);
+  background:rgba(7,10,18,.66);
+  color:rgba(232,236,255,.94);
+  font-size:34px;
+  line-height:1;
+  cursor:pointer;
+}
+
+.lightbox-nav:hover{
+  border-color:rgba(255,255,255,.28);
+  background:rgba(255,255,255,.08);
+}
+
+.lightbox-nav.prev{ left:18px; }
+.lightbox-nav.next{ right:18px; }
+
+@media (max-width:900px){
+  .lightbox{
+    padding:16px;
+  }
+
+  .lightbox-nav{
+    width:42px;
+    height:42px;
+    font-size:28px;
+  }
+
+  .lightbox-nav.prev{ left:10px; }
+  .lightbox-nav.next{ right:10px; }
+
+  .lightbox-close{
+    top:10px;
+    right:10px;
+    width:40px;
+    height:40px;
+    font-size:24px;
+  }
+}
+
     @keyframes targetFlash{
       0%{
         box-shadow:0 0 0 0 rgba(43,87,255,.0);
@@ -1803,8 +1918,96 @@ byId("btnDownloadView").addEventListener("click", () => {
   downloadText(renumberMode ? "bibliografia_renumerada.txt" : "bibliografia_vista.txt", workingText);
 });
 
+let lightboxItems = [];
+let lightboxIndex = 0;
+
+function setupLightbox(){
+  const box = byId("lightbox");
+  const img = byId("lightboxImage");
+  const caption = byId("lightboxCaption");
+  const btnClose = byId("lightboxClose");
+  const btnPrev = byId("lightboxPrev");
+  const btnNext = byId("lightboxNext");
+
+  if(!box || !img || !caption || !btnClose || !btnPrev || !btnNext) return;
+
+  function openLightbox(index){
+    if(!lightboxItems.length) return;
+    lightboxIndex = Math.max(0, Math.min(index, lightboxItems.length - 1));
+    const item = lightboxItems[lightboxIndex];
+    img.src = item.src;
+    img.alt = item.caption || "";
+    caption.textContent = item.caption || "";
+    box.classList.add("is-open");
+    box.setAttribute("aria-hidden", "false");
+    document.body.style.overflow = "hidden";
+  }
+
+  function closeLightbox(){
+    box.classList.remove("is-open");
+    box.setAttribute("aria-hidden", "true");
+    img.src = "";
+    img.alt = "";
+    caption.textContent = "";
+    document.body.style.overflow = "";
+  }
+
+  function prevLightbox(){
+    if(!lightboxItems.length) return;
+    lightboxIndex = (lightboxIndex - 1 + lightboxItems.length) % lightboxItems.length;
+    openLightbox(lightboxIndex);
+  }
+
+  function nextLightbox(){
+    if(!lightboxItems.length) return;
+    lightboxIndex = (lightboxIndex + 1) % lightboxItems.length;
+    openLightbox(lightboxIndex);
+  }
+
+  btnClose.addEventListener("click", closeLightbox);
+  btnPrev.addEventListener("click", prevLightbox);
+  btnNext.addEventListener("click", nextLightbox);
+
+  box.addEventListener("click", (e) => {
+    if(e.target === box) closeLightbox();
+  });
+
+  document.addEventListener("keydown", (e) => {
+    if(!box.classList.contains("is-open")) return;
+    if(e.key === "Escape") closeLightbox();
+    if(e.key === "ArrowLeft") prevLightbox();
+    if(e.key === "ArrowRight") nextLightbox();
+  });
+
+  window.__openLightbox = openLightbox;
+}
+
+function bindCollageLightbox(){
+  const collageThumbs = [...document.querySelectorAll(".auto-thumb[data-collage='1']")];
+
+  lightboxItems = collageThumbs.map(node => ({
+    src: node.getAttribute("href"),
+    caption: node.getAttribute("data-caption") || ""
+  }));
+
+  collageThumbs.forEach((node, index) => {
+    node.addEventListener("click", (e) => {
+      e.preventDefault();
+      if(window.__openLightbox) window.__openLightbox(index);
+    });
+  });
+}  
 setupSearch();
 loadTxt();
 </script>
+  <div id="lightbox" class="lightbox" aria-hidden="true">
+  <button id="lightboxClose" class="lightbox-close" type="button" aria-label="Cerrar">×</button>
+  <button id="lightboxPrev" class="lightbox-nav prev" type="button" aria-label="Anterior">‹</button>
+  <div class="lightbox-stage">
+    <img id="lightboxImage" class="lightbox-image" src="" alt="">
+    <div id="lightboxCaption" class="lightbox-caption"></div>
+  </div>
+  <button id="lightboxNext" class="lightbox-nav next" type="button" aria-label="Siguiente">›</button>
+</div>
 </body>
 </html>
