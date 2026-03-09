@@ -1308,7 +1308,7 @@ async function loadAutoArchive(){
 
   list.innerHTML = "";
 
-  let found = 0;
+  const grouped = {};
 
   for(const folder of folders){
     try{
@@ -1319,27 +1319,78 @@ async function loadAutoArchive(){
       const files = await res.json();
       if(!Array.isArray(files)) continue;
 
-      for(const f of files){
-        if(f.type !== "file") continue;
-        if(!/\.(pdf|mp3|wav|ogg|m4a|jpg|jpeg|png|webp)$/i.test(f.name)) continue;
+      const validFiles = files.filter(f =>
+        f.type === "file" &&
+        /\.(pdf|mp3|wav|ogg|m4a|jpg|jpeg|png|webp)$/i.test(f.name)
+      );
 
-        found++;
-
-        const li = document.createElement("li");
-        li.innerHTML = `
-          <span class="folder">${escapeHTML(folder)}</span><br>
-          <a href="${escapeHTML(f.download_url || f.html_url)}" target="_blank" rel="noopener">${escapeHTML(f.name)}</a>
-        `;
-        list.appendChild(li);
+      if(validFiles.length){
+        grouped[folder] = validFiles;
       }
     }catch(e){
       console.warn("error leyendo carpeta", folder, e);
     }
   }
 
+  const folderOrder = [
+    "archivo/tecnica",
+    "archivo/politica",
+    "archivo/ritual",
+    "archivo/sombra",
+    "archivo/pliegue",
+    "archivo/bustamante/articulos",
+    "archivo/bustamante/collage",
+    "audio/entrevistas",
+    "audio/conferencias",
+    "audio/sombra"
+  ];
+
+  const folderLabels = {
+    "archivo/tecnica": "Archivo / Técnica",
+    "archivo/politica": "Archivo / Política",
+    "archivo/ritual": "Archivo / Ritual",
+    "archivo/sombra": "Archivo / Sombra",
+    "archivo/pliegue": "Archivo / Pliegue",
+    "archivo/bustamante/articulos": "Archivo / Bustamante / Artículos",
+    "archivo/bustamante/collage": "Archivo / Bustamante / Collage",
+    "audio/entrevistas": "Audio / Entrevistas",
+    "audio/conferencias": "Audio / Conferencias",
+    "audio/sombra": "Audio / Sombra"
+  };
+
+  let found = 0;
+
+  for(const folder of folderOrder){
+    const files = grouped[folder];
+    if(!files || !files.length) continue;
+
+    found += files.length;
+
+    const wrapper = document.createElement("li");
+    wrapper.className = "auto-group";
+
+    const title = document.createElement("div");
+    title.className = "auto-group-title";
+    title.textContent = folderLabels[folder] || folder;
+
+    const innerList = document.createElement("ul");
+    innerList.className = "auto-group-list";
+
+    for(const f of files){
+      const li = document.createElement("li");
+      li.innerHTML = `<a href="${escapeHTML(f.download_url || f.html_url)}" target="_blank" rel="noopener">${escapeHTML(f.name)}</a>`;
+      innerList.appendChild(li);
+    }
+
+    wrapper.appendChild(title);
+    wrapper.appendChild(innerList);
+    list.appendChild(wrapper);
+  }
+
   if(found === 0){
     const li = document.createElement("li");
-    li.innerHTML = `<span class="folder">sin documentos detectados por ahora</span>`;
+    li.className = "auto-empty";
+    li.textContent = "sin documentos detectados por ahora";
     list.appendChild(li);
   }
 }
