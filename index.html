@@ -614,6 +614,41 @@
       box-shadow:inset 0 1px 0 rgba(255,255,255,.03);
     }
 
+    .auto-list{
+      margin:12px 0 0 0;
+      padding:0;
+      list-style:none;
+      display:flex;
+      flex-direction:column;
+      gap:8px;
+    }
+
+    .auto-list li{
+      padding:10px 12px;
+      border:1px solid rgba(255,255,255,.06);
+      border-radius:12px;
+      background:rgba(7,10,18,.26);
+      line-height:1.45;
+    }
+
+    .auto-list .folder{
+      display:inline-block;
+      font-family:var(--mono);
+      font-size:11px;
+      color:var(--muted);
+      margin-bottom:4px;
+    }
+
+    .auto-list a{
+      color:rgba(232,236,255,.96);
+      text-decoration:none;
+      border-bottom:1px dotted rgba(255,255,255,.18);
+    }
+
+    .auto-list a:hover{
+      border-bottom-color:rgba(255,255,255,.42);
+    }
+
     .canon{
       margin-bottom:16px;
       border:1px solid rgba(255,255,255,.08);
@@ -816,6 +851,7 @@ Precio para adultos.</div>
 <script>
 const TXT_FILE = "bibliografia.txt";
 const BUY_BOOK_URL = "https://www.amazon.es/s?k=Azul+de+Pantalla+M.+M%C3%BCller";
+const GITHUB_REPO = "primateth/azul-de-pantalla-bio";
 
 let originalText = "";
 let workingText = "";
@@ -1185,6 +1221,74 @@ function renderBlock(sec, blk){
   return det;
 }
 
+function renderAutoArchiveSection(){
+  const sec = document.createElement("div");
+  sec.className = "section-card";
+  sec.id = "archivo-detectado-automaticamente";
+  sec.dataset.kind = "section";
+  sec.innerHTML = `
+    <div class="name">ARCHIVO DETECTADO AUTOMÁTICAMENTE</div>
+    <div class="meta">documentos presentes en el repositorio</div>
+    <ul id="autoList" class="auto-list"></ul>
+  `;
+  return sec;
+}
+
+async function loadAutoArchive(){
+  const folders = [
+    "archivo/tecnica",
+    "archivo/politica",
+    "archivo/ritual",
+    "archivo/sombra",
+    "archivo/pliegue",
+    "archivo/bustamante/articulos",
+    "archivo/bustamante/collage",
+    "audio/entrevistas",
+    "audio/conferencias",
+    "audio/sombra"
+  ];
+
+  const list = byId("autoList");
+  if(!list) return;
+
+  list.innerHTML = "";
+
+  let found = 0;
+
+  for(const folder of folders){
+    try{
+      const url = `https://api.github.com/repos/${GITHUB_REPO}/contents/${folder}`;
+      const res = await fetch(url, { cache:"no-store" });
+      if(!res.ok) continue;
+
+      const files = await res.json();
+      if(!Array.isArray(files)) continue;
+
+      for(const f of files){
+        if(f.type !== "file") continue;
+        if(!/\.(pdf|mp3|wav|ogg|m4a|jpg|jpeg|png|webp)$/i.test(f.name)) continue;
+
+        found++;
+
+        const li = document.createElement("li");
+        li.innerHTML = `
+          <span class="folder">${escapeHTML(folder)}</span><br>
+          <a href="${escapeHTML(f.download_url || f.html_url)}" target="_blank" rel="noopener">${escapeHTML(f.name)}</a>
+        `;
+        list.appendChild(li);
+      }
+    }catch(e){
+      console.warn("error leyendo carpeta", folder, e);
+    }
+  }
+
+  if(found === 0){
+    const li = document.createElement("li");
+    li.innerHTML = `<span class="folder">sin documentos detectados por ahora</span>`;
+    list.appendChild(li);
+  }
+}
+
 function renderCanonChips(){
   const host = byId("canonChips");
   host.innerHTML = "";
@@ -1228,6 +1332,7 @@ function render(parsed){
     }
   }
 
+  frag.appendChild(renderAutoArchiveSection());
   content.appendChild(frag);
 
   for(const c of CANON){
@@ -1236,6 +1341,11 @@ function render(parsed){
     opt.textContent = `${c.name} · canon`;
     jump.appendChild(opt);
   }
+
+  const autoOpt = document.createElement("option");
+  autoOpt.value = "archivo-detectado-automaticamente";
+  autoOpt.textContent = "Archivo detectado automáticamente · sección";
+  jump.appendChild(autoOpt);
 
   const og = document.createElement("optgroup");
   og.label = "Bloques";
@@ -1270,6 +1380,13 @@ function render(parsed){
     }
   }
 
+  const autoDiv = document.createElement("div");
+  autoDiv.className = "navitem";
+  autoDiv.dataset.jump = "archivo-detectado-automaticamente";
+  autoDiv.innerHTML = `<div class="name">Archivo detectado automáticamente</div><div class="meta">repo</div>`;
+  autoDiv.addEventListener("click", () => jumpTo("archivo-detectado-automaticamente"));
+  navSections.appendChild(autoDiv);
+
   const counts = countAll(parsed);
   byId("stLoaded").textContent = String(counts.items);
   byId("stBlocks").textContent = String(counts.blocks);
@@ -1280,6 +1397,8 @@ function render(parsed){
   content.querySelectorAll("[data-refjump]").forEach(btn => {
     btn.addEventListener("click", () => jumpToRef(btn.dataset.refjump));
   });
+
+  loadAutoArchive();
 }
 
 function jumpTo(id){
