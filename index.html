@@ -193,20 +193,18 @@
     }
 
     @media (max-width:900px){
+      .stats{
+        grid-template-columns:repeat(2, minmax(0,1fr));
+      }
 
-  .stats{
-    grid-template-columns:repeat(2, minmax(0,1fr));
-  }
+      .canon-grid{
+        grid-template-columns:1fr;
+      }
 
-  .canon-grid{
-    grid-template-columns:1fr;
-  }
-
-  .section-card{
-    padding:16px;
-  }
-
-}
+      .section-card{
+        padding:16px;
+      }
+    }
 
     .stat{
       border:1px solid var(--line);
@@ -243,11 +241,11 @@
     }
 
     aside{
-  position:sticky;
-  top:76px;
-  align-self:start;
-  min-height:0;
-}
+      position:sticky;
+      top:76px;
+      align-self:start;
+      min-height:0;
+    }
 
     .panel{
       background:linear-gradient(180deg, rgba(14,22,48,.93), rgba(11,16,34,.89));
@@ -258,10 +256,10 @@
     }
 
     aside .panel{
-  max-height:calc(100vh - 96px);
-  display:flex;
-  flex-direction:column;
-}
+      max-height:calc(100vh - 96px);
+      display:flex;
+      flex-direction:column;
+    }
 
     .phead{
       padding:14px 14px 12px;
@@ -291,34 +289,35 @@
     }
 
     .pbody{
-  padding:14px;
-  overflow:auto;
-  min-height:0;
-  scrollbar-width:thin;
-  scrollbar-color:rgba(255,255,255,.18) transparent;
-}
+      padding:14px;
+      overflow:auto;
+      min-height:0;
+      scrollbar-width:thin;
+      scrollbar-color:rgba(255,255,255,.18) transparent;
+    }
 
     .pbody::-webkit-scrollbar{
-  width:8px;
-}
+      width:8px;
+    }
 
-.pbody::-webkit-scrollbar-track{
-  background:transparent;
-}
+    .pbody::-webkit-scrollbar-track{
+      background:transparent;
+    }
 
-.pbody::-webkit-scrollbar-thumb{
-  background:rgba(255,255,255,.14);
-  border-radius:999px;
-  border:2px solid transparent;
-  background-clip:padding-box;
-}
+    .pbody::-webkit-scrollbar-thumb{
+      background:rgba(255,255,255,.14);
+      border-radius:999px;
+      border:2px solid transparent;
+      background-clip:padding-box;
+    }
 
-.pbody::-webkit-scrollbar-thumb:hover{
-  background:rgba(255,255,255,.24);
-  border-radius:999px;
-  border:2px solid transparent;
-  background-clip:padding-box;
-}
+    .pbody::-webkit-scrollbar-thumb:hover{
+      background:rgba(255,255,255,.24);
+      border-radius:999px;
+      border:2px solid transparent;
+      background-clip:padding-box;
+    }
+
     input[type="search"], select{
       width:100%;
       border:1px solid var(--line);
@@ -355,10 +354,10 @@
     }
 
     .list{
-  margin-top:12px;
-  border-top:1px dashed rgba(255,255,255,.10);
-  padding-top:12px;
-}
+      margin-top:12px;
+      border-top:1px dashed rgba(255,255,255,.10);
+      padding-top:12px;
+    }
 
     .list h4{
       margin:12px 0 6px;
@@ -383,7 +382,10 @@
       transition:all .15s ease;
     }
 
-    .navitem:hover{border-color:rgba(43,87,255,.28)}
+    .navitem:hover{
+      border-color:rgba(43,87,255,.28);
+      background:rgba(43,87,255,.06);
+    }
 
     .navitem .name{
       font-size:13px;
@@ -435,18 +437,18 @@
     }
 
     .section-card .name{
-  font-weight:900;
-  letter-spacing:.5px;
-  text-transform:uppercase;
-  font-size:15px;
-}
+      font-weight:900;
+      letter-spacing:.5px;
+      text-transform:uppercase;
+      font-size:15px;
+    }
 
-.section-card .meta{
-  font-family:var(--mono);
-  font-size:11px;
-  color:rgba(169,178,214,.88);
-  margin-top:6px;
-}
+    .section-card .meta{
+      font-family:var(--mono);
+      font-size:11px;
+      color:rgba(169,178,214,.88);
+      margin-top:6px;
+    }
 
     details{
       border:1px solid rgba(255,255,255,.08);
@@ -477,15 +479,15 @@
     }
 
     summary .who{
-  font-weight:900;
-  letter-spacing:.28px;
-  font-size:14px;
-  line-height:1.35;
-  overflow:hidden;
-  text-overflow:ellipsis;
-  white-space:nowrap;
-  max-width:74ch;
-}
+      font-weight:900;
+      letter-spacing:.28px;
+      font-size:14px;
+      line-height:1.35;
+      overflow:hidden;
+      text-overflow:ellipsis;
+      white-space:nowrap;
+      max-width:74ch;
+    }
 
     summary .range{
       font-family:var(--mono);
@@ -578,6 +580,40 @@
       background:rgba(43,87,255,.14);
     }
 
+    .links a.link-fuente{
+      border-color:rgba(43,87,255,.22);
+      background:rgba(43,87,255,.08);
+    }
+
+    .links a.link-lectura{
+      border-color:rgba(60,255,180,.20);
+      background:rgba(60,255,180,.08);
+    }
+
+    .links a.link-archivo{
+      border-color:rgba(255,255,255,.14);
+      background:rgba(255,255,255,.05);
+    }
+
+    .links a.link-sombra{
+      border-color:rgba(255,92,138,.24);
+      background:rgba(255,92,138,.10);
+      color:rgba(255,220,230,.96);
+    }
+
+    .links a.link-pliegue{
+      border-color:rgba(255,196,107,.22);
+      background:rgba(255,196,107,.09);
+      color:rgba(255,240,214,.95);
+    }
+
+    .links a.link-delirio{
+      border-color:rgba(255,160,90,.30);
+      background:rgba(255,160,90,.14);
+      color:rgba(255,232,214,.98);
+      box-shadow:inset 0 1px 0 rgba(255,255,255,.03);
+    }
+
     .canon{
       margin-bottom:16px;
       border:1px solid rgba(255,255,255,.08);
@@ -605,10 +641,6 @@
       display:grid;
       grid-template-columns:repeat(2, minmax(0,1fr));
       gap:10px;
-    }
-
-    @media (max-width:900px){
-      .canon-grid{grid-template-columns:1fr}
     }
 
     .canon-card{
@@ -663,61 +695,28 @@
       font-size:12px;
       white-space:pre-wrap;
     }
+
     .target-flash{
-  animation:targetFlash 1.8s ease;
-}
+      animation:targetFlash 1.8s ease;
+    }
 
-    .links a.link-fuente{
-  border-color:rgba(43,87,255,.22);
-  background:rgba(43,87,255,.08);
-}
-
-.links a.link-lectura{
-  border-color:rgba(60,255,180,.20);
-  background:rgba(60,255,180,.08);
-}
-
-.links a.link-archivo{
-  border-color:rgba(255,255,255,.14);
-  background:rgba(255,255,255,.05);
-}
-
-.links a.link-sombra{
-  border-color:rgba(255,92,138,.24);
-  background:rgba(255,92,138,.10);
-  color:rgba(255,220,230,.96);
-}
-
-.links a.link-pliegue{
-  border-color:rgba(255,196,107,.22);
-  background:rgba(255,196,107,.09);
-  color:rgba(255,240,214,.95);
-}
-
-.links a.link-delirio{
-  border-color:rgba(255,160,90,.30);
-  background:rgba(255,160,90,.14);
-  color:rgba(255,232,214,.98);
-  box-shadow:inset 0 1px 0 rgba(255,255,255,.03);
-}
-@keyframes targetFlash{
-  0%{
-    box-shadow:0 0 0 0 rgba(43,87,255,.0);
-    border-color:rgba(43,87,255,.18);
-    background:rgba(43,87,255,.04);
-  }
-  20%{
-    box-shadow:0 0 0 3px rgba(43,87,255,.10);
-    border-color:rgba(43,87,255,.42);
-    background:rgba(43,87,255,.10);
-  }
-  100%{
-    box-shadow:0 0 0 0 rgba(43,87,255,.0);
-    border-color:rgba(255,255,255,.08);
-    background:rgba(255,255,255,.03);
-  }
-}
-    
+    @keyframes targetFlash{
+      0%{
+        box-shadow:0 0 0 0 rgba(43,87,255,.0);
+        border-color:rgba(43,87,255,.18);
+        background:rgba(43,87,255,.04);
+      }
+      20%{
+        box-shadow:0 0 0 3px rgba(43,87,255,.10);
+        border-color:rgba(43,87,255,.42);
+        background:rgba(43,87,255,.10);
+      }
+      100%{
+        box-shadow:0 0 0 0 rgba(43,87,255,.0);
+        border-color:rgba(255,255,255,.08);
+        background:rgba(255,255,255,.03);
+      }
+    }
 
     footer{
       margin-top:18px;
@@ -1039,7 +1038,7 @@ function parseBib(text){
     const link = normalizeTypedLink(line);
     if(link && lastItem){
       const already = lastItem.links.some(x => x.type === link.type && x.url === link.url);
-      if(!already && lastItem.links.length < 3) lastItem.links.push(link);
+      if(!already && lastItem.links.length < 12) lastItem.links.push(link);
       continue;
     }
 
@@ -1080,7 +1079,7 @@ function countAll(parsed){
     blocks += sec.blocks.length;
     for(const blk of sec.blocks) items += blk.items.length;
   }
-  return { items, blocks, sections: parsed.sections.length - 1 + 1 };
+  return { items, blocks, sections: parsed.sections.length };
 }
 
 function renderCanon(){
@@ -1141,14 +1140,30 @@ function renderBlock(sec, blk){
     li.dataset.ref = it.ref;
     li.id = "item-" + it.ref.toLowerCase().replace(/[^a-z0-9]+/g, "-");
 
-    const linksHtml = it.links.length
-  ? `<div class="links">${it.links.map(link => {
-      const isLocalFile = !/^https?:\/\//i.test(link.url);
-      const isArchivo = link.type === "archivo";
-      const extra = (isLocalFile && isArchivo) ? ' download' : '';
-      return `<a href="${escapeHTML(link.url)}" target="_blank" rel="noopener"${extra}>${escapeHTML(prettyLinkLabel(link.type))}</a>`;
-    }).join("")}</div>`
-  : "";
+    const audioLinks = it.links.filter(link => link.type === "audio" || isAudioFile(link.url));
+    const normalLinks = it.links.filter(link => !(link.type === "audio" || isAudioFile(link.url)));
+
+    const linksHtml = normalLinks.length
+      ? `<div class="links">${normalLinks.map(link => {
+          const isLocalFile = !/^https?:\/\//i.test(link.url);
+          const isArchivo = link.type === "archivo";
+          const extra = (isLocalFile && isArchivo) ? ' download' : '';
+          return `<a class="link-${escapeHTML(link.type)}" href="${escapeHTML(link.url)}" target="_blank" rel="noopener"${extra}>${escapeHTML(prettyLinkLabel(link.type))}</a>`;
+        }).join("")}</div>`
+      : "";
+
+    const audioHtml = audioLinks.length
+      ? `<div class="links" style="margin-top:10px;display:flex;flex-direction:column;gap:10px;">
+          ${audioLinks.map(link => `
+            <div>
+              <div style="font-family:var(--mono);font-size:11px;color:var(--muted);margin-bottom:6px;">${escapeHTML(prettyLinkLabel(link.type))}</div>
+              <audio controls preload="none" style="width:100%;">
+                <source src="${escapeHTML(link.url)}">
+              </audio>
+            </div>
+          `).join("")}
+        </div>`
+      : "";
 
     li.innerHTML = `
       <div class="ref">${escapeHTML(it.ref)}</div>
@@ -1159,6 +1174,7 @@ function renderBlock(sec, blk){
           ${it.publisher ? `<span>Ed.: ${escapeHTML(it.publisher)}</span>` : ""}
         </div>
         ${linksHtml}
+        ${audioHtml}
       </div>
     `;
     ul.appendChild(li);
@@ -1384,14 +1400,6 @@ function downloadText(filename, text){
   a.click();
   a.remove();
   setTimeout(() => URL.revokeObjectURL(a.href), 800);
-}
-
-function renumberRefsInText(text){
-  let n = 1;
-  return text.replace(/^(\s*)REF-\d{1,4}(?:[_-]\d+)?\.\s*(.*)$/gm, (_, indent, rest) => {
-    const refNew = "REF-" + String(n++).padStart(3,"0");
-    return indent + refNew + ". " + rest;
-  });
 }
 
 byId("btnReload").addEventListener("click", () => {
