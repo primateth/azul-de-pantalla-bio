@@ -1,38 +1,54 @@
 # Archivo sonoro
 
-Este directorio reúne registros de audio vinculados al proyecto **Azul de Pantalla — Fuentes y Constelaciones**.
+Registro sonoro
 
-El archivo sonoro complementa la biblioteca escrita mediante entrevistas, conferencias, lecturas y documentos sonoros relacionados con los autores o temas presentes en la bibliografía.
+El directorio audio conserva documentos sonoros asociados al proyecto Azul de Pantalla — Fuentes y Constelaciones.
 
-Los archivos pueden aparecer reproducidos directamente en la biblioteca mediante reproductor HTML5 cuando se enlazan con la etiqueta:
+La biblioteca del proyecto está formada principalmente por textos, pero algunas ideas solo circulan plenamente cuando se escuchan: conferencias, conversaciones, intervenciones públicas o registros informales. Este archivo intenta preservar esos fragmentos de voz antes de que desaparezcan del espacio digital.
 
-`Audio`
+Internet tiende a borrar lentamente su propia memoria.
+El archivo intenta resistir ese proceso.
 
----
+Tipos de material
 
-## Organización
+Los audios reunidos aquí pertenecen a tres categorías principales:
 
-El directorio se divide en tres zonas principales:
+entrevistas
 
-### entrevistas
-Conversaciones, entrevistas o registros de diálogo con autores, investigadores o testigos.
+Conversaciones, diálogos o registros de intercambio intelectual entre autores, investigadores o testigos.
 
-### conferencias
-Conferencias, clases magistrales o exposiciones públicas relacionadas con los temas del proyecto.
+conferencias
 
-### sombra
-Materiales sonoros asociados a narrativas de conspiración, guerra informativa o análisis crítico de propaganda y operaciones de percepción.
+Clases, seminarios o exposiciones públicas relacionadas con temas presentes en la biblioteca.
 
----
+sombra
 
-## Función del archivo sonoro
+Materiales vinculados a análisis crítico de propaganda, guerra informativa, operaciones de percepción o narrativas conspirativas.
 
-El objetivo de esta colección no es crear una fonoteca completa, sino **preservar documentos relevantes** que ayuden a comprender el contexto intelectual y cultural de los textos citados.
+Integración con la biblioteca
 
-La voz, en muchos casos, transmite matices que el texto escrito no conserva.
+Cuando un archivo de este directorio aparece citado en la bibliografía del proyecto, se identifica mediante la etiqueta:
 
----
+Audio
 
-## Nota
+El visor bibliográfico permite reproducir directamente estos archivos mediante un reproductor HTML5 integrado.
 
-Los audios se almacenan en formatos simples (`mp3`, `wav`, `ogg`) para garantizar su compatibilidad y reproducción directa en navegadores.
+Función del archivo
+
+Este repositorio no pretende construir una fonoteca completa ni una colección académica. Su objetivo es más modesto:
+
+preservar documentos que circulan de forma inestable
+
+mantener accesibles voces relevantes para el contexto del proyecto
+
+acompañar el archivo textual con su dimensión oral
+
+Formato
+
+Para garantizar compatibilidad y reproducción directa en navegadores, los archivos se conservan en formatos simples:
+
+mp3
+
+ogg
+
+wav
