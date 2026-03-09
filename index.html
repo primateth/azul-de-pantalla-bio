@@ -193,17 +193,9 @@
     }
 
     @media (max-width:900px){
-      .stats{
-        grid-template-columns:repeat(2, minmax(0,1fr));
-      }
-
-      .canon-grid{
-        grid-template-columns:1fr;
-      }
-
-      .section-card{
-        padding:16px;
-      }
+      .stats{grid-template-columns:repeat(2, minmax(0,1fr))}
+      .canon-grid{grid-template-columns:1fr}
+      .section-card{padding:16px}
     }
 
     .stat{
@@ -296,21 +288,14 @@
       scrollbar-color:rgba(255,255,255,.18) transparent;
     }
 
-    .pbody::-webkit-scrollbar{
-      width:8px;
-    }
-
-    .pbody::-webkit-scrollbar-track{
-      background:transparent;
-    }
-
+    .pbody::-webkit-scrollbar{width:8px}
+    .pbody::-webkit-scrollbar-track{background:transparent}
     .pbody::-webkit-scrollbar-thumb{
       background:rgba(255,255,255,.14);
       border-radius:999px;
       border:2px solid transparent;
       background-clip:padding-box;
     }
-
     .pbody::-webkit-scrollbar-thumb:hover{
       background:rgba(255,255,255,.24);
       border-radius:999px;
@@ -661,14 +646,107 @@
       line-height:1.45;
     }
 
-    .auto-group-list a{
+    .auto-file-row{
+      display:flex;
+      align-items:center;
+      gap:10px;
+      flex-wrap:wrap;
+    }
+
+    .auto-file-icon{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      min-width:28px;
+      height:28px;
+      padding:0 8px;
+      border-radius:999px;
+      font-family:var(--mono);
+      font-size:10px;
+      letter-spacing:.4px;
+      border:1px solid rgba(255,255,255,.10);
+      background:rgba(255,255,255,.04);
+      color:rgba(232,236,255,.92);
+    }
+
+    .auto-file-icon.pdf{
+      border-color:rgba(43,87,255,.24);
+      background:rgba(43,87,255,.10);
+    }
+
+    .auto-file-icon.audio{
+      border-color:rgba(60,255,180,.22);
+      background:rgba(60,255,180,.09);
+    }
+
+    .auto-file-icon.image{
+      border-color:rgba(255,196,107,.24);
+      background:rgba(255,196,107,.10);
+    }
+
+    .auto-file-name{
       color:rgba(232,236,255,.96);
       text-decoration:none;
       border-bottom:1px dotted rgba(255,255,255,.18);
+      word-break:break-word;
     }
 
-    .auto-group-list a:hover{
+    .auto-file-name:hover{
       border-bottom-color:rgba(255,255,255,.42);
+    }
+
+    .auto-audio{
+      margin-top:10px;
+    }
+
+    .auto-audio audio{
+      width:100%;
+      max-width:520px;
+    }
+
+    .auto-preview-link{
+      font-family:var(--mono);
+      font-size:11px;
+      color:var(--muted);
+      text-decoration:none;
+      border-bottom:1px dotted rgba(255,255,255,.14);
+    }
+
+    .auto-preview-link:hover{
+      border-bottom-color:rgba(255,255,255,.34);
+    }
+
+    .auto-thumb-grid{
+      margin-top:10px;
+      display:grid;
+      grid-template-columns:repeat(auto-fill, minmax(140px, 1fr));
+      gap:10px;
+    }
+
+    .auto-thumb{
+      display:block;
+      border:1px solid rgba(255,255,255,.08);
+      border-radius:12px;
+      overflow:hidden;
+      background:rgba(255,255,255,.03);
+      text-decoration:none;
+    }
+
+    .auto-thumb img{
+      display:block;
+      width:100%;
+      height:130px;
+      object-fit:cover;
+      background:rgba(255,255,255,.02);
+    }
+
+    .auto-thumb-caption{
+      padding:8px 10px;
+      font-family:var(--mono);
+      font-size:10px;
+      line-height:1.35;
+      color:rgba(232,236,255,.86);
+      word-break:break-word;
     }
 
     .auto-empty{
@@ -1295,6 +1373,21 @@ async function loadAutoArchive(){
     "audio/sombra": "Audio / Sombra"
   };
 
+  function detectFileKind(path){
+    const p = (path || "").toLowerCase();
+    if(/\.(mp3|wav|ogg|m4a)$/i.test(p)) return "audio";
+    if(/\.(jpg|jpeg|png|webp)$/i.test(p)) return "image";
+    if(/\.pdf$/i.test(p)) return "pdf";
+    return "file";
+  }
+
+  function kindLabel(kind){
+    if(kind === "audio") return "AUDIO";
+    if(kind === "image") return "IMG";
+    if(kind === "pdf") return "PDF";
+    return "FILE";
+  }
+
   try{
     const treeUrl = `https://api.github.com/repos/${GITHUB_REPO}/git/trees/main?recursive=1`;
     const res = await fetch(treeUrl, { cache:"no-store" });
@@ -1312,11 +1405,8 @@ async function loadAutoArchive(){
     );
 
     const grouped = {};
-
     for(const folder of folderOrder){
-      grouped[folder] = validFiles.filter(file =>
-        file.path.startsWith(folder + "/")
-      );
+      grouped[folder] = validFiles.filter(file => file.path.startsWith(folder + "/"));
     }
 
     let found = 0;
@@ -1342,7 +1432,40 @@ async function loadAutoArchive(){
         .forEach(f => {
           const li = document.createElement("li");
           const localHref = encodeURI(f.path);
-          li.innerHTML = `<a href="${escapeHTML(localHref)}" target="_blank" rel="noopener">${escapeHTML(f.path.split("/").pop())}</a>`;
+          const filename = f.path.split("/").pop();
+          const kind = detectFileKind(f.path);
+
+          let extraHtml = "";
+
+          if(kind === "audio"){
+            extraHtml = `
+              <div class="auto-audio">
+                <audio controls preload="none">
+                  <source src="${escapeHTML(localHref)}">
+                </audio>
+              </div>
+            `;
+          }else if(kind === "image"){
+            extraHtml = `
+              <div class="auto-thumb-grid">
+                <a class="auto-thumb" href="${escapeHTML(localHref)}" target="_blank" rel="noopener">
+                  <img src="${escapeHTML(localHref)}" loading="lazy" alt="${escapeHTML(filename)}">
+                  <div class="auto-thumb-caption">${escapeHTML(filename)}</div>
+                </a>
+              </div>
+            `;
+          }
+
+          li.innerHTML = `
+            <div class="auto-file-row">
+              <span class="auto-file-icon ${escapeHTML(kind)}">${escapeHTML(kindLabel(kind))}</span>
+              <a class="auto-file-name" href="${escapeHTML(localHref)}" target="_blank" rel="noopener">
+                ${escapeHTML(filename)}
+              </a>
+            </div>
+            ${extraHtml}
+          `;
+
           innerList.appendChild(li);
         });
 
