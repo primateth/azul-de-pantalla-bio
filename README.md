@@ -1,3 +1,28 @@
+<p align="center">
+
+AZUL DE PANTALLA  
+FUENTES Y CONSTELACIONES
+
+</p>
+
+---
+
+> Este repositorio no es una biblioteca.  
+> Es un archivo.
+
+Los libros se ordenan para ser leídos.  
+Los archivos se conservan para que algo no desaparezca.
+
+Aquí se reúnen textos, documentos y voces que atraviesan el proyecto  
+**Azul de Pantalla**: fragmentos de pensamiento sobre técnica, poder, ritual  
+y cultura contemporánea.
+
+La red borra lentamente su propia memoria.
+
+Archivar es una forma mínima de resistencia.
+
+---
+
 # Bibliografía incompleta
 Punto de aterrizaje del QR de Azul de Pantalla: Sinopsis, enlaces y verificación. Si no te carga, no existes. 
 Despliegue en GitHub Pages.
