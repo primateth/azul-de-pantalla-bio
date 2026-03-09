@@ -72,7 +72,7 @@ Las referencias de la biblioteca pueden incluir distintos tipos de acceso:
 
 Estas etiquetas permiten diferenciar origen, naturaleza y estatuto documental de cada referencia.
 
-##Estructura del repositorio
+**Estructura del repositorio**
 - **index.html**
 - **bibliografia.txt**
 
