@@ -1,5 +1,5 @@
-# Entrevistas
+# Conferencias
 
-Conversaciones registradas con autores, investigadores o interlocutores cercanos al proyecto.
+Registro de charlas, presentaciones y exposiciones públicas relacionadas con los temas del proyecto.
 
-Las entrevistas funcionan como documentos abiertos: permiten que el pensamiento se despliegue sin el cierre que impone el texto escrito.
+Las conferencias forman parte del archivo porque capturan un momento concreto del pensamiento en circulación.
