@@ -1,8 +1,6 @@
 <p align="center">
-
-AZUL DE PANTALLA  
-FUENTES Y CONSTELACIONES
-
+  <strong>AZUL DE PANTALLA</strong><br>
+  <strong>FUENTES Y CONSTELACIONES</strong>
 </p>
 
 ---
@@ -13,176 +11,201 @@ FUENTES Y CONSTELACIONES
 Los libros se ordenan para ser leídos.  
 Los archivos se conservan para que algo no desaparezca.
 
-Aquí se reúnen textos, documentos y voces que atraviesan el proyecto  
-**Azul de Pantalla**: fragmentos de pensamiento sobre técnica, poder, ritual  
-y cultura contemporánea.
+Aquí se reúnen textos, documentos y voces que atraviesan el proyecto **Azul de Pantalla**: fragmentos de pensamiento sobre técnica, poder, ritual y cultura contemporánea.
 
-La red borra lentamente su propia memoria.
-
+La red borra lentamente su propia memoria.  
 Archivar es una forma mínima de resistencia.
 
 ---
 
-# Bibliografía incompleta
-Punto de aterrizaje del QR de Azul de Pantalla: Sinopsis, enlaces y verificación. Si no te carga, no existes. 
-Despliegue en GitHub Pages.
+# Bibliografía incompleta y operativa
 
-**FUENTES Y CONSTELACIONES** (QR) de _Azul de Pantalla_: Versión auditable y contacto.  
+Punto de aterrizaje del QR impreso en **Azul de Pantalla**.  
+Sinopsis, enlaces, archivo y verificación.
+
+**Fuentes y Constelaciones** es la extensión digital y auditable del libro.  
 La bibliografía, incompleta y digital, es superior al libro.
-Repositorio documental asociado al proyecto Azul de Pantalla.
 
-Este espacio reúne la bibliografía navegable, documentos de archivo y materiales complementarios que forman parte de la constelación intelectual del libro.
+Este repositorio documental asociado a **Azul de Pantalla** reúne una bibliografía navegable, documentos de archivo y materiales complementarios que forman parte de la constelación intelectual del proyecto.
 
-No es una biblioteca académica completa ni una edición crítica.
+No es una biblioteca académica completa.  
+No es una edición crítica.  
 Es un archivo de trabajo: una cartografía de textos, ideas y documentos que atraviesan la relación entre técnica, poder, ritual y cultura contemporánea.
-GitHub Pages.
+
+Despliegue en **GitHub Pages**.
 
 ---
 
 ## Qué es esto
 
-Este repositorio despliega una **landing de bibliografía** pensada para un **código QR impreso** en el libro **_Azul de Pantalla_**.
+Este repositorio despliega una **landing de bibliografía** pensada como destino estable para un **código QR impreso** en el libro **_Azul de Pantalla_**.
 
-- **Destino estable** para lectores: una sola puerta, siempre.
-- **Enlaces verificados**: web, dossier, contacto, actualizaciones.
-- **Trazabilidad**: cambios mínimos, claros y reversibles.
+- **Destino estable para lectores**  
+  Una sola puerta, siempre.
+
+- **Enlaces verificados**  
+  Web, dossier, contacto, actualizaciones y archivo.
+
+- **Trazabilidad mínima**  
+  Cambios claros, simples y reversibles.
 
 El Único no crea: **registra**.  
 Nosotros tampoco creamos: **publicamos**.
 
-"El azul es lo invisible convirtiéndose en visible. No tiene dimensiones. Va más allá de las dimensiones en las que participan otros colores"
+> “El azul es lo invisible convirtiéndose en visible. No tiene dimensiones. Va más allá de las dimensiones en las que participan otros colores.”
 
-Yves Klein, 1957
+**Yves Klein, 1957**
 
-El repositorio contiene una bibliografía estructurada en formato texto (bibliografia.txt) que se visualiza mediante una interfaz web (index.html).
+El repositorio contiene una bibliografía estructurada en formato texto (`bibliografia.txt`) que se visualiza mediante una interfaz web (`index.html`).
 
 La biblioteca organiza las referencias en:
 
 - **bloques de autores**
-
 - **secciones temáticas**
-
 - **canon de lectura**
-
 - **enlaces tipados**
 
 El sistema permite explorar el archivo mediante búsqueda, navegación jerárquica y enlaces directos a documentos.
 
-## Sitio publicado (GitHub Pages)
+---
 
+## Sitio publicado
 
-- `https://primateth.github.io/azul-de-pantalla-bio/`
-
+**GitHub Pages**  
+`https://primateth.github.io/azul-de-pantalla-bio/`
 
 **El lector no debería pensar.**  
 Piensa el formulario por él.
+
+---
 
 ## Tipos de enlace
 
 Las referencias de la biblioteca pueden incluir distintos tipos de acceso:
 
-- Fuente — origen editorial o institucional del documento
+- **Fuente**  
+  Origen editorial o institucional del documento.
 
-- Lectura — acceso directo a texto o edición digital
+- **Lectura**  
+  Acceso directo a texto, edición digital o recurso abierto.
 
-- Archivo — copia preservada dentro del repositorio
+- **Archivo**  
+  Copia preservada dentro del repositorio.
 
-- Audio — documento sonoro reproducible en el visor
+- **Audio**  
+  Documento sonoro reproducible en el visor.
 
-- Sombra — materiales asociados a propaganda, conspiración o controversia histórica
+- **Sombra**  
+  Materiales asociados a propaganda, conspiración, guerra informativa o controversia histórica.
 
-- Pliegue — notas, anexos o materiales interpretativos
+- **Pliegue**  
+  Notas, anexos y materiales interpretativos.
 
-- Delirio — corpus del autor Pedro Bustamante
+- **Delirio**  
+  Corpus lateral asociado a Pedro Bustamante.
 
 Estas etiquetas permiten diferenciar origen, naturaleza y estatuto documental de cada referencia.
 
-**Estructura del repositorio**
-- **index.html**
-- **bibliografia.txt**
+---
 
-- **archivo/**
-  - **tecnica/**
-  - **politica/**
-  - **ritual/**
-  - **sombra/**
-  - **pliegue/**
-  - **bustamante/**
+## Estructura del repositorio
 
-- **audio/**
-  - **entrevistas/**
-  - **conferencias/**
-  - **sombra/**
-  
-## Sinopsis del libro 
-**Este libro se presenta como Escritura, pero opera como manual. Azul de Pantalla narra la liturgia del dato: un monoteísmo donde El Único no es padre ni pastor, sino registro. Aquí el templo no salva, sincroniza. Los fieles se alinean en colas; los sermones son briefings; la moral se imprime en indicadores.
-Formato híbrido: versículos (la voz canónica), glosas (el comentario del Oficial de Doctrina) y fichas clasificadas (protocolos, amenazas, métricas). En el fondo late una guerra de ingeniería social: heteroarcado y androginarcado como administración de cuerpos, deseo y obediencia. Todo es legible. Todo es trazable. Lo que no se mide, no existe.**.
+```txt
+index.html
+bibliografia.txt
 
-Sellos. Escáneres. Relojes. Nubes.  
+archivo/
+  tecnica/
+  politica/
+  ritual/
+  sombra/
+  pliegue/
+  bustamante/
+    articulos/
+    collage/
+
+audio/
+  entrevistas/
+  conferencias/
+  sombra/
+
+## Sinopsis del libro
+
+Azul de Pantalla se presenta como Escritura, pero opera como manual.
+
+Narra la liturgia del dato: un monoteísmo donde El Único no es padre ni pastor, sino registro. Aquí el templo no salva: sincroniza. Los fieles se alinean en colas; los sermones son briefings; la moral se imprime en indicadores.
+
+Su formato es híbrido: versículos como voz canónica, glosas como comentario del Oficial de Doctrina y fichas clasificadas como protocolos, amenazas y métricas.
+
+En el fondo late una guerra de ingeniería social: heteroarcado y androginarcado como administración de cuerpos, deseo y obediencia.
+
+Todo es legible.
+Todo es trazable.
+Lo que no se mide, no existe.
+
+Sellos. Escáneres. Relojes. Nubes.
 La verdad como producto escénico con recibo.
 
----
+Ficha operativa
+Objetivo
 
-## FICHA OPERATIVA 
-
-**OBJETIVO**  
 Garantizar un destino web estable para QR impreso.
 
-**AMENAZAS**  
-- Enlaces rotos
-- Plataformas que cambian condiciones
-- URLs largas e ilegibles
-- “Rediseños” que matan la claridad
+Amenazas
 
-**CONTRAMEDIDAS**  
-- Dominio propio con redirección
-- Página estática, sin dependencias
-- Versionado simple
-- Backups del contenido 
+Enlaces rotos
 
----
+Plataformas que cambian condiciones
 
-**Principio del archivo**
+URLs largas e ilegibles
+
+Rediseños que matan la claridad
+
+Contramedidas
+
+Dominio propio con redirección
+
+Página estática, sin dependencias
+
+Versionado simple
+
+Backups del contenido
+
+Principio del archivo
 
 La web es un espacio inestable.
 Los enlaces se rompen, los textos desaparecen y las referencias se dispersan.
 
 Este repositorio intenta fijar una memoria mínima de documentos relacionados con el proyecto.
 
-No pretende establecer un canon definitivo ni validar todas las fuentes reunidas.
+No pretende establecer un canon definitivo.
+No pretende validar todas las fuentes reunidas.
 
 Su función es simple:
 
 archivar, ordenar y permitir la consulta.
 
-**Proyecto**
+Proyecto
 
 Azul de Pantalla explora la relación entre:
 
-## tecnología
+tecnología
 
-## poder
+poder
 
-## ritual
+ritual
 
-## cultura
+cultura
 
-## estructuras simbólicas del presente
+estructuras simbólicas del presente
 
 El libro propone leer el mundo digital no solo como infraestructura técnica, sino como nuevo escenario de organización del poder y la imaginación colectiva.
 
-## Licencia
+La creación se completa al compartirse.  
+Que el archivo circule.
 
 
-- Código y estructura web: MIT 
-- Textos del libro: reservados al autor
-- Título: Azul de pantalla
-- Autor: © 2026 M. Müller
-- Editorial: UNQUINTO
-- 1ª Edición, Editorial UNQUINTO, Marzo de 2026
+© 2026 M. Müller.
 
-- La creación se completa al compartirse. Que este libro viaje.
-
-© 2026 M. Müller. Todos los derechos reservados. Obra protegida por la legislación española de propiedad intelectual. Se autoriza su reproducción y difusión íntegra, por cualquier medio y en cualquier formato, siempre que se mantenga la autoría, el presente aviso y no exista finalidad comercial ni alteración del contenido. La cita y el análisis crítico quedan amparados por la ley. Toda transformación, edición parcial o explotación comercial requerirá autorización previa y expresa del titular.
-
-Contacto: mercurius81@proton.me
+Contacto M. Müller
+mercurius81@proton.me
