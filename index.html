@@ -704,18 +704,6 @@
       max-width:520px;
     }
 
-    .auto-preview-link{
-      font-family:var(--mono);
-      font-size:11px;
-      color:var(--muted);
-      text-decoration:none;
-      border-bottom:1px dotted rgba(255,255,255,.14);
-    }
-
-    .auto-preview-link:hover{
-      border-bottom-color:rgba(255,255,255,.34);
-    }
-
     .auto-thumb-grid{
       margin-top:10px;
       display:grid;
@@ -754,6 +742,75 @@
       font-size:11px;
       color:var(--muted);
       padding:10px 0;
+    }
+
+    .auto-thumb-year{
+      position:absolute;
+      top:8px;
+      left:8px;
+      z-index:2;
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      min-width:52px;
+      height:22px;
+      padding:0 8px;
+      border-radius:999px;
+      font-family:var(--mono);
+      font-size:10px;
+      letter-spacing:.4px;
+      border:1px solid rgba(255,255,255,.14);
+      background:rgba(7,10,18,.72);
+      color:rgba(232,236,255,.96);
+      backdrop-filter:blur(6px);
+    }
+
+    .auto-thumb-wrap{
+      position:relative;
+    }
+
+    .auto-subpath{
+      margin-top:6px;
+      font-family:var(--mono);
+      font-size:10px;
+      color:rgba(169,178,214,.78);
+      line-height:1.35;
+      word-break:break-word;
+    }
+
+    .auto-year-block{
+      margin-top:12px;
+      padding-top:12px;
+      border-top:1px dashed rgba(255,255,255,.08);
+    }
+
+    .auto-year-block:first-child{
+      margin-top:0;
+      padding-top:0;
+      border-top:none;
+    }
+
+    .auto-year-title{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      min-width:72px;
+      height:24px;
+      padding:0 10px;
+      border-radius:999px;
+      font-family:var(--mono);
+      font-size:10px;
+      letter-spacing:.5px;
+      border:1px solid rgba(255,255,255,.14);
+      background:rgba(7,10,18,.64);
+      color:rgba(232,236,255,.95);
+      margin-bottom:10px;
+    }
+
+    .auto-year-grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fill, minmax(150px, 1fr));
+      gap:10px;
     }
 
     .canon{
@@ -838,158 +895,125 @@
       white-space:pre-wrap;
     }
 
-    .auto-thumb-year{
-  position:absolute;
-  top:8px;
-  left:8px;
-  z-index:2;
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  min-width:52px;
-  height:22px;
-  padding:0 8px;
-  border-radius:999px;
-  font-family:var(--mono);
-  font-size:10px;
-  letter-spacing:.4px;
-  border:1px solid rgba(255,255,255,.14);
-  background:rgba(7,10,18,.72);
-  color:rgba(232,236,255,.96);
-  backdrop-filter:blur(6px);
-}
-
-.auto-thumb-wrap{
-  position:relative;
-}
-
-.auto-subpath{
-  margin-top:6px;
-  font-family:var(--mono);
-  font-size:10px;
-  color:rgba(169,178,214,.78);
-  line-height:1.35;
-  word-break:break-word;
-}
-
     .target-flash{
       animation:targetFlash 1.8s ease;
     }
 
     .lightbox{
-  position:fixed;
-  inset:0;
-  z-index:9999;
-  display:none;
-  align-items:center;
-  justify-content:center;
-  background:rgba(4,8,18,.88);
-  backdrop-filter:blur(10px);
-  padding:28px;
-}
+      position:fixed;
+      inset:0;
+      z-index:9999;
+      display:none;
+      align-items:center;
+      justify-content:center;
+      background:rgba(4,8,18,.88);
+      backdrop-filter:blur(10px);
+      padding:28px;
+    }
 
-.lightbox.is-open{
-  display:flex;
-}
+    .lightbox.is-open{
+      display:flex;
+    }
 
-.lightbox-stage{
-  position:relative;
-  max-width:min(92vw, 1400px);
-  max-height:88vh;
-  display:flex;
-  flex-direction:column;
-  align-items:center;
-  gap:12px;
-}
+    .lightbox-stage{
+      position:relative;
+      max-width:min(92vw, 1400px);
+      max-height:88vh;
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      gap:12px;
+    }
 
-.lightbox-image{
-  display:block;
-  max-width:100%;
-  max-height:78vh;
-  object-fit:contain;
-  border-radius:14px;
-  border:1px solid rgba(255,255,255,.10);
-  box-shadow:0 20px 50px rgba(0,0,0,.45);
-  background:rgba(255,255,255,.02);
-}
+    .lightbox-image{
+      display:block;
+      max-width:100%;
+      max-height:74vh;
+      object-fit:contain;
+      border-radius:14px;
+      border:1px solid rgba(255,255,255,.10);
+      box-shadow:0 20px 50px rgba(0,0,0,.45);
+      background:rgba(255,255,255,.02);
+    }
 
-.lightbox-caption{
-  max-width:min(90vw, 1000px);
-  text-align:center;
-  font-family:var(--mono);
-  font-size:11px;
-  line-height:1.5;
-  color:rgba(232,236,255,.88);
-  word-break:break-word;
-}
+    .lightbox-caption{
+      max-width:min(90vw, 1000px);
+      text-align:center;
+      font-family:var(--mono);
+      font-size:11px;
+      line-height:1.65;
+      color:rgba(232,236,255,.88);
+      word-break:break-word;
+      white-space:pre-line;
+    }
 
-.lightbox-close{
-  position:absolute;
-  top:18px;
-  right:18px;
-  z-index:3;
-  width:44px;
-  height:44px;
-  border-radius:999px;
-  border:1px solid rgba(255,255,255,.14);
-  background:rgba(7,10,18,.66);
-  color:rgba(232,236,255,.94);
-  font-size:28px;
-  line-height:1;
-  cursor:pointer;
-}
+    .lightbox-close{
+      position:absolute;
+      top:18px;
+      right:18px;
+      z-index:3;
+      width:44px;
+      height:44px;
+      border-radius:999px;
+      border:1px solid rgba(255,255,255,.14);
+      background:rgba(7,10,18,.66);
+      color:rgba(232,236,255,.94);
+      font-size:28px;
+      line-height:1;
+      cursor:pointer;
+    }
 
-.lightbox-close:hover{
-  border-color:rgba(255,255,255,.28);
-  background:rgba(255,255,255,.08);
-}
+    .lightbox-close:hover{
+      border-color:rgba(255,255,255,.28);
+      background:rgba(255,255,255,.08);
+    }
 
-.lightbox-nav{
-  position:absolute;
-  top:50%;
-  transform:translateY(-50%);
-  z-index:3;
-  width:48px;
-  height:48px;
-  border-radius:999px;
-  border:1px solid rgba(255,255,255,.14);
-  background:rgba(7,10,18,.66);
-  color:rgba(232,236,255,.94);
-  font-size:34px;
-  line-height:1;
-  cursor:pointer;
-}
+    .lightbox-nav{
+      position:absolute;
+      top:50%;
+      transform:translateY(-50%);
+      z-index:3;
+      width:48px;
+      height:48px;
+      border-radius:999px;
+      border:1px solid rgba(255,255,255,.14);
+      background:rgba(7,10,18,.66);
+      color:rgba(232,236,255,.94);
+      font-size:34px;
+      line-height:1;
+      cursor:pointer;
+    }
 
-.lightbox-nav:hover{
-  border-color:rgba(255,255,255,.28);
-  background:rgba(255,255,255,.08);
-}
+    .lightbox-nav:hover{
+      border-color:rgba(255,255,255,.28);
+      background:rgba(255,255,255,.08);
+    }
 
-.lightbox-nav.prev{ left:18px; }
-.lightbox-nav.next{ right:18px; }
+    .lightbox-nav.prev{ left:18px; }
+    .lightbox-nav.next{ right:18px; }
 
-@media (max-width:900px){
-  .lightbox{
-    padding:16px;
-  }
+    @media (max-width:900px){
+      .lightbox{
+        padding:16px;
+      }
 
-  .lightbox-nav{
-    width:42px;
-    height:42px;
-    font-size:28px;
-  }
+      .lightbox-nav{
+        width:42px;
+        height:42px;
+        font-size:28px;
+      }
 
-  .lightbox-nav.prev{ left:10px; }
-  .lightbox-nav.next{ right:10px; }
+      .lightbox-nav.prev{ left:10px; }
+      .lightbox-nav.next{ right:10px; }
 
-  .lightbox-close{
-    top:10px;
-    right:10px;
-    width:40px;
-    height:40px;
-    font-size:24px;
-  }
-}
+      .lightbox-close{
+        top:10px;
+        right:10px;
+        width:40px;
+        height:40px;
+        font-size:24px;
+      }
+    }
 
     @keyframes targetFlash{
       0%{
@@ -1102,6 +1126,16 @@ Precio para adultos.</div>
 © M. MÜLLER</footer>
       </article>
     </div>
+  </div>
+
+  <div id="lightbox" class="lightbox" aria-hidden="true">
+    <button id="lightboxClose" class="lightbox-close" type="button" aria-label="Cerrar">×</button>
+    <button id="lightboxPrev" class="lightbox-nav prev" type="button" aria-label="Anterior">‹</button>
+    <div class="lightbox-stage">
+      <img id="lightboxImage" class="lightbox-image" src="" alt="">
+      <div id="lightboxCaption" class="lightbox-caption"></div>
+    </div>
+    <button id="lightboxNext" class="lightbox-nav next" type="button" aria-label="Siguiente">›</button>
   </div>
 
 <script>
@@ -1539,17 +1573,22 @@ async function loadAutoArchive(){
 
   function extractCollageYear(path){
     const m = (path || "").match(/archivo\/bustamante\/collage\/([^/]+)\//i);
-    if(!m) return "";
+    if(!m) return "SIN FECHA";
     const raw = m[1].trim().toLowerCase();
-
-    if (/^\d{4}$/.test(raw)) return raw;
-    if (raw === "sin-fecha") return "SIN FECHA";
+    if(/^\d{4}$/.test(raw)) return raw;
+    if(raw === "sin-fecha") return "SIN FECHA";
     return raw.toUpperCase();
   }
 
   function extractSubpath(path, baseFolder){
     if(!path.startsWith(baseFolder + "/")) return "";
     return path.slice((baseFolder + "/").length);
+  }
+
+  function yearSortValue(label){
+    if(label === "SIN FECHA") return 999999;
+    const n = parseInt(label, 10);
+    return Number.isFinite(n) ? n : 999998;
   }
 
   try{
@@ -1587,6 +1626,63 @@ async function loadAutoArchive(){
       const title = document.createElement("div");
       title.className = "auto-group-title";
       title.textContent = folderLabels[folder] || folder;
+      wrapper.appendChild(title);
+
+      if(folder === "archivo/bustamante/collage"){
+        const collageImages = files
+          .filter(f => detectFileKind(f.path) === "image")
+          .sort((a,b) => a.path.localeCompare(b.path, "es"));
+
+        const years = {};
+        for(const f of collageImages){
+          const year = extractCollageYear(f.path);
+          if(!years[year]) years[year] = [];
+          years[year].push(f);
+        }
+
+        const orderedYears = Object.keys(years).sort((a,b) => yearSortValue(a) - yearSortValue(b));
+
+        for(const year of orderedYears){
+          const yearBlock = document.createElement("div");
+          yearBlock.className = "auto-year-block";
+
+          const yearTitle = document.createElement("div");
+          yearTitle.className = "auto-year-title";
+          yearTitle.textContent = year;
+
+          const grid = document.createElement("div");
+          grid.className = "auto-year-grid";
+
+          years[year].forEach(f => {
+            const localHref = encodeURI(f.path);
+            const filename = f.path.split("/").pop();
+            const subpath = extractSubpath(f.path, "archivo/bustamante/collage");
+
+            const card = document.createElement("a");
+            card.className = "auto-thumb";
+            card.href = localHref;
+            card.setAttribute("data-collage", "1");
+            card.setAttribute("data-caption", `${year}\n${subpath}\n${filename}`);
+
+            card.innerHTML = `
+              <div class="auto-thumb-wrap">
+                <span class="auto-thumb-year">${escapeHTML(year)}</span>
+                <img src="${escapeHTML(localHref)}" loading="lazy" alt="${escapeHTML(filename)}">
+              </div>
+              <div class="auto-thumb-caption">${escapeHTML(filename)}</div>
+            `;
+
+            grid.appendChild(card);
+          });
+
+          yearBlock.appendChild(yearTitle);
+          yearBlock.appendChild(grid);
+          wrapper.appendChild(yearBlock);
+        }
+
+        list.appendChild(wrapper);
+        continue;
+      }
 
       const innerList = document.createElement("ul");
       innerList.className = "auto-group-list";
@@ -1598,7 +1694,6 @@ async function loadAutoArchive(){
           const localHref = encodeURI(f.path);
           const filename = f.path.split("/").pop();
           const kind = detectFileKind(f.path);
-          const subpath = extractSubpath(f.path, folder);
 
           let extraHtml = "";
 
@@ -1611,15 +1706,10 @@ async function loadAutoArchive(){
               </div>
             `;
           }else if(kind === "image"){
-            const yearTag = folder === "archivo/bustamante/collage"
-              ? extractCollageYear(f.path)
-              : "";
-
             extraHtml = `
               <div class="auto-thumb-grid">
                 <a class="auto-thumb" href="${escapeHTML(localHref)}" target="_blank" rel="noopener">
                   <div class="auto-thumb-wrap">
-                    ${yearTag ? `<span class="auto-thumb-year">${escapeHTML(yearTag)}</span>` : ""}
                     <img src="${escapeHTML(localHref)}" loading="lazy" alt="${escapeHTML(filename)}">
                   </div>
                   <div class="auto-thumb-caption">${escapeHTML(filename)}</div>
@@ -1635,14 +1725,12 @@ async function loadAutoArchive(){
                 ${escapeHTML(filename)}
               </a>
             </div>
-            ${subpath && folder === "archivo/bustamante/collage" ? `<div class="auto-subpath">${escapeHTML(subpath)}</div>` : ""}
             ${extraHtml}
           `;
 
           innerList.appendChild(li);
         });
 
-      wrapper.appendChild(title);
       wrapper.appendChild(innerList);
       list.appendChild(wrapper);
     }
@@ -1772,7 +1860,9 @@ function render(parsed){
     btn.addEventListener("click", () => jumpToRef(btn.dataset.refjump));
   });
 
-  loadAutoArchive();
+  loadAutoArchive().then(() => {
+    bindCollageLightbox();
+  });
 }
 
 function jumpTo(id){
@@ -1996,18 +2086,11 @@ function bindCollageLightbox(){
       if(window.__openLightbox) window.__openLightbox(index);
     });
   });
-}  
+}
+
+setupLightbox();
 setupSearch();
 loadTxt();
 </script>
-  <div id="lightbox" class="lightbox" aria-hidden="true">
-  <button id="lightboxClose" class="lightbox-close" type="button" aria-label="Cerrar">×</button>
-  <button id="lightboxPrev" class="lightbox-nav prev" type="button" aria-label="Anterior">‹</button>
-  <div class="lightbox-stage">
-    <img id="lightboxImage" class="lightbox-image" src="" alt="">
-    <div id="lightboxCaption" class="lightbox-caption"></div>
-  </div>
-  <button id="lightboxNext" class="lightbox-nav next" type="button" aria-label="Siguiente">›</button>
-</div>
 </body>
 </html>
