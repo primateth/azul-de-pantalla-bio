@@ -179,10 +179,8 @@ estructuras simbólicas del presente
 
 El libro propone leer el mundo digital no solo como infraestructura técnica, sino como nuevo escenario de organización del poder y la imaginación colectiva.
 
-Cierre
-
 La creación se completa al compartirse.
-Que el archivo circule.
+Que el archivo viaje.
 
 ---
 
