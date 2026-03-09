@@ -1,9 +1,8 @@
 # Bibliografía incompleta
 Punto de aterrizaje del QR de Azul de Pantalla: Sinopsis, enlaces y verificación. Si no te carga, no existes. 
 Despliegue en GitHub Pages.
-# Azul de Pantalla · Templo del dato  (QR)
 
-# FUENTES Y CONSTELACIONES (QR) de _Azul de Pantalla_: Versión auditable y contacto.  
+**FUENTES Y CONSTELACIONES** (QR) de _Azul de Pantalla_: Versión auditable y contacto.  
 La bibliografía, incompleta y digital, es superior al libro.
 Repositorio documental asociado al proyecto Azul de Pantalla.
 
@@ -74,21 +73,21 @@ Las referencias de la biblioteca pueden incluir distintos tipos de acceso:
 Estas etiquetas permiten diferenciar origen, naturaleza y estatuto documental de cada referencia.
 
 ##Estructura del repositorio
-**index.html
-bibliografia.txt
+- **index.html**
+- **bibliografia.txt**
 
-archivo/
-  tecnica/
-  politica/
-  ritual/
-  sombra/
-  pliegue/
-  bustamante/
+- **archivo/**
+  - **tecnica/**
+  - **politica/**
+  - **ritual/**
+  - **sombra/**
+  - **pliegue/**
+  - **bustamante/**
 
-audio/
-  entrevistas/
-  conferencias/
-  sombra/**
+- **audio/**
+  - **entrevistas/**
+  - **conferencias/**
+  - **sombra/**
   
 ## Sinopsis del libro 
 **Este libro se presenta como Escritura, pero opera como manual. Azul de Pantalla narra la liturgia del dato: un monoteísmo donde El Único no es padre ni pastor, sino registro. Aquí el templo no salva, sincroniza. Los fieles se alinean en colas; los sermones son briefings; la moral se imprime en indicadores.
