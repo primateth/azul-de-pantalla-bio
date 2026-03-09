@@ -1,7 +1,7 @@
 <p align="center">
 Archivo lateral del proyecto Azul de Pantalla
 </p>
-#🜂 Archivo Bustamante
+🜂 Archivo Bustamante
 
 > Subarchivo del proyecto  
 > **Azul de Pantalla — Fuentes y Constelaciones**
