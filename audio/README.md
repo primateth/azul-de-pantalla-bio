@@ -1,55 +1,89 @@
-# Archivo sonoro
+<p align="center">
+  Archivo sonoro del proyecto Azul de Pantalla
+</p>
+# 🎧 Archivo sonoro
 
-Este directorio reúne registros de audio vinculados al proyecto **Azul de Pantalla — Fuentes y Constelaciones**.
+> Registro oral del proyecto  
+> **Azul de Pantalla — Fuentes y Constelaciones**
 
-La biblioteca del proyecto está formada principalmente por textos, pero algunas ideas solo circulan plenamente cuando se escuchan: conferencias, conversaciones, intervenciones públicas o registros informales. Este archivo intenta preservar esos fragmentos de voz antes de que desaparezcan del espacio digital.
+---
 
-Internet tiende a borrar lentamente su propia memoria.
+## Naturaleza del archivo
+
+La biblioteca de *Azul de Pantalla* está formada principalmente por textos.
+
+Sin embargo, algunas ideas circulan con mayor claridad cuando se escuchan.
+
+Conferencias, conversaciones, intervenciones públicas o registros informales
+constituyen una dimensión distinta del archivo:  
+la **voz**.
+
+Este directorio conserva fragmentos sonoros vinculados al universo intelectual del proyecto.
+
+Internet tiende a borrar lentamente su propia memoria.  
 El archivo intenta resistir ese proceso.
 
-Los archivos pueden aparecer reproducidos directamente en la biblioteca mediante reproductor HTML5 cuando se enlazan con la etiqueta:
+---
 
-`Audio`
+## Reproducción en la biblioteca
+
+Cuando un archivo de audio aparece citado en la bibliografía del proyecto,
+se identifica mediante la etiqueta:
+
+
+El visor bibliográfico puede reproducir esos archivos directamente mediante
+**reproductor HTML5 integrado** cuando se enlazan desde el repositorio.
 
 ---
 
-## Organización
+## Estructura del directorio
 
-El directorio se divide en tres zonas principales:
+El archivo sonoro se organiza en tres zonas principales.
 
 ### entrevistas
-Conversaciones, entrevistas o registros de diálogo con autores, investigadores o testigos.
+Conversaciones o entrevistas con autores, investigadores o interlocutores
+relacionados con los temas del proyecto.
 
 ### conferencias
-Conferencias, clases magistrales o exposiciones públicas relacionadas con los temas del proyecto.
+Conferencias, clases magistrales o exposiciones públicas que aportan contexto
+intelectual a los textos citados en la biblioteca.
 
 ### sombra
-Materiales sonoros asociados a narrativas de conspiración, guerra informativa o análisis crítico de propaganda y operaciones de percepción.
+Material sonoro asociado a análisis crítico de propaganda, narrativas
+de conspiración, guerra informativa u operaciones de percepción.
 
 ---
 
-## Función del archivo sonoro
+## Función del archivo
 
-El objetivo de esta colección no es crear una fonoteca completa, sino **preservar documentos relevantes** que ayuden a comprender el contexto intelectual y cultural de los textos citados.
+El objetivo de esta colección no es construir una fonoteca completa.
 
-Este repositorio no pretende construir una fonoteca completa ni una colección académica. Su objetivo es más modesto:
+Su propósito es más simple:
 
-preservar documentos que circulan de forma inestable
+- preservar documentos que circulan de forma inestable  
+- mantener accesibles voces relevantes para el contexto del proyecto  
+- acompañar el archivo textual con su dimensión oral  
 
-mantener accesibles voces relevantes para el contexto del proyecto
+La voz transmite matices que el texto escrito no siempre conserva.
 
-acompañar el archivo textual con su dimensión oral
+---
 
-La voz, en muchos casos, transmite matices que el texto escrito no conserva.
+## Formatos
 
-Cuando un archivo de este directorio aparece citado en la bibliografía del proyecto, se identifica mediante la etiqueta:
+Los archivos se almacenan en formatos simples para garantizar su
+reproducción directa en navegadores.
 
-Audio
-
-El visor bibliográfico permite reproducir directamente estos archivos mediante un reproductor HTML5 integrado.
+mp3
+wav
+ogg
 
 ---
 
 ## Nota
 
-Los audios se almacenan en formatos simples (`mp3`, `wav`, `ogg`) para garantizar su compatibilidad y reproducción directa en navegadores.
+Este archivo forma parte del repositorio:
+
+**Azul de Pantalla — Fuentes y Constelaciones**
+
+Un archivo digital dedicado a preservar textos, documentos y voces
+relacionados con la técnica, el poder, el ritual y la cultura contemporánea.
