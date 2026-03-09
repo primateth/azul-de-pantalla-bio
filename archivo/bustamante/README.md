@@ -1,34 +1,80 @@
-Archivo Bustamante
+<p align="center">
+Archivo lateral del proyecto Azul de Pantalla
+</p>
+# 🜂 Archivo Bustamante
 
-Este directorio reúne textos, fragmentos y materiales asociados al trabajo del pensador y ensayista Pedro Bustamante, autor singular dentro del paisaje intelectual contemporáneo.
+> Subarchivo del proyecto  
+> **Azul de Pantalla — Fuentes y Constelaciones**
 
-Su escritura se sitúa en una zona fronteriza entre filosofía política, antropología del sacrificio, crítica cultural y ensayo heterodoxo. Muchos de sus textos circularon durante años en contextos digitales, editoriales marginales o repositorios dispersos.
+---
 
-El objetivo de este archivo no es canonizar una obra ni fijar una edición definitiva.
-Su función es preservar y ordenar materiales que, por su naturaleza fragmentaria o marginal, tienden a desaparecer de la circulación.
+## Naturaleza del archivo
 
-Dentro de esta carpeta se distinguen dos zonas principales:
+Este directorio reúne textos, fragmentos y materiales asociados al trabajo del pensador y ensayista **Pedro Bustamante**, figura singular dentro del paisaje intelectual contemporáneo.
 
-articulos
+Su escritura se sitúa en una zona fronteriza entre:
+
+- filosofía política  
+- antropología del sacrificio  
+- crítica cultural  
+- ensayo heterodoxo  
+
+Muchos de sus textos circularon durante años en contextos digitales, editoriales marginales o repositorios dispersos.
+
+Este archivo intenta **reunir y estabilizar** esos materiales antes de que desaparezcan de la circulación.
+
+---
+
+## Estructura del archivo
+
+Dentro de este directorio se distinguen dos zonas principales.
+
+### articulos
 
 Textos ensayísticos, manifiestos y fragmentos doctrinales atribuidos a Bustamante.
 
-collage
+Incluyen materiales publicados en contextos editoriales menores, repositorios digitales o documentos de circulación informal.
 
-Material visual, composiciones gráficas y piezas derivadas que acompañan o expanden su imaginario simbólico.
+---
 
-Relación con la biblioteca
+### collage
 
-Los documentos de este archivo aparecen citados en la bibliografía navegable del proyecto mediante la etiqueta:
+Material visual y composiciones gráficas vinculadas a su imaginario simbólico.
 
+El collage funciona aquí como prolongación visual del ensayo:  
+una forma de pensamiento por ensamblaje.
+
+---
+
+## Relación con la biblioteca
+
+Los documentos de este archivo aparecen citados dentro de la **bibliografía navegable** del proyecto mediante la etiqueta:
 Delirio
 
-Esta etiqueta no pretende descalificar el contenido, sino indicar que se trata de un archivo lateral, situado en el borde entre ensayo, hipótesis cultural y especulación interpretativa.
+Esta etiqueta no pretende descalificar el contenido.
 
-Nota editorial
+Indica que se trata de un archivo situado en una zona lateral del pensamiento:  
+entre ensayo, hipótesis cultural y especulación interpretativa.
 
-Este archivo forma parte del proyecto documental Azul de Pantalla — Fuentes y Constelaciones, cuyo propósito es mapear textos, ideas y documentos que atraviesan la relación entre técnica, poder, ritual y cultura contemporánea.
+---
 
-No constituye una edición crítica ni una validación académica de los textos recopilados.
+## Nota editorial
 
-Su función es archivar, ordenar y permitir la consulta.
+Este archivo forma parte del proyecto documental:
+
+**Azul de Pantalla — Fuentes y Constelaciones**
+
+Un archivo digital dedicado a preservar textos, documentos y voces que atraviesan la relación entre:
+
+- técnica  
+- poder  
+- ritual  
+- cultura contemporánea  
+
+Este repositorio **no constituye una edición crítica ni una validación académica** de los textos recopilados.
+
+Su función es más simple:
+
+archivar  
+ordenar  
+permitir la consulta.
