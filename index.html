@@ -704,13 +704,6 @@
       max-width:520px;
     }
 
-    .auto-thumb-grid{
-      margin-top:10px;
-      display:grid;
-      grid-template-columns:repeat(auto-fill, minmax(140px, 1fr));
-      gap:10px;
-    }
-
     .auto-thumb{
       display:block;
       border:1px solid rgba(255,255,255,.08);
@@ -723,7 +716,7 @@
     .auto-thumb img{
       display:block;
       width:100%;
-      height:130px;
+      height:140px;
       object-fit:cover;
       background:rgba(255,255,255,.02);
     }
@@ -778,19 +771,28 @@
       word-break:break-word;
     }
 
-    .auto-year-block{
+    .auto-year-group{
       margin-top:12px;
-      padding-top:12px;
-      border-top:1px dashed rgba(255,255,255,.08);
+      border:1px solid rgba(255,255,255,.06);
+      border-radius:12px;
+      overflow:hidden;
+      background:rgba(255,255,255,.02);
     }
 
-    .auto-year-block:first-child{
-      margin-top:0;
-      padding-top:0;
-      border-top:none;
+    .auto-year-group summary{
+      padding:12px 14px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:10px;
+      cursor:pointer;
+      list-style:none;
+      background:rgba(255,255,255,.02);
     }
 
-    .auto-year-title{
+    .auto-year-group summary::-webkit-details-marker{display:none}
+
+    .auto-year-label{
       display:inline-flex;
       align-items:center;
       justify-content:center;
@@ -804,13 +806,21 @@
       border:1px solid rgba(255,255,255,.14);
       background:rgba(7,10,18,.64);
       color:rgba(232,236,255,.95);
-      margin-bottom:10px;
+    }
+
+    .auto-year-meta{
+      font-family:var(--mono);
+      font-size:11px;
+      color:var(--muted);
+      white-space:nowrap;
     }
 
     .auto-year-grid{
+      padding:12px;
       display:grid;
-      grid-template-columns:repeat(auto-fill, minmax(150px, 1fr));
+      grid-template-columns:repeat(auto-fill, minmax(160px, 1fr));
       gap:10px;
+      border-top:1px solid rgba(255,255,255,.06);
     }
 
     .canon{
@@ -922,13 +932,13 @@
       display:flex;
       flex-direction:column;
       align-items:center;
-      gap:12px;
+      gap:14px;
     }
 
     .lightbox-image{
       display:block;
       max-width:100%;
-      max-height:74vh;
+      max-height:72vh;
       object-fit:contain;
       border-radius:14px;
       border:1px solid rgba(255,255,255,.10);
@@ -939,12 +949,41 @@
     .lightbox-caption{
       max-width:min(90vw, 1000px);
       text-align:center;
+      word-break:break-word;
+    }
+
+    .lightbox-cap-year{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      min-width:82px;
+      height:24px;
+      padding:0 10px;
+      border-radius:999px;
+      font-family:var(--mono);
+      font-size:10px;
+      letter-spacing:.5px;
+      border:1px solid rgba(255,255,255,.14);
+      background:rgba(255,255,255,.05);
+      color:rgba(232,236,255,.96);
+      margin-bottom:8px;
+    }
+
+    .lightbox-cap-subpath{
+      font-family:var(--mono);
+      font-size:10px;
+      line-height:1.5;
+      color:rgba(169,178,214,.80);
+      margin-bottom:6px;
+      white-space:pre-wrap;
+    }
+
+    .lightbox-cap-name{
       font-family:var(--mono);
       font-size:11px;
-      line-height:1.65;
-      color:rgba(232,236,255,.88);
-      word-break:break-word;
-      white-space:pre-line;
+      line-height:1.6;
+      color:rgba(232,236,255,.92);
+      white-space:pre-wrap;
     }
 
     .lightbox-close{
@@ -1643,17 +1682,22 @@ async function loadAutoArchive(){
         const orderedYears = Object.keys(years).sort((a,b) => yearSortValue(a) - yearSortValue(b));
 
         for(const year of orderedYears){
-          const yearBlock = document.createElement("div");
-          yearBlock.className = "auto-year-block";
+          const yearDetails = document.createElement("details");
+          yearDetails.className = "auto-year-group";
+          yearDetails.open = year === orderedYears[0];
 
-          const yearTitle = document.createElement("div");
-          yearTitle.className = "auto-year-title";
-          yearTitle.textContent = year;
+          const filesInYear = years[year];
+
+          const summary = document.createElement("summary");
+          summary.innerHTML = `
+            <span class="auto-year-label">${escapeHTML(year)}</span>
+            <span class="auto-year-meta">${filesInYear.length} piezas</span>
+          `;
 
           const grid = document.createElement("div");
           grid.className = "auto-year-grid";
 
-          years[year].forEach(f => {
+          filesInYear.forEach(f => {
             const localHref = encodeURI(f.path);
             const filename = f.path.split("/").pop();
             const subpath = extractSubpath(f.path, "archivo/bustamante/collage");
@@ -1662,7 +1706,9 @@ async function loadAutoArchive(){
             card.className = "auto-thumb";
             card.href = localHref;
             card.setAttribute("data-collage", "1");
-            card.setAttribute("data-caption", `${year}\n${subpath}\n${filename}`);
+            card.setAttribute("data-caption-year", year);
+            card.setAttribute("data-caption-subpath", subpath);
+            card.setAttribute("data-caption-name", filename);
 
             card.innerHTML = `
               <div class="auto-thumb-wrap">
@@ -1675,9 +1721,9 @@ async function loadAutoArchive(){
             grid.appendChild(card);
           });
 
-          yearBlock.appendChild(yearTitle);
-          yearBlock.appendChild(grid);
-          wrapper.appendChild(yearBlock);
+          yearDetails.appendChild(summary);
+          yearDetails.appendChild(grid);
+          wrapper.appendChild(yearDetails);
         }
 
         list.appendChild(wrapper);
@@ -1707,7 +1753,7 @@ async function loadAutoArchive(){
             `;
           }else if(kind === "image"){
             extraHtml = `
-              <div class="auto-thumb-grid">
+              <div style="margin-top:10px;">
                 <a class="auto-thumb" href="${escapeHTML(localHref)}" target="_blank" rel="noopener">
                   <div class="auto-thumb-wrap">
                     <img src="${escapeHTML(localHref)}" loading="lazy" alt="${escapeHTML(filename)}">
@@ -2021,13 +2067,25 @@ function setupLightbox(){
 
   if(!box || !img || !caption || !btnClose || !btnPrev || !btnNext) return;
 
+  function renderCaption(item){
+    const year = item.year || "";
+    const subpath = item.subpath || "";
+    const name = item.name || "";
+
+    caption.innerHTML = `
+      ${year ? `<div class="lightbox-cap-year">${escapeHTML(year)}</div>` : ""}
+      ${subpath ? `<div class="lightbox-cap-subpath">${escapeHTML(subpath)}</div>` : ""}
+      ${name ? `<div class="lightbox-cap-name">${escapeHTML(name)}</div>` : ""}
+    `;
+  }
+
   function openLightbox(index){
     if(!lightboxItems.length) return;
     lightboxIndex = Math.max(0, Math.min(index, lightboxItems.length - 1));
     const item = lightboxItems[lightboxIndex];
     img.src = item.src;
-    img.alt = item.caption || "";
-    caption.textContent = item.caption || "";
+    img.alt = item.name || "";
+    renderCaption(item);
     box.classList.add("is-open");
     box.setAttribute("aria-hidden", "false");
     document.body.style.overflow = "hidden";
@@ -2038,7 +2096,7 @@ function setupLightbox(){
     box.setAttribute("aria-hidden", "true");
     img.src = "";
     img.alt = "";
-    caption.textContent = "";
+    caption.innerHTML = "";
     document.body.style.overflow = "";
   }
 
@@ -2077,7 +2135,9 @@ function bindCollageLightbox(){
 
   lightboxItems = collageThumbs.map(node => ({
     src: node.getAttribute("href"),
-    caption: node.getAttribute("data-caption") || ""
+    year: node.getAttribute("data-caption-year") || "",
+    subpath: node.getAttribute("data-caption-subpath") || "",
+    name: node.getAttribute("data-caption-name") || ""
   }));
 
   collageThumbs.forEach((node, index) => {
