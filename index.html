@@ -838,6 +838,40 @@
       white-space:pre-wrap;
     }
 
+    .auto-thumb-year{
+  position:absolute;
+  top:8px;
+  left:8px;
+  z-index:2;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  min-width:52px;
+  height:22px;
+  padding:0 8px;
+  border-radius:999px;
+  font-family:var(--mono);
+  font-size:10px;
+  letter-spacing:.4px;
+  border:1px solid rgba(255,255,255,.14);
+  background:rgba(7,10,18,.72);
+  color:rgba(232,236,255,.96);
+  backdrop-filter:blur(6px);
+}
+
+.auto-thumb-wrap{
+  position:relative;
+}
+
+.auto-subpath{
+  margin-top:6px;
+  font-family:var(--mono);
+  font-size:10px;
+  color:rgba(169,178,214,.78);
+  line-height:1.35;
+  word-break:break-word;
+}
+
     .target-flash{
       animation:targetFlash 1.8s ease;
     }
@@ -1388,6 +1422,21 @@ async function loadAutoArchive(){
     return "FILE";
   }
 
+  function extractCollageYear(path){
+    const m = (path || "").match(/archivo\/bustamante\/collage\/([^/]+)\//i);
+    if(!m) return "";
+    const raw = m[1].trim().toLowerCase();
+
+    if (/^\d{4}$/.test(raw)) return raw;
+    if (raw === "sin-fecha") return "SIN FECHA";
+    return raw.toUpperCase();
+  }
+
+  function extractSubpath(path, baseFolder){
+    if(!path.startsWith(baseFolder + "/")) return "";
+    return path.slice((baseFolder + "/").length);
+  }
+
   try{
     const treeUrl = `https://api.github.com/repos/${GITHUB_REPO}/git/trees/main?recursive=1`;
     const res = await fetch(treeUrl, { cache:"no-store" });
@@ -1434,6 +1483,7 @@ async function loadAutoArchive(){
           const localHref = encodeURI(f.path);
           const filename = f.path.split("/").pop();
           const kind = detectFileKind(f.path);
+          const subpath = extractSubpath(f.path, folder);
 
           let extraHtml = "";
 
@@ -1446,10 +1496,17 @@ async function loadAutoArchive(){
               </div>
             `;
           }else if(kind === "image"){
+            const yearTag = folder === "archivo/bustamante/collage"
+              ? extractCollageYear(f.path)
+              : "";
+
             extraHtml = `
               <div class="auto-thumb-grid">
                 <a class="auto-thumb" href="${escapeHTML(localHref)}" target="_blank" rel="noopener">
-                  <img src="${escapeHTML(localHref)}" loading="lazy" alt="${escapeHTML(filename)}">
+                  <div class="auto-thumb-wrap">
+                    ${yearTag ? `<span class="auto-thumb-year">${escapeHTML(yearTag)}</span>` : ""}
+                    <img src="${escapeHTML(localHref)}" loading="lazy" alt="${escapeHTML(filename)}">
+                  </div>
                   <div class="auto-thumb-caption">${escapeHTML(filename)}</div>
                 </a>
               </div>
@@ -1463,6 +1520,7 @@ async function loadAutoArchive(){
                 ${escapeHTML(filename)}
               </a>
             </div>
+            ${subpath && folder === "archivo/bustamante/collage" ? `<div class="auto-subpath">${escapeHTML(subpath)}</div>` : ""}
             ${extraHtml}
           `;
 
