@@ -3,7 +3,7 @@ Punto de aterrizaje del QR de Azul de Pantalla: Sinopsis, enlaces y verificació
 Despliegue en GitHub Pages.
 # Azul de Pantalla · Templo del dato  (QR)
 
-**FUENTES Y CONSTELACIONES (QR) de _Azul de Pantalla_: Versión auditable y contacto.  
+# FUENTES Y CONSTELACIONES (QR) de _Azul de Pantalla_: Versión auditable y contacto.  
 La bibliografía, incompleta y digital, es superior al libro.
 Repositorio documental asociado al proyecto Azul de Pantalla.
 
@@ -11,7 +11,7 @@ Este espacio reúne la bibliografía navegable, documentos de archivo y material
 
 No es una biblioteca académica completa ni una edición crítica.
 Es un archivo de trabajo: una cartografía de textos, ideas y documentos que atraviesan la relación entre técnica, poder, ritual y cultura contemporánea.
-GitHub Pages.**
+GitHub Pages.
 
 ---
 
@@ -34,13 +34,13 @@ El repositorio contiene una bibliografía estructurada en formato texto (bibliog
 
 La biblioteca organiza las referencias en:
 
-bloques de autores
+- **bloques de autores**
 
-secciones temáticas
+- **secciones temáticas**
 
-canon de lectura
+- **canon de lectura**
 
-enlaces tipados
+- **enlaces tipados**
 
 El sistema permite explorar el archivo mediante búsqueda, navegación jerárquica y enlaces directos a documentos.
 
@@ -57,19 +57,19 @@ Piensa el formulario por él.
 
 Las referencias de la biblioteca pueden incluir distintos tipos de acceso:
 
-Fuente — origen editorial o institucional del documento
+- Fuente — origen editorial o institucional del documento
 
-Lectura — acceso directo a texto o edición digital
+- Lectura — acceso directo a texto o edición digital
 
-Archivo — copia preservada dentro del repositorio
+- Archivo — copia preservada dentro del repositorio
 
-Audio — documento sonoro reproducible en el visor
+- Audio — documento sonoro reproducible en el visor
 
-Sombra — materiales asociados a propaganda, conspiración o controversia histórica
+- Sombra — materiales asociados a propaganda, conspiración o controversia histórica
 
-Pliegue — notas, anexos o materiales interpretativos
+- Pliegue — notas, anexos o materiales interpretativos
 
-Delirio — corpus del autor Pedro Bustamante
+- Delirio — corpus del autor Pedro Bustamante
 
 Estas etiquetas permiten diferenciar origen, naturaleza y estatuto documental de cada referencia.
 
