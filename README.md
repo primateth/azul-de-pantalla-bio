@@ -30,7 +30,7 @@ Nosotros tampoco creamos: **publicamos**.
 
 Yves Klein, 1957
 
-**El repositorio contiene una bibliografía estructurada en formato texto (bibliografia.txt) que se visualiza mediante una interfaz web (index.html).
+El repositorio contiene una bibliografía estructurada en formato texto (bibliografia.txt) que se visualiza mediante una interfaz web (index.html).
 
 La biblioteca organiza las referencias en:
 
@@ -42,7 +42,7 @@ canon de lectura
 
 enlaces tipados
 
-El sistema permite explorar el archivo mediante búsqueda, navegación jerárquica y enlaces directos a documentos.**
+El sistema permite explorar el archivo mediante búsqueda, navegación jerárquica y enlaces directos a documentos.
 
 ## Sitio publicado (GitHub Pages)
 
@@ -55,7 +55,7 @@ Piensa el formulario por él.
 
 ## Tipos de enlace
 
-**Las referencias de la biblioteca pueden incluir distintos tipos de acceso:
+Las referencias de la biblioteca pueden incluir distintos tipos de acceso:
 
 Fuente — origen editorial o institucional del documento
 
@@ -71,7 +71,7 @@ Pliegue — notas, anexos o materiales interpretativos
 
 Delirio — corpus del autor Pedro Bustamante
 
-Estas etiquetas permiten diferenciar origen, naturaleza y estatuto documental de cada referencia.**
+Estas etiquetas permiten diferenciar origen, naturaleza y estatuto documental de cada referencia.
 
 ##Estructura del repositorio
 **index.html
@@ -131,7 +131,7 @@ Su función es simple:
 
 archivar, ordenar y permitir la consulta.
 
-Proyecto
+**Proyecto**
 
 Azul de Pantalla explora la relación entre:
 
@@ -143,7 +143,7 @@ Azul de Pantalla explora la relación entre:
 
 ## cultura
 
-estructuras simbólicas del presente
+## estructuras simbólicas del presente
 
 El libro propone leer el mundo digital no solo como infraestructura técnica, sino como nuevo escenario de organización del poder y la imaginación colectiva.
 
