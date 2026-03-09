@@ -18,7 +18,7 @@ Archivar es una forma mínima de resistencia.
 
 ---
 
-# Bibliografía incompleta y operativa
+# Bibliografía incompleta, operativa y hostil
 
 Punto de aterrizaje del QR impreso en **Azul de Pantalla**.  
 Sinopsis, enlaces, archivo y verificación.
@@ -107,6 +107,113 @@ Las referencias de la biblioteca pueden incluir distintos tipos de acceso:
 Estas etiquetas permiten diferenciar origen, naturaleza y estatuto documental de cada referencia.
 
 ---
+Sinopsis del libro
+
+Azul de Pantalla se presenta como Escritura, pero opera como manual.
+
+Narra la liturgia del dato: un monoteísmo donde El Único no es padre ni pastor, sino registro. Aquí el templo no salva: sincroniza. Los fieles se alinean en colas; los sermones son briefings; la moral se imprime en indicadores.
+
+Su formato es híbrido: versículos como voz canónica, glosas como comentario del Oficial de Doctrina y fichas clasificadas como protocolos, amenazas y métricas.
+
+En el fondo late una guerra de ingeniería social: heteroarcado y androginarcado como administración de cuerpos, deseo y obediencia.
+
+Todo es legible.
+Todo es trazable.
+Lo que no se mide, no existe.
+
+Sellos. Escáneres. Relojes. Nubes.
+La verdad como producto escénico con recibo.
+
+Ficha operativa
+Objetivo
+
+Garantizar un destino web estable para QR impreso.
+
+Amenazas
+
+Enlaces rotos
+
+Plataformas que cambian condiciones
+
+URLs largas e ilegibles
+
+Rediseños que matan la claridad
+
+Contramedidas
+
+Dominio propio con redirección
+
+Página estática, sin dependencias
+
+Versionado simple
+
+Backups del contenido
+
+Principio del archivo
+
+La web es un espacio inestable.
+Los enlaces se rompen, los textos desaparecen y las referencias se dispersan.
+
+Este repositorio intenta fijar una memoria mínima de documentos relacionados con el proyecto.
+
+No pretende establecer un canon definitivo.
+No pretende validar todas las fuentes reunidas.
+
+Su función es simple:
+
+archivar, ordenar y permitir la consulta.
+
+Proyecto
+
+Azul de Pantalla explora la relación entre:
+
+tecnología
+
+poder
+
+ritual
+
+cultura
+
+estructuras simbólicas del presente
+
+El libro propone leer el mundo digital no solo como infraestructura técnica, sino como nuevo escenario de organización del poder y la imaginación colectiva.
+
+Cierre
+
+La creación se completa al compartirse.
+Que el archivo circule.
+
+---
+
+## Nota de autoría
+
+Este proyecto utiliza teclado, ratón y sistemas de generación textual.
+
+No se presenta como una obra pura de autor.
+
+Forma parte de un experimento: observar qué ocurre con la escritura cuando el autor deja de producir frases y empieza a **negociar con una máquina**.
+
+El modelo propone.  
+El sistema reorganiza.  
+El autor selecciona.
+
+La creación se vuelve selección.
+
+La autoridad del autor se reduce.  
+La intervención de la máquina aumenta.
+
+Este archivo no intenta resolver esa tensión.
+
+Solo la deja visible.
+
+Autoría y contacto
+
+© 2026 M. Müller
+
+Contacto
+M. Müller
+mercurius81@proton.me
 
 ## Estructura del repositorio
 
@@ -128,3 +235,4 @@ audio/
   entrevistas/
   conferencias/
   sombra/
+
