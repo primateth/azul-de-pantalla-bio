@@ -1,54 +1,106 @@
+<p align="center">
 Se consagra el tercer alivio: La descarga.
+</p>
+
+<p align="center">
+Archivo asociado al proyecto Azul de Pantalla
+</p>
+
+---
 
 # Archivo documental
 
-Este directorio reúne documentos preservados para consulta dentro del proyecto **Azul de Pantalla — Fuentes y Constelaciones**.
+Este repositorio reúne materiales asociados al proyecto **Azul de Pantalla — Fuentes y Constelaciones**.
 
-El archivo funciona como una extensión material de la bibliografía navegable del proyecto. Mientras el índice bibliográfico organiza referencias, autores y tradiciones intelectuales, este directorio conserva copias locales de documentos relevantes para su estudio.
+Su función es conservar y organizar textos, documentos, imágenes y registros sonoros relacionados con las ideas que atraviesan el proyecto.
 
-El criterio no es exhaustivo ni académico en sentido estricto. El objetivo es **preservar, ordenar y permitir acceso directo** a materiales que a menudo desaparecen de la web o circulan de forma fragmentaria.
+La biblioteca principal del proyecto se presenta en forma de **bibliografía navegable**, accesible mediante el visor incluido en el repositorio.
 
-El archivo se organiza en varias zonas temáticas:
-
-### tecnica
-Textos sobre tecnología, sistemas técnicos, infraestructuras digitales y crítica de la técnica.
-
-### politica
-Documentos relacionados con gobernanza, ideología, estrategias de poder y administración de sistemas sociales.
-
-### ritual
-Materiales vinculados a antropología, religión, sacrificio, mitología o estructuras simbólicas.
-
-### sombra
-Documentos asociados a narrativas de conspiración, guerra informativa, propaganda o hipótesis históricas controvertidas.  
-Su inclusión responde a interés documental, no a validación de su contenido.
-
-### pliegue
-Materiales secundarios: notas, anexos, interpretaciones o documentos derivados que acompañan otras obras.
-
-### bustamante
-Subarchivo dedicado a textos y materiales del autor **Pedro Bustamante**, conservados como corpus específico dentro de la biblioteca.
+Este archivo actúa como su **depósito documental**.
 
 ---
 
-## Relación con la biblioteca
+## Naturaleza del archivo
 
-Los documentos aquí almacenados aparecen citados en la **bibliografía navegable** mediante enlaces tipados:
+Internet produce conocimiento con gran rapidez, pero lo conserva mal.
 
-- `Fuente` → origen editorial o institucional
-- `Lectura` → acceso directo a lectura
-- `Archivo` → copia preservada en este repositorio
-- `Sombra` → material asociado a contextos polémicos o conspirativos
-- `Pliegue` → documento lateral o interpretativo
-- `Delirio` → archivo Bustamante
+Muchos textos, conferencias o documentos que circulan durante algunos años terminan desapareciendo de la red o quedando ocultos en repositorios difíciles de localizar.
+
+Este repositorio intenta **reunir y preservar** algunos de esos materiales.
+
+No pretende construir una biblioteca exhaustiva ni una colección académica completa.
+
+Su objetivo es más modesto:
+
+- conservar documentos relevantes  
+- facilitar su consulta  
+- estabilizar materiales que circulan de forma dispersa  
 
 ---
 
-## Principio de archivo
+## Estructura del repositorio
 
-La lógica del archivo es simple:
+El archivo se organiza en varias zonas principales.
 
-> Lo digital desaparece con facilidad.  
-> Lo archivado permanece.
+### ⚙ tecnica
+Textos y documentos relacionados con tecnología, sistemas, infraestructura y control técnico.
 
-Este repositorio intenta fijar una **memoria mínima de textos, documentos y materiales culturales** que forman parte de la constelación intelectual del proyecto.
+### 🏛 politica
+Materiales vinculados a teoría política, gobernanza, doctrina institucional y arquitectura del poder.
+
+### 🜂 ritual
+Documentos relacionados con religión, antropología simbólica y formas rituales de organización social.
+
+### 🜁 sombra
+Textos marginales, hipótesis culturales, narrativas críticas y materiales situados fuera de los discursos dominantes.
+
+### 🜄 pliegue
+Materiales híbridos o difíciles de clasificar dentro de una sola disciplina.
+
+### ✶ bustamante
+Subarchivo dedicado a textos y materiales asociados al ensayista Pedro Bustamante.
+
+---
+
+## Archivo sonoro
+
+El directorio **audio** reúne materiales de voz vinculados al proyecto.
+
+Incluye:
+
+- entrevistas  
+- conferencias  
+- registros sonoros de carácter documental  
+
+Cuando estos documentos aparecen citados en la bibliografía del proyecto se identifican mediante la etiqueta:
+
+Audio
+
+El visor bibliográfico permite reproducirlos directamente mediante reproductor HTML5.
+
+---
+
+## Biblioteca navegable
+
+La bibliografía principal del proyecto se encuentra en:
+index.html
+
+
+Este visor permite explorar las fuentes mediante:
+
+- navegación por secciones
+- búsqueda textual
+- acceso directo a documentos
+- reproducción de audio integrado
+
+---
+
+## Nota
+
+Este repositorio forma parte del proyecto **Azul de Pantalla — Fuentes y Constelaciones**, un archivo digital dedicado a mapear textos, ideas y documentos relacionados con la relación contemporánea entre:
+
+técnica  
+poder  
+ritual  
+cultura
+
