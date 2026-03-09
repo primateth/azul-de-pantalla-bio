@@ -200,11 +200,10 @@ El autor selecciona.
 
 La creación se vuelve selección.
 
-La autoridad del autor se reduce.  
-La intervención de la máquina aumenta.
+La autoridad del autor se reduce.
+La intervención de la máquina se expande.
 
 Este archivo no intenta resolver esa tensión.
-
 Solo la deja visible.
 
 Autoría y contacto
