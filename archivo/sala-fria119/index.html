@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
 
 <meta charset="UTF-8">
@@ -35,7 +36,7 @@ font-family:system-ui;
 
 .panel{
 width:420px;
-padding:40px;
+padding:42px;
 border:1px solid var(--line);
 border-radius:16px;
 background:linear-gradient(180deg, rgba(14,22,48,.92), rgba(11,16,34,.88));
@@ -49,12 +50,12 @@ font-size:11px;
 letter-spacing:.8px;
 color:var(--muted);
 text-transform:uppercase;
-margin-bottom:8px;
+margin-bottom:10px;
 }
 
 h1{
-margin:0 0 10px;
-font-size:26px;
+margin:0 0 12px;
+font-size:28px;
 }
 
 p{
@@ -83,11 +84,11 @@ cursor:pointer;
 }
 
 button:hover{
-background:rgba(43,87,255,.5);
+background:rgba(43,87,255,.55);
 }
 
 #msg{
-margin-top:18px;
+margin-top:20px;
 font-family:var(--mono);
 font-size:12px;
 color:var(--muted);
@@ -95,7 +96,7 @@ white-space:pre-line;
 }
 
 .note{
-margin-top:24px;
+margin-top:28px;
 padding-top:18px;
 border-top:1px solid var(--line);
 font-family:var(--mono);
@@ -106,7 +107,9 @@ white-space:pre-line;
 }
 
 </style>
+
 </head>
+
 
 <body>
 
@@ -121,9 +124,11 @@ white-space:pre-line;
 <p>Introduzca la clave impresa en el libro.</p>
 
 <input type="password" id="pass">
+
 <button onclick="check()">Acceder</button>
 
 <p id="msg"></p>
+
 
 <div class="note">
 
@@ -137,6 +142,8 @@ El algoritmo sí.
 
 </div>
 
+
+
 <script>
 
 function generarRegistro(){
@@ -145,9 +152,29 @@ return "R-"+Math.floor(Math.random()*900000+100000);
 
 }
 
+
+function contadorAccesos(){
+
+let visitas=localStorage.getItem("sala_fria_visitas");
+
+if(!visitas){
+visitas=1;
+}else{
+visitas=parseInt(visitas)+1;
+}
+
+localStorage.setItem("sala_fria_visitas",visitas);
+
+return visitas;
+
+}
+
+
+
 function check(){
 
 const p=document.getElementById("pass").value;
+
 const msg=document.getElementById("msg");
 
 if(p==="DataloveLace1843"){
@@ -156,19 +183,28 @@ const ahora=new Date();
 
 const registro=generarRegistro();
 
+const visitas=contadorAccesos();
+
+
 msg.innerText=
 "Acceso autorizado\n"+
 "Registro: "+registro+"\n"+
 "Hora: "+ahora.toLocaleString()+"\n"+
+"Accesos locales: "+visitas+"\n"+
 "Sesión archivada";
+
 
 sessionStorage.setItem("sala_fria","ok");
 
+
 setTimeout(function(){
+
 window.location="contenido/";
+
 },1800);
 
 }
+
 
 else{
 
@@ -180,5 +216,8 @@ msg.innerText="Clave incorrecta";
 
 </script>
 
+
+
 </body>
+
 </html>
