@@ -1,75 +1,179 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="robots" content="noindex, nofollow">
+
 <title>Sala fría</title>
 
 <style>
+
+:root{
+--bg:#070A12;
+--panel:#0E1630;
+--text:#E8ECFF;
+--muted:#A9B2D6;
+--line:rgba(255,255,255,.08);
+--blue:#2B57FF;
+--mono:ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+}
+
 body{
-background:#070A12;
-color:#E8ECFF;
-font-family:system-ui;
+margin:0;
+min-height:100vh;
 display:flex;
 align-items:center;
 justify-content:center;
-height:100vh;
+background:
+radial-gradient(900px 500px at 20% 0%, rgba(43,87,255,.18), transparent 55%),
+var(--bg);
+color:var(--text);
+font-family:system-ui;
+}
+
+.panel{
+width:420px;
+padding:40px;
+border:1px solid var(--line);
+border-radius:16px;
+background:linear-gradient(180deg, rgba(14,22,48,.92), rgba(11,16,34,.88));
+box-shadow:0 18px 40px rgba(0,0,0,.35);
 text-align:center;
 }
 
-.box{
-max-width:420px;
-padding:40px;
-border:1px solid rgba(255,255,255,0.08);
-border-radius:12px;
-background:rgba(10,15,30,.9);
+.kicker{
+font-family:var(--mono);
+font-size:11px;
+letter-spacing:.8px;
+color:var(--muted);
+text-transform:uppercase;
+margin-bottom:8px;
+}
+
+h1{
+margin:0 0 10px;
+font-size:26px;
+}
+
+p{
+color:rgba(232,236,255,.9);
+line-height:1.6;
 }
 
 input{
+width:220px;
 padding:10px;
-margin-top:10px;
-border:none;
+border-radius:8px;
+border:1px solid var(--line);
+background:#060913;
+color:white;
+margin-top:14px;
 }
 
 button{
 padding:10px 14px;
+border-radius:8px;
+border:none;
+background:rgba(43,87,255,.35);
+color:white;
 margin-left:6px;
+cursor:pointer;
 }
+
+button:hover{
+background:rgba(43,87,255,.5);
+}
+
+#msg{
+margin-top:18px;
+font-family:var(--mono);
+font-size:12px;
+color:var(--muted);
+white-space:pre-line;
+}
+
+.note{
+margin-top:24px;
+padding-top:18px;
+border-top:1px solid var(--line);
+font-family:var(--mono);
+font-size:12px;
+color:var(--muted);
+line-height:1.6;
+white-space:pre-line;
+}
+
 </style>
 </head>
 
 <body>
 
-<div class="box">
+<div class="panel">
 
-<h2>Sala fría</h2>
+<div class="kicker">Archivo suplementario</div>
+
+<h1>Sala fría</h1>
 
 <p>Acceso restringido.</p>
 
 <p>Introduzca la clave impresa en el libro.</p>
 
 <input type="password" id="pass">
-
 <button onclick="check()">Acceder</button>
 
 <p id="msg"></p>
+
+<div class="note">
+
+El primer algoritmo diseñado para ser ejecutado por una máquina fue publicado por Ada Lovelace en 1843, en sus notas sobre la Máquina Analítica de Charles Babbage.
+
+La máquina nunca llegó a construirse.
+
+El algoritmo sí.
+
+</div>
 
 </div>
 
 <script>
 
+function generarRegistro(){
+
+return "R-"+Math.floor(Math.random()*900000+100000);
+
+}
+
 function check(){
 
-var p=document.getElementById("pass").value;
+const p=document.getElementById("pass").value;
+const msg=document.getElementById("msg");
 
-if(p==="DataloveLACE1843"){
+if(p==="DataloveLace1843"){
+
+const ahora=new Date();
+
+const registro=generarRegistro();
+
+msg.innerText=
+"Acceso autorizado\n"+
+"Registro: "+registro+"\n"+
+"Hora: "+ahora.toLocaleString()+"\n"+
+"Sesión archivada";
+
 sessionStorage.setItem("sala_fria","ok");
+
+setTimeout(function(){
 window.location="contenido/";
+},1800);
+
 }
 
 else{
-document.getElementById("msg").innerText="Clave incorrecta";
+
+msg.innerText="Clave incorrecta";
+
 }
 
 }
