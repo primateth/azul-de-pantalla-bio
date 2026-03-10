@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Sala fría</title>
+
+<style>
+body{
+background:#070A12;
+color:#E8ECFF;
+font-family:system-ui;
+display:flex;
+align-items:center;
+justify-content:center;
+height:100vh;
+text-align:center;
+}
+
+.box{
+max-width:420px;
+padding:40px;
+border:1px solid rgba(255,255,255,0.08);
+border-radius:12px;
+background:rgba(10,15,30,.9);
+}
+
+input{
+padding:10px;
+margin-top:10px;
+border:none;
+}
+
+button{
+padding:10px 14px;
+margin-left:6px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="box">
+
+<h2>Sala fría</h2>
+
+<p>Acceso restringido.</p>
+
+<p>Introduzca la clave impresa en el libro.</p>
+
+<input type="password" id="pass">
+
+<button onclick="check()">Acceder</button>
+
+<p id="msg"></p>
+
+</div>
+
+<script>
+
+function check(){
+
+var p=document.getElementById("pass").value;
+
+if(p==="DataloveLACE1843"){
+sessionStorage.setItem("sala_fria","ok");
+window.location="contenido/";
+}
+
+else{
+document.getElementById("msg").innerText="Clave incorrecta";
+}
+
+}
+
+</script>
+
+</body>
+</html>
