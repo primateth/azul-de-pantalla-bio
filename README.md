@@ -210,7 +210,7 @@ Autoría y contacto
 
 Contacto
 M. Müller
-mercurius81@proton.me
+azuldepantalla@proton.me
 
 ## Estructura del repositorio
 
