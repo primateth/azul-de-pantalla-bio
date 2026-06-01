@@ -210,7 +210,7 @@ Autoría y contacto
 
 Contacto
 M. Müller
-azuldepantalla@proton.me
+azuldepantalla@unquinto.es
 
 ## Estructura del repositorio
 
