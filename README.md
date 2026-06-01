@@ -210,7 +210,7 @@ Autoría y contacto
 
 Contacto
 M. Müller
-azuldepantalla@unquinto.es
+github@unquinto.es
 
 ## Estructura del repositorio
 
