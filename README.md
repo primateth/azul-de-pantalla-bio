@@ -184,23 +184,6 @@ Que el archivo viaje.
 
 ---
 
-## Nota de autoría
-
-Este proyecto utiliza teclado, ratón y sistemas de generación textual.
-
-No se presenta como una obra pura de autor.
-
-Forma parte de un experimento: observar qué ocurre con la escritura cuando el autor deja de producir frases y empieza a **negociar con una máquina**.
-
-El modelo propone.  
-El sistema reorganiza.  
-El autor selecciona.
-
-La creación se vuelve selección.
-
-La autoridad del autor se reduce.
-La intervención de la máquina se expande.
-
 Este archivo no intenta resolver esa tensión.
 Solo la deja visible.
 
