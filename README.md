@@ -102,7 +102,7 @@ Las referencias de la biblioteca pueden incluir distintos tipos de acceso:
   Notas, anexos y materiales interpretativos.
 
 - **Delirio**  
-  Corpus lateral asociado a Pedro Bustamante.
+  Corpus lateral asociado.
 
 Estas etiquetas permiten diferenciar origen, naturaleza y estatuto documental de cada referencia.
 
